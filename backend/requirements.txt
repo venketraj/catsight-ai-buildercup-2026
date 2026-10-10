@@ -44,9 +44,9 @@ pydantic==2.13.5
 
 # ── Observability (Cloud Trace) ─────────────────────────────────────────────
 # ADK's built-in Cloud Trace exporter (google.adk.telemetry.google_cloud) needs
-# the OTLP/HTTP exporter, which google-adk does not install. 1.45.1 rather than
-# the SDK's 1.42.1, because 1.42.1 would downgrade protobuf 7 -> 6; this moves
-# opentelemetry-sdk 1.42.1 -> 1.45.1 instead (suite re-run, green). Only used
+# the OTLP/HTTP exporter, which google-adk does not install. google-adk 2.11
+# caps opentelemetry-api/sdk at <=1.42.1, so the exporter is pinned to 1.42.1;
+# that resolves protobuf to 6.33.6 (instead of 7.x). Verified 2026-10-10 in a
+# clean venv built from this file: pip check clean, 864 tests pass. Only used
 # when ENABLE_CLOUD_TRACE=true.
-opentelemetry-exporter-otlp-proto-http==1.45.1
-opentelemetry-sdk==1.45.1
+opentelemetry-exporter-otlp-proto-http==1.42.1
