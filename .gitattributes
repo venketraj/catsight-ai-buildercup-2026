@@ -1,0 +1,16 @@
+# Default: let git normalise text in the repo and check out native endings.
+* text=auto
+
+# These must be LF whatever the developer's platform. A shell script checked
+# out with CRLF fails on Linux with "bad interpreter: /usr/bin/env bash^M",
+# and Cloud Build runs on Linux - so a Windows checkout would produce a
+# deploy script that only breaks in the one place it matters.
+*.sh        text eol=lf
+Dockerfile  text eol=lf
+*.rules     text eol=lf
+
+# Binary: never normalise, never diff as text.
+*.pdf   binary
+*.png   binary
+*.jpg   binary
+*.ico   binary

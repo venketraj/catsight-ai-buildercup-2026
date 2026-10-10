@@ -1,0 +1,11 @@
+.venv/
+data/synthetic/portfolio/
+data/synthetic/wordings/
+
+# Derived wording PDFs are regenerated; the answer key is committed
+data/synthetic/wordings/*.pdf
+data/synthetic/wordings/*.md
+
+# Local embedding cache and run logs (dev only; Firestore holds the vectors)
+data/cache/
+*.log

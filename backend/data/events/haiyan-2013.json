@@ -1,0 +1,913 @@
+{
+  "event_id": "haiyan-2013",
+  "name": "Typhoon Haiyan",
+  "peril": "WS",
+  "sid": "2013306N07162",
+  "start": "2013-11-07T21:00:00Z",
+  "end": "2013-11-08T09:00:00Z",
+  "duration_h": 12.0,
+  "duration_basis": "span of track points at which at least one in-scope region experiences wind of 25.7 m/s or more; not the track lifetime",
+  "track_start": "2013-11-02T06:00:00Z",
+  "track_end": "2013-11-11T06:00:00Z",
+  "damaging_points": 5,
+  "peak": {
+    "t": "2013-11-07T12:00:00Z",
+    "lat": 10.2,
+    "lon": 129.1,
+    "vmax_ms": 87.46
+  },
+  "track": [
+    {
+      "t": "2013-11-02T06:00:00Z",
+      "lat": 6.6,
+      "lon": 161.6,
+      "vmax_ms": 7.72,
+      "rmw_km": 0.0,
+      "r34_km": 0.0,
+      "r50_km": 0.0,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2013-11-02T09:00:00Z",
+      "lat": 6.4,
+      "lon": 161.0,
+      "vmax_ms": 7.72,
+      "rmw_km": 0.0,
+      "r34_km": 0.0,
+      "r50_km": 0.0,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2013-11-02T12:00:00Z",
+      "lat": 6.2,
+      "lon": 160.3,
+      "vmax_ms": 7.72,
+      "rmw_km": 0.0,
+      "r34_km": 0.0,
+      "r50_km": 0.0,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2013-11-02T15:00:00Z",
+      "lat": 6.1,
+      "lon": 159.6,
+      "vmax_ms": 7.72,
+      "rmw_km": 0.0,
+      "r34_km": 0.0,
+      "r50_km": 0.0,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2013-11-02T18:00:00Z",
+      "lat": 6.1,
+      "lon": 158.8,
+      "vmax_ms": 7.72,
+      "rmw_km": 0.0,
+      "r34_km": 0.0,
+      "r50_km": 0.0,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2013-11-02T21:00:00Z",
+      "lat": 6.1,
+      "lon": 158.0,
+      "vmax_ms": 9.26,
+      "rmw_km": 0.0,
+      "r34_km": 0.0,
+      "r50_km": 0.0,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2013-11-03T00:00:00Z",
+      "lat": 6.2,
+      "lon": 157.2,
+      "vmax_ms": 10.29,
+      "rmw_km": 0.0,
+      "r34_km": 0.0,
+      "r50_km": 0.0,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2013-11-03T03:00:00Z",
+      "lat": 6.2,
+      "lon": 156.4,
+      "vmax_ms": 11.83,
+      "rmw_km": 0.0,
+      "r34_km": 0.0,
+      "r50_km": 0.0,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2013-11-03T06:00:00Z",
+      "lat": 6.1,
+      "lon": 156.2,
+      "vmax_ms": 12.86,
+      "rmw_km": 83.3,
+      "r34_km": 0.0,
+      "r50_km": 0.0,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2013-11-03T09:00:00Z",
+      "lat": 6.2,
+      "lon": 155.6,
+      "vmax_ms": 14.4,
+      "rmw_km": 83.3,
+      "r34_km": 0.0,
+      "r50_km": 0.0,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2013-11-03T12:00:00Z",
+      "lat": 6.3,
+      "lon": 154.9,
+      "vmax_ms": 15.43,
+      "rmw_km": 83.3,
+      "r34_km": 0.0,
+      "r50_km": 0.0,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2013-11-03T15:00:00Z",
+      "lat": 6.2,
+      "lon": 154.1,
+      "vmax_ms": 15.43,
+      "rmw_km": 83.3,
+      "r34_km": 0.0,
+      "r50_km": 0.0,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2013-11-03T18:00:00Z",
+      "lat": 6.2,
+      "lon": 153.2,
+      "vmax_ms": 15.43,
+      "rmw_km": 83.3,
+      "r34_km": 0.0,
+      "r50_km": 0.0,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2013-11-03T21:00:00Z",
+      "lat": 6.1,
+      "lon": 152.6,
+      "vmax_ms": 16.98,
+      "rmw_km": 83.3,
+      "r34_km": 0.0,
+      "r50_km": 0.0,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2013-11-04T00:00:00Z",
+      "lat": 6.1,
+      "lon": 152.0,
+      "vmax_ms": 18.01,
+      "rmw_km": 83.3,
+      "r34_km": 0.0,
+      "r50_km": 0.0,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2013-11-04T03:00:00Z",
+      "lat": 6.1,
+      "lon": 151.1,
+      "vmax_ms": 19.55,
+      "rmw_km": 74.1,
+      "r34_km": 0.0,
+      "r50_km": 0.0,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2013-11-04T06:00:00Z",
+      "lat": 6.2,
+      "lon": 150.3,
+      "vmax_ms": 20.58,
+      "rmw_km": 64.8,
+      "r34_km": 78.7,
+      "r50_km": 0.0,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2013-11-04T09:00:00Z",
+      "lat": 6.2,
+      "lon": 149.5,
+      "vmax_ms": 22.12,
+      "rmw_km": 64.8,
+      "r34_km": 84.3,
+      "r50_km": 0.0,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2013-11-04T12:00:00Z",
+      "lat": 6.3,
+      "lon": 148.8,
+      "vmax_ms": 23.15,
+      "rmw_km": 64.8,
+      "r34_km": 88.0,
+      "r50_km": 0.0,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2013-11-04T15:00:00Z",
+      "lat": 6.4,
+      "lon": 148.0,
+      "vmax_ms": 25.72,
+      "rmw_km": 55.6,
+      "r34_km": 93.5,
+      "r50_km": 27.8,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2013-11-04T18:00:00Z",
+      "lat": 6.5,
+      "lon": 147.2,
+      "vmax_ms": 28.29,
+      "rmw_km": 46.3,
+      "r34_km": 97.2,
+      "r50_km": 55.6,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2013-11-04T21:00:00Z",
+      "lat": 6.5,
+      "lon": 146.5,
+      "vmax_ms": 32.41,
+      "rmw_km": 37.0,
+      "r34_km": 97.2,
+      "r50_km": 55.6,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2013-11-05T00:00:00Z",
+      "lat": 6.5,
+      "lon": 145.9,
+      "vmax_ms": 36.01,
+      "rmw_km": 27.8,
+      "r34_km": 97.2,
+      "r50_km": 55.6,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2013-11-05T03:00:00Z",
+      "lat": 6.5,
+      "lon": 145.2,
+      "vmax_ms": 37.55,
+      "rmw_km": 27.8,
+      "r34_km": 97.2,
+      "r50_km": 55.6,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2013-11-05T06:00:00Z",
+      "lat": 6.5,
+      "lon": 144.5,
+      "vmax_ms": 38.58,
+      "rmw_km": 27.8,
+      "r34_km": 97.2,
+      "r50_km": 55.6,
+      "r64_km": 27.8
+    },
+    {
+      "t": "2013-11-05T09:00:00Z",
+      "lat": 6.7,
+      "lon": 143.7,
+      "vmax_ms": 42.7,
+      "rmw_km": 27.8,
+      "r34_km": 112.0,
+      "r50_km": 67.6,
+      "r64_km": 37.0
+    },
+    {
+      "t": "2013-11-05T12:00:00Z",
+      "lat": 6.9,
+      "lon": 142.9,
+      "vmax_ms": 46.3,
+      "rmw_km": 27.8,
+      "r34_km": 125.0,
+      "r50_km": 78.7,
+      "r64_km": 46.3
+    },
+    {
+      "t": "2013-11-05T15:00:00Z",
+      "lat": 7.0,
+      "lon": 142.1,
+      "vmax_ms": 51.44,
+      "rmw_km": 20.4,
+      "r34_km": 141.7,
+      "r50_km": 81.5,
+      "r64_km": 46.3
+    },
+    {
+      "t": "2013-11-05T18:00:00Z",
+      "lat": 7.1,
+      "lon": 141.3,
+      "vmax_ms": 56.59,
+      "rmw_km": 13.0,
+      "r34_km": 157.4,
+      "r50_km": 83.3,
+      "r64_km": 46.3
+    },
+    {
+      "t": "2013-11-05T21:00:00Z",
+      "lat": 7.2,
+      "lon": 140.5,
+      "vmax_ms": 61.73,
+      "rmw_km": 13.0,
+      "r34_km": 172.2,
+      "r50_km": 101.9,
+      "r64_km": 55.6
+    },
+    {
+      "t": "2013-11-06T00:00:00Z",
+      "lat": 7.3,
+      "lon": 139.7,
+      "vmax_ms": 66.88,
+      "rmw_km": 13.0,
+      "r34_km": 185.2,
+      "r50_km": 120.4,
+      "r64_km": 64.8
+    },
+    {
+      "t": "2013-11-06T03:00:00Z",
+      "lat": 7.5,
+      "lon": 138.8,
+      "vmax_ms": 68.42,
+      "rmw_km": 13.0,
+      "r34_km": 194.5,
+      "r50_km": 120.4,
+      "r64_km": 64.8
+    },
+    {
+      "t": "2013-11-06T06:00:00Z",
+      "lat": 7.6,
+      "lon": 138.0,
+      "vmax_ms": 69.45,
+      "rmw_km": 13.0,
+      "r34_km": 203.7,
+      "r50_km": 120.4,
+      "r64_km": 64.8
+    },
+    {
+      "t": "2013-11-06T09:00:00Z",
+      "lat": 7.7,
+      "lon": 137.1,
+      "vmax_ms": 73.57,
+      "rmw_km": 13.0,
+      "r34_km": 215.8,
+      "r50_km": 129.6,
+      "r64_km": 74.1
+    },
+    {
+      "t": "2013-11-06T12:00:00Z",
+      "lat": 7.9,
+      "lon": 136.2,
+      "vmax_ms": 77.17,
+      "rmw_km": 13.0,
+      "r34_km": 226.9,
+      "r50_km": 138.9,
+      "r64_km": 83.3
+    },
+    {
+      "t": "2013-11-06T15:00:00Z",
+      "lat": 8.0,
+      "lon": 135.2,
+      "vmax_ms": 78.71,
+      "rmw_km": 18.5,
+      "r34_km": 219.0,
+      "r50_km": 123.2,
+      "r64_km": 75.5
+    },
+    {
+      "t": "2013-11-06T18:00:00Z",
+      "lat": 8.2,
+      "lon": 134.4,
+      "vmax_ms": 79.74,
+      "rmw_km": 22.2,
+      "r34_km": 210.7,
+      "r50_km": 106.5,
+      "r64_km": 67.1
+    },
+    {
+      "t": "2013-11-06T21:00:00Z",
+      "lat": 8.4,
+      "lon": 133.6,
+      "vmax_ms": 79.74,
+      "rmw_km": 25.9,
+      "r34_km": 210.7,
+      "r50_km": 106.5,
+      "r64_km": 67.1
+    },
+    {
+      "t": "2013-11-07T00:00:00Z",
+      "lat": 8.7,
+      "lon": 132.8,
+      "vmax_ms": 79.74,
+      "rmw_km": 27.8,
+      "r34_km": 210.7,
+      "r50_km": 106.5,
+      "r64_km": 67.1
+    },
+    {
+      "t": "2013-11-07T03:00:00Z",
+      "lat": 9.0,
+      "lon": 132.0,
+      "vmax_ms": 81.28,
+      "rmw_km": 29.6,
+      "r34_km": 210.7,
+      "r50_km": 106.5,
+      "r64_km": 67.1
+    },
+    {
+      "t": "2013-11-07T06:00:00Z",
+      "lat": 9.3,
+      "lon": 131.1,
+      "vmax_ms": 82.31,
+      "rmw_km": 31.5,
+      "r34_km": 210.7,
+      "r50_km": 106.5,
+      "r64_km": 67.1
+    },
+    {
+      "t": "2013-11-07T09:00:00Z",
+      "lat": 9.8,
+      "lon": 130.1,
+      "vmax_ms": 84.88,
+      "rmw_km": 31.5,
+      "r34_km": 216.2,
+      "r50_km": 112.0,
+      "r64_km": 72.7
+    },
+    {
+      "t": "2013-11-07T12:00:00Z",
+      "lat": 10.2,
+      "lon": 129.1,
+      "vmax_ms": 87.46,
+      "rmw_km": 31.5,
+      "r34_km": 219.9,
+      "r50_km": 115.8,
+      "r64_km": 76.4
+    },
+    {
+      "t": "2013-11-07T15:00:00Z",
+      "lat": 10.4,
+      "lon": 128.0,
+      "vmax_ms": 87.46,
+      "rmw_km": 31.5,
+      "r34_km": 225.0,
+      "r50_km": 117.1,
+      "r64_km": 81.0
+    },
+    {
+      "t": "2013-11-07T18:00:00Z",
+      "lat": 10.6,
+      "lon": 126.9,
+      "vmax_ms": 87.46,
+      "rmw_km": 31.5,
+      "r34_km": 229.2,
+      "r50_km": 118.1,
+      "r64_km": 85.7
+    },
+    {
+      "t": "2013-11-07T21:00:00Z",
+      "lat": 10.8,
+      "lon": 125.9,
+      "vmax_ms": 86.43,
+      "rmw_km": 29.6,
+      "r34_km": 229.2,
+      "r50_km": 118.1,
+      "r64_km": 85.7
+    },
+    {
+      "t": "2013-11-08T00:00:00Z",
+      "lat": 11.0,
+      "lon": 124.8,
+      "vmax_ms": 84.88,
+      "rmw_km": 27.8,
+      "r34_km": 229.2,
+      "r50_km": 118.1,
+      "r64_km": 85.7
+    },
+    {
+      "t": "2013-11-08T03:00:00Z",
+      "lat": 11.2,
+      "lon": 123.7,
+      "vmax_ms": 79.74,
+      "rmw_km": 24.1,
+      "r34_km": 229.2,
+      "r50_km": 118.1,
+      "r64_km": 85.7
+    },
+    {
+      "t": "2013-11-08T06:00:00Z",
+      "lat": 11.4,
+      "lon": 122.6,
+      "vmax_ms": 74.59,
+      "rmw_km": 18.5,
+      "r34_km": 229.2,
+      "r50_km": 118.1,
+      "r64_km": 85.7
+    },
+    {
+      "t": "2013-11-08T09:00:00Z",
+      "lat": 11.6,
+      "lon": 121.5,
+      "vmax_ms": 70.99,
+      "rmw_km": 24.1,
+      "r34_km": 229.2,
+      "r50_km": 118.1,
+      "r64_km": 85.7
+    },
+    {
+      "t": "2013-11-08T12:00:00Z",
+      "lat": 11.9,
+      "lon": 120.5,
+      "vmax_ms": 66.88,
+      "rmw_km": 27.8,
+      "r34_km": 229.2,
+      "r50_km": 118.1,
+      "r64_km": 85.7
+    },
+    {
+      "t": "2013-11-08T15:00:00Z",
+      "lat": 12.1,
+      "lon": 119.2,
+      "vmax_ms": 64.31,
+      "rmw_km": 24.1,
+      "r34_km": 230.6,
+      "r50_km": 119.9,
+      "r64_km": 80.1
+    },
+    {
+      "t": "2013-11-08T18:00:00Z",
+      "lat": 12.3,
+      "lon": 118.0,
+      "vmax_ms": 61.73,
+      "rmw_km": 18.5,
+      "r34_km": 231.5,
+      "r50_km": 120.4,
+      "r64_km": 74.1
+    },
+    {
+      "t": "2013-11-08T21:00:00Z",
+      "lat": 12.3,
+      "lon": 117.2,
+      "vmax_ms": 60.7,
+      "rmw_km": 24.1,
+      "r34_km": 231.5,
+      "r50_km": 125.9,
+      "r64_km": 79.6
+    },
+    {
+      "t": "2013-11-09T00:00:00Z",
+      "lat": 12.5,
+      "lon": 116.5,
+      "vmax_ms": 59.16,
+      "rmw_km": 27.8,
+      "r34_km": 231.5,
+      "r50_km": 129.6,
+      "r64_km": 83.3
+    },
+    {
+      "t": "2013-11-09T03:00:00Z",
+      "lat": 12.9,
+      "lon": 115.6,
+      "vmax_ms": 56.59,
+      "rmw_km": 27.8,
+      "r34_km": 231.5,
+      "r50_km": 129.6,
+      "r64_km": 83.3
+    },
+    {
+      "t": "2013-11-09T06:00:00Z",
+      "lat": 13.5,
+      "lon": 114.7,
+      "vmax_ms": 54.02,
+      "rmw_km": 27.8,
+      "r34_km": 231.5,
+      "r50_km": 129.6,
+      "r64_km": 83.3
+    },
+    {
+      "t": "2013-11-09T09:00:00Z",
+      "lat": 14.0,
+      "lon": 113.9,
+      "vmax_ms": 52.99,
+      "rmw_km": 27.8,
+      "r34_km": 222.2,
+      "r50_km": 120.4,
+      "r64_km": 74.1
+    },
+    {
+      "t": "2013-11-09T12:00:00Z",
+      "lat": 14.5,
+      "lon": 113.1,
+      "vmax_ms": 51.44,
+      "rmw_km": 27.8,
+      "r34_km": 213.0,
+      "r50_km": 111.1,
+      "r64_km": 64.8
+    },
+    {
+      "t": "2013-11-09T15:00:00Z",
+      "lat": 14.9,
+      "lon": 112.2,
+      "vmax_ms": 50.42,
+      "rmw_km": 24.1,
+      "r34_km": 213.0,
+      "r50_km": 111.1,
+      "r64_km": 64.8
+    },
+    {
+      "t": "2013-11-09T18:00:00Z",
+      "lat": 15.4,
+      "lon": 111.5,
+      "vmax_ms": 48.87,
+      "rmw_km": 18.5,
+      "r34_km": 213.0,
+      "r50_km": 111.1,
+      "r64_km": 64.8
+    },
+    {
+      "t": "2013-11-09T21:00:00Z",
+      "lat": 15.9,
+      "lon": 110.8,
+      "vmax_ms": 47.84,
+      "rmw_km": 24.1,
+      "r34_km": 213.0,
+      "r50_km": 111.1,
+      "r64_km": 64.8
+    },
+    {
+      "t": "2013-11-10T00:00:00Z",
+      "lat": 16.5,
+      "lon": 110.2,
+      "vmax_ms": 46.3,
+      "rmw_km": 27.8,
+      "r34_km": 213.0,
+      "r50_km": 111.1,
+      "r64_km": 64.8
+    },
+    {
+      "t": "2013-11-10T03:00:00Z",
+      "lat": 17.2,
+      "lon": 109.6,
+      "vmax_ms": 43.73,
+      "rmw_km": 27.8,
+      "r34_km": 213.0,
+      "r50_km": 111.1,
+      "r64_km": 64.8
+    },
+    {
+      "t": "2013-11-10T06:00:00Z",
+      "lat": 17.9,
+      "lon": 109.1,
+      "vmax_ms": 41.16,
+      "rmw_km": 27.8,
+      "r34_km": 213.0,
+      "r50_km": 111.1,
+      "r64_km": 64.8
+    },
+    {
+      "t": "2013-11-10T09:00:00Z",
+      "lat": 18.6,
+      "lon": 108.5,
+      "vmax_ms": 41.16,
+      "rmw_km": 33.3,
+      "r34_km": 203.7,
+      "r50_km": 101.9,
+      "r64_km": 55.6
+    },
+    {
+      "t": "2013-11-10T12:00:00Z",
+      "lat": 19.3,
+      "lon": 108.0,
+      "vmax_ms": 41.16,
+      "rmw_km": 37.0,
+      "r34_km": 194.5,
+      "r50_km": 92.6,
+      "r64_km": 46.3
+    },
+    {
+      "t": "2013-11-10T15:00:00Z",
+      "lat": 19.9,
+      "lon": 107.6,
+      "vmax_ms": 38.58,
+      "rmw_km": 37.0,
+      "r34_km": 194.5,
+      "r50_km": 92.6,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2013-11-10T18:00:00Z",
+      "lat": 20.4,
+      "lon": 107.4,
+      "vmax_ms": 36.01,
+      "rmw_km": 37.0,
+      "r34_km": 194.5,
+      "r50_km": 92.6,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2013-11-10T21:00:00Z",
+      "lat": 21.0,
+      "lon": 107.3,
+      "vmax_ms": 33.44,
+      "rmw_km": 46.3,
+      "r34_km": 194.5,
+      "r50_km": 92.6,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2013-11-11T00:00:00Z",
+      "lat": 21.6,
+      "lon": 107.3,
+      "vmax_ms": 30.87,
+      "rmw_km": 55.6,
+      "r34_km": 194.5,
+      "r50_km": 92.6,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2013-11-11T03:00:00Z",
+      "lat": 22.1,
+      "lon": 107.5,
+      "vmax_ms": 27.27,
+      "rmw_km": 55.6,
+      "r34_km": 146.3,
+      "r50_km": 46.3,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2013-11-11T06:00:00Z",
+      "lat": 22.5,
+      "lon": 107.9,
+      "vmax_ms": 23.15,
+      "rmw_km": 55.6,
+      "r34_km": 97.2,
+      "r50_km": 0.0,
+      "r64_km": 0.0
+    }
+  ],
+  "regions": [
+    {
+      "code": "PH-LEY",
+      "name": "Leyte",
+      "country": "PHL",
+      "intensity": {
+        "wind_ms": 84.88
+      },
+      "band": 5,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "PH-CAP",
+      "name": "Capiz",
+      "country": "PHL",
+      "intensity": {
+        "wind_ms": 74.59
+      },
+      "band": 5,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "PH-AKL",
+      "name": "Aklan",
+      "country": "PHL",
+      "intensity": {
+        "wind_ms": 59.36
+      },
+      "band": 5,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "PH-ILI",
+      "name": "Iloilo",
+      "country": "PHL",
+      "intensity": {
+        "wind_ms": 51.42
+      },
+      "band": 5,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "PH-ANT",
+      "name": "Antique",
+      "country": "PHL",
+      "intensity": {
+        "wind_ms": 43.49
+      },
+      "band": 4,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "PH-CEB",
+      "name": "Cebu",
+      "country": "PHL",
+      "intensity": {
+        "wind_ms": 32.04
+      },
+      "band": 2,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "PH-WSA",
+      "name": "Samar",
+      "country": "PHL",
+      "intensity": {
+        "wind_ms": 32.04
+      },
+      "band": 2,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "PH-EAS",
+      "name": "Eastern Samar",
+      "country": "PHL",
+      "intensity": {
+        "wind_ms": 29.46
+      },
+      "band": 2,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "PH-NEC",
+      "name": "Negros Occidental",
+      "country": "PHL",
+      "intensity": {
+        "wind_ms": 25.89
+      },
+      "band": 2,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "PH-BOH",
+      "name": "Bohol",
+      "country": "PHL",
+      "intensity": {
+        "wind_ms": 23.63
+      },
+      "band": 1,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "PH-NSA",
+      "name": "Northern Samar",
+      "country": "PHL",
+      "intensity": {
+        "wind_ms": 23.28
+      },
+      "band": 1,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "PH-NER",
+      "name": "Negros Oriental",
+      "country": "PHL",
+      "intensity": {
+        "wind_ms": 20.66
+      },
+      "band": 1,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "PH-SOR",
+      "name": "Sorsogon",
+      "country": "PHL",
+      "intensity": {
+        "wind_ms": 20.26
+      },
+      "band": 1,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "PH-ALB",
+      "name": "Albay",
+      "country": "PHL",
+      "intensity": {
+        "wind_ms": 17.56
+      },
+      "band": 1,
+      "intensity_source": "computed"
+    }
+  ],
+  "facts": [
+    {
+      "text": "Landfall 04:40 PHT on 8 November at Guiuan, Eastern Samar, with sustained winds about 235 km/h.",
+      "source": "Third party",
+      "url": null
+    }
+  ],
+  "reference_losses": [
+    {
+      "source": "Swiss Re sigma (third party)",
+      "value": "about USD 1.5bn insured of about USD 12.5bn economic",
+      "as_of": null,
+      "note": "an insurance protection gap of roughly 88%",
+      "url": null
+    }
+  ],
+  "attribution": [
+    "NOAA IBTrACS v04r01 (Knapp et al. 2010), doi:10.25921/82ty-9e16"
+  ],
+  "disclaimer": "Indicative first view on synthetic data. Not a catastrophe-model output. Reference losses are published figures, cited for credibility and back-testing only, and are never model inputs."
+}

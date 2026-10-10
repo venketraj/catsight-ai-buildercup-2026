@@ -1,0 +1,2010 @@
+{
+ "event_id": "hagibis-2019",
+ "recorded_at": "2026-10-10T08:58:18+00:00",
+ "seconds": 26.391,
+ "frames": [
+  {
+   "t": 0.438,
+   "frame": {
+    "type": "stage",
+    "agent": "event_intel",
+    "status": "started"
+   }
+  },
+  {
+   "t": 1.609,
+   "frame": {
+    "type": "result",
+    "key": "event",
+    "data": {
+     "event_id": "hagibis-2019",
+     "name": "Typhoon Hagibis",
+     "peril": "WS",
+     "duration_h": 27.0,
+     "regions": 38,
+     "facts": [
+      {
+       "url": "https://www.jma.go.jp/jma/indexe.html",
+       "source": "JMA",
+       "text": "Landfall just before 19:00 JST on 12 October on the Izu Peninsula."
+      },
+      {
+       "url": "https://www.jma.go.jp/jma/indexe.html",
+       "source": "JMA",
+       "text": "Hakone recorded about 1,000 mm of rainfall."
+      }
+     ]
+    }
+   }
+  },
+  {
+   "t": 1.625,
+   "frame": {
+    "type": "stage",
+    "agent": "event_intel",
+    "status": "completed"
+   }
+  },
+  {
+   "t": 1.625,
+   "frame": {
+    "type": "stage",
+    "agent": "exposure_analyst",
+    "status": "started"
+   }
+  },
+  {
+   "t": 3.156,
+   "frame": {
+    "type": "tool",
+    "agent": "exposure_analyst",
+    "name": "match_treaties",
+    "summary": "13 matched, 11 excluded"
+   }
+  },
+  {
+   "t": 3.156,
+   "frame": {
+    "type": "tool",
+    "agent": "exposure_analyst",
+    "name": "loss_engine",
+    "summary": "13 treaties priced, deterministic"
+   }
+  },
+  {
+   "t": 3.156,
+   "frame": {
+    "type": "result",
+    "key": "impact",
+    "data": {
+     "event": {
+      "event_id": "hagibis-2019",
+      "name": "Typhoon Hagibis",
+      "peril": "WS",
+      "start": "2019-10-11T21:00:00Z",
+      "end": "2019-10-13T00:00:00Z",
+      "duration_h": 27.0,
+      "regions": 38,
+      "facts": [
+       {
+        "url": "https://www.jma.go.jp/jma/indexe.html",
+        "source": "JMA",
+        "text": "Landfall just before 19:00 JST on 12 October on the Izu Peninsula."
+       },
+       {
+        "url": "https://www.jma.go.jp/jma/indexe.html",
+        "source": "JMA",
+        "text": "Hakone recorded about 1,000 mm of rainfall."
+       }
+      ],
+      "disclaimer": "Indicative first view on synthetic data. Not a catastrophe-model output. Reference losses are published figures, cited for credibility and back-testing only, and are never model inputs."
+     },
+     "totals": {
+      "gross": "1580.82",
+      "ceded": "1166.71",
+      "retained": "414.11",
+      "our_net": "153.51",
+      "treaties_matched": 13,
+      "treaties_excluded": 11
+     },
+     "as_if": true,
+     "methodology": {
+      "version": "2026.1",
+      "effective_from": "2026-10-01"
+     },
+     "treaties": [
+      {
+       "treaty_id": "T-016",
+       "cedent_id": "C-SAKURA",
+       "cedent": "Sakura General Insurance",
+       "type": "CAT_XL",
+       "gross": "117.10",
+       "regions": [
+        "JP-22",
+        "JP-11",
+        "JP-13",
+        "JP-14",
+        "JP-19",
+        "JP-12",
+        "JP-07",
+        "JP-08",
+        "JP-09",
+        "JP-10",
+        "JP-20",
+        "JP-23",
+        "JP-15",
+        "JP-06",
+        "JP-04",
+        "JP-03",
+        "JP-24",
+        "JP-05",
+        "JP-21",
+        "JP-16",
+        "JP-29",
+        "JP-25",
+        "JP-30",
+        "JP-18",
+        "JP-17",
+        "JP-27",
+        "JP-02",
+        "JP-26",
+        "JP-36",
+        "JP-28",
+        "JP-01",
+        "JP-37",
+        "JP-39",
+        "JP-33",
+        "JP-31",
+        "JP-38",
+        "JP-34",
+        "JP-32"
+       ],
+       "our_net": "20.44",
+       "ceded": "102.60",
+       "layers": [
+        {
+         "layer_no": 1,
+         "ceded": "27.40",
+         "our_loss": "3.84",
+         "our_rip": "0.25",
+         "burn": "1.0000",
+         "exhausted": true,
+         "reinstated": "27.40"
+        },
+        {
+         "layer_no": 2,
+         "ceded": "52.30",
+         "our_loss": "14.12",
+         "our_rip": "1.58",
+         "burn": "1.0000",
+         "exhausted": true,
+         "reinstated": "52.30"
+        },
+        {
+         "layer_no": 3,
+         "ceded": "22.90",
+         "our_loss": "4.81",
+         "our_rip": "0.50",
+         "burn": "0.1310",
+         "exhausted": false,
+         "reinstated": "22.90"
+        },
+        {
+         "layer_no": 4,
+         "ceded": "0.00",
+         "our_loss": "0.00",
+         "our_rip": "0.00",
+         "burn": "0.0000",
+         "exhausted": false,
+         "reinstated": "0.00"
+        }
+       ],
+       "cedent_retention": "14.50",
+       "cedent_net_cost": "24.51",
+       "total_rip": "10.01",
+       "our_loss": "22.77",
+       "our_rip": "2.33",
+       "market_net": "92.59"
+      },
+      {
+       "treaty_id": "T-014",
+       "cedent_id": "C-SAKURA",
+       "cedent": "Sakura General Insurance",
+       "type": "CAT_XL",
+       "gross": "117.10",
+       "regions": [
+        "JP-22",
+        "JP-11",
+        "JP-13",
+        "JP-14",
+        "JP-19",
+        "JP-12",
+        "JP-07",
+        "JP-08",
+        "JP-09",
+        "JP-10",
+        "JP-20",
+        "JP-23",
+        "JP-15",
+        "JP-06",
+        "JP-04",
+        "JP-03",
+        "JP-24",
+        "JP-05",
+        "JP-21",
+        "JP-16",
+        "JP-29",
+        "JP-25",
+        "JP-30",
+        "JP-18",
+        "JP-17",
+        "JP-27",
+        "JP-02",
+        "JP-26",
+        "JP-36",
+        "JP-28",
+        "JP-01",
+        "JP-37",
+        "JP-39",
+        "JP-33",
+        "JP-31",
+        "JP-38",
+        "JP-34",
+        "JP-32"
+       ],
+       "our_net": "19.92",
+       "ceded": "101.10",
+       "layers": [
+        {
+         "layer_no": 1,
+         "ceded": "28.20",
+         "our_loss": "1.69",
+         "our_rip": "0.14",
+         "burn": "1.0000",
+         "exhausted": true,
+         "reinstated": "28.20"
+        },
+        {
+         "layer_no": 2,
+         "ceded": "66.40",
+         "our_loss": "19.26",
+         "our_rip": "1.88",
+         "burn": "1.0000",
+         "exhausted": true,
+         "reinstated": "66.40"
+        },
+        {
+         "layer_no": 3,
+         "ceded": "6.50",
+         "our_loss": "1.10",
+         "our_rip": "0.12",
+         "burn": "0.0347",
+         "exhausted": false,
+         "reinstated": "6.50"
+        }
+       ],
+       "cedent_retention": "16.00",
+       "cedent_net_cost": "25.44",
+       "total_rip": "9.44",
+       "our_loss": "22.05",
+       "our_rip": "2.13",
+       "market_net": "91.66"
+      },
+      {
+       "treaty_id": "T-002",
+       "cedent_id": "C-KOGANE",
+       "cedent": "Kogane Fire & Marine",
+       "type": "CAT_XL",
+       "gross": "150.55",
+       "regions": [
+        "JP-22",
+        "JP-11",
+        "JP-13",
+        "JP-14",
+        "JP-19",
+        "JP-12",
+        "JP-07",
+        "JP-08",
+        "JP-09",
+        "JP-10",
+        "JP-20",
+        "JP-23",
+        "JP-15",
+        "JP-06",
+        "JP-04",
+        "JP-03",
+        "JP-24",
+        "JP-05",
+        "JP-21",
+        "JP-16",
+        "JP-29",
+        "JP-25",
+        "JP-30",
+        "JP-18",
+        "JP-17",
+        "JP-27",
+        "JP-02",
+        "JP-26",
+        "JP-36",
+        "JP-28",
+        "JP-01",
+        "JP-37",
+        "JP-39",
+        "JP-33",
+        "JP-31",
+        "JP-38",
+        "JP-34",
+        "JP-32"
+       ],
+       "our_net": "15.44",
+       "ceded": "139.35",
+       "layers": [
+        {
+         "layer_no": 1,
+         "ceded": "14.60",
+         "our_loss": "1.46",
+         "our_rip": "0.11",
+         "burn": "1.0000",
+         "exhausted": true,
+         "reinstated": "14.60"
+        },
+        {
+         "layer_no": 2,
+         "ceded": "45.00",
+         "our_loss": "7.65",
+         "our_rip": "0.77",
+         "burn": "1.0000",
+         "exhausted": true,
+         "reinstated": "45.00"
+        },
+        {
+         "layer_no": 3,
+         "ceded": "79.75",
+         "our_loss": "7.98",
+         "our_rip": "0.76",
+         "burn": "0.5792",
+         "exhausted": false,
+         "reinstated": "79.75"
+        }
+       ],
+       "cedent_retention": "11.20",
+       "cedent_net_cost": "24.47",
+       "total_rip": "13.27",
+       "our_loss": "17.09",
+       "our_rip": "1.64",
+       "market_net": "126.09"
+      },
+      {
+       "treaty_id": "T-004",
+       "cedent_id": "C-YAMABIKO",
+       "cedent": "Yamabiko Casualty",
+       "type": "CAT_XL",
+       "gross": "125.46",
+       "regions": [
+        "JP-22",
+        "JP-11",
+        "JP-13",
+        "JP-14",
+        "JP-19",
+        "JP-12",
+        "JP-07",
+        "JP-08",
+        "JP-09",
+        "JP-10",
+        "JP-20",
+        "JP-23",
+        "JP-15",
+        "JP-06",
+        "JP-04",
+        "JP-03",
+        "JP-24",
+        "JP-05",
+        "JP-21",
+        "JP-16",
+        "JP-29",
+        "JP-25",
+        "JP-30",
+        "JP-18",
+        "JP-17",
+        "JP-27",
+        "JP-02",
+        "JP-26",
+        "JP-36",
+        "JP-28",
+        "JP-01",
+        "JP-37",
+        "JP-39",
+        "JP-33",
+        "JP-31",
+        "JP-38",
+        "JP-34",
+        "JP-32"
+       ],
+       "our_net": "15.37",
+       "ceded": "106.86",
+       "layers": [
+        {
+         "layer_no": 1,
+         "ceded": "25.80",
+         "our_loss": "6.71",
+         "our_rip": "0.68",
+         "burn": "1.0000",
+         "exhausted": true,
+         "reinstated": "25.80"
+        },
+        {
+         "layer_no": 2,
+         "ceded": "81.06",
+         "our_loss": "10.54",
+         "our_rip": "1.20",
+         "burn": "0.9995",
+         "exhausted": false,
+         "reinstated": "81.06"
+        },
+        {
+         "layer_no": 3,
+         "ceded": "0.00",
+         "our_loss": "0.00",
+         "our_rip": "0.00",
+         "burn": "0.0000",
+         "exhausted": false,
+         "reinstated": "0.00"
+        },
+        {
+         "layer_no": 4,
+         "ceded": "0.00",
+         "our_loss": "0.00",
+         "our_rip": "0.00",
+         "burn": "0.0000",
+         "exhausted": false,
+         "reinstated": "0.00"
+        }
+       ],
+       "cedent_retention": "18.60",
+       "cedent_net_cost": "30.45",
+       "total_rip": "11.85",
+       "our_loss": "17.25",
+       "our_rip": "1.88",
+       "market_net": "95.02"
+      },
+      {
+       "treaty_id": "T-017",
+       "cedent_id": "C-TSURUMI",
+       "cedent": "Tsurumi Mutual Insurance",
+       "type": "CAT_XL",
+       "gross": "108.73",
+       "regions": [
+        "JP-22",
+        "JP-11",
+        "JP-13",
+        "JP-14",
+        "JP-19",
+        "JP-12",
+        "JP-07",
+        "JP-08",
+        "JP-09",
+        "JP-10",
+        "JP-20",
+        "JP-23",
+        "JP-15",
+        "JP-06",
+        "JP-04",
+        "JP-03",
+        "JP-24",
+        "JP-05",
+        "JP-21",
+        "JP-16",
+        "JP-29",
+        "JP-25",
+        "JP-30",
+        "JP-18",
+        "JP-17",
+        "JP-27",
+        "JP-02",
+        "JP-26",
+        "JP-36",
+        "JP-28",
+        "JP-01",
+        "JP-37",
+        "JP-39",
+        "JP-33",
+        "JP-31",
+        "JP-38",
+        "JP-34",
+        "JP-32"
+       ],
+       "our_net": "12.76",
+       "ceded": "100.43",
+       "layers": [
+        {
+         "layer_no": 1,
+         "ceded": "15.90",
+         "our_loss": "3.50",
+         "our_rip": "0.34",
+         "burn": "1.0000",
+         "exhausted": true,
+         "reinstated": "15.90"
+        },
+        {
+         "layer_no": 2,
+         "ceded": "34.00",
+         "our_loss": "4.42",
+         "our_rip": "0.40",
+         "burn": "1.0000",
+         "exhausted": true,
+         "reinstated": "34.00"
+        },
+        {
+         "layer_no": 3,
+         "ceded": "50.53",
+         "our_loss": "6.06",
+         "our_rip": "0.49",
+         "burn": "0.4413",
+         "exhausted": false,
+         "reinstated": "50.53"
+        },
+        {
+         "layer_no": 4,
+         "ceded": "0.00",
+         "our_loss": "0.00",
+         "our_rip": "0.00",
+         "burn": "0.0000",
+         "exhausted": false,
+         "reinstated": "0.00"
+        }
+       ],
+       "cedent_retention": "8.30",
+       "cedent_net_cost": "16.98",
+       "total_rip": "8.68",
+       "our_loss": "13.98",
+       "our_rip": "1.22",
+       "market_net": "91.76"
+      },
+      {
+       "treaty_id": "T-010",
+       "cedent_id": "C-SAKURA",
+       "cedent": "Sakura General Insurance",
+       "type": "CAT_XL",
+       "gross": "117.10",
+       "regions": [
+        "JP-22",
+        "JP-11",
+        "JP-13",
+        "JP-14",
+        "JP-19",
+        "JP-12",
+        "JP-07",
+        "JP-08",
+        "JP-09",
+        "JP-10",
+        "JP-20",
+        "JP-23",
+        "JP-15",
+        "JP-06",
+        "JP-04",
+        "JP-03",
+        "JP-24",
+        "JP-05",
+        "JP-21",
+        "JP-16",
+        "JP-29",
+        "JP-25",
+        "JP-30",
+        "JP-18",
+        "JP-17",
+        "JP-27",
+        "JP-02",
+        "JP-26",
+        "JP-36",
+        "JP-28",
+        "JP-01",
+        "JP-37",
+        "JP-39",
+        "JP-33",
+        "JP-31",
+        "JP-38",
+        "JP-34",
+        "JP-32"
+       ],
+       "our_net": "12.61",
+       "ceded": "105.00",
+       "layers": [
+        {
+         "layer_no": 1,
+         "ceded": "12.70",
+         "our_loss": "1.91",
+         "our_rip": "0.22",
+         "burn": "1.0000",
+         "exhausted": true,
+         "reinstated": "12.70"
+        },
+        {
+         "layer_no": 2,
+         "ceded": "28.30",
+         "our_loss": "3.40",
+         "our_rip": "0.23",
+         "burn": "1.0000",
+         "exhausted": true,
+         "reinstated": "28.30"
+        },
+        {
+         "layer_no": 3,
+         "ceded": "64.00",
+         "our_loss": "8.32",
+         "our_rip": "0.56",
+         "burn": "0.6550",
+         "exhausted": false,
+         "reinstated": "64.00"
+        }
+       ],
+       "cedent_retention": "12.10",
+       "cedent_net_cost": "19.79",
+       "total_rip": "7.69",
+       "our_loss": "13.62",
+       "our_rip": "1.01",
+       "market_net": "97.31"
+      },
+      {
+       "treaty_id": "T-023",
+       "cedent_id": "C-TSURUMI",
+       "cedent": "Tsurumi Mutual Insurance",
+       "type": "QS",
+       "gross": "108.73",
+       "regions": [
+        "JP-22",
+        "JP-11",
+        "JP-13",
+        "JP-14",
+        "JP-19",
+        "JP-12",
+        "JP-07",
+        "JP-08",
+        "JP-09",
+        "JP-10",
+        "JP-20",
+        "JP-23",
+        "JP-15",
+        "JP-06",
+        "JP-04",
+        "JP-03",
+        "JP-24",
+        "JP-05",
+        "JP-21",
+        "JP-16",
+        "JP-29",
+        "JP-25",
+        "JP-30",
+        "JP-18",
+        "JP-17",
+        "JP-27",
+        "JP-02",
+        "JP-26",
+        "JP-36",
+        "JP-28",
+        "JP-01",
+        "JP-37",
+        "JP-39",
+        "JP-33",
+        "JP-31",
+        "JP-38",
+        "JP-34",
+        "JP-32"
+       ],
+       "our_net": "11.25",
+       "ceded": "38.80",
+       "capped": true
+      },
+      {
+       "treaty_id": "T-013",
+       "cedent_id": "C-TSURUMI",
+       "cedent": "Tsurumi Mutual Insurance",
+       "type": "CAT_XL",
+       "gross": "108.73",
+       "regions": [
+        "JP-22",
+        "JP-11",
+        "JP-13",
+        "JP-14",
+        "JP-19",
+        "JP-12",
+        "JP-07",
+        "JP-08",
+        "JP-09",
+        "JP-10",
+        "JP-20",
+        "JP-23",
+        "JP-15",
+        "JP-06",
+        "JP-04",
+        "JP-03",
+        "JP-24",
+        "JP-05",
+        "JP-21",
+        "JP-16",
+        "JP-29",
+        "JP-25",
+        "JP-30",
+        "JP-18",
+        "JP-17",
+        "JP-27",
+        "JP-02",
+        "JP-26",
+        "JP-36",
+        "JP-28",
+        "JP-01",
+        "JP-37",
+        "JP-39",
+        "JP-33",
+        "JP-31",
+        "JP-38",
+        "JP-34",
+        "JP-32"
+       ],
+       "our_net": "9.45",
+       "ceded": "98.63",
+       "layers": [
+        {
+         "layer_no": 1,
+         "ceded": "14.20",
+         "our_loss": "3.98",
+         "our_rip": "0.25",
+         "burn": "1.0000",
+         "exhausted": true,
+         "reinstated": "14.20"
+        },
+        {
+         "layer_no": 2,
+         "ceded": "44.00",
+         "our_loss": "2.64",
+         "our_rip": "0.27",
+         "burn": "1.0000",
+         "exhausted": true,
+         "reinstated": "44.00"
+        },
+        {
+         "layer_no": 3,
+         "ceded": "40.43",
+         "our_loss": "3.64",
+         "our_rip": "0.28",
+         "burn": "0.4238",
+         "exhausted": false,
+         "reinstated": "40.43"
+        }
+       ],
+       "cedent_retention": "10.10",
+       "cedent_net_cost": "18.59",
+       "total_rip": "8.49",
+       "our_loss": "10.26",
+       "our_rip": "0.80",
+       "market_net": "90.14"
+      },
+      {
+       "treaty_id": "T-009",
+       "cedent_id": "C-YAMABIKO",
+       "cedent": "Yamabiko Casualty",
+       "type": "CAT_XL",
+       "gross": "125.46",
+       "regions": [
+        "JP-22",
+        "JP-11",
+        "JP-13",
+        "JP-14",
+        "JP-19",
+        "JP-12",
+        "JP-07",
+        "JP-08",
+        "JP-09",
+        "JP-10",
+        "JP-20",
+        "JP-23",
+        "JP-15",
+        "JP-06",
+        "JP-04",
+        "JP-03",
+        "JP-24",
+        "JP-05",
+        "JP-21",
+        "JP-16",
+        "JP-29",
+        "JP-25",
+        "JP-30",
+        "JP-18",
+        "JP-17",
+        "JP-27",
+        "JP-02",
+        "JP-26",
+        "JP-36",
+        "JP-28",
+        "JP-01",
+        "JP-37",
+        "JP-39",
+        "JP-33",
+        "JP-31",
+        "JP-38",
+        "JP-34",
+        "JP-32"
+       ],
+       "our_net": "8.91",
+       "ceded": "111.76",
+       "layers": [
+        {
+         "layer_no": 1,
+         "ceded": "22.20",
+         "our_loss": "2.22",
+         "our_rip": "0.15",
+         "burn": "1.0000",
+         "exhausted": true,
+         "reinstated": "22.20"
+        },
+        {
+         "layer_no": 2,
+         "ceded": "58.40",
+         "our_loss": "5.84",
+         "our_rip": "0.65",
+         "burn": "1.0000",
+         "exhausted": true,
+         "reinstated": "58.40"
+        },
+        {
+         "layer_no": 3,
+         "ceded": "31.16",
+         "our_loss": "1.87",
+         "our_rip": "0.21",
+         "burn": "0.2988",
+         "exhausted": false,
+         "reinstated": "31.16"
+        },
+        {
+         "layer_no": 4,
+         "ceded": "0.00",
+         "our_loss": "0.00",
+         "our_rip": "0.00",
+         "burn": "0.0000",
+         "exhausted": false,
+         "reinstated": "0.00"
+        }
+       ],
+       "cedent_retention": "13.70",
+       "cedent_net_cost": "25.31",
+       "total_rip": "11.61",
+       "our_loss": "9.93",
+       "our_rip": "1.02",
+       "market_net": "100.16"
+      },
+      {
+       "treaty_id": "T-021",
+       "cedent_id": "C-YAMABIKO",
+       "cedent": "Yamabiko Casualty",
+       "type": "QS",
+       "gross": "125.46",
+       "regions": [
+        "JP-22",
+        "JP-11",
+        "JP-13",
+        "JP-14",
+        "JP-19",
+        "JP-12",
+        "JP-07",
+        "JP-08",
+        "JP-09",
+        "JP-10",
+        "JP-20",
+        "JP-23",
+        "JP-15",
+        "JP-06",
+        "JP-04",
+        "JP-03",
+        "JP-24",
+        "JP-05",
+        "JP-21",
+        "JP-16",
+        "JP-29",
+        "JP-25",
+        "JP-30",
+        "JP-18",
+        "JP-17",
+        "JP-27",
+        "JP-02",
+        "JP-26",
+        "JP-36",
+        "JP-28",
+        "JP-01",
+        "JP-37",
+        "JP-39",
+        "JP-33",
+        "JP-31",
+        "JP-38",
+        "JP-34",
+        "JP-32"
+       ],
+       "our_net": "8.26",
+       "ceded": "35.90",
+       "capped": true
+      },
+      {
+       "treaty_id": "T-001",
+       "cedent_id": "C-SAKURA",
+       "cedent": "Sakura General Insurance",
+       "type": "CAT_XL",
+       "gross": "117.10",
+       "regions": [
+        "JP-22",
+        "JP-11",
+        "JP-13",
+        "JP-14",
+        "JP-19",
+        "JP-12",
+        "JP-07",
+        "JP-08",
+        "JP-09",
+        "JP-10",
+        "JP-20",
+        "JP-23",
+        "JP-15",
+        "JP-06",
+        "JP-04",
+        "JP-03",
+        "JP-24",
+        "JP-05",
+        "JP-21",
+        "JP-16",
+        "JP-29",
+        "JP-25",
+        "JP-30",
+        "JP-18",
+        "JP-17",
+        "JP-27",
+        "JP-02",
+        "JP-26",
+        "JP-36",
+        "JP-28",
+        "JP-01",
+        "JP-37",
+        "JP-39",
+        "JP-33",
+        "JP-31",
+        "JP-38",
+        "JP-34",
+        "JP-32"
+       ],
+       "our_net": "7.35",
+       "ceded": "90.00",
+       "layers": [
+        {
+         "layer_no": 1,
+         "ceded": "20.00",
+         "our_loss": "5.00",
+         "our_rip": "0.50",
+         "burn": "1.0000",
+         "exhausted": true,
+         "reinstated": "20.00"
+        },
+        {
+         "layer_no": 2,
+         "ceded": "30.00",
+         "our_loss": "3.00",
+         "our_rip": "0.15",
+         "burn": "1.0000",
+         "exhausted": true,
+         "reinstated": "30.00"
+        },
+        {
+         "layer_no": 3,
+         "ceded": "40.00",
+         "our_loss": "0.00",
+         "our_rip": "0.00",
+         "burn": "1.0000",
+         "exhausted": true,
+         "reinstated": "40.00"
+        }
+       ],
+       "cedent_retention": "27.10",
+       "cedent_net_cost": "31.60",
+       "total_rip": "4.50",
+       "our_loss": "8.00",
+       "our_rip": "0.65",
+       "market_net": "85.50"
+      },
+      {
+       "treaty_id": "T-003",
+       "cedent_id": "C-TSURUMI",
+       "cedent": "Tsurumi Mutual Insurance",
+       "type": "CAT_XL",
+       "gross": "108.73",
+       "regions": [
+        "JP-22",
+        "JP-11",
+        "JP-13",
+        "JP-14",
+        "JP-19",
+        "JP-12",
+        "JP-07",
+        "JP-08",
+        "JP-09",
+        "JP-10",
+        "JP-20",
+        "JP-23",
+        "JP-15",
+        "JP-06",
+        "JP-04",
+        "JP-03",
+        "JP-24",
+        "JP-05",
+        "JP-21",
+        "JP-16",
+        "JP-29",
+        "JP-25",
+        "JP-30",
+        "JP-18",
+        "JP-17",
+        "JP-27",
+        "JP-02",
+        "JP-26",
+        "JP-36",
+        "JP-28",
+        "JP-01",
+        "JP-37",
+        "JP-39",
+        "JP-33",
+        "JP-31",
+        "JP-38",
+        "JP-34",
+        "JP-32"
+       ],
+       "our_net": "7.23",
+       "ceded": "98.63",
+       "layers": [
+        {
+         "layer_no": 1,
+         "ceded": "11.90",
+         "our_loss": "1.19",
+         "our_rip": "0.10",
+         "burn": "1.0000",
+         "exhausted": true,
+         "reinstated": "11.90"
+        },
+        {
+         "layer_no": 2,
+         "ceded": "36.10",
+         "our_loss": "3.25",
+         "our_rip": "0.36",
+         "burn": "1.0000",
+         "exhausted": true,
+         "reinstated": "36.10"
+        },
+        {
+         "layer_no": 3,
+         "ceded": "50.63",
+         "our_loss": "3.54",
+         "our_rip": "0.29",
+         "burn": "0.6108",
+         "exhausted": false,
+         "reinstated": "50.63"
+        }
+       ],
+       "cedent_retention": "10.10",
+       "cedent_net_cost": "19.23",
+       "total_rip": "9.13",
+       "our_loss": "7.98",
+       "our_rip": "0.75",
+       "market_net": "89.50"
+      },
+      {
+       "treaty_id": "T-022",
+       "cedent_id": "C-KOGANE",
+       "cedent": "Kogane Fire & Marine",
+       "type": "QS",
+       "gross": "150.55",
+       "regions": [
+        "JP-22",
+        "JP-11",
+        "JP-13",
+        "JP-14",
+        "JP-19",
+        "JP-12",
+        "JP-07",
+        "JP-08",
+        "JP-09",
+        "JP-10",
+        "JP-20",
+        "JP-23",
+        "JP-15",
+        "JP-06",
+        "JP-04",
+        "JP-03",
+        "JP-24",
+        "JP-05",
+        "JP-21",
+        "JP-16",
+        "JP-29",
+        "JP-25",
+        "JP-30",
+        "JP-18",
+        "JP-17",
+        "JP-27",
+        "JP-02",
+        "JP-26",
+        "JP-36",
+        "JP-28",
+        "JP-01",
+        "JP-37",
+        "JP-39",
+        "JP-33",
+        "JP-31",
+        "JP-38",
+        "JP-34",
+        "JP-32"
+       ],
+       "our_net": "4.52",
+       "ceded": "37.64",
+       "capped": false
+      }
+     ],
+     "excluded": [
+      {
+       "treaty_id": "T-005",
+       "reason": "no affected region in territory (PHL)"
+      },
+      {
+       "treaty_id": "T-006",
+       "reason": "no affected region in territory (PHL)"
+      },
+      {
+       "treaty_id": "T-007",
+       "reason": "no affected region in territory (TWN)"
+      },
+      {
+       "treaty_id": "T-008",
+       "reason": "no affected region in territory (TWN)"
+      },
+      {
+       "treaty_id": "T-011",
+       "reason": "no affected region in territory (PHL)"
+      },
+      {
+       "treaty_id": "T-012",
+       "reason": "no affected region in territory (PHL)"
+      },
+      {
+       "treaty_id": "T-015",
+       "reason": "no affected region in territory (PHL)"
+      },
+      {
+       "treaty_id": "T-018",
+       "reason": "no affected region in territory (PHL)"
+      },
+      {
+       "treaty_id": "T-019",
+       "reason": "no affected region in territory (PHL)"
+      },
+      {
+       "treaty_id": "T-020",
+       "reason": "no affected region in territory (PHL)"
+      },
+      {
+       "treaty_id": "T-024",
+       "reason": "no affected region in territory (TWN)"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "t": 3.156,
+   "frame": {
+    "type": "stage",
+    "agent": "exposure_analyst",
+    "status": "completed"
+   }
+  },
+  {
+   "t": 3.156,
+   "frame": {
+    "type": "stage",
+    "agent": "wording_checker",
+    "status": "started"
+   }
+  },
+  {
+   "t": 3.156,
+   "frame": {
+    "type": "tool",
+    "agent": "wording_checker",
+    "name": "search_treaty_clauses",
+    "summary": "4 matched treaties have wordings"
+   }
+  },
+  {
+   "t": 4.172,
+   "frame": {
+    "type": "retrieval",
+    "agent": "wording_checker",
+    "treaty_id": "T-002",
+    "query": "HOURS",
+    "hits": [
+     {
+      "chunk_id": "T-002#c5",
+      "clause_no": "5",
+      "title": "Loss Occurrence",
+      "page": 2,
+      "score": 0.792
+     },
+     {
+      "chunk_id": "T-002#c12.5",
+      "clause_no": "12.5",
+      "title": "Definition: Act of God Period",
+      "page": 4,
+      "score": 0.727
+     },
+     {
+      "chunk_id": "T-002#c13.2",
+      "clause_no": "13.2",
+      "title": "Extended Expiration",
+      "page": 4,
+      "score": 0.696
+     }
+    ]
+   }
+  },
+  {
+   "t": 5.375,
+   "frame": {
+    "type": "retrieval",
+    "agent": "wording_checker",
+    "treaty_id": "T-004",
+    "query": "HOURS",
+    "hits": [
+     {
+      "chunk_id": "T-004#c5",
+      "clause_no": "5",
+      "title": "Loss Occurrence",
+      "page": 2,
+      "score": 0.795
+     },
+     {
+      "chunk_id": "T-004#t7",
+      "clause_no": "END-1",
+      "title": "Endorsement",
+      "page": 7,
+      "score": 0.688
+     },
+     {
+      "chunk_id": "T-004#c12.5",
+      "clause_no": "12.5",
+      "title": "Definition: Act of God Period",
+      "page": 3,
+      "score": 0.714
+     }
+    ]
+   }
+  },
+  {
+   "t": 5.406,
+   "frame": {
+    "type": "retrieval",
+    "agent": "wording_checker",
+    "treaty_id": "T-001",
+    "query": "HOURS",
+    "hits": [
+     {
+      "chunk_id": "T-001#c5",
+      "clause_no": "5",
+      "title": "Loss Occurrence",
+      "page": 2,
+      "score": 0.795
+     },
+     {
+      "chunk_id": "T-001#c12.5",
+      "clause_no": "12.5",
+      "title": "Definition: Act of God Period",
+      "page": 4,
+      "score": 0.727
+     },
+     {
+      "chunk_id": "T-001#c13.2",
+      "clause_no": "13.2",
+      "title": "Extended Expiration",
+      "page": 4,
+      "score": 0.696
+     }
+    ]
+   }
+  },
+  {
+   "t": 5.422,
+   "frame": {
+    "type": "retrieval",
+    "agent": "wording_checker",
+    "treaty_id": "T-003",
+    "query": "HOURS",
+    "hits": [
+     {
+      "chunk_id": "T-003#c5",
+      "clause_no": "5",
+      "title": "Loss Occurrence",
+      "page": 2,
+      "score": 0.797
+     },
+     {
+      "chunk_id": "T-003#c12.5",
+      "clause_no": "12.5",
+      "title": "Definition: Act of God Period",
+      "page": 4,
+      "score": 0.727
+     },
+     {
+      "chunk_id": "T-003#c13.2",
+      "clause_no": "13.2",
+      "title": "Extended Expiration",
+      "page": 4,
+      "score": 0.696
+     }
+    ]
+   }
+  },
+  {
+   "t": 5.422,
+   "frame": {
+    "type": "retrieval",
+    "agent": "wording_checker",
+    "treaty_id": "T-002",
+    "query": "EXCLUSION",
+    "hits": [
+     {
+      "chunk_id": "T-002#c8",
+      "clause_no": "8",
+      "title": "Exclusions",
+      "page": 2,
+      "score": 0.764
+     },
+     {
+      "chunk_id": "T-002#c2",
+      "clause_no": "2",
+      "title": "Business Covered",
+      "page": 1,
+      "score": 0.701
+     },
+     {
+      "chunk_id": "T-002#c5",
+      "clause_no": "5",
+      "title": "Loss Occurrence",
+      "page": 2,
+      "score": 0.68
+     }
+    ]
+   }
+  },
+  {
+   "t": 6.406,
+   "frame": {
+    "type": "retrieval",
+    "agent": "wording_checker",
+    "treaty_id": "T-004",
+    "query": "EXCLUSION",
+    "hits": [
+     {
+      "chunk_id": "T-004#c8",
+      "clause_no": "8",
+      "title": "Exclusions",
+      "page": 2,
+      "score": 0.743
+     },
+     {
+      "chunk_id": "T-004#c2",
+      "clause_no": "2",
+      "title": "Business Covered",
+      "page": 1,
+      "score": 0.701
+     },
+     {
+      "chunk_id": "T-004#c5",
+      "clause_no": "5",
+      "title": "Loss Occurrence",
+      "page": 2,
+      "score": 0.678
+     }
+    ]
+   }
+  },
+  {
+   "t": 7.594,
+   "frame": {
+    "type": "retrieval",
+    "agent": "wording_checker",
+    "treaty_id": "T-001",
+    "query": "EXCLUSION",
+    "hits": [
+     {
+      "chunk_id": "T-001#c8",
+      "clause_no": "8",
+      "title": "Exclusions",
+      "page": 2,
+      "score": 0.746
+     },
+     {
+      "chunk_id": "T-001#c2",
+      "clause_no": "2",
+      "title": "Business Covered",
+      "page": 1,
+      "score": 0.701
+     },
+     {
+      "chunk_id": "T-001#c5",
+      "clause_no": "5",
+      "title": "Loss Occurrence",
+      "page": 2,
+      "score": 0.678
+     }
+    ]
+   }
+  },
+  {
+   "t": 7.609,
+   "frame": {
+    "type": "retrieval",
+    "agent": "wording_checker",
+    "treaty_id": "T-002",
+    "query": "TERRITORY",
+    "hits": [
+     {
+      "chunk_id": "T-002#c3",
+      "clause_no": "3",
+      "title": "Territorial Scope",
+      "page": 1,
+      "score": 0.739
+     },
+     {
+      "chunk_id": "T-002#c2",
+      "clause_no": "2",
+      "title": "Business Covered",
+      "page": 1,
+      "score": 0.665
+     },
+     {
+      "chunk_id": "T-002#c1",
+      "clause_no": "1",
+      "title": "Preamble and Interpretation",
+      "page": 1,
+      "score": 0.651
+     }
+    ]
+   }
+  },
+  {
+   "t": 7.625,
+   "frame": {
+    "type": "retrieval",
+    "agent": "wording_checker",
+    "treaty_id": "T-003",
+    "query": "EXCLUSION",
+    "hits": [
+     {
+      "chunk_id": "T-003#c8",
+      "clause_no": "8",
+      "title": "Exclusions",
+      "page": 2,
+      "score": 0.747
+     },
+     {
+      "chunk_id": "T-003#c2",
+      "clause_no": "2",
+      "title": "Business Covered",
+      "page": 1,
+      "score": 0.701
+     },
+     {
+      "chunk_id": "T-003#c5",
+      "clause_no": "5",
+      "title": "Loss Occurrence",
+      "page": 2,
+      "score": 0.677
+     }
+    ]
+   }
+  },
+  {
+   "t": 7.656,
+   "frame": {
+    "type": "retrieval",
+    "agent": "wording_checker",
+    "treaty_id": "T-004",
+    "query": "TERRITORY",
+    "hits": [
+     {
+      "chunk_id": "T-004#c3",
+      "clause_no": "3",
+      "title": "Territorial Scope",
+      "page": 1,
+      "score": 0.739
+     },
+     {
+      "chunk_id": "T-004#c2",
+      "clause_no": "2",
+      "title": "Business Covered",
+      "page": 1,
+      "score": 0.665
+     },
+     {
+      "chunk_id": "T-004#c1",
+      "clause_no": "1",
+      "title": "Preamble and Interpretation",
+      "page": 1,
+      "score": 0.651
+     }
+    ]
+   }
+  },
+  {
+   "t": 8.484,
+   "frame": {
+    "type": "retrieval",
+    "agent": "wording_checker",
+    "treaty_id": "T-002",
+    "query": "REINSTATEMENT",
+    "hits": [
+     {
+      "chunk_id": "T-002#c7",
+      "clause_no": "7",
+      "title": "Reinstatement",
+      "page": 2,
+      "score": 0.767
+     },
+     {
+      "chunk_id": "T-002#c6",
+      "clause_no": "6",
+      "title": "Limit and Retention",
+      "page": 2,
+      "score": 0.692
+     },
+     {
+      "chunk_id": "T-002#c10.1",
+      "clause_no": "10.1",
+      "title": "Premium Payment",
+      "page": 3,
+      "score": 0.658
+     }
+    ]
+   }
+  },
+  {
+   "t": 8.5,
+   "frame": {
+    "type": "retrieval",
+    "agent": "wording_checker",
+    "treaty_id": "T-003",
+    "query": "TERRITORY",
+    "hits": [
+     {
+      "chunk_id": "T-003#c3",
+      "clause_no": "3",
+      "title": "Territorial Scope",
+      "page": 1,
+      "score": 0.741
+     },
+     {
+      "chunk_id": "T-003#c2",
+      "clause_no": "2",
+      "title": "Business Covered",
+      "page": 1,
+      "score": 0.665
+     },
+     {
+      "chunk_id": "T-003#c1",
+      "clause_no": "1",
+      "title": "Preamble and Interpretation",
+      "page": 1,
+      "score": 0.651
+     }
+    ]
+   }
+  },
+  {
+   "t": 8.5,
+   "frame": {
+    "type": "retrieval",
+    "agent": "wording_checker",
+    "treaty_id": "T-004",
+    "query": "REINSTATEMENT",
+    "hits": [
+     {
+      "chunk_id": "T-004#c7",
+      "clause_no": "7",
+      "title": "Reinstatement",
+      "page": 2,
+      "score": 0.767
+     },
+     {
+      "chunk_id": "T-004#c6",
+      "clause_no": "6",
+      "title": "Limit and Retention",
+      "page": 2,
+      "score": 0.688
+     },
+     {
+      "chunk_id": "T-004#c10.1",
+      "clause_no": "10.1",
+      "title": "Premium Payment",
+      "page": 3,
+      "score": 0.658
+     }
+    ]
+   }
+  },
+  {
+   "t": 8.641,
+   "frame": {
+    "type": "retrieval",
+    "agent": "wording_checker",
+    "treaty_id": "T-001",
+    "query": "TERRITORY",
+    "hits": [
+     {
+      "chunk_id": "T-001#c3",
+      "clause_no": "3",
+      "title": "Territorial Scope",
+      "page": 1,
+      "score": 0.739
+     },
+     {
+      "chunk_id": "T-001#c2",
+      "clause_no": "2",
+      "title": "Business Covered",
+      "page": 1,
+      "score": 0.665
+     },
+     {
+      "chunk_id": "T-001#c1",
+      "clause_no": "1",
+      "title": "Preamble and Interpretation",
+      "page": 1,
+      "score": 0.651
+     }
+    ]
+   }
+  },
+  {
+   "t": 9.094,
+   "frame": {
+    "type": "retrieval",
+    "agent": "wording_checker",
+    "treaty_id": "T-002",
+    "query": "PERIOD",
+    "hits": [
+     {
+      "chunk_id": "T-002#c13.2",
+      "clause_no": "13.2",
+      "title": "Extended Expiration",
+      "page": 4,
+      "score": 0.714
+     },
+     {
+      "chunk_id": "T-002#c4",
+      "clause_no": "4",
+      "title": "Period",
+      "page": 1,
+      "score": 0.713
+     },
+     {
+      "chunk_id": "T-002#c10.1",
+      "clause_no": "10.1",
+      "title": "Premium Payment",
+      "page": 3,
+      "score": 0.663
+     }
+    ]
+   }
+  },
+  {
+   "t": 9.375,
+   "frame": {
+    "type": "retrieval",
+    "agent": "wording_checker",
+    "treaty_id": "T-003",
+    "query": "REINSTATEMENT",
+    "hits": [
+     {
+      "chunk_id": "T-003#c7",
+      "clause_no": "7",
+      "title": "Reinstatement",
+      "page": 2,
+      "score": 0.767
+     },
+     {
+      "chunk_id": "T-003#c6",
+      "clause_no": "6",
+      "title": "Limit and Retention",
+      "page": 2,
+      "score": 0.694
+     },
+     {
+      "chunk_id": "T-003#c10.1",
+      "clause_no": "10.1",
+      "title": "Premium Payment",
+      "page": 3,
+      "score": 0.658
+     }
+    ]
+   }
+  },
+  {
+   "t": 9.469,
+   "frame": {
+    "type": "retrieval",
+    "agent": "wording_checker",
+    "treaty_id": "T-004",
+    "query": "PERIOD",
+    "hits": [
+     {
+      "chunk_id": "T-004#c13.2",
+      "clause_no": "13.2",
+      "title": "Extended Expiration",
+      "page": 4,
+      "score": 0.714
+     },
+     {
+      "chunk_id": "T-004#c4",
+      "clause_no": "4",
+      "title": "Period",
+      "page": 1,
+      "score": 0.707
+     },
+     {
+      "chunk_id": "T-004#c15",
+      "clause_no": "15",
+      "title": "Endorsements",
+      "page": 6,
+      "score": 0.671
+     }
+    ]
+   }
+  },
+  {
+   "t": 9.5,
+   "frame": {
+    "type": "retrieval",
+    "agent": "wording_checker",
+    "treaty_id": "T-001",
+    "query": "REINSTATEMENT",
+    "hits": [
+     {
+      "chunk_id": "T-001#c7",
+      "clause_no": "7",
+      "title": "Reinstatement",
+      "page": 2,
+      "score": 0.767
+     },
+     {
+      "chunk_id": "T-001#c6",
+      "clause_no": "6",
+      "title": "Limit and Retention",
+      "page": 2,
+      "score": 0.7
+     },
+     {
+      "chunk_id": "T-001#c10.1",
+      "clause_no": "10.1",
+      "title": "Premium Payment",
+      "page": 3,
+      "score": 0.658
+     }
+    ]
+   }
+  },
+  {
+   "t": 10.094,
+   "frame": {
+    "type": "retrieval",
+    "agent": "wording_checker",
+    "treaty_id": "T-003",
+    "query": "PERIOD",
+    "hits": [
+     {
+      "chunk_id": "T-003#c4",
+      "clause_no": "4",
+      "title": "Period",
+      "page": 1,
+      "score": 0.715
+     },
+     {
+      "chunk_id": "T-003#c13.2",
+      "clause_no": "13.2",
+      "title": "Extended Expiration",
+      "page": 4,
+      "score": 0.714
+     },
+     {
+      "chunk_id": "T-003#c10.1",
+      "clause_no": "10.1",
+      "title": "Premium Payment",
+      "page": 3,
+      "score": 0.663
+     }
+    ]
+   }
+  },
+  {
+   "t": 10.656,
+   "frame": {
+    "type": "retrieval",
+    "agent": "wording_checker",
+    "treaty_id": "T-001",
+    "query": "PERIOD",
+    "hits": [
+     {
+      "chunk_id": "T-001#c13.2",
+      "clause_no": "13.2",
+      "title": "Extended Expiration",
+      "page": 4,
+      "score": 0.714
+     },
+     {
+      "chunk_id": "T-001#c4",
+      "clause_no": "4",
+      "title": "Period",
+      "page": 1,
+      "score": 0.711
+     },
+     {
+      "chunk_id": "T-001#c10.1",
+      "clause_no": "10.1",
+      "title": "Premium Payment",
+      "page": 3,
+      "score": 0.663
+     }
+    ]
+   }
+  },
+  {
+   "t": 13.031,
+   "frame": {
+    "type": "flag",
+    "status": "candidate",
+    "flag": {
+     "treaty_id": "T-002",
+     "issue_type": "EXCLUSION",
+     "severity": "MEDIUM",
+     "explanation": "Hakone recorded about 1,000 mm of rainfall, which implies flooding. Under clause 8, flood is excluded if the Reinsured's original policy writes flood as a separately rated and separately stated peril, which may remove part of the loss from the gross engine result of 150.55.",
+     "citation": {
+      "treaty_id": "T-002",
+      "page": 2,
+      "clause_no": "8",
+      "quote": "Flood, where the Reinsured's original policy writes flood as a separately rated and separately stated peril.",
+      "source": "text"
+     },
+     "scenario_delta": null
+    }
+   }
+  },
+  {
+   "t": 13.031,
+   "frame": {
+    "type": "flag",
+    "status": "candidate",
+    "flag": {
+     "treaty_id": "T-004",
+     "issue_type": "EXCLUSION",
+     "severity": "HIGH",
+     "explanation": "The event caused landfall and extreme rainfall implying storm surge or coastal flooding, but the treaty explicitly excludes storm surge under clause 8.",
+     "citation": {
+      "treaty_id": "T-004",
+      "page": 2,
+      "clause_no": "8",
+      "quote": "Storm surge, being the rise in sea level caused by meteorological conditions, whether or not accompanied by windstorm",
+      "source": "text"
+     },
+     "scenario_delta": null
+    }
+   }
+  },
+  {
+   "t": 13.031,
+   "frame": {
+    "type": "stage",
+    "agent": "wording_checker",
+    "status": "completed"
+   }
+  },
+  {
+   "t": 13.047,
+   "frame": {
+    "type": "stage",
+    "agent": "verifier",
+    "status": "started"
+   }
+  },
+  {
+   "t": 22.313,
+   "frame": {
+    "type": "flag",
+    "status": "verified",
+    "badge": "verified \u00b7 T-002, p. 2, cl. 8",
+    "flag": {
+     "treaty_id": "T-002",
+     "issue_type": "EXCLUSION",
+     "severity": "MEDIUM",
+     "explanation": "Hakone recorded about 1,000 mm of rainfall, which implies flooding. Under clause 8, flood is excluded if the Reinsured's original policy writes flood as a separately rated and separately stated peril, which may remove part of the loss from the gross engine result of 150.55.",
+     "citation": {
+      "treaty_id": "T-002",
+      "page": 2,
+      "clause_no": "8",
+      "quote": "Flood, where the Reinsured's original policy writes flood as a separately rated and separately stated peril.",
+      "source": "text"
+     },
+     "scenario_delta": null
+    }
+   }
+  },
+  {
+   "t": 22.313,
+   "frame": {
+    "type": "verification",
+    "header": "1 of 1 displayed citations verified \u00b7 1 withheld",
+    "verified": 1,
+    "withheld": [
+     {
+      "treaty_id": "T-004",
+      "issue_type": "EXCLUSION",
+      "reason": "While the treaty wording does explicitly exclude storm surge under clause 8, the observed facts of landfall and extreme rainfall do not demonstrate or reasonably imply that storm surge occurred."
+     }
+    ]
+   }
+  },
+  {
+   "t": 22.313,
+   "frame": {
+    "type": "stage",
+    "agent": "verifier",
+    "status": "completed"
+   }
+  },
+  {
+   "t": 22.328,
+   "frame": {
+    "type": "stage",
+    "agent": "reporter",
+    "status": "started"
+   }
+  },
+  {
+   "t": 26.391,
+   "frame": {
+    "type": "report",
+    "markdown": "## Summary\nTyphoon Hagibis occurred between 2019-10-11T21:00:00Z and 2019-10-13T00:00:00Z, impacting our reinsurance book with a gross loss of 1580.82 USD m and a ceded amount of 1166.71 USD m. Across 13 matched treaties (with 11 excluded), our net loss is 153.51 USD m.\n\n## Treaties affected\nThe largest exposures by our net loss are detailed below, ordered from largest to smallest net impact:\n\n*   **T-016** (Sakura General Insurance | CAT_XL)\n    *   Gross: 117.10 | Ceded: 102.60 | Our Net: 20.44\n    *   Layer 1: Burn 100.0%, Exhausted: true, Ceded: 27.40\n    *   Layer 2: Burn 100.0%, Exhausted: true, Ceded: 52.30\n    *   Layer 3: Burn 13.1%, Exhausted: false, Ceded: 22.90\n    *   Layer 4: Burn 0.0%, Exhausted: false, Ceded: 0.00\n*   **T-014** (Sakura General Insurance | CAT_XL)\n    *   Gross: 117.10 | Ceded: 101.10 | Our Net: 19.92\n    *   Layer 1: Burn 100.0%, Exhausted: true, Ceded: 28.20\n    *   Layer 2: Burn 100.0%, Exhausted: true, Ceded: 66.40\n    *   Layer 3: Burn 3.5%, Exhausted: false, Ceded: 6.50\n*   **T-002** (Kogane Fire & Marine | CAT_XL)\n    *   Gross: 150.55 | Ceded: 139.35 | Our Net: 15.44\n    *   Layer 1: Burn 100.0%, Exhausted: true, Ceded: 14.60\n    *   Layer 2: Burn 100.0%, Exhausted: true, Ceded: 45.00\n    *   Layer 3: Burn 57.9%, Exhausted: false, Ceded: 79.75\n*   **T-004** (Yamabiko Casualty | CAT_XL)\n    *   Gross: 125.46 | Ceded: 106.86 | Our Net: 15.37\n    *   Layer 1: Burn 100.0%, Exhausted: true, Ceded: 25.80\n    *   Layer 2: Burn 100.0%, Exhausted: false, Ceded: 81.06\n    *   Layer 3: Burn 0.0%, Exhausted: false, Ceded: 0.00\n    *   Layer 4: Burn 0.0%, Exhausted: false, Ceded: 0.00\n*   **T-017** (Tsurumi Mutual Insurance | CAT_XL)\n    *   Gross: 108.73 | Ceded: 100.43 | Our Net: 12.76\n    *   Layer 1: Burn 100.0%, Exhausted: true, Ceded: 15.90\n    *   Layer 2: Burn 100.0%, Exhausted: true, Ceded: 34.00\n    *   Layer 3: Burn 44.1%, Exhausted: false, Ceded: 50.53\n    *   Layer 4: Burn 0.0%, Exhausted: false, Ceded: 0.00\n*   **T-010** (Sakura General Insurance | CAT_XL)\n    *   Gross: 117.10 | Ceded: 105.00 | Our Net: 12.61\n    *   Layer 1: Burn 100.0%, Exhausted: true, Ceded: 12.70\n    *   Layer 2: Burn 100.0%, Exhausted: true, Ceded: 28.30\n    *   Layer 3: Burn 65.5%, Exhausted: false, Ceded: 64.00\n\n## Wording to review\n*   **T-002** [T-002 p.2 cl.8]: Hakone recorded about 1,000 mm of rainfall, which implies flooding. Under clause 8, flood is excluded if the Reinsured's original policy writes flood as a separately rated and separately stated peril, which may remove part of the loss from the gross engine result of 150.55.\n\n## Caveats\n1 withheld flag was not checked in this report. Methodology version 2026.1 was utilized on synthetic data as-if on current book. \n\n*Disclaimer:* Indicative first view on synthetic data. Not a catastrophe-model output and not advice; figures are deterministic estimates and wording flags are machine-verified citations for an analyst to review.",
+    "unsupported_figures": [],
+    "calls": {
+     "wording_checker": 4,
+     "verifier": 2,
+     "reviser": 1,
+     "reporter": 1
+    },
+    "usage": {
+     "gemini-3.5-flash-lite": {
+      "input": 17010,
+      "output": 1537
+     },
+     "gemini-3.8-flash": {
+      "input": 1255,
+      "output": 98
+     }
+    },
+    "cost_usd": "0.0103"
+   }
+  },
+  {
+   "t": 26.391,
+   "frame": {
+    "type": "stage",
+    "agent": "reporter",
+    "status": "completed"
+   }
+  },
+  {
+   "t": 26.391,
+   "frame": {
+    "type": "done",
+    "analysis_id": "replay-hagibis-2019",
+    "agents": true
+   }
+  }
+ ]
+}

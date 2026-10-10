@@ -1,0 +1,48 @@
+{
+  "_comment": [
+    "Reference data for the Business impact panel. Every figure carries its",
+    "source or is labelled a hypothesis. The manual baseline is SIMULATED from",
+    "docs/BUSINESS_IMPACT.md section 2.1 until benchmark B1 (a person timing",
+    "the manual process on the same data) replaces it. CatSight's own figures",
+    "are not here: they are measured on each run."
+  ],
+  "manual_baseline": {
+    "status": "simulated",
+    "label": "Simulated manual analyst - BUSINESS_IMPACT 2.1 hypothesis, to be replaced by benchmark B1",
+    "reference_firm": "Mid-size reinsurer, about 100 APAC cat treaties, about 25 exposed to the event",
+    "steps": [
+      {"step": "Gather event facts (track, intensity, affected areas)", "manual_hours": [2, 4], "catsight": "Automated, cited (event record)"},
+      {"step": "Identify exposed treaties (territory, peril, period)", "manual_hours": [3, 6], "catsight": "Automated, a reason for every treaty"},
+      {"step": "Assemble cedent exposure by region", "manual_hours": [6, 12], "catsight": "Already in the system (treaty book in Firestore)"},
+      {"step": "Estimate gross loss and apply layers", "manual_hours": [6, 12], "catsight": "Deterministic loss engine"},
+      {"step": "Wording review of exposed treaties", "manual_hours": [10, 20], "catsight": "Agents flag clauses; analyst reviews flagged ones only (1.5-4 h)"},
+      {"step": "Compile report, peer review, sign-off", "manual_hours": [3, 6], "catsight": "Analyst reviews the drafted report (2-4 h)"}
+    ],
+    "total_hours": [30, 60],
+    "catsight_review_hours": [3.5, 8],
+    "elapsed": "2-4 business days",
+    "catsight_elapsed": "Same day: the automated run takes about a minute, then human review",
+    "loaded_rate_usd_per_hour": 100,
+    "rate_note": "Singapore loaded cost per analyst hour, range 70-150 (BUSINESS_IMPACT 2.2) - replace with your own"
+  },
+  "pricing": {
+    "source": "Vertex AI generative AI pricing (cloud.google.com/vertex-ai/generative-ai/pricing) - verified 2026-10-02, global endpoint; thinking tokens bill as output",
+    "usd_per_million_tokens": {
+      "gemini-3.5-flash-lite": {"input": 0.30, "output": 2.50},
+      "gemini-3.8-flash": {"input": 0.75, "output": 3.75},
+      "gemini-3.1-flash-lite": {"input": 0.25, "output": 1.50},
+      "gemini-embedding-001": {"input": 0.15, "output": 0.0}
+    }
+  },
+  "real_world": {
+    "jebi-2018": {
+      "headline": "Typhoon Jebi, 4 September 2018 - what the market actually saw",
+      "facts": [
+        {"text": "Insured-loss estimates rose from early figures of US$3-5bn to about US$13bn - roughly three times the first view", "source": "BUSINESS_IMPACT 2.4 [SOURCED]"},
+        {"text": "Japanese non-life insurers paid JPY 1,067.8bn in claims (fire lines JPY 920.2bn)", "source": "General Insurance Association of Japan (GIAJ), via BUSINESS_IMPACT B5"},
+        {"text": "Industry loss views arrived in 4-20 days (modelling firms), 6 weeks (PERILS) and up to 90 days (Verisk PCS Japan)", "source": "BUSINESS_IMPACT V2 [SOURCED]"}
+      ],
+      "not_like_for_like": "Industry figures estimate the whole market's loss; CatSight gives a first view of one reinsurer's own book. The comparison is of speed and purpose, not of the same number."
+    }
+  }
+}

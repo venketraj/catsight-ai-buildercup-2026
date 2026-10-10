@@ -1,0 +1,23 @@
+# Only what the live API needs goes into the container. Everything else is a
+# development or one-time ingestion artifact and must never ship.
+
+# Environments, secrets, caches
+.venv/
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+*.log
+
+# Tests and QA harnesses never run in production
+tests/
+qa/
+
+# Local-only data: the embedding cache, raw public downloads, generated PDFs.
+# The live service reads vectors from Firestore and PDFs from Cloud Storage.
+data/cache/
+data/raw/
+data/synthetic/

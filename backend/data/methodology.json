@@ -1,0 +1,45 @@
+{
+  "_comment": [
+    "The versioned method the deterministic engine runs under. Every analysis",
+    "is stamped with the version it used, so a figure can always be traced to",
+    "the rules in force when it was produced. A change to market practice is a",
+    "NEW version with its own effective date and source - never an edit to an",
+    "existing one. Treaty terms are not here: they come from the treaty book",
+    "and the wordings. This file holds only conventions that apply across",
+    "treaties when a wording is silent, and the damage model's parameters."
+  ],
+  "version": "2026.1",
+  "effective_from": "2026-10-01",
+  "status": "approved",
+  "approved_by": "Techno Crackers - prototype review",
+  "vulnerability_file": "vulnerability.json",
+  "conventions": {
+    "reinstatement_premium": {
+      "rule": "pro rata as to amount, per occurrence, on the limit eroded by that occurrence while reinstatement capacity remains",
+      "source": "docs/DOMAIN_PRIMER.md worked example; docs/MONEY_MOMENT.md section 4"
+    },
+    "reinstatement_capacity": {
+      "rule": "aggregate cover = limit x (1 + number of reinstatements); erosion past capacity pays nothing further and earns no reinstatement premium",
+      "source": "docs/DOMAIN_PRIMER.md"
+    },
+    "occurrence_retention": {
+      "rule": "the retention applies afresh to each loss occurrence as defined by the treaty's hours clause",
+      "source": "docs/DOMAIN_PRIMER.md"
+    },
+    "replay_basis": {
+      "rule": "a historical event is replayed as-if on the current book; the treaty-period test applies only when as_if is false",
+      "source": "backend/data/ASSUMPTIONS.md A5 (the as-if basis)"
+    },
+    "money": {
+      "rule": "decimal arithmetic, half-up rounding, amounts in millions of treaty currency",
+      "source": "backend/catsight_agent/tools/loss_engine.py"
+    }
+  },
+  "changelog": [
+    {
+      "version": "2026.1",
+      "date": "2026-10-01",
+      "change": "Initial method: Emanuel (2011) wind curve with Eberenz (2021) v_half, illustrative MMI table, pro-rata-as-to-amount reinstatement premium."
+    }
+  ]
+}

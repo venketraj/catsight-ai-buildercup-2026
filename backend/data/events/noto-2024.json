@@ -1,0 +1,279 @@
+{
+  "event_id": "noto-2024",
+  "name": "Noto Peninsula Earthquake",
+  "peril": "EQ",
+  "usgs_id": "us6000m0xl",
+  "shakemap_event_id": "us6000m0xl",
+  "start": "2024-01-01T07:10:09Z",
+  "end": "2024-01-01T07:10:09Z",
+  "duration_h": 0.0,
+  "duration_basis": "mainshock only; aftershock sequence not modelled",
+  "grid_cells": 134784,
+  "max_grid_mmi": 8.8,
+  "track": [],
+  "regions": [
+    {
+      "code": "JP-17",
+      "name": "Ishikawa",
+      "country": "JPN",
+      "intensity": {
+        "mmi": 6.6
+      },
+      "band": 2,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-16",
+      "name": "Toyama",
+      "country": "JPN",
+      "intensity": {
+        "mmi": 6.2
+      },
+      "band": 2,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-15",
+      "name": "Niigata",
+      "country": "JPN",
+      "intensity": {
+        "mmi": 5.9
+      },
+      "band": 1,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-20",
+      "name": "Nagano",
+      "country": "JPN",
+      "intensity": {
+        "mmi": 4.5
+      },
+      "band": 0,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-23",
+      "name": "Aichi",
+      "country": "JPN",
+      "intensity": {
+        "mmi": 4.1
+      },
+      "band": 0,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-06",
+      "name": "Yamagata",
+      "country": "JPN",
+      "intensity": {
+        "mmi": 4.0
+      },
+      "band": 0,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-18",
+      "name": "Fukui",
+      "country": "JPN",
+      "intensity": {
+        "mmi": 4.0
+      },
+      "band": 0,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-07",
+      "name": "Fukushima",
+      "country": "JPN",
+      "intensity": {
+        "mmi": 3.8
+      },
+      "band": 0,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-10",
+      "name": "Gunma",
+      "country": "JPN",
+      "intensity": {
+        "mmi": 3.8
+      },
+      "band": 0,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-21",
+      "name": "Gifu",
+      "country": "JPN",
+      "intensity": {
+        "mmi": 3.8
+      },
+      "band": 0,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-25",
+      "name": "Shiga",
+      "country": "JPN",
+      "intensity": {
+        "mmi": 3.8
+      },
+      "band": 0,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-11",
+      "name": "Saitama",
+      "country": "JPN",
+      "intensity": {
+        "mmi": 3.7
+      },
+      "band": 0,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-08",
+      "name": "Ibaraki",
+      "country": "JPN",
+      "intensity": {
+        "mmi": 3.6
+      },
+      "band": 0,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-12",
+      "name": "Chiba",
+      "country": "JPN",
+      "intensity": {
+        "mmi": 3.6
+      },
+      "band": 0,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-13",
+      "name": "Tokyo",
+      "country": "JPN",
+      "intensity": {
+        "mmi": 3.5
+      },
+      "band": 0,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-14",
+      "name": "Kanagawa",
+      "country": "JPN",
+      "intensity": {
+        "mmi": 3.5
+      },
+      "band": 0,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-19",
+      "name": "Yamanashi",
+      "country": "JPN",
+      "intensity": {
+        "mmi": 3.5
+      },
+      "band": 0,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-22",
+      "name": "Shizuoka",
+      "country": "JPN",
+      "intensity": {
+        "mmi": 3.5
+      },
+      "band": 0,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-09",
+      "name": "Tochigi",
+      "country": "JPN",
+      "intensity": {
+        "mmi": 3.4
+      },
+      "band": 0,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-26",
+      "name": "Kyoto",
+      "country": "JPN",
+      "intensity": {
+        "mmi": 3.4
+      },
+      "band": 0,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-31",
+      "name": "Tottori",
+      "country": "JPN",
+      "intensity": {
+        "mmi": 3.2
+      },
+      "band": 0,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-05",
+      "name": "Akita",
+      "country": "JPN",
+      "intensity": {
+        "mmi": 3.1
+      },
+      "band": 0,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-28",
+      "name": "Hyogo",
+      "country": "JPN",
+      "intensity": {
+        "mmi": 3.1
+      },
+      "band": 0,
+      "intensity_source": "computed"
+    }
+  ],
+  "facts": [
+    {
+      "text": "Mww 7.5 at 07:10:09 UTC on 1 January 2024, 37.487N 137.271E, depth 10 km.",
+      "source": "USGS",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000m0xl"
+    },
+    {
+      "text": "JMA magnitude 7.6, maximum seismic intensity shindo 7.",
+      "source": "JMA",
+      "url": "https://www.jma.go.jp/jma/indexe.html"
+    }
+  ],
+  "reference_losses": [
+    {
+      "source": "Japan Earthquake Reinsurance",
+      "value": "119,913 claims, JPY 108.0bn",
+      "as_of": "2026-03-31",
+      "note": "residential earthquake only",
+      "url": "https://www.nihonjishin.co.jp/"
+    },
+    {
+      "source": "Moody's RMS",
+      "value": "JPY 435-870bn insured",
+      "as_of": null,
+      "note": "including commercial lines",
+      "url": null
+    }
+  ],
+  "attribution": [
+    "U.S. Geological Survey ShakeMap, public domain",
+    "Source: Japan Meteorological Agency website"
+  ],
+  "disclaimer": "Indicative first view on synthetic data. Not a catastrophe-model output. Reference losses are published figures, cited for credibility and back-testing only, and are never model inputs."
+}

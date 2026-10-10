@@ -1,0 +1,2273 @@
+{
+  "extracted": {
+    "T-001": {
+      "currency": "USD",
+      "exclusions": [
+        "war",
+        "nuclear",
+        "cyber"
+      ],
+      "expiry": "2027-03-31",
+      "hours_clause.EQ": 72,
+      "hours_clause.FL": 168,
+      "hours_clause.WS": 72,
+      "inception": "2026-04-01",
+      "layers.1.limit": "20.0",
+      "layers.1.premium": "2.00",
+      "layers.1.retention": "10.0",
+      "layers.2.limit": "30.0",
+      "layers.2.premium": "1.50",
+      "layers.2.retention": "30.0",
+      "layers.3.limit": "40.0",
+      "layers.3.premium": "1.00",
+      "layers.3.retention": "60.0",
+      "perils": [
+        "WS",
+        "EQ"
+      ],
+      "reinstatements.basis": "pro rata as to amount",
+      "reinstatements.count": 1,
+      "reinstatements.rate": "1.0",
+      "territory.exclude": [],
+      "territory.include": [
+        "JPN"
+      ],
+      "type": "CAT_XL"
+    },
+    "T-002": {
+      "currency": "USD",
+      "exclusions": [
+        "war",
+        "nuclear",
+        "flood",
+        "terrorism",
+        "pollution",
+        "communicable disease"
+      ],
+      "expiry": "2027-03-31",
+      "hours_clause.EQ": 168,
+      "hours_clause.FL": 168,
+      "hours_clause.WS": 96,
+      "inception": "2026-04-01",
+      "layers.1.limit": "14.6",
+      "layers.1.premium": "1.12",
+      "layers.1.retention": "11.2",
+      "layers.2.limit": "45.0",
+      "layers.2.premium": "4.51",
+      "layers.2.retention": "25.8",
+      "layers.3.limit": "137.7",
+      "layers.3.premium": "13.19",
+      "layers.3.retention": "70.8",
+      "perils": [
+        "WS",
+        "EQ"
+      ],
+      "reinstatements.basis": "pro rata as to amount",
+      "reinstatements.count": 1,
+      "reinstatements.rate": "1.0",
+      "territory.exclude": [],
+      "territory.include": [
+        "JPN"
+      ],
+      "type": "CAT_XL"
+    },
+    "T-003": {
+      "currency": "USD",
+      "exclusions": [
+        "war",
+        "nuclear"
+      ],
+      "expiry": "2027-03-31",
+      "hours_clause.EQ": 72,
+      "hours_clause.FL": 168,
+      "hours_clause.WS": 120,
+      "inception": "2026-04-01",
+      "layers.1.limit": "11.9",
+      "layers.1.premium": "1.00",
+      "layers.1.retention": "10.1",
+      "layers.2.limit": "36.1",
+      "layers.2.premium": "3.97",
+      "layers.2.retention": "22.0",
+      "layers.3.limit": "82.9",
+      "layers.3.premium": "6.81",
+      "layers.3.retention": "58.1",
+      "perils": [
+        "WS",
+        "EQ"
+      ],
+      "reinstatements.basis": "pro rata as to amount",
+      "reinstatements.count": 1,
+      "reinstatements.rate": "1.0",
+      "territory.exclude": [
+        "JP-47"
+      ],
+      "territory.include": [
+        "JPN"
+      ],
+      "type": "CAT_XL"
+    },
+    "T-004": {
+      "currency": "USD",
+      "endorsement.overrides": "hours_clause.WS",
+      "exclusions": [
+        "war",
+        "nuclear",
+        "storm surge"
+      ],
+      "expiry": "2027-03-31",
+      "hours_clause.EQ": 72,
+      "hours_clause.FL": 168,
+      "hours_clause.WS": 168,
+      "hours_clause.WS.base": "72",
+      "inception": "2026-04-01",
+      "layers.1.limit": "25.8",
+      "layers.1.premium": "2.62",
+      "layers.1.retention": "18.6",
+      "layers.2.limit": "81.1",
+      "layers.2.premium": "9.23",
+      "layers.2.retention": "44.4",
+      "layers.3.limit": "237.8",
+      "layers.3.premium": "27.05",
+      "layers.3.retention": "125.5",
+      "layers.4.limit": "578.1",
+      "layers.4.premium": "39.07",
+      "layers.4.retention": "363.3",
+      "perils": [
+        "WS",
+        "EQ"
+      ],
+      "reinstatements.basis": "pro rata as to amount",
+      "reinstatements.count": 2,
+      "reinstatements.rate": "1.0",
+      "territory.exclude": [],
+      "territory.include": [
+        "JPN"
+      ],
+      "type": "CAT_XL"
+    },
+    "T-005": {
+      "currency": "USD",
+      "exclusions": [
+        "war",
+        "nuclear",
+        "earthquake"
+      ],
+      "expiry": "2026-12-31",
+      "hours_clause.EQ": 72,
+      "hours_clause.FL": 168,
+      "hours_clause.WS": 72,
+      "inception": "2026-01-01",
+      "layers.1.limit": "5.4",
+      "layers.1.premium": "0.64",
+      "layers.1.retention": "4.8",
+      "layers.2.limit": "14.7",
+      "layers.2.premium": "1.37",
+      "layers.2.retention": "10.2",
+      "layers.3.limit": "45.0",
+      "layers.3.premium": "4.62",
+      "layers.3.retention": "24.9",
+      "layers.4.limit": "139.6",
+      "layers.4.premium": "14.22",
+      "layers.4.retention": "69.9",
+      "perils": [
+        "WS"
+      ],
+      "reinstatements.basis": "pro rata as to amount",
+      "reinstatements.count": 1,
+      "reinstatements.rate": "1.0",
+      "territory.exclude": [],
+      "territory.include": [
+        "PHL"
+      ],
+      "type": "CAT_XL"
+    },
+    "T-006": {
+      "currency": "USD",
+      "exclusions": [
+        "war",
+        "nuclear"
+      ],
+      "expiry": "2026-12-31",
+      "hours_clause.EQ": 0,
+      "hours_clause.FL": 0,
+      "hours_clause.WS": 0,
+      "inception": "2026-01-01",
+      "perils": [
+        "WS",
+        "EQ"
+      ],
+      "qs.cession_pct": "0.3",
+      "qs.event_limit": "19.8",
+      "territory.exclude": [],
+      "territory.include": [
+        "PHL"
+      ],
+      "type": "QS"
+    },
+    "T-007": {
+      "currency": "USD",
+      "exclusions": [
+        "war",
+        "nuclear"
+      ],
+      "expiry": "2026-12-31",
+      "hours_clause.EQ": 168,
+      "hours_clause.FL": 168,
+      "hours_clause.WS": 168,
+      "inception": "2026-01-01",
+      "layers.1.limit": "4.6",
+      "layers.1.premium": "0.41",
+      "layers.1.retention": "3.3",
+      "layers.2.limit": "10.2",
+      "layers.2.premium": "1.21",
+      "layers.2.retention": "7.9",
+      "layers.3.limit": "28.3",
+      "layers.3.premium": "3.18",
+      "layers.3.retention": "18.1",
+      "layers.4.limit": "70.2",
+      "layers.4.premium": "6.99",
+      "layers.4.retention": "46.4",
+      "perils": [
+        "WS",
+        "EQ"
+      ],
+      "reinstatements.basis": "pro rata as to amount",
+      "reinstatements.count": 1,
+      "reinstatements.rate": "0",
+      "territory.exclude": [],
+      "territory.include": [
+        "TWN"
+      ],
+      "type": "CAT_XL"
+    },
+    "T-008": {
+      "currency": "USD",
+      "exclusions": [
+        "war",
+        "nuclear"
+      ],
+      "expiry": "2025-12-31",
+      "hours_clause.EQ": 72,
+      "hours_clause.FL": 168,
+      "hours_clause.WS": 72,
+      "inception": "2025-01-01",
+      "layers.1.limit": "3.4",
+      "layers.1.premium": "0.32",
+      "layers.1.retention": "2.6",
+      "layers.2.limit": "9.5",
+      "layers.2.premium": "0.97",
+      "layers.2.retention": "6.0",
+      "layers.3.limit": "23.3",
+      "layers.3.premium": "2.12",
+      "layers.3.retention": "15.5",
+      "layers.4.limit": "55.3",
+      "layers.4.premium": "5.53",
+      "layers.4.retention": "38.8",
+      "perils": [
+        "WS",
+        "EQ"
+      ],
+      "reinstatements.basis": "pro rata as to amount",
+      "reinstatements.count": 1,
+      "reinstatements.rate": "1.0",
+      "territory.exclude": [],
+      "territory.include": [
+        "TWN"
+      ],
+      "type": "CAT_XL"
+    }
+  },
+  "model": "gemini-3.5-flash-lite",
+  "pages": {
+    "T-001": {
+      "currency": 4,
+      "exclusions": 2,
+      "expiry": 1,
+      "hours_clause.EQ": 2,
+      "hours_clause.FL": 2,
+      "hours_clause.WS": 2,
+      "inception": 1,
+      "layers.1.limit": 2,
+      "layers.1.premium": 2,
+      "layers.1.retention": 2,
+      "layers.2.limit": 2,
+      "layers.2.premium": 2,
+      "layers.2.retention": 2,
+      "layers.3.limit": 2,
+      "layers.3.premium": 2,
+      "layers.3.retention": 2,
+      "perils": 1,
+      "reinstatements.basis": 2,
+      "reinstatements.count": 2,
+      "reinstatements.rate": 2,
+      "territory.exclude": 1,
+      "territory.include": 1,
+      "type": 1
+    },
+    "T-002": {
+      "currency": 4,
+      "exclusions": 2,
+      "expiry": 1,
+      "hours_clause.EQ": 2,
+      "hours_clause.FL": 2,
+      "hours_clause.WS": 2,
+      "inception": 1,
+      "layers.1.limit": 2,
+      "layers.1.premium": 2,
+      "layers.1.retention": 2,
+      "layers.2.limit": 2,
+      "layers.2.premium": 2,
+      "layers.2.retention": 2,
+      "layers.3.limit": 2,
+      "layers.3.premium": 2,
+      "layers.3.retention": 2,
+      "perils": 1,
+      "reinstatements.basis": 2,
+      "reinstatements.count": 2,
+      "reinstatements.rate": 2,
+      "territory.exclude": 1,
+      "territory.include": 1,
+      "type": 1
+    },
+    "T-003": {
+      "currency": 4,
+      "exclusions": 2,
+      "expiry": 1,
+      "hours_clause.EQ": 2,
+      "hours_clause.FL": 2,
+      "hours_clause.WS": 2,
+      "inception": 1,
+      "layers.1.limit": 2,
+      "layers.1.premium": 2,
+      "layers.1.retention": 2,
+      "layers.2.limit": 2,
+      "layers.2.premium": 2,
+      "layers.2.retention": 2,
+      "layers.3.limit": 2,
+      "layers.3.premium": 2,
+      "layers.3.retention": 2,
+      "perils": 1,
+      "reinstatements.basis": 2,
+      "reinstatements.count": 2,
+      "reinstatements.rate": 2,
+      "territory.exclude": 1,
+      "territory.include": 1,
+      "type": 1
+    },
+    "T-004": {
+      "currency": 4,
+      "exclusions": 2,
+      "expiry": 1,
+      "hours_clause.EQ": 2,
+      "hours_clause.FL": 2,
+      "hours_clause.WS": 7,
+      "hours_clause.WS.base": 2,
+      "inception": 1,
+      "layers.1.limit": 2,
+      "layers.1.premium": 2,
+      "layers.1.retention": 2,
+      "layers.2.limit": 2,
+      "layers.2.premium": 2,
+      "layers.2.retention": 2,
+      "layers.3.limit": 2,
+      "layers.3.premium": 2,
+      "layers.3.retention": 2,
+      "layers.4.limit": 2,
+      "layers.4.premium": 2,
+      "layers.4.retention": 2,
+      "perils": 1,
+      "reinstatements.basis": 2,
+      "reinstatements.count": 2,
+      "reinstatements.rate": 2,
+      "territory.exclude": 1,
+      "territory.include": 1,
+      "type": 1
+    },
+    "T-005": {
+      "currency": 4,
+      "expiry": 1,
+      "hours_clause.EQ": 2,
+      "hours_clause.FL": 2,
+      "hours_clause.WS": 2,
+      "inception": 1,
+      "layers.1.limit": 2,
+      "layers.1.premium": 2,
+      "layers.1.retention": 2,
+      "layers.2.limit": 2,
+      "layers.2.premium": 2,
+      "layers.2.retention": 2,
+      "layers.3.limit": 2,
+      "layers.3.premium": 2,
+      "layers.3.retention": 2,
+      "layers.4.limit": 2,
+      "layers.4.premium": 2,
+      "layers.4.retention": 2,
+      "perils": 1,
+      "reinstatements.basis": 2,
+      "reinstatements.count": 2,
+      "reinstatements.rate": 2,
+      "territory.exclude": 1,
+      "territory.include": 1,
+      "type": 1
+    },
+    "T-006": {
+      "currency": 4,
+      "exclusions": 2,
+      "expiry": 1,
+      "hours_clause.EQ": 2,
+      "hours_clause.WS": 2,
+      "inception": 1,
+      "perils": 1,
+      "qs.cession_pct": 2,
+      "qs.event_limit": 2,
+      "territory.exclude": 1,
+      "territory.include": 1,
+      "type": 1
+    },
+    "T-007": {
+      "currency": 4,
+      "exclusions": 3,
+      "expiry": 1,
+      "hours_clause.EQ": 2,
+      "hours_clause.FL": 2,
+      "hours_clause.WS": 2,
+      "inception": 1,
+      "layers.1.limit": 2,
+      "layers.1.premium": 2,
+      "layers.1.retention": 2,
+      "layers.2.limit": 2,
+      "layers.2.premium": 2,
+      "layers.2.retention": 2,
+      "layers.3.limit": 2,
+      "layers.3.premium": 2,
+      "layers.3.retention": 2,
+      "layers.4.limit": 2,
+      "layers.4.premium": 2,
+      "layers.4.retention": 2,
+      "perils": 1,
+      "reinstatements.basis": 2,
+      "reinstatements.count": 2,
+      "reinstatements.rate": 2,
+      "territory.exclude": 1,
+      "territory.include": 1,
+      "type": 1
+    },
+    "T-008": {
+      "currency": 4,
+      "exclusions": 2,
+      "expiry": 1,
+      "hours_clause.EQ": 4,
+      "hours_clause.FL": 2,
+      "hours_clause.WS": 4,
+      "inception": 1,
+      "layers.1.limit": 2,
+      "layers.1.premium": 2,
+      "layers.1.retention": 2,
+      "layers.2.limit": 2,
+      "layers.2.premium": 2,
+      "layers.2.retention": 2,
+      "layers.3.limit": 2,
+      "layers.3.premium": 2,
+      "layers.3.retention": 2,
+      "layers.4.limit": 2,
+      "layers.4.premium": 2,
+      "layers.4.retention": 2,
+      "perils": 1,
+      "reinstatements.basis": 2,
+      "reinstatements.count": 2,
+      "reinstatements.rate": 2,
+      "territory.exclude": 1,
+      "territory.include": 1,
+      "type": 1
+    }
+  },
+  "provenance": {
+    "T-001": {
+      "currency": {
+        "clause_no": "14",
+        "page": 4,
+        "quote": "All amounts stated in this Agreement are expressed in USD.",
+        "reason": null,
+        "status": "verified"
+      },
+      "exclusions": {
+        "clause_no": "8",
+        "page": 2,
+        "quote": "This Agreement does not cover loss, damage, cost or expense directly or indirectly arising out of any of the following. War, invasion, hostilities, civil war, rebellion or insurrection, whether war be declared or not. Nuclear reaction, nuclear radiation or radioactive contamination, however caused.",
+        "reason": null,
+        "status": "verified"
+      },
+      "expiry": {
+        "clause_no": "4",
+        "page": 1,
+        "quote": "This Agreement attaches at 00:00 hours local standard time on 2026-04-01 and expires at 24:00 hours local standard time on 2027-03-31, both days inclusive.",
+        "reason": null,
+        "status": "verified"
+      },
+      "hours_clause.EQ": {
+        "clause_no": "5",
+        "page": 2,
+        "quote": "As respects Earthquake, the corresponding period is 72 consecutive hours.",
+        "reason": null,
+        "status": "verified"
+      },
+      "hours_clause.FL": {
+        "clause_no": "5",
+        "page": 2,
+        "quote": "As respects Flood, and as respects any other peril covered hereunder, the period is 168 consecutive hours.",
+        "reason": null,
+        "status": "verified"
+      },
+      "hours_clause.WS": {
+        "clause_no": "5",
+        "page": 2,
+        "quote": "As respects Windstorm, all individual losses which first occur during 72 consecutive hours shall be deemed to",
+        "reason": null,
+        "status": "verified"
+      },
+      "inception": {
+        "clause_no": "4",
+        "page": 1,
+        "quote": "This Agreement attaches at 00:00 hours local standard time on 2026-04-01 and expires at 24:00 hours local",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.1.limit": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 1: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 10.0, but not more than 20.0 in respect of any one Loss Occurrence.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.1.premium": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "The premium for this layer is 2.00.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.1.retention": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 1: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 10.0, but not more than",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.2.limit": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 2: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 30.0, but not more than 30.0 in respect of any one Loss Occurrence.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.2.premium": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "The premium for this layer is 1.50.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.2.retention": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 2: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 30.0, but not more than",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.3.limit": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 3: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 60.0, but not more than 40.0 in respect of any one Loss Occurrence.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.3.premium": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "The premium for this layer is 1.00.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.3.retention": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 3: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 60.0, but not more than",
+        "reason": null,
+        "status": "verified"
+      },
+      "perils": {
+        "clause_no": "2",
+        "page": 1,
+        "quote": "limited to loss arising from Windstorm and Earthquake",
+        "reason": null,
+        "status": "verified"
+      },
+      "reinstatements.basis": {
+        "clause_no": "7",
+        "page": 2,
+        "quote": "Reinstatement premium is calculated pro rata as to amount",
+        "reason": null,
+        "status": "verified"
+      },
+      "reinstatements.count": {
+        "clause_no": "7",
+        "page": 2,
+        "quote": "automatically reinstated from the moment of the Loss Occurrence giving rise to the loss, for 1 such",
+        "reason": null,
+        "status": "verified"
+      },
+      "reinstatements.rate": {
+        "clause_no": "7",
+        "page": 2,
+        "quote": "at 100 per cent additional premium.",
+        "reason": null,
+        "status": "verified"
+      },
+      "territory.exclude": {
+        "clause_no": "3",
+        "page": 1,
+        "quote": "No part of the territory stated above is carved out of this Agreement.",
+        "reason": null,
+        "status": "verified"
+      },
+      "territory.include": {
+        "clause_no": "3",
+        "page": 1,
+        "quote": "The territorial scope of this Agreement is JPN, in respect of risks situate within that territory at the time of the",
+        "reason": null,
+        "status": "verified"
+      },
+      "type": {
+        "clause_no": "2",
+        "page": 1,
+        "quote": "This Agreement provides excess of loss reinsurance in respect of the Reinsured's property account",
+        "reason": null,
+        "status": "verified"
+      }
+    },
+    "T-002": {
+      "currency": {
+        "clause_no": "14",
+        "page": 4,
+        "quote": "All amounts stated in this Agreement are expressed in USD.",
+        "reason": null,
+        "status": "verified"
+      },
+      "exclusions": {
+        "clause_no": "8",
+        "page": 2,
+        "quote": "This Agreement does not cover loss, damage, cost or expense directly or indirectly arising out of any of the following. War, invasion, hostilities, civil war, rebellion or insurrection, whether war be declared or not. Nuclear reaction, nuclear radiation or radioactive contamination, however caused.",
+        "reason": null,
+        "status": "verified"
+      },
+      "expiry": {
+        "clause_no": "4",
+        "page": 1,
+        "quote": "This Agreement attaches at 00:00 hours local standard time on 2026-04-01 and expires at 24:00 hours local standard time on 2027-03-31, both days inclusive.",
+        "reason": null,
+        "status": "verified"
+      },
+      "hours_clause.EQ": {
+        "clause_no": "5",
+        "page": 2,
+        "quote": "As respects Earthquake, the corresponding period is one hundred and sixty-eight (168) consecutive hours.",
+        "reason": null,
+        "status": "verified"
+      },
+      "hours_clause.FL": {
+        "clause_no": "5",
+        "page": 2,
+        "quote": "As respects Flood, and as respects any other peril covered hereunder, the period is one hundred and sixty-eight (168) consecutive hours.",
+        "reason": null,
+        "status": "verified"
+      },
+      "hours_clause.WS": {
+        "clause_no": "5",
+        "page": 2,
+        "quote": "As respects Windstorm, all individual losses which first occur during ninety-six (96) consecutive hours shall be deemed to constitute a single Loss Occurrence.",
+        "reason": null,
+        "status": "verified"
+      },
+      "inception": {
+        "clause_no": "4",
+        "page": 1,
+        "quote": "This Agreement attaches at 00:00 hours local standard time on 2026-04-01 and expires at 24:00 hours local",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.1.limit": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 1: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 11.2, but not more than 14.6 in respect of any one Loss Occurrence.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.1.premium": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 1: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 11.2, but not more than 14.6 in respect of any one Loss Occurrence. The premium for this layer is 1.12.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.1.retention": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 1: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 11.2, but not more than",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.2.limit": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 2: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 25.8, but not more than 45.0 in respect of any one Loss Occurrence.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.2.premium": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 2: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 25.8, but not more than 45.0 in respect of any one Loss Occurrence. The premium for this layer is 4.51.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.2.retention": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 2: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 25.8, but not more than",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.3.limit": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 3: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 70.8, but not more than 137.7 in respect of any one Loss Occurrence.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.3.premium": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 3: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 70.8, but not more than 137.7 in respect of any one Loss Occurrence. The premium for this layer is 13.19.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.3.retention": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 3: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 70.8, but not more than",
+        "reason": null,
+        "status": "verified"
+      },
+      "perils": {
+        "clause_no": "2",
+        "page": 1,
+        "quote": "limited to loss arising from Windstorm and Earthquake",
+        "reason": null,
+        "status": "verified"
+      },
+      "reinstatements.basis": {
+        "clause_no": "7",
+        "page": 2,
+        "quote": "Reinstatement premium is calculated pro rata as to amount, being the proportion that the amount of limit",
+        "reason": null,
+        "status": "verified"
+      },
+      "reinstatements.count": {
+        "clause_no": "7",
+        "page": 2,
+        "quote": "automatically reinstated from the moment of the Loss Occurrence giving rise to the loss, for 1 such",
+        "reason": null,
+        "status": "verified"
+      },
+      "reinstatements.rate": {
+        "clause_no": "7",
+        "page": 2,
+        "quote": "reinstatement, at 100 per cent additional premium.",
+        "reason": null,
+        "status": "verified"
+      },
+      "territory.exclude": {
+        "clause_no": "3",
+        "page": 1,
+        "quote": "No part of the territory stated above is carved out of this Agreement.",
+        "reason": null,
+        "status": "verified"
+      },
+      "territory.include": {
+        "clause_no": "3",
+        "page": 1,
+        "quote": "The territorial scope of this Agreement is JPN, in respect of risks situate within that territory at the time of the",
+        "reason": null,
+        "status": "verified"
+      },
+      "type": {
+        "clause_no": "2",
+        "page": 1,
+        "quote": "This Agreement provides excess of loss reinsurance in respect of the Reinsured's property account",
+        "reason": null,
+        "status": "verified"
+      }
+    },
+    "T-003": {
+      "currency": {
+        "clause_no": "14",
+        "page": 4,
+        "quote": "All amounts stated in this Agreement are expressed in USD.",
+        "reason": null,
+        "status": "verified"
+      },
+      "exclusions": {
+        "clause_no": "8",
+        "page": 2,
+        "quote": "This Agreement does not cover loss, damage, cost or expense directly or indirectly arising out of any of the following. War, invasion, hostilities, civil war, rebellion or insurrection, whether war be declared or not. Nuclear reaction, nuclear radiation or radioactive contamination, however caused.",
+        "reason": null,
+        "status": "verified"
+      },
+      "expiry": {
+        "clause_no": "4",
+        "page": 1,
+        "quote": "This Agreement attaches at 00:00 hours local standard time on 2026-04-01 and expires at 24:00 hours local",
+        "reason": null,
+        "status": "verified"
+      },
+      "hours_clause.EQ": {
+        "clause_no": "5",
+        "page": 2,
+        "quote": "As respects Earthquake, the corresponding period is a period of seventy-two (72) consecutive hours.",
+        "reason": null,
+        "status": "verified"
+      },
+      "hours_clause.FL": {
+        "clause_no": "5",
+        "page": 2,
+        "quote": "As respects Flood, and as respects any other peril covered hereunder, the period is a period of one hundred and sixty-eight (168) consecutive hours.",
+        "reason": null,
+        "status": "verified"
+      },
+      "hours_clause.WS": {
+        "clause_no": "5",
+        "page": 2,
+        "quote": "As respects Windstorm, all individual losses which first occur during a period of one hundred and twenty (120) consecutive hours shall be deemed to constitute a single Loss Occurrence.",
+        "reason": null,
+        "status": "verified"
+      },
+      "inception": {
+        "clause_no": "4",
+        "page": 1,
+        "quote": "This Agreement attaches at 00:00 hours local standard time on 2026-04-01 and expires at 24:00 hours local",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.1.limit": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 1: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 10.1, but not more than 11.9 in respect of any one Loss Occurrence.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.1.premium": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "The premium for this layer is 1.00.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.1.retention": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 1: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 10.1, but not more than",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.2.limit": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 2: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 22.0, but not more than 36.1 in respect of any one Loss Occurrence.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.2.premium": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "The premium for this layer is 3.97.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.2.retention": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 2: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 22.0, but not more than",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.3.limit": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 3: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 58.1, but not more than 82.9 in respect of any one Loss Occurrence.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.3.premium": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "The premium for this layer is 6.81.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.3.retention": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 3: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 58.1, but not more than",
+        "reason": null,
+        "status": "verified"
+      },
+      "perils": {
+        "clause_no": "2",
+        "page": 1,
+        "quote": "limited to loss arising from Windstorm and Earthquake, written or renewed by the Reinsured during the Period",
+        "reason": null,
+        "status": "verified"
+      },
+      "reinstatements.basis": {
+        "clause_no": "7",
+        "page": 2,
+        "quote": "Reinstatement premium is calculated pro rata as to amount",
+        "reason": null,
+        "status": "verified"
+      },
+      "reinstatements.count": {
+        "clause_no": "7",
+        "page": 2,
+        "quote": "for 1 such reinstatement, at 100 per cent additional premium",
+        "reason": null,
+        "status": "verified"
+      },
+      "reinstatements.rate": {
+        "clause_no": "7",
+        "page": 2,
+        "quote": "at 100 per cent additional premium",
+        "reason": null,
+        "status": "verified"
+      },
+      "territory.exclude": {
+        "clause_no": "3",
+        "page": 1,
+        "quote": "Notwithstanding the foregoing, risks situate in Okinawa Prefecture are excluded from this Agreement, and no loss arising there shall be recoverable hereunder (territory codes: JP-47).",
+        "reason": null,
+        "status": "verified"
+      },
+      "territory.include": {
+        "clause_no": "3",
+        "page": 1,
+        "quote": "The territorial scope of this Agreement is JPN, in respect of risks situate within that territory at the time of the Loss Occurrence.",
+        "reason": null,
+        "status": "verified"
+      },
+      "type": {
+        "clause_no": "2",
+        "page": 1,
+        "quote": "This Agreement provides excess of loss reinsurance in respect of the Reinsured's property account",
+        "reason": null,
+        "status": "verified"
+      }
+    },
+    "T-004": {
+      "currency": {
+        "clause_no": "14",
+        "page": 4,
+        "quote": "All amounts stated in this Agreement are expressed in USD.",
+        "reason": null,
+        "status": "verified"
+      },
+      "exclusions": {
+        "clause_no": "8",
+        "page": 2,
+        "quote": "This Agreement does not cover loss, damage, cost or expense directly or indirectly arising out of any of the following. War, invasion, hostilities, civil war, rebellion or insurrection, whether war be declared or not. Nuclear reaction, nuclear radiation or radioactive contamination, however caused.",
+        "reason": null,
+        "status": "verified"
+      },
+      "expiry": {
+        "clause_no": "4",
+        "page": 1,
+        "quote": "This Agreement attaches at 00:00 hours local standard time on 2026-04-01 and expires at 24:00 hours local standard time on 2027-03-31, both days inclusive.",
+        "reason": null,
+        "status": "verified"
+      },
+      "hours_clause.EQ": {
+        "clause_no": "5",
+        "page": 2,
+        "quote": "As respects Earthquake, the corresponding period is 72 consecutive hours.",
+        "reason": null,
+        "status": "verified"
+      },
+      "hours_clause.FL": {
+        "clause_no": "5",
+        "page": 2,
+        "quote": "As respects Flood, and as respects any other peril covered hereunder, the period is 168 consecutive hours.",
+        "reason": null,
+        "status": "verified"
+      },
+      "hours_clause.WS": {
+        "clause_no": "END-1",
+        "page": 7,
+        "quote": "so that the period therein stated shall read: 168 CONSECUTIVE HOURS in place of the 72 consecutive hours previously stated.",
+        "reason": null,
+        "status": "transcribed"
+      },
+      "hours_clause.WS.base": {
+        "clause_no": "5",
+        "page": 2,
+        "quote": "As respects Windstorm, all individual losses which first occur during 72 consecutive hours shall be deemed to constitute a single Loss Occurrence.",
+        "reason": null,
+        "status": "verified"
+      },
+      "inception": {
+        "clause_no": "4",
+        "page": 1,
+        "quote": "This Agreement attaches at 00:00 hours local standard time on 2026-04-01 and expires at 24:00 hours local",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.1.limit": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 1: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 18.6, but not more than 25.8 in respect of any one Loss Occurrence.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.1.premium": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 1: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 18.6, but not more than 25.8 in respect of any one Loss Occurrence. The premium for this layer is 2.62.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.1.retention": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 1: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 18.6, but not more than",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.2.limit": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 2: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 44.4, but not more than 81.1 in respect of any one Loss Occurrence.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.2.premium": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 2: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 44.4, but not more than 81.1 in respect of any one Loss Occurrence. The premium for this layer is 9.23.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.2.retention": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 2: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 44.4, but not more than",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.3.limit": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 3: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 125.5, but not more than 237.8 in respect of any one Loss Occurrence.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.3.premium": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 3: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 125.5, but not more than 237.8 in respect of any one Loss Occurrence. The premium for this layer is 27.05.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.3.retention": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 3: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 125.5, but not more than",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.4.limit": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 4: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 363.3, but not more than 578.1 in respect of any one Loss Occurrence.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.4.premium": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 4: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 363.3, but not more than 578.1 in respect of any one Loss Occurrence. The premium for this layer is 39.07.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.4.retention": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 4: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 363.3, but not more than",
+        "reason": null,
+        "status": "verified"
+      },
+      "perils": {
+        "clause_no": "2",
+        "page": 1,
+        "quote": "limited to loss arising from Windstorm and Earthquake",
+        "reason": null,
+        "status": "verified"
+      },
+      "reinstatements.basis": {
+        "clause_no": "7",
+        "page": 2,
+        "quote": "Reinstatement premium is calculated pro rata as to amount, being the proportion that the amount of limit",
+        "reason": null,
+        "status": "verified"
+      },
+      "reinstatements.count": {
+        "clause_no": "7",
+        "page": 2,
+        "quote": "automatically reinstated from the moment of the Loss Occurrence giving rise to the loss, for 2 such reinstatements",
+        "reason": null,
+        "status": "verified"
+      },
+      "reinstatements.rate": {
+        "clause_no": "7",
+        "page": 2,
+        "quote": "reinstatements, at 100 per cent additional premium.",
+        "reason": null,
+        "status": "verified"
+      },
+      "territory.exclude": {
+        "clause_no": "3",
+        "page": 1,
+        "quote": "No part of the territory stated above is carved out of this Agreement. Risks situate outside that territory are not",
+        "reason": null,
+        "status": "verified"
+      },
+      "territory.include": {
+        "clause_no": "3",
+        "page": 1,
+        "quote": "The territorial scope of this Agreement is JPN, in respect of risks situate within that territory at the time of the",
+        "reason": null,
+        "status": "verified"
+      },
+      "type": {
+        "clause_no": "2",
+        "page": 1,
+        "quote": "This Agreement provides excess of loss reinsurance in respect of the Reinsured's property account",
+        "reason": null,
+        "status": "verified"
+      }
+    },
+    "T-005": {
+      "currency": {
+        "clause_no": "14",
+        "page": 4,
+        "quote": "All amounts stated in this Agreement are expressed in USD.",
+        "reason": null,
+        "status": "verified"
+      },
+      "exclusions": {
+        "clause_no": "8",
+        "page": 2,
+        "quote": "War, invasion, hostilities, civil war, rebellion or insurrection, whether war be declared or not. W5 / T-005 Nuclear reaction, nuclear radiation or radioactive contamination, however caused. Earthquake, earthquake shock, volcanic eruption and tsunami",
+        "reason": "not found on page 2: the quote does not appear in the cited clause - it may be paraphrased",
+        "status": "unverified"
+      },
+      "expiry": {
+        "clause_no": "4",
+        "page": 1,
+        "quote": "This Agreement attaches at 00:00 hours local standard time on 2026-01-01 and expires at 24:00 hours local standard time on 2026-12-31, both days inclusive.",
+        "reason": null,
+        "status": "verified"
+      },
+      "hours_clause.EQ": {
+        "clause_no": "5",
+        "page": 2,
+        "quote": "As respects Earthquake, the corresponding period is seventy-two (72) consecutive hours.",
+        "reason": null,
+        "status": "verified"
+      },
+      "hours_clause.FL": {
+        "clause_no": "5",
+        "page": 2,
+        "quote": "As respects Flood, and as respects any other peril covered hereunder, the period is one hundred and sixty-eight (168) consecutive hours.",
+        "reason": null,
+        "status": "verified"
+      },
+      "hours_clause.WS": {
+        "clause_no": "5",
+        "page": 2,
+        "quote": "As respects Windstorm, all individual losses which first occur during seventy-two (72) consecutive hours shall be deemed to constitute a single Loss Occurrence.",
+        "reason": null,
+        "status": "verified"
+      },
+      "inception": {
+        "clause_no": "4",
+        "page": 1,
+        "quote": "This Agreement attaches at 00:00 hours local standard time on 2026-01-01 and expires at 24:00 hours local",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.1.limit": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "exceeds 4.8, but not more than 5.4",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.1.premium": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "The premium for this layer is 0.64.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.1.retention": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 1: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 4.8",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.2.limit": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "exceeds 10.2, but not more than 14.7",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.2.premium": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "The premium for this layer is 1.37.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.2.retention": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 2: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 10.2",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.3.limit": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "exceeds 24.9, but not more than 45.0",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.3.premium": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "The premium for this layer is 4.62.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.3.retention": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 3: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 24.9",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.4.limit": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "exceeds 69.9, but not more than 139.6",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.4.premium": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "The premium for this layer is 14.22.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.4.retention": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 4: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 69.9",
+        "reason": null,
+        "status": "verified"
+      },
+      "perils": {
+        "clause_no": "2",
+        "page": 1,
+        "quote": "limited to loss arising from Windstorm, written or renewed by the Reinsured during the Period and classified by the Reinsured in accordance with its own practice at inception.",
+        "reason": null,
+        "status": "verified"
+      },
+      "reinstatements.basis": {
+        "clause_no": "7",
+        "page": 2,
+        "quote": "Reinstatement premium is calculated pro rata as to amount, being the proportion that the amount of limit",
+        "reason": null,
+        "status": "verified"
+      },
+      "reinstatements.count": {
+        "clause_no": "7",
+        "page": 2,
+        "quote": "automatically reinstated from the moment of the Loss Occurrence giving rise to the loss, for 1 such",
+        "reason": null,
+        "status": "verified"
+      },
+      "reinstatements.rate": {
+        "clause_no": "7",
+        "page": 2,
+        "quote": "reinstatement, at 100 per cent additional premium",
+        "reason": null,
+        "status": "verified"
+      },
+      "territory.exclude": {
+        "clause_no": "3",
+        "page": 1,
+        "quote": "No part of the territory stated above is carved out of this Agreement.",
+        "reason": null,
+        "status": "verified"
+      },
+      "territory.include": {
+        "clause_no": "3",
+        "page": 1,
+        "quote": "The territorial scope of this Agreement is PHL, in respect of risks situate within that territory at the time of the Loss Occurrence.",
+        "reason": null,
+        "status": "verified"
+      },
+      "type": {
+        "clause_no": "2",
+        "page": 1,
+        "quote": "This Agreement provides excess of loss reinsurance in respect of the Reinsured's property account",
+        "reason": null,
+        "status": "verified"
+      }
+    },
+    "T-006": {
+      "currency": {
+        "clause_no": "14",
+        "page": 4,
+        "quote": "All amounts stated in this Agreement are expressed in USD.",
+        "reason": null,
+        "status": "verified"
+      },
+      "exclusions": {
+        "clause_no": "8",
+        "page": 2,
+        "quote": "This Agreement does not cover loss, damage, cost or expense directly or indirectly arising out of any of the following. War, invasion, hostilities, civil war, rebellion or insurrection, whether war be declared or not. Nuclear reaction, nuclear radiation or radioactive contamination, however caused.",
+        "reason": null,
+        "status": "verified"
+      },
+      "expiry": {
+        "clause_no": "4",
+        "page": 1,
+        "quote": "This Agreement attaches at 00:00 hours local standard time on 2026-01-01 and expires at 24:00 hours local",
+        "reason": null,
+        "status": "verified"
+      },
+      "hours_clause.EQ": {
+        "clause_no": "5",
+        "page": 2,
+        "quote": "This Agreement is written on a proportional basis and does not respond per Loss Occurrence. No hours clause applies.",
+        "reason": null,
+        "status": "verified"
+      },
+      "hours_clause.FL": {
+        "clause_no": null,
+        "page": null,
+        "quote": null,
+        "reason": "no citation was returned",
+        "status": "missing"
+      },
+      "hours_clause.WS": {
+        "clause_no": "5",
+        "page": 2,
+        "quote": "This Agreement is written on a proportional basis and does not respond per Loss Occurrence. No hours clause applies.",
+        "reason": null,
+        "status": "verified"
+      },
+      "inception": {
+        "clause_no": "4",
+        "page": 1,
+        "quote": "This Agreement attaches at 00:00 hours local standard time on 2026-01-01 and expires at 24:00 hours local",
+        "reason": null,
+        "status": "verified"
+      },
+      "perils": {
+        "clause_no": "2",
+        "page": 1,
+        "quote": "property account, limited to loss arising from Windstorm and Earthquake, written or renewed by the Reinsured",
+        "reason": null,
+        "status": "verified"
+      },
+      "qs.cession_pct": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "The Reinsured cedes and the Reinsurers accept 30 per cent of the Reinsured's property account",
+        "reason": null,
+        "status": "verified"
+      },
+      "qs.event_limit": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "The Reinsurers' liability in respect of all losses arising out of any one catastrophe event shall not exceed 19.8 million USD",
+        "reason": null,
+        "status": "verified"
+      },
+      "territory.exclude": {
+        "clause_no": "3",
+        "page": 1,
+        "quote": "No part of the territory stated above is carved out of this Agreement.",
+        "reason": null,
+        "status": "verified"
+      },
+      "territory.include": {
+        "clause_no": "3",
+        "page": 1,
+        "quote": "The territorial scope of this Agreement is PHL, in respect of risks situate within that territory at the time of the",
+        "reason": null,
+        "status": "verified"
+      },
+      "type": {
+        "clause_no": "2",
+        "page": 1,
+        "quote": "This Agreement provides a quota share of the Reinsured's retained account in respect of the Reinsured's property account",
+        "reason": null,
+        "status": "verified"
+      }
+    },
+    "T-007": {
+      "currency": {
+        "clause_no": "14",
+        "page": 4,
+        "quote": "All amounts stated in this Agreement are expressed in USD.",
+        "reason": null,
+        "status": "verified"
+      },
+      "exclusions": {
+        "clause_no": "8",
+        "page": 3,
+        "quote": "War, invasion, hostilities, civil war, rebellion or insurrection, whether war be declared or not. Nuclear reaction, nuclear radiation or radioactive contamination, however caused.",
+        "reason": null,
+        "status": "verified"
+      },
+      "expiry": {
+        "clause_no": "4",
+        "page": 1,
+        "quote": "This Agreement attaches at 00:00 hours local standard time on 2026-01-01 and expires at 24:00 hours local",
+        "reason": null,
+        "status": "verified"
+      },
+      "hours_clause.EQ": {
+        "clause_no": "5",
+        "page": 2,
+        "quote": "As respects Earthquake, the corresponding period is a period of one hundred and sixty-eight (168) consecutive hours.",
+        "reason": null,
+        "status": "verified"
+      },
+      "hours_clause.FL": {
+        "clause_no": "5",
+        "page": 2,
+        "quote": "As respects Flood, and as respects any other peril covered hereunder, the period is a period of one hundred and sixty-eight (168) consecutive hours.",
+        "reason": null,
+        "status": "verified"
+      },
+      "hours_clause.WS": {
+        "clause_no": "5",
+        "page": 2,
+        "quote": "As respects Windstorm, all individual losses which first occur during a period of one hundred and sixty-eight (168) consecutive hours shall be deemed to constitute a single Loss Occurrence.",
+        "reason": null,
+        "status": "verified"
+      },
+      "inception": {
+        "clause_no": "4",
+        "page": 1,
+        "quote": "This Agreement attaches at 00:00 hours local standard time on 2026-01-01 and expires at 24:00 hours local",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.1.limit": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 1: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 3.3, but not more than 4.6",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.1.premium": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 1: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 3.3, but not more than 4.6 in respect of any one Loss Occurrence. The premium for this layer is 0.41.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.1.retention": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 1: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 3.3, but not more than 4.6",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.2.limit": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 2: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 7.9, but not more than 10.2",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.2.premium": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 2: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 7.9, but not more than 10.2 in respect of any one Loss Occurrence. The premium for this layer is 1.21.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.2.retention": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 2: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 7.9, but not more than 10.2",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.3.limit": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 3: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 18.1, but not more than 28.3 in respect of any one Loss Occurrence. The premium for this layer is 3.18.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.3.premium": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 3: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 18.1, but not more than 28.3 in respect of any one Loss Occurrence. The premium for this layer is 3.18.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.3.retention": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 3: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 18.1, but not more than 28.3",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.4.limit": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 4: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 46.4, but not more than 70.2 in respect of any one Loss Occurrence. The premium for this layer is 6.99.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.4.premium": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 4: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 46.4, but not more than 70.2 in respect of any one Loss Occurrence. The premium for this layer is 6.99.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.4.retention": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 4: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 46.4, but not more than 70.2",
+        "reason": null,
+        "status": "verified"
+      },
+      "perils": {
+        "clause_no": "2",
+        "page": 1,
+        "quote": "limited to loss arising from Windstorm and Earthquake, written or renewed by the Reinsured during the Period",
+        "reason": null,
+        "status": "verified"
+      },
+      "reinstatements.basis": {
+        "clause_no": "7",
+        "page": 2,
+        "quote": "Reinstatement premium is calculated pro rata as to amount, being the proportion that the amount of limit reinstated bears to the full limit of the layer",
+        "reason": null,
+        "status": "verified"
+      },
+      "reinstatements.count": {
+        "clause_no": "7",
+        "page": 2,
+        "quote": "automatically reinstated from the moment of the Loss Occurrence giving rise to the loss, for 1 such reinstatement, without additional premium.",
+        "reason": null,
+        "status": "verified"
+      },
+      "reinstatements.rate": {
+        "clause_no": "7",
+        "page": 2,
+        "quote": "automatically reinstated from the moment of the Loss Occurrence giving rise to the loss, for 1 such reinstatement, without additional premium.",
+        "reason": null,
+        "status": "verified"
+      },
+      "territory.exclude": {
+        "clause_no": "3",
+        "page": 1,
+        "quote": "No part of the territory stated above is carved out of this Agreement.",
+        "reason": null,
+        "status": "verified"
+      },
+      "territory.include": {
+        "clause_no": "3",
+        "page": 1,
+        "quote": "The territorial scope of this Agreement is TWN, in respect of risks situate within that territory at the time of the",
+        "reason": null,
+        "status": "verified"
+      },
+      "type": {
+        "clause_no": "2",
+        "page": 1,
+        "quote": "This Agreement provides excess of loss reinsurance in respect of the Reinsured's property account",
+        "reason": null,
+        "status": "verified"
+      }
+    },
+    "T-008": {
+      "currency": {
+        "clause_no": "14",
+        "page": 4,
+        "quote": "All amounts stated in this Agreement are expressed in USD.",
+        "reason": null,
+        "status": "verified"
+      },
+      "exclusions": {
+        "clause_no": "8",
+        "page": 2,
+        "quote": "War, invasion, hostilities, civil war, rebellion or insurrection, whether war be declared or not. Nuclear reaction, nuclear radiation or radioactive contamination, however caused.",
+        "reason": null,
+        "status": "verified"
+      },
+      "expiry": {
+        "clause_no": "4",
+        "page": 1,
+        "quote": "This Agreement attaches at 00:00 hours local standard time on 2025-01-01 and expires at 24:00 hours local standard time on 2025-12-31, both days inclusive.",
+        "reason": null,
+        "status": "verified"
+      },
+      "hours_clause.EQ": {
+        "clause_no": "12",
+        "page": 4,
+        "quote": "Loss Occurrence, as respects Windstorm and as respects Earthquake alike, means all individual losses which first occur within seventy-two consecutive hours of one another",
+        "reason": null,
+        "status": "verified"
+      },
+      "hours_clause.FL": {
+        "clause_no": "5",
+        "page": 2,
+        "quote": "As respects Flood, and as respects any other peril covered hereunder, the period is one hundred and sixty-eight consecutive hours.",
+        "reason": null,
+        "status": "verified"
+      },
+      "hours_clause.WS": {
+        "clause_no": "12",
+        "page": 4,
+        "quote": "Loss Occurrence, as respects Windstorm and as respects Earthquake alike, means all individual losses which first occur within seventy-two consecutive hours of one another",
+        "reason": null,
+        "status": "verified"
+      },
+      "inception": {
+        "clause_no": "4",
+        "page": 1,
+        "quote": "This Agreement attaches at 00:00 hours local standard time on 2025-01-01 and expires at 24:00 hours local",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.1.limit": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "exceeds 2.6, but not more than 3.4 in respect of any one Loss Occurrence",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.1.premium": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "The premium for this layer is 0.32.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.1.retention": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 1: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 2.6",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.2.limit": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "exceeds 6.0, but not more than 9.5 in respect of any one Loss Occurrence",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.2.premium": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "The premium for this layer is 0.97.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.2.retention": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 2: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 6.0",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.3.limit": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "exceeds 15.5, but not more than 23.3 in respect of any one Loss Occurrence",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.3.premium": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "The premium for this layer is 2.12.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.3.retention": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 3: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 15.5",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.4.limit": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "exceeds 38.8, but not more than 55.3 in respect of any one Loss Occurrence",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.4.premium": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "The premium for this layer is 5.53.",
+        "reason": null,
+        "status": "verified"
+      },
+      "layers.4.retention": {
+        "clause_no": "6",
+        "page": 2,
+        "quote": "Layer 4: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 38.8",
+        "reason": null,
+        "status": "verified"
+      },
+      "perils": {
+        "clause_no": "2",
+        "page": 1,
+        "quote": "limited to loss arising from Windstorm and Earthquake, written or renewed by the Reinsured during the Period",
+        "reason": null,
+        "status": "verified"
+      },
+      "reinstatements.basis": {
+        "clause_no": "7",
+        "page": 2,
+        "quote": "Reinstatement premium is calculated pro rata as to amount, being the proportion that the amount of limit",
+        "reason": null,
+        "status": "verified"
+      },
+      "reinstatements.count": {
+        "clause_no": "7",
+        "page": 2,
+        "quote": "automatically reinstated from the moment of the Loss Occurrence giving rise to the loss, for 1 such",
+        "reason": null,
+        "status": "verified"
+      },
+      "reinstatements.rate": {
+        "clause_no": "7",
+        "page": 2,
+        "quote": "reinstatement, at 100 per cent additional premium.",
+        "reason": null,
+        "status": "verified"
+      },
+      "territory.exclude": {
+        "clause_no": "3",
+        "page": 1,
+        "quote": "No part of the territory stated above is carved out of this Agreement.",
+        "reason": null,
+        "status": "verified"
+      },
+      "territory.include": {
+        "clause_no": "3",
+        "page": 1,
+        "quote": "The territorial scope of this Agreement is TWN, in respect of risks situate within that territory at the time of the Loss Occurrence.",
+        "reason": null,
+        "status": "verified"
+      },
+      "type": {
+        "clause_no": "2",
+        "page": 1,
+        "quote": "This Agreement provides excess of loss reinsurance in respect of the Reinsured's property account",
+        "reason": null,
+        "status": "verified"
+      }
+    }
+  },
+  "retrieval": {
+    "T-001": {
+      "groups": {
+        "currency": [
+          "T-001#c14",
+          "T-001#c18.4",
+          "T-001#c18.2",
+          "T-001#c11.1"
+        ],
+        "exclusions": [
+          "T-001#c8",
+          "T-001#c13.3",
+          "T-001#c2",
+          "T-001#c12.5"
+        ],
+        "hours": [
+          "T-001#c5",
+          "T-001#c12.5",
+          "T-001#c2",
+          "T-001#c12"
+        ],
+        "limits": [
+          "T-001#c6",
+          "T-001#c7",
+          "T-001#c5",
+          "T-001#c1"
+        ],
+        "period": [
+          "T-001#c4",
+          "T-001#c13.2",
+          "T-001#c10.1",
+          "T-001#c1"
+        ],
+        "reinstatements": [
+          "T-001#c7",
+          "T-001#c6",
+          "T-001#c5",
+          "T-001#c10.1"
+        ],
+        "scope": [
+          "T-001#c2",
+          "T-001#c5",
+          "T-001#c1",
+          "T-001#c3"
+        ],
+        "territory": [
+          "T-001#c3",
+          "T-001#c2",
+          "T-001#c1",
+          "T-001#c4"
+        ]
+      },
+      "hits": 23,
+      "misses": [],
+      "seconds": 26.6,
+      "total": 23
+    },
+    "T-002": {
+      "groups": {
+        "currency": [
+          "T-002#c14",
+          "T-002#c18.4",
+          "T-002#c11.1",
+          "T-002#c18.2"
+        ],
+        "exclusions": [
+          "T-002#c8",
+          "T-002#c13.3",
+          "T-002#c2",
+          "T-002#c12.5"
+        ],
+        "hours": [
+          "T-002#c5",
+          "T-002#c12.5",
+          "T-002#c2",
+          "T-002#c8"
+        ],
+        "limits": [
+          "T-002#c6",
+          "T-002#c7",
+          "T-002#c5",
+          "T-002#c1"
+        ],
+        "period": [
+          "T-002#c4",
+          "T-002#c13.2",
+          "T-002#c10.1",
+          "T-002#c1"
+        ],
+        "reinstatements": [
+          "T-002#c7",
+          "T-002#c6",
+          "T-002#c5",
+          "T-002#c10.1"
+        ],
+        "scope": [
+          "T-002#c2",
+          "T-002#c5",
+          "T-002#c1",
+          "T-002#c8"
+        ],
+        "territory": [
+          "T-002#c3",
+          "T-002#c2",
+          "T-002#c1",
+          "T-002#c4"
+        ]
+      },
+      "hits": 23,
+      "misses": [],
+      "seconds": 4.0,
+      "total": 23
+    },
+    "T-003": {
+      "groups": {
+        "currency": [
+          "T-003#c14",
+          "T-003#c18.4",
+          "T-003#c18.2",
+          "T-003#c11.1"
+        ],
+        "exclusions": [
+          "T-003#c8",
+          "T-003#c13.3",
+          "T-003#c2",
+          "T-003#c12.5"
+        ],
+        "hours": [
+          "T-003#c5",
+          "T-003#c12.5",
+          "T-003#c2",
+          "T-003#c12"
+        ],
+        "limits": [
+          "T-003#c6",
+          "T-003#c7",
+          "T-003#c5",
+          "T-003#c1"
+        ],
+        "period": [
+          "T-003#c4",
+          "T-003#c13.2",
+          "T-003#c10.1",
+          "T-003#c1"
+        ],
+        "reinstatements": [
+          "T-003#c7",
+          "T-003#c6",
+          "T-003#c5",
+          "T-003#c10.1"
+        ],
+        "scope": [
+          "T-003#c2",
+          "T-003#c1",
+          "T-003#c5",
+          "T-003#c12"
+        ],
+        "territory": [
+          "T-003#c3",
+          "T-003#c2",
+          "T-003#c1",
+          "T-003#c4"
+        ]
+      },
+      "hits": 23,
+      "misses": [],
+      "seconds": 3.9,
+      "total": 23
+    },
+    "T-004": {
+      "groups": {
+        "currency": [
+          "T-004#c14",
+          "T-004#c18.4",
+          "T-004#c15",
+          "T-004#c18.2",
+          "T-004#t7"
+        ],
+        "exclusions": [
+          "T-004#c8",
+          "T-004#c13.3",
+          "T-004#c2",
+          "T-004#c12.5",
+          "T-004#c15",
+          "T-004#t7"
+        ],
+        "hours": [
+          "T-004#c5",
+          "T-004#t7",
+          "T-004#c12.5",
+          "T-004#c2",
+          "T-004#c15"
+        ],
+        "limits": [
+          "T-004#c6",
+          "T-004#c7",
+          "T-004#c5",
+          "T-004#c1",
+          "T-004#c15",
+          "T-004#t7"
+        ],
+        "period": [
+          "T-004#c4",
+          "T-004#c13.2",
+          "T-004#c15",
+          "T-004#c10.1",
+          "T-004#t7"
+        ],
+        "reinstatements": [
+          "T-004#c7",
+          "T-004#c6",
+          "T-004#c5",
+          "T-004#t7",
+          "T-004#c15"
+        ],
+        "scope": [
+          "T-004#c2",
+          "T-004#c5",
+          "T-004#c1",
+          "T-004#c3",
+          "T-004#c15",
+          "T-004#t7"
+        ],
+        "territory": [
+          "T-004#c3",
+          "T-004#c2",
+          "T-004#c1",
+          "T-004#c15",
+          "T-004#t7"
+        ]
+      },
+      "hits": 28,
+      "misses": [],
+      "seconds": 4.5,
+      "total": 28
+    },
+    "T-005": {
+      "groups": {
+        "currency": [
+          "T-005#c14",
+          "T-005#c18.4",
+          "T-005#c18.2",
+          "T-005#c11.1"
+        ],
+        "exclusions": [
+          "T-005#c8",
+          "T-005#c13.3",
+          "T-005#c2",
+          "T-005#c12.5"
+        ],
+        "hours": [
+          "T-005#c5",
+          "T-005#c12.5",
+          "T-005#c8",
+          "T-005#c12"
+        ],
+        "limits": [
+          "T-005#c6",
+          "T-005#c7",
+          "T-005#c5",
+          "T-005#c1"
+        ],
+        "period": [
+          "T-005#c4",
+          "T-005#c13.2",
+          "T-005#c10.1",
+          "T-005#c1"
+        ],
+        "reinstatements": [
+          "T-005#c7",
+          "T-005#c6",
+          "T-005#c5",
+          "T-005#c10.1"
+        ],
+        "scope": [
+          "T-005#c2",
+          "T-005#c1",
+          "T-005#c5",
+          "T-005#c3"
+        ],
+        "territory": [
+          "T-005#c3",
+          "T-005#c4",
+          "T-005#c2",
+          "T-005#c1"
+        ]
+      },
+      "hits": 26,
+      "misses": [],
+      "seconds": 4.2,
+      "total": 26
+    },
+    "T-006": {
+      "groups": {
+        "currency": [
+          "T-006#c14",
+          "T-006#c18.4",
+          "T-006#c18.2",
+          "T-006#c11.1"
+        ],
+        "exclusions": [
+          "T-006#c8",
+          "T-006#c13.3",
+          "T-006#c2",
+          "T-006#c12.5"
+        ],
+        "hours": [
+          "T-006#c5",
+          "T-006#c12.5",
+          "T-006#c2",
+          "T-006#c12"
+        ],
+        "limits": [
+          "T-006#c6",
+          "T-006#c5",
+          "T-006#c7.1",
+          "T-006#c1"
+        ],
+        "period": [
+          "T-006#c4",
+          "T-006#c13.2",
+          "T-006#c10.1",
+          "T-006#c1"
+        ],
+        "reinstatements": [
+          "T-006#c5",
+          "T-006#c10.1",
+          "T-006#c1",
+          "T-006#c18.3"
+        ],
+        "scope": [
+          "T-006#c2",
+          "T-006#c1",
+          "T-006#c3",
+          "T-006#c12"
+        ],
+        "territory": [
+          "T-006#c3",
+          "T-006#c2",
+          "T-006#c4",
+          "T-006#c1"
+        ]
+      },
+      "hits": 11,
+      "misses": [],
+      "seconds": 3.0,
+      "total": 11
+    },
+    "T-007": {
+      "groups": {
+        "currency": [
+          "T-007#c14",
+          "T-007#c18.4",
+          "T-007#c18.2",
+          "T-007#c11.1"
+        ],
+        "exclusions": [
+          "T-007#c8",
+          "T-007#c13.3",
+          "T-007#c2",
+          "T-007#c12.5"
+        ],
+        "hours": [
+          "T-007#c5",
+          "T-007#c12.5",
+          "T-007#c2",
+          "T-007#c7"
+        ],
+        "limits": [
+          "T-007#c6",
+          "T-007#c7",
+          "T-007#c5",
+          "T-007#c1"
+        ],
+        "period": [
+          "T-007#c4",
+          "T-007#c13.2",
+          "T-007#c10.1",
+          "T-007#c1"
+        ],
+        "reinstatements": [
+          "T-007#c7",
+          "T-007#c6",
+          "T-007#c5",
+          "T-007#c10.1"
+        ],
+        "scope": [
+          "T-007#c2",
+          "T-007#c5",
+          "T-007#c1",
+          "T-007#c3"
+        ],
+        "territory": [
+          "T-007#c3",
+          "T-007#c2",
+          "T-007#c1",
+          "T-007#c4"
+        ]
+      },
+      "hits": 26,
+      "misses": [],
+      "seconds": 4.8,
+      "total": 26
+    },
+    "T-008": {
+      "groups": {
+        "currency": [
+          "T-008#c14",
+          "T-008#c18.4",
+          "T-008#c18.2",
+          "T-008#c11.1"
+        ],
+        "exclusions": [
+          "T-008#c8",
+          "T-008#c13.3",
+          "T-008#c2",
+          "T-008#c12.5"
+        ],
+        "hours": [
+          "T-008#c5",
+          "T-008#c12",
+          "T-008#c12.5",
+          "T-008#c2"
+        ],
+        "limits": [
+          "T-008#c6",
+          "T-008#c7",
+          "T-008#c1",
+          "T-008#c9.2"
+        ],
+        "period": [
+          "T-008#c4",
+          "T-008#c13.2",
+          "T-008#c10.1",
+          "T-008#c1"
+        ],
+        "reinstatements": [
+          "T-008#c7",
+          "T-008#c6",
+          "T-008#c10.1",
+          "T-008#c18.3"
+        ],
+        "scope": [
+          "T-008#c2",
+          "T-008#c5",
+          "T-008#c1",
+          "T-008#c12"
+        ],
+        "territory": [
+          "T-008#c3",
+          "T-008#c2",
+          "T-008#c4",
+          "T-008#c1"
+        ]
+      },
+      "hits": 26,
+      "misses": [],
+      "seconds": 3.9,
+      "total": 26
+    }
+  },
+  "seconds": 57.0
+}

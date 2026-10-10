@@ -1,0 +1,1650 @@
+[
+  {
+    "cedent_id": "C-SAKURA",
+    "currency": "USD",
+    "endorsement": null,
+    "exclusions": [
+      "war",
+      "nuclear",
+      "cyber"
+    ],
+    "expiry": "2027-03-31",
+    "extraction": null,
+    "hours_clause": {
+      "EQ": 72,
+      "FL": 168,
+      "OTHER": 168,
+      "WS": 72
+    },
+    "inception": "2026-04-01",
+    "layers": [
+      {
+        "layer_no": 1,
+        "limit": 20.0,
+        "our_share": 0.25,
+        "premium": 2.0,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 10.0
+      },
+      {
+        "layer_no": 2,
+        "limit": 30.0,
+        "our_share": 0.1,
+        "premium": 1.5,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 30.0
+      },
+      {
+        "layer_no": 3,
+        "limit": 40.0,
+        "our_share": 0.0,
+        "premium": 1.0,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 60.0
+      }
+    ],
+    "perils": [
+      "WS",
+      "EQ"
+    ],
+    "qs": null,
+    "source_pdf": "gs://{bucket}/treaties/w1.pdf",
+    "territory": {
+      "exclude": [],
+      "include": [
+        "JPN"
+      ]
+    },
+    "treaty_id": "T-001",
+    "type": "CAT_XL",
+    "wording_id": "W1"
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "currency": "USD",
+    "endorsement": null,
+    "exclusions": [
+      "war",
+      "nuclear",
+      "flood when written as such"
+    ],
+    "expiry": "2027-03-31",
+    "extraction": null,
+    "hours_clause": {
+      "EQ": 168,
+      "FL": 168,
+      "OTHER": 168,
+      "WS": 96
+    },
+    "inception": "2026-04-01",
+    "layers": [
+      {
+        "layer_no": 1,
+        "limit": 14.6,
+        "our_share": 0.1,
+        "premium": 1.12,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 11.2
+      },
+      {
+        "layer_no": 2,
+        "limit": 45.0,
+        "our_share": 0.17,
+        "premium": 4.51,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 25.8
+      },
+      {
+        "layer_no": 3,
+        "limit": 137.7,
+        "our_share": 0.1,
+        "premium": 13.19,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 70.8
+      }
+    ],
+    "perils": [
+      "WS",
+      "EQ"
+    ],
+    "qs": null,
+    "source_pdf": "gs://{bucket}/treaties/w2.pdf",
+    "territory": {
+      "exclude": [],
+      "include": [
+        "JPN"
+      ]
+    },
+    "treaty_id": "T-002",
+    "type": "CAT_XL",
+    "wording_id": "W2"
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "currency": "USD",
+    "endorsement": null,
+    "exclusions": [
+      "war",
+      "nuclear"
+    ],
+    "expiry": "2027-03-31",
+    "extraction": null,
+    "hours_clause": {
+      "EQ": 72,
+      "FL": 168,
+      "OTHER": 168,
+      "WS": 120
+    },
+    "inception": "2026-04-01",
+    "layers": [
+      {
+        "layer_no": 1,
+        "limit": 11.9,
+        "our_share": 0.1,
+        "premium": 1.0,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 10.1
+      },
+      {
+        "layer_no": 2,
+        "limit": 36.1,
+        "our_share": 0.09,
+        "premium": 3.97,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 22.0
+      },
+      {
+        "layer_no": 3,
+        "limit": 82.9,
+        "our_share": 0.07,
+        "premium": 6.81,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 58.1
+      }
+    ],
+    "perils": [
+      "WS",
+      "EQ"
+    ],
+    "qs": null,
+    "source_pdf": "gs://{bucket}/treaties/w3.pdf",
+    "territory": {
+      "exclude": [
+        "JP-47"
+      ],
+      "include": [
+        "JPN"
+      ]
+    },
+    "treaty_id": "T-003",
+    "type": "CAT_XL",
+    "wording_id": "W3"
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "currency": "USD",
+    "endorsement": {
+      "base_value": 72,
+      "endorsed_value": 168,
+      "note": "stamped and signed endorsement page, no text layer",
+      "overrides": "hours_clause.WS",
+      "source": "transcription"
+    },
+    "exclusions": [
+      "war",
+      "nuclear",
+      "storm surge"
+    ],
+    "expiry": "2027-03-31",
+    "extraction": null,
+    "hours_clause": {
+      "EQ": 72,
+      "FL": 168,
+      "OTHER": 168,
+      "WS": 168
+    },
+    "inception": "2026-04-01",
+    "layers": [
+      {
+        "layer_no": 1,
+        "limit": 25.8,
+        "our_share": 0.26,
+        "premium": 2.62,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 2,
+          "rate": 1.0
+        },
+        "retention": 18.6
+      },
+      {
+        "layer_no": 2,
+        "limit": 81.1,
+        "our_share": 0.13,
+        "premium": 9.23,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 2,
+          "rate": 1.0
+        },
+        "retention": 44.4
+      },
+      {
+        "layer_no": 3,
+        "limit": 237.8,
+        "our_share": 0.2,
+        "premium": 27.05,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 2,
+          "rate": 1.0
+        },
+        "retention": 125.5
+      },
+      {
+        "layer_no": 4,
+        "limit": 578.1,
+        "our_share": 0.19,
+        "premium": 39.07,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 2,
+          "rate": 1.0
+        },
+        "retention": 363.3
+      }
+    ],
+    "perils": [
+      "WS",
+      "EQ"
+    ],
+    "qs": null,
+    "source_pdf": "gs://{bucket}/treaties/w4.pdf",
+    "territory": {
+      "exclude": [],
+      "include": [
+        "JPN"
+      ]
+    },
+    "treaty_id": "T-004",
+    "type": "CAT_XL",
+    "wording_id": "W4"
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "currency": "USD",
+    "endorsement": null,
+    "exclusions": [
+      "war",
+      "nuclear",
+      "earthquake"
+    ],
+    "expiry": "2026-12-31",
+    "extraction": null,
+    "hours_clause": {
+      "EQ": 72,
+      "FL": 168,
+      "OTHER": 168,
+      "WS": 72
+    },
+    "inception": "2026-01-01",
+    "layers": [
+      {
+        "layer_no": 1,
+        "limit": 5.4,
+        "our_share": 0.29,
+        "premium": 0.64,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 4.8
+      },
+      {
+        "layer_no": 2,
+        "limit": 14.7,
+        "our_share": 0.29,
+        "premium": 1.37,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 10.2
+      },
+      {
+        "layer_no": 3,
+        "limit": 45.0,
+        "our_share": 0.1,
+        "premium": 4.62,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 24.9
+      },
+      {
+        "layer_no": 4,
+        "limit": 139.6,
+        "our_share": 0.28,
+        "premium": 14.22,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 69.9
+      }
+    ],
+    "perils": [
+      "WS"
+    ],
+    "qs": null,
+    "source_pdf": "gs://{bucket}/treaties/w5.pdf",
+    "territory": {
+      "exclude": [],
+      "include": [
+        "PHL"
+      ]
+    },
+    "treaty_id": "T-005",
+    "type": "CAT_XL",
+    "wording_id": "W5"
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "currency": "USD",
+    "endorsement": null,
+    "exclusions": [
+      "war",
+      "nuclear"
+    ],
+    "expiry": "2026-12-31",
+    "extraction": null,
+    "hours_clause": {
+      "EQ": 0,
+      "FL": 0,
+      "OTHER": 0,
+      "WS": 0
+    },
+    "inception": "2026-01-01",
+    "layers": [],
+    "perils": [
+      "WS",
+      "EQ"
+    ],
+    "qs": {
+      "cession_pct": 0.3,
+      "event_limit": 19.8,
+      "our_share": 0.22
+    },
+    "source_pdf": "gs://{bucket}/treaties/w6.pdf",
+    "territory": {
+      "exclude": [],
+      "include": [
+        "PHL"
+      ]
+    },
+    "treaty_id": "T-006",
+    "type": "QS",
+    "wording_id": "W6"
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "currency": "USD",
+    "endorsement": null,
+    "exclusions": [
+      "war",
+      "nuclear"
+    ],
+    "expiry": "2026-12-31",
+    "extraction": null,
+    "hours_clause": {
+      "EQ": 168,
+      "FL": 168,
+      "OTHER": 168,
+      "WS": 168
+    },
+    "inception": "2026-01-01",
+    "layers": [
+      {
+        "layer_no": 1,
+        "limit": 4.6,
+        "our_share": 0.3,
+        "premium": 0.41,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 0.0
+        },
+        "retention": 3.3
+      },
+      {
+        "layer_no": 2,
+        "limit": 10.2,
+        "our_share": 0.23,
+        "premium": 1.21,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 0.0
+        },
+        "retention": 7.9
+      },
+      {
+        "layer_no": 3,
+        "limit": 28.3,
+        "our_share": 0.16,
+        "premium": 3.18,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 0.0
+        },
+        "retention": 18.1
+      },
+      {
+        "layer_no": 4,
+        "limit": 70.2,
+        "our_share": 0.16,
+        "premium": 6.99,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 0.0
+        },
+        "retention": 46.4
+      }
+    ],
+    "perils": [
+      "WS",
+      "EQ"
+    ],
+    "qs": null,
+    "source_pdf": "gs://{bucket}/treaties/w7.pdf",
+    "territory": {
+      "exclude": [],
+      "include": [
+        "TWN"
+      ]
+    },
+    "treaty_id": "T-007",
+    "type": "CAT_XL",
+    "wording_id": "W7"
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "currency": "USD",
+    "endorsement": null,
+    "exclusions": [
+      "war",
+      "nuclear"
+    ],
+    "expiry": "2025-12-31",
+    "extraction": null,
+    "hours_clause": {
+      "EQ": 72,
+      "FL": 168,
+      "OTHER": 168,
+      "WS": 72
+    },
+    "inception": "2025-01-01",
+    "layers": [
+      {
+        "layer_no": 1,
+        "limit": 3.4,
+        "our_share": 0.09,
+        "premium": 0.32,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 2.6
+      },
+      {
+        "layer_no": 2,
+        "limit": 9.5,
+        "our_share": 0.21,
+        "premium": 0.97,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 6.0
+      },
+      {
+        "layer_no": 3,
+        "limit": 23.3,
+        "our_share": 0.13,
+        "premium": 2.12,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 15.5
+      },
+      {
+        "layer_no": 4,
+        "limit": 55.3,
+        "our_share": 0.24,
+        "premium": 5.53,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 38.8
+      }
+    ],
+    "perils": [
+      "WS",
+      "EQ"
+    ],
+    "qs": null,
+    "source_pdf": "gs://{bucket}/treaties/w8.pdf",
+    "territory": {
+      "exclude": [],
+      "include": [
+        "TWN"
+      ]
+    },
+    "treaty_id": "T-008",
+    "type": "CAT_XL",
+    "wording_id": "W8"
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "currency": "USD",
+    "endorsement": null,
+    "exclusions": [
+      "war",
+      "nuclear"
+    ],
+    "expiry": "2027-03-31",
+    "extraction": null,
+    "hours_clause": {
+      "EQ": 120,
+      "FL": 168,
+      "OTHER": 168,
+      "WS": 120
+    },
+    "inception": "2026-04-01",
+    "layers": [
+      {
+        "layer_no": 1,
+        "limit": 22.2,
+        "our_share": 0.1,
+        "premium": 1.53,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 13.7
+      },
+      {
+        "layer_no": 2,
+        "limit": 58.4,
+        "our_share": 0.1,
+        "premium": 6.53,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 35.9
+      },
+      {
+        "layer_no": 3,
+        "limit": 104.3,
+        "our_share": 0.06,
+        "premium": 11.87,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 94.3
+      },
+      {
+        "layer_no": 4,
+        "limit": 333.8,
+        "our_share": 0.21,
+        "premium": 36.6,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 198.6
+      }
+    ],
+    "perils": [
+      "WS",
+      "EQ"
+    ],
+    "qs": null,
+    "source_pdf": null,
+    "territory": {
+      "exclude": [],
+      "include": [
+        "JPN"
+      ]
+    },
+    "treaty_id": "T-009",
+    "type": "CAT_XL",
+    "wording_id": null
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "currency": "USD",
+    "endorsement": null,
+    "exclusions": [
+      "war",
+      "nuclear"
+    ],
+    "expiry": "2027-03-31",
+    "extraction": null,
+    "hours_clause": {
+      "EQ": 96,
+      "FL": 168,
+      "OTHER": 168,
+      "WS": 96
+    },
+    "inception": "2026-04-01",
+    "layers": [
+      {
+        "layer_no": 1,
+        "limit": 12.7,
+        "our_share": 0.15,
+        "premium": 1.47,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 12.1
+      },
+      {
+        "layer_no": 2,
+        "limit": 28.3,
+        "our_share": 0.12,
+        "premium": 1.93,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 24.8
+      },
+      {
+        "layer_no": 3,
+        "limit": 97.7,
+        "our_share": 0.13,
+        "premium": 6.55,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 53.1
+      }
+    ],
+    "perils": [
+      "WS",
+      "EQ"
+    ],
+    "qs": null,
+    "source_pdf": null,
+    "territory": {
+      "exclude": [],
+      "include": [
+        "JPN"
+      ]
+    },
+    "treaty_id": "T-010",
+    "type": "CAT_XL",
+    "wording_id": null
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "currency": "USD",
+    "endorsement": null,
+    "exclusions": [
+      "war",
+      "nuclear"
+    ],
+    "expiry": "2026-12-31",
+    "extraction": null,
+    "hours_clause": {
+      "EQ": 72,
+      "FL": 168,
+      "OTHER": 168,
+      "WS": 72
+    },
+    "inception": "2026-01-01",
+    "layers": [
+      {
+        "layer_no": 1,
+        "limit": 7.1,
+        "our_share": 0.28,
+        "premium": 0.59,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 6.0
+      },
+      {
+        "layer_no": 2,
+        "limit": 14.4,
+        "our_share": 0.12,
+        "premium": 1.28,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 13.1
+      },
+      {
+        "layer_no": 3,
+        "limit": 46.6,
+        "our_share": 0.23,
+        "premium": 5.27,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 27.5
+      }
+    ],
+    "perils": [
+      "WS",
+      "EQ"
+    ],
+    "qs": null,
+    "source_pdf": null,
+    "territory": {
+      "exclude": [],
+      "include": [
+        "PHL"
+      ]
+    },
+    "treaty_id": "T-011",
+    "type": "CAT_XL",
+    "wording_id": null
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "currency": "USD",
+    "endorsement": null,
+    "exclusions": [
+      "war",
+      "nuclear"
+    ],
+    "expiry": "2026-12-31",
+    "extraction": null,
+    "hours_clause": {
+      "EQ": 168,
+      "FL": 168,
+      "OTHER": 168,
+      "WS": 168
+    },
+    "inception": "2026-01-01",
+    "layers": [
+      {
+        "layer_no": 1,
+        "limit": 15.9,
+        "our_share": 0.26,
+        "premium": 1.4,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 8.4
+      },
+      {
+        "layer_no": 2,
+        "limit": 47.5,
+        "our_share": 0.08,
+        "premium": 3.79,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 24.3
+      },
+      {
+        "layer_no": 3,
+        "limit": 107.2,
+        "our_share": 0.05,
+        "premium": 12.66,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 71.8
+      },
+      {
+        "layer_no": 4,
+        "limit": 291.5,
+        "our_share": 0.14,
+        "premium": 28.69,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 179.0
+      }
+    ],
+    "perils": [
+      "WS"
+    ],
+    "qs": null,
+    "source_pdf": null,
+    "territory": {
+      "exclude": [],
+      "include": [
+        "PHL"
+      ]
+    },
+    "treaty_id": "T-012",
+    "type": "CAT_XL",
+    "wording_id": null
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "currency": "USD",
+    "endorsement": null,
+    "exclusions": [
+      "war",
+      "nuclear"
+    ],
+    "expiry": "2027-03-31",
+    "extraction": null,
+    "hours_clause": {
+      "EQ": 96,
+      "FL": 168,
+      "OTHER": 168,
+      "WS": 96
+    },
+    "inception": "2026-04-01",
+    "layers": [
+      {
+        "layer_no": 1,
+        "limit": 14.2,
+        "our_share": 0.28,
+        "premium": 0.91,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 10.1
+      },
+      {
+        "layer_no": 2,
+        "limit": 44.0,
+        "our_share": 0.06,
+        "premium": 4.51,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 24.3
+      },
+      {
+        "layer_no": 3,
+        "limit": 95.4,
+        "our_share": 0.09,
+        "premium": 7.25,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 68.3
+      }
+    ],
+    "perils": [
+      "WS",
+      "EQ"
+    ],
+    "qs": null,
+    "source_pdf": null,
+    "territory": {
+      "exclude": [],
+      "include": [
+        "JPN"
+      ]
+    },
+    "treaty_id": "T-013",
+    "type": "CAT_XL",
+    "wording_id": null
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "currency": "USD",
+    "endorsement": null,
+    "exclusions": [
+      "war",
+      "nuclear"
+    ],
+    "expiry": "2027-03-31",
+    "extraction": null,
+    "hours_clause": {
+      "EQ": 96,
+      "FL": 168,
+      "OTHER": 168,
+      "WS": 96
+    },
+    "inception": "2026-04-01",
+    "layers": [
+      {
+        "layer_no": 1,
+        "limit": 28.2,
+        "our_share": 0.06,
+        "premium": 2.26,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 16.0
+      },
+      {
+        "layer_no": 2,
+        "limit": 66.4,
+        "our_share": 0.29,
+        "premium": 6.47,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 44.2
+      },
+      {
+        "layer_no": 3,
+        "limit": 187.1,
+        "our_share": 0.17,
+        "premium": 20.43,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 110.6
+      }
+    ],
+    "perils": [
+      "WS",
+      "EQ"
+    ],
+    "qs": null,
+    "source_pdf": null,
+    "territory": {
+      "exclude": [],
+      "include": [
+        "JPN"
+      ]
+    },
+    "treaty_id": "T-014",
+    "type": "CAT_XL",
+    "wording_id": null
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "currency": "USD",
+    "endorsement": null,
+    "exclusions": [
+      "war",
+      "nuclear"
+    ],
+    "expiry": "2026-12-31",
+    "extraction": null,
+    "hours_clause": {
+      "EQ": 96,
+      "FL": 168,
+      "OTHER": 168,
+      "WS": 96
+    },
+    "inception": "2026-01-01",
+    "layers": [
+      {
+        "layer_no": 1,
+        "limit": 6.8,
+        "our_share": 0.08,
+        "premium": 0.52,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 4.6
+      },
+      {
+        "layer_no": 2,
+        "limit": 20.6,
+        "our_share": 0.16,
+        "premium": 1.33,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 11.4
+      },
+      {
+        "layer_no": 3,
+        "limit": 59.4,
+        "our_share": 0.22,
+        "premium": 5.31,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 32.0
+      },
+      {
+        "layer_no": 4,
+        "limit": 137.7,
+        "our_share": 0.23,
+        "premium": 14.75,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 91.4
+      }
+    ],
+    "perils": [
+      "WS",
+      "EQ"
+    ],
+    "qs": null,
+    "source_pdf": null,
+    "territory": {
+      "exclude": [],
+      "include": [
+        "PHL"
+      ]
+    },
+    "treaty_id": "T-015",
+    "type": "CAT_XL",
+    "wording_id": null
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "currency": "USD",
+    "endorsement": null,
+    "exclusions": [
+      "war",
+      "nuclear"
+    ],
+    "expiry": "2027-03-31",
+    "extraction": null,
+    "hours_clause": {
+      "EQ": 120,
+      "FL": 168,
+      "OTHER": 168,
+      "WS": 120
+    },
+    "inception": "2026-04-01",
+    "layers": [
+      {
+        "layer_no": 1,
+        "limit": 27.4,
+        "our_share": 0.14,
+        "premium": 1.78,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 14.5
+      },
+      {
+        "layer_no": 2,
+        "limit": 52.3,
+        "our_share": 0.27,
+        "premium": 5.86,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 41.9
+      },
+      {
+        "layer_no": 3,
+        "limit": 174.8,
+        "our_share": 0.21,
+        "premium": 18.1,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 94.2
+      },
+      {
+        "layer_no": 4,
+        "limit": 518.1,
+        "our_share": 0.08,
+        "premium": 49.92,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 269.0
+      }
+    ],
+    "perils": [
+      "WS",
+      "EQ"
+    ],
+    "qs": null,
+    "source_pdf": null,
+    "territory": {
+      "exclude": [],
+      "include": [
+        "JPN"
+      ]
+    },
+    "treaty_id": "T-016",
+    "type": "CAT_XL",
+    "wording_id": null
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "currency": "USD",
+    "endorsement": null,
+    "exclusions": [
+      "war",
+      "nuclear"
+    ],
+    "expiry": "2027-03-31",
+    "extraction": null,
+    "hours_clause": {
+      "EQ": 72,
+      "FL": 168,
+      "OTHER": 168,
+      "WS": 72
+    },
+    "inception": "2026-04-01",
+    "layers": [
+      {
+        "layer_no": 1,
+        "limit": 15.9,
+        "our_share": 0.22,
+        "premium": 1.53,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 8.3
+      },
+      {
+        "layer_no": 2,
+        "limit": 34.0,
+        "our_share": 0.13,
+        "premium": 3.06,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 24.2
+      },
+      {
+        "layer_no": 3,
+        "limit": 114.5,
+        "our_share": 0.12,
+        "premium": 9.26,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 58.2
+      },
+      {
+        "layer_no": 4,
+        "limit": 328.9,
+        "our_share": 0.13,
+        "premium": 23.68,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 172.7
+      }
+    ],
+    "perils": [
+      "WS",
+      "EQ"
+    ],
+    "qs": null,
+    "source_pdf": null,
+    "territory": {
+      "exclude": [],
+      "include": [
+        "JPN"
+      ]
+    },
+    "treaty_id": "T-017",
+    "type": "CAT_XL",
+    "wording_id": null
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "currency": "USD",
+    "endorsement": null,
+    "exclusions": [
+      "war",
+      "nuclear"
+    ],
+    "expiry": "2026-12-31",
+    "extraction": null,
+    "hours_clause": {
+      "EQ": 120,
+      "FL": 168,
+      "OTHER": 168,
+      "WS": 120
+    },
+    "inception": "2026-01-01",
+    "layers": [
+      {
+        "layer_no": 1,
+        "limit": 13.9,
+        "our_share": 0.18,
+        "premium": 0.93,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 7.9
+      },
+      {
+        "layer_no": 2,
+        "limit": 29.0,
+        "our_share": 0.12,
+        "premium": 2.64,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 21.8
+      },
+      {
+        "layer_no": 3,
+        "limit": 90.4,
+        "our_share": 0.11,
+        "premium": 6.04,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 50.8
+      },
+      {
+        "layer_no": 4,
+        "limit": 196.8,
+        "our_share": 0.15,
+        "premium": 13.03,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 141.2
+      }
+    ],
+    "perils": [
+      "WS",
+      "EQ"
+    ],
+    "qs": null,
+    "source_pdf": null,
+    "territory": {
+      "exclude": [],
+      "include": [
+        "PHL"
+      ]
+    },
+    "treaty_id": "T-018",
+    "type": "CAT_XL",
+    "wording_id": null
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "currency": "USD",
+    "endorsement": null,
+    "exclusions": [
+      "war",
+      "nuclear"
+    ],
+    "expiry": "2026-12-31",
+    "extraction": null,
+    "hours_clause": {
+      "EQ": 120,
+      "FL": 168,
+      "OTHER": 168,
+      "WS": 120
+    },
+    "inception": "2026-01-01",
+    "layers": [
+      {
+        "layer_no": 1,
+        "limit": 10.8,
+        "our_share": 0.19,
+        "premium": 1.16,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 8.0
+      },
+      {
+        "layer_no": 2,
+        "limit": 33.6,
+        "our_share": 0.29,
+        "premium": 2.05,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 18.8
+      },
+      {
+        "layer_no": 3,
+        "limit": 86.7,
+        "our_share": 0.19,
+        "premium": 10.28,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 52.4
+      },
+      {
+        "layer_no": 4,
+        "limit": 259.3,
+        "our_share": 0.3,
+        "premium": 21.91,
+        "reinstatements": {
+          "basis": "pro rata as to amount",
+          "count": 1,
+          "rate": 1.0
+        },
+        "retention": 139.1
+      }
+    ],
+    "perils": [
+      "WS",
+      "EQ"
+    ],
+    "qs": null,
+    "source_pdf": null,
+    "territory": {
+      "exclude": [],
+      "include": [
+        "PHL"
+      ]
+    },
+    "treaty_id": "T-019",
+    "type": "CAT_XL",
+    "wording_id": null
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "currency": "USD",
+    "endorsement": null,
+    "exclusions": [
+      "war",
+      "nuclear"
+    ],
+    "expiry": "2026-12-31",
+    "extraction": null,
+    "hours_clause": {
+      "EQ": 0,
+      "FL": 0,
+      "OTHER": 0,
+      "WS": 0
+    },
+    "inception": "2026-01-01",
+    "layers": [],
+    "perils": [
+      "WS",
+      "EQ"
+    ],
+    "qs": {
+      "cession_pct": 0.2,
+      "event_limit": 15.6,
+      "our_share": 0.27
+    },
+    "source_pdf": null,
+    "territory": {
+      "exclude": [],
+      "include": [
+        "PHL"
+      ]
+    },
+    "treaty_id": "T-020",
+    "type": "QS",
+    "wording_id": null
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "currency": "USD",
+    "endorsement": null,
+    "exclusions": [
+      "war",
+      "nuclear"
+    ],
+    "expiry": "2027-03-31",
+    "extraction": null,
+    "hours_clause": {
+      "EQ": 0,
+      "FL": 0,
+      "OTHER": 0,
+      "WS": 0
+    },
+    "inception": "2026-04-01",
+    "layers": [],
+    "perils": [
+      "WS",
+      "EQ"
+    ],
+    "qs": {
+      "cession_pct": 0.4,
+      "event_limit": 35.9,
+      "our_share": 0.23
+    },
+    "source_pdf": null,
+    "territory": {
+      "exclude": [],
+      "include": [
+        "JPN"
+      ]
+    },
+    "treaty_id": "T-021",
+    "type": "QS",
+    "wording_id": null
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "currency": "USD",
+    "endorsement": null,
+    "exclusions": [
+      "war",
+      "nuclear"
+    ],
+    "expiry": "2027-03-31",
+    "extraction": null,
+    "hours_clause": {
+      "EQ": 0,
+      "FL": 0,
+      "OTHER": 0,
+      "WS": 0
+    },
+    "inception": "2026-04-01",
+    "layers": [],
+    "perils": [
+      "WS",
+      "EQ"
+    ],
+    "qs": {
+      "cession_pct": 0.25,
+      "event_limit": 67.7,
+      "our_share": 0.12
+    },
+    "source_pdf": null,
+    "territory": {
+      "exclude": [],
+      "include": [
+        "JPN"
+      ]
+    },
+    "treaty_id": "T-022",
+    "type": "QS",
+    "wording_id": null
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "currency": "USD",
+    "endorsement": null,
+    "exclusions": [
+      "war",
+      "nuclear"
+    ],
+    "expiry": "2027-03-31",
+    "extraction": null,
+    "hours_clause": {
+      "EQ": 0,
+      "FL": 0,
+      "OTHER": 0,
+      "WS": 0
+    },
+    "inception": "2026-04-01",
+    "layers": [],
+    "perils": [
+      "WS",
+      "EQ"
+    ],
+    "qs": {
+      "cession_pct": 0.4,
+      "event_limit": 38.8,
+      "our_share": 0.29
+    },
+    "source_pdf": null,
+    "territory": {
+      "exclude": [],
+      "include": [
+        "JPN"
+      ]
+    },
+    "treaty_id": "T-023",
+    "type": "QS",
+    "wording_id": null
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "currency": "USD",
+    "endorsement": null,
+    "exclusions": [
+      "war",
+      "nuclear"
+    ],
+    "expiry": "2026-12-31",
+    "extraction": null,
+    "hours_clause": {
+      "EQ": 0,
+      "FL": 0,
+      "OTHER": 0,
+      "WS": 0
+    },
+    "inception": "2026-01-01",
+    "layers": [],
+    "perils": [
+      "WS",
+      "EQ"
+    ],
+    "qs": {
+      "cession_pct": 0.4,
+      "event_limit": 6.4,
+      "our_share": 0.19
+    },
+    "source_pdf": null,
+    "territory": {
+      "exclude": [],
+      "include": [
+        "TWN"
+      ]
+    },
+    "treaty_id": "T-024",
+    "type": "QS",
+    "wording_id": null
+  }
+]

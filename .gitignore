@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Secrets and local config — NEVER commit
+.env
+.env.local
+.env.*.local
+*-key.json
+service-account*.json
+
+# Large public downloads (C: data/raw is git-ignored)
+backend/data/raw/
+
+# Node
+node_modules/
+dist/
+
+# Benchmark output
+backend/benchmarks/results/*.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Coverage artifacts
+.coverage
+.coverage.*
+htmlcov/
+
+# firebase-tools writes this into the working directory on error. It records
+# request bodies and token metadata, so it must never be committed.
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+.firebase/
+
+# Staged by scripts/deploy.sh from frontend/dist. A build artefact, not source.
+backend/static/
+frontend/dist/
+
+# Internal planning docs and tool configuration: kept locally, never published.
+CLAUDE.md
+docs/internal/

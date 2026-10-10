@@ -1,0 +1,2470 @@
+{
+  "T-001": {
+    "counts": {
+      "match": 23
+    },
+    "fields": [
+      {
+        "booked": "USD",
+        "citation": {
+          "clause_no": "14",
+          "page": 4,
+          "quote": "All amounts stated in this Agreement are expressed in USD.",
+          "status": "verified"
+        },
+        "field": "currency",
+        "result": "match",
+        "wording": "USD"
+      },
+      {
+        "booked": [
+          "war",
+          "nuclear",
+          "cyber"
+        ],
+        "citation": {
+          "clause_no": "8",
+          "page": 2,
+          "quote": "This Agreement does not cover loss, damage, cost or expense directly or indirectly arising out of any of the following. War, invasion, hostilities, civil war, rebellion or insurrection, whether war be declared or not. Nuclear reaction, nuclear radiation or radioactive contamination, however caused.",
+          "status": "verified"
+        },
+        "field": "exclusions",
+        "result": "match",
+        "wording": [
+          "war",
+          "nuclear",
+          "cyber"
+        ]
+      },
+      {
+        "booked": "2027-03-31",
+        "citation": {
+          "clause_no": "4",
+          "page": 1,
+          "quote": "This Agreement attaches at 00:00 hours local standard time on 2026-04-01 and expires at 24:00 hours local standard time on 2027-03-31, both days inclusive.",
+          "status": "verified"
+        },
+        "field": "expiry",
+        "result": "match",
+        "wording": "2027-03-31"
+      },
+      {
+        "booked": 72,
+        "citation": {
+          "clause_no": "5",
+          "page": 2,
+          "quote": "As respects Earthquake, the corresponding period is 72 consecutive hours.",
+          "status": "verified"
+        },
+        "field": "hours_clause.EQ",
+        "result": "match",
+        "wording": 72
+      },
+      {
+        "booked": 168,
+        "citation": {
+          "clause_no": "5",
+          "page": 2,
+          "quote": "As respects Flood, and as respects any other peril covered hereunder, the period is 168 consecutive hours.",
+          "status": "verified"
+        },
+        "field": "hours_clause.FL",
+        "result": "match",
+        "wording": 168
+      },
+      {
+        "booked": 72,
+        "citation": {
+          "clause_no": "5",
+          "page": 2,
+          "quote": "As respects Windstorm, all individual losses which first occur during 72 consecutive hours shall be deemed to",
+          "status": "verified"
+        },
+        "field": "hours_clause.WS",
+        "result": "match",
+        "wording": 72
+      },
+      {
+        "booked": "2026-04-01",
+        "citation": {
+          "clause_no": "4",
+          "page": 1,
+          "quote": "This Agreement attaches at 00:00 hours local standard time on 2026-04-01 and expires at 24:00 hours local",
+          "status": "verified"
+        },
+        "field": "inception",
+        "result": "match",
+        "wording": "2026-04-01"
+      },
+      {
+        "booked": 20.0,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 1: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 10.0, but not more than 20.0 in respect of any one Loss Occurrence.",
+          "status": "verified"
+        },
+        "field": "layers.1.limit",
+        "result": "match",
+        "wording": "20.0"
+      },
+      {
+        "booked": 2.0,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "The premium for this layer is 2.00.",
+          "status": "verified"
+        },
+        "field": "layers.1.premium",
+        "result": "match",
+        "wording": "2.00"
+      },
+      {
+        "booked": 10.0,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 1: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 10.0, but not more than",
+          "status": "verified"
+        },
+        "field": "layers.1.retention",
+        "result": "match",
+        "wording": "10.0"
+      },
+      {
+        "booked": 30.0,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 2: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 30.0, but not more than 30.0 in respect of any one Loss Occurrence.",
+          "status": "verified"
+        },
+        "field": "layers.2.limit",
+        "result": "match",
+        "wording": "30.0"
+      },
+      {
+        "booked": 1.5,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "The premium for this layer is 1.50.",
+          "status": "verified"
+        },
+        "field": "layers.2.premium",
+        "result": "match",
+        "wording": "1.50"
+      },
+      {
+        "booked": 30.0,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 2: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 30.0, but not more than",
+          "status": "verified"
+        },
+        "field": "layers.2.retention",
+        "result": "match",
+        "wording": "30.0"
+      },
+      {
+        "booked": 40.0,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 3: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 60.0, but not more than 40.0 in respect of any one Loss Occurrence.",
+          "status": "verified"
+        },
+        "field": "layers.3.limit",
+        "result": "match",
+        "wording": "40.0"
+      },
+      {
+        "booked": 1.0,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "The premium for this layer is 1.00.",
+          "status": "verified"
+        },
+        "field": "layers.3.premium",
+        "result": "match",
+        "wording": "1.00"
+      },
+      {
+        "booked": 60.0,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 3: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 60.0, but not more than",
+          "status": "verified"
+        },
+        "field": "layers.3.retention",
+        "result": "match",
+        "wording": "60.0"
+      },
+      {
+        "booked": [
+          "WS",
+          "EQ"
+        ],
+        "citation": {
+          "clause_no": "2",
+          "page": 1,
+          "quote": "limited to loss arising from Windstorm and Earthquake",
+          "status": "verified"
+        },
+        "field": "perils",
+        "result": "match",
+        "wording": [
+          "WS",
+          "EQ"
+        ]
+      },
+      {
+        "booked": "pro rata as to amount",
+        "citation": {
+          "clause_no": "7",
+          "page": 2,
+          "quote": "Reinstatement premium is calculated pro rata as to amount",
+          "status": "verified"
+        },
+        "field": "reinstatements.basis",
+        "result": "match",
+        "wording": "pro rata as to amount"
+      },
+      {
+        "booked": 1,
+        "citation": {
+          "clause_no": "7",
+          "page": 2,
+          "quote": "automatically reinstated from the moment of the Loss Occurrence giving rise to the loss, for 1 such",
+          "status": "verified"
+        },
+        "field": "reinstatements.count",
+        "result": "match",
+        "wording": 1
+      },
+      {
+        "booked": 1.0,
+        "citation": {
+          "clause_no": "7",
+          "page": 2,
+          "quote": "at 100 per cent additional premium.",
+          "status": "verified"
+        },
+        "field": "reinstatements.rate",
+        "result": "match",
+        "wording": "1.0"
+      },
+      {
+        "booked": [],
+        "citation": {
+          "clause_no": "3",
+          "page": 1,
+          "quote": "No part of the territory stated above is carved out of this Agreement.",
+          "status": "verified"
+        },
+        "field": "territory.exclude",
+        "result": "match",
+        "wording": []
+      },
+      {
+        "booked": [
+          "JPN"
+        ],
+        "citation": {
+          "clause_no": "3",
+          "page": 1,
+          "quote": "The territorial scope of this Agreement is JPN, in respect of risks situate within that territory at the time of the",
+          "status": "verified"
+        },
+        "field": "territory.include",
+        "result": "match",
+        "wording": [
+          "JPN"
+        ]
+      },
+      {
+        "booked": "CAT_XL",
+        "citation": {
+          "clause_no": "2",
+          "page": 1,
+          "quote": "This Agreement provides excess of loss reinsurance in respect of the Reinsured's property account",
+          "status": "verified"
+        },
+        "field": "type",
+        "result": "match",
+        "wording": "CAT_XL"
+      }
+    ],
+    "status": "reconciled",
+    "treaty_id": "T-001",
+    "wording_id": "W1"
+  },
+  "T-002": {
+    "counts": {
+      "differs": 1,
+      "match": 22
+    },
+    "fields": [
+      {
+        "booked": "USD",
+        "citation": {
+          "clause_no": "14",
+          "page": 4,
+          "quote": "All amounts stated in this Agreement are expressed in USD.",
+          "status": "verified"
+        },
+        "field": "currency",
+        "result": "match",
+        "wording": "USD"
+      },
+      {
+        "booked": [
+          "war",
+          "nuclear",
+          "flood when written as such"
+        ],
+        "citation": {
+          "clause_no": "8",
+          "page": 2,
+          "quote": "This Agreement does not cover loss, damage, cost or expense directly or indirectly arising out of any of the following. War, invasion, hostilities, civil war, rebellion or insurrection, whether war be declared or not. Nuclear reaction, nuclear radiation or radioactive contamination, however caused.",
+          "status": "verified"
+        },
+        "field": "exclusions",
+        "result": "differs",
+        "wording": [
+          "war",
+          "nuclear",
+          "flood",
+          "terrorism",
+          "pollution",
+          "communicable disease"
+        ]
+      },
+      {
+        "booked": "2027-03-31",
+        "citation": {
+          "clause_no": "4",
+          "page": 1,
+          "quote": "This Agreement attaches at 00:00 hours local standard time on 2026-04-01 and expires at 24:00 hours local standard time on 2027-03-31, both days inclusive.",
+          "status": "verified"
+        },
+        "field": "expiry",
+        "result": "match",
+        "wording": "2027-03-31"
+      },
+      {
+        "booked": 168,
+        "citation": {
+          "clause_no": "5",
+          "page": 2,
+          "quote": "As respects Earthquake, the corresponding period is one hundred and sixty-eight (168) consecutive hours.",
+          "status": "verified"
+        },
+        "field": "hours_clause.EQ",
+        "result": "match",
+        "wording": 168
+      },
+      {
+        "booked": 168,
+        "citation": {
+          "clause_no": "5",
+          "page": 2,
+          "quote": "As respects Flood, and as respects any other peril covered hereunder, the period is one hundred and sixty-eight (168) consecutive hours.",
+          "status": "verified"
+        },
+        "field": "hours_clause.FL",
+        "result": "match",
+        "wording": 168
+      },
+      {
+        "booked": 96,
+        "citation": {
+          "clause_no": "5",
+          "page": 2,
+          "quote": "As respects Windstorm, all individual losses which first occur during ninety-six (96) consecutive hours shall be deemed to constitute a single Loss Occurrence.",
+          "status": "verified"
+        },
+        "field": "hours_clause.WS",
+        "result": "match",
+        "wording": 96
+      },
+      {
+        "booked": "2026-04-01",
+        "citation": {
+          "clause_no": "4",
+          "page": 1,
+          "quote": "This Agreement attaches at 00:00 hours local standard time on 2026-04-01 and expires at 24:00 hours local",
+          "status": "verified"
+        },
+        "field": "inception",
+        "result": "match",
+        "wording": "2026-04-01"
+      },
+      {
+        "booked": 14.6,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 1: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 11.2, but not more than 14.6 in respect of any one Loss Occurrence.",
+          "status": "verified"
+        },
+        "field": "layers.1.limit",
+        "result": "match",
+        "wording": "14.6"
+      },
+      {
+        "booked": 1.12,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 1: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 11.2, but not more than 14.6 in respect of any one Loss Occurrence. The premium for this layer is 1.12.",
+          "status": "verified"
+        },
+        "field": "layers.1.premium",
+        "result": "match",
+        "wording": "1.12"
+      },
+      {
+        "booked": 11.2,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 1: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 11.2, but not more than",
+          "status": "verified"
+        },
+        "field": "layers.1.retention",
+        "result": "match",
+        "wording": "11.2"
+      },
+      {
+        "booked": 45.0,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 2: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 25.8, but not more than 45.0 in respect of any one Loss Occurrence.",
+          "status": "verified"
+        },
+        "field": "layers.2.limit",
+        "result": "match",
+        "wording": "45.0"
+      },
+      {
+        "booked": 4.51,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 2: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 25.8, but not more than 45.0 in respect of any one Loss Occurrence. The premium for this layer is 4.51.",
+          "status": "verified"
+        },
+        "field": "layers.2.premium",
+        "result": "match",
+        "wording": "4.51"
+      },
+      {
+        "booked": 25.8,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 2: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 25.8, but not more than",
+          "status": "verified"
+        },
+        "field": "layers.2.retention",
+        "result": "match",
+        "wording": "25.8"
+      },
+      {
+        "booked": 137.7,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 3: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 70.8, but not more than 137.7 in respect of any one Loss Occurrence.",
+          "status": "verified"
+        },
+        "field": "layers.3.limit",
+        "result": "match",
+        "wording": "137.7"
+      },
+      {
+        "booked": 13.19,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 3: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 70.8, but not more than 137.7 in respect of any one Loss Occurrence. The premium for this layer is 13.19.",
+          "status": "verified"
+        },
+        "field": "layers.3.premium",
+        "result": "match",
+        "wording": "13.19"
+      },
+      {
+        "booked": 70.8,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 3: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 70.8, but not more than",
+          "status": "verified"
+        },
+        "field": "layers.3.retention",
+        "result": "match",
+        "wording": "70.8"
+      },
+      {
+        "booked": [
+          "WS",
+          "EQ"
+        ],
+        "citation": {
+          "clause_no": "2",
+          "page": 1,
+          "quote": "limited to loss arising from Windstorm and Earthquake",
+          "status": "verified"
+        },
+        "field": "perils",
+        "result": "match",
+        "wording": [
+          "WS",
+          "EQ"
+        ]
+      },
+      {
+        "booked": "pro rata as to amount",
+        "citation": {
+          "clause_no": "7",
+          "page": 2,
+          "quote": "Reinstatement premium is calculated pro rata as to amount, being the proportion that the amount of limit",
+          "status": "verified"
+        },
+        "field": "reinstatements.basis",
+        "result": "match",
+        "wording": "pro rata as to amount"
+      },
+      {
+        "booked": 1,
+        "citation": {
+          "clause_no": "7",
+          "page": 2,
+          "quote": "automatically reinstated from the moment of the Loss Occurrence giving rise to the loss, for 1 such",
+          "status": "verified"
+        },
+        "field": "reinstatements.count",
+        "result": "match",
+        "wording": 1
+      },
+      {
+        "booked": 1.0,
+        "citation": {
+          "clause_no": "7",
+          "page": 2,
+          "quote": "reinstatement, at 100 per cent additional premium.",
+          "status": "verified"
+        },
+        "field": "reinstatements.rate",
+        "result": "match",
+        "wording": "1.0"
+      },
+      {
+        "booked": [],
+        "citation": {
+          "clause_no": "3",
+          "page": 1,
+          "quote": "No part of the territory stated above is carved out of this Agreement.",
+          "status": "verified"
+        },
+        "field": "territory.exclude",
+        "result": "match",
+        "wording": []
+      },
+      {
+        "booked": [
+          "JPN"
+        ],
+        "citation": {
+          "clause_no": "3",
+          "page": 1,
+          "quote": "The territorial scope of this Agreement is JPN, in respect of risks situate within that territory at the time of the",
+          "status": "verified"
+        },
+        "field": "territory.include",
+        "result": "match",
+        "wording": [
+          "JPN"
+        ]
+      },
+      {
+        "booked": "CAT_XL",
+        "citation": {
+          "clause_no": "2",
+          "page": 1,
+          "quote": "This Agreement provides excess of loss reinsurance in respect of the Reinsured's property account",
+          "status": "verified"
+        },
+        "field": "type",
+        "result": "match",
+        "wording": "CAT_XL"
+      }
+    ],
+    "status": "discrepancies",
+    "treaty_id": "T-002",
+    "wording_id": "W2"
+  },
+  "T-003": {
+    "counts": {
+      "match": 23
+    },
+    "fields": [
+      {
+        "booked": "USD",
+        "citation": {
+          "clause_no": "14",
+          "page": 4,
+          "quote": "All amounts stated in this Agreement are expressed in USD.",
+          "status": "verified"
+        },
+        "field": "currency",
+        "result": "match",
+        "wording": "USD"
+      },
+      {
+        "booked": [
+          "war",
+          "nuclear"
+        ],
+        "citation": {
+          "clause_no": "8",
+          "page": 2,
+          "quote": "This Agreement does not cover loss, damage, cost or expense directly or indirectly arising out of any of the following. War, invasion, hostilities, civil war, rebellion or insurrection, whether war be declared or not. Nuclear reaction, nuclear radiation or radioactive contamination, however caused.",
+          "status": "verified"
+        },
+        "field": "exclusions",
+        "result": "match",
+        "wording": [
+          "war",
+          "nuclear"
+        ]
+      },
+      {
+        "booked": "2027-03-31",
+        "citation": {
+          "clause_no": "4",
+          "page": 1,
+          "quote": "This Agreement attaches at 00:00 hours local standard time on 2026-04-01 and expires at 24:00 hours local",
+          "status": "verified"
+        },
+        "field": "expiry",
+        "result": "match",
+        "wording": "2027-03-31"
+      },
+      {
+        "booked": 72,
+        "citation": {
+          "clause_no": "5",
+          "page": 2,
+          "quote": "As respects Earthquake, the corresponding period is a period of seventy-two (72) consecutive hours.",
+          "status": "verified"
+        },
+        "field": "hours_clause.EQ",
+        "result": "match",
+        "wording": 72
+      },
+      {
+        "booked": 168,
+        "citation": {
+          "clause_no": "5",
+          "page": 2,
+          "quote": "As respects Flood, and as respects any other peril covered hereunder, the period is a period of one hundred and sixty-eight (168) consecutive hours.",
+          "status": "verified"
+        },
+        "field": "hours_clause.FL",
+        "result": "match",
+        "wording": 168
+      },
+      {
+        "booked": 120,
+        "citation": {
+          "clause_no": "5",
+          "page": 2,
+          "quote": "As respects Windstorm, all individual losses which first occur during a period of one hundred and twenty (120) consecutive hours shall be deemed to constitute a single Loss Occurrence.",
+          "status": "verified"
+        },
+        "field": "hours_clause.WS",
+        "result": "match",
+        "wording": 120
+      },
+      {
+        "booked": "2026-04-01",
+        "citation": {
+          "clause_no": "4",
+          "page": 1,
+          "quote": "This Agreement attaches at 00:00 hours local standard time on 2026-04-01 and expires at 24:00 hours local",
+          "status": "verified"
+        },
+        "field": "inception",
+        "result": "match",
+        "wording": "2026-04-01"
+      },
+      {
+        "booked": 11.9,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 1: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 10.1, but not more than 11.9 in respect of any one Loss Occurrence.",
+          "status": "verified"
+        },
+        "field": "layers.1.limit",
+        "result": "match",
+        "wording": "11.9"
+      },
+      {
+        "booked": 1.0,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "The premium for this layer is 1.00.",
+          "status": "verified"
+        },
+        "field": "layers.1.premium",
+        "result": "match",
+        "wording": "1.00"
+      },
+      {
+        "booked": 10.1,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 1: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 10.1, but not more than",
+          "status": "verified"
+        },
+        "field": "layers.1.retention",
+        "result": "match",
+        "wording": "10.1"
+      },
+      {
+        "booked": 36.1,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 2: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 22.0, but not more than 36.1 in respect of any one Loss Occurrence.",
+          "status": "verified"
+        },
+        "field": "layers.2.limit",
+        "result": "match",
+        "wording": "36.1"
+      },
+      {
+        "booked": 3.97,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "The premium for this layer is 3.97.",
+          "status": "verified"
+        },
+        "field": "layers.2.premium",
+        "result": "match",
+        "wording": "3.97"
+      },
+      {
+        "booked": 22.0,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 2: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 22.0, but not more than",
+          "status": "verified"
+        },
+        "field": "layers.2.retention",
+        "result": "match",
+        "wording": "22.0"
+      },
+      {
+        "booked": 82.9,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 3: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 58.1, but not more than 82.9 in respect of any one Loss Occurrence.",
+          "status": "verified"
+        },
+        "field": "layers.3.limit",
+        "result": "match",
+        "wording": "82.9"
+      },
+      {
+        "booked": 6.81,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "The premium for this layer is 6.81.",
+          "status": "verified"
+        },
+        "field": "layers.3.premium",
+        "result": "match",
+        "wording": "6.81"
+      },
+      {
+        "booked": 58.1,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 3: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 58.1, but not more than",
+          "status": "verified"
+        },
+        "field": "layers.3.retention",
+        "result": "match",
+        "wording": "58.1"
+      },
+      {
+        "booked": [
+          "WS",
+          "EQ"
+        ],
+        "citation": {
+          "clause_no": "2",
+          "page": 1,
+          "quote": "limited to loss arising from Windstorm and Earthquake, written or renewed by the Reinsured during the Period",
+          "status": "verified"
+        },
+        "field": "perils",
+        "result": "match",
+        "wording": [
+          "WS",
+          "EQ"
+        ]
+      },
+      {
+        "booked": "pro rata as to amount",
+        "citation": {
+          "clause_no": "7",
+          "page": 2,
+          "quote": "Reinstatement premium is calculated pro rata as to amount",
+          "status": "verified"
+        },
+        "field": "reinstatements.basis",
+        "result": "match",
+        "wording": "pro rata as to amount"
+      },
+      {
+        "booked": 1,
+        "citation": {
+          "clause_no": "7",
+          "page": 2,
+          "quote": "for 1 such reinstatement, at 100 per cent additional premium",
+          "status": "verified"
+        },
+        "field": "reinstatements.count",
+        "result": "match",
+        "wording": 1
+      },
+      {
+        "booked": 1.0,
+        "citation": {
+          "clause_no": "7",
+          "page": 2,
+          "quote": "at 100 per cent additional premium",
+          "status": "verified"
+        },
+        "field": "reinstatements.rate",
+        "result": "match",
+        "wording": "1.0"
+      },
+      {
+        "booked": [
+          "JP-47"
+        ],
+        "citation": {
+          "clause_no": "3",
+          "page": 1,
+          "quote": "Notwithstanding the foregoing, risks situate in Okinawa Prefecture are excluded from this Agreement, and no loss arising there shall be recoverable hereunder (territory codes: JP-47).",
+          "status": "verified"
+        },
+        "field": "territory.exclude",
+        "result": "match",
+        "wording": [
+          "JP-47"
+        ]
+      },
+      {
+        "booked": [
+          "JPN"
+        ],
+        "citation": {
+          "clause_no": "3",
+          "page": 1,
+          "quote": "The territorial scope of this Agreement is JPN, in respect of risks situate within that territory at the time of the Loss Occurrence.",
+          "status": "verified"
+        },
+        "field": "territory.include",
+        "result": "match",
+        "wording": [
+          "JPN"
+        ]
+      },
+      {
+        "booked": "CAT_XL",
+        "citation": {
+          "clause_no": "2",
+          "page": 1,
+          "quote": "This Agreement provides excess of loss reinsurance in respect of the Reinsured's property account",
+          "status": "verified"
+        },
+        "field": "type",
+        "result": "match",
+        "wording": "CAT_XL"
+      }
+    ],
+    "status": "reconciled",
+    "treaty_id": "T-003",
+    "wording_id": "W3"
+  },
+  "T-004": {
+    "counts": {
+      "match": 27
+    },
+    "fields": [
+      {
+        "booked": "USD",
+        "citation": {
+          "clause_no": "14",
+          "page": 4,
+          "quote": "All amounts stated in this Agreement are expressed in USD.",
+          "status": "verified"
+        },
+        "field": "currency",
+        "result": "match",
+        "wording": "USD"
+      },
+      {
+        "booked": [
+          "war",
+          "nuclear",
+          "storm surge"
+        ],
+        "citation": {
+          "clause_no": "8",
+          "page": 2,
+          "quote": "This Agreement does not cover loss, damage, cost or expense directly or indirectly arising out of any of the following. War, invasion, hostilities, civil war, rebellion or insurrection, whether war be declared or not. Nuclear reaction, nuclear radiation or radioactive contamination, however caused.",
+          "status": "verified"
+        },
+        "field": "exclusions",
+        "result": "match",
+        "wording": [
+          "war",
+          "nuclear",
+          "storm surge"
+        ]
+      },
+      {
+        "booked": "2027-03-31",
+        "citation": {
+          "clause_no": "4",
+          "page": 1,
+          "quote": "This Agreement attaches at 00:00 hours local standard time on 2026-04-01 and expires at 24:00 hours local standard time on 2027-03-31, both days inclusive.",
+          "status": "verified"
+        },
+        "field": "expiry",
+        "result": "match",
+        "wording": "2027-03-31"
+      },
+      {
+        "booked": 72,
+        "citation": {
+          "clause_no": "5",
+          "page": 2,
+          "quote": "As respects Earthquake, the corresponding period is 72 consecutive hours.",
+          "status": "verified"
+        },
+        "field": "hours_clause.EQ",
+        "result": "match",
+        "wording": 72
+      },
+      {
+        "booked": 168,
+        "citation": {
+          "clause_no": "5",
+          "page": 2,
+          "quote": "As respects Flood, and as respects any other peril covered hereunder, the period is 168 consecutive hours.",
+          "status": "verified"
+        },
+        "field": "hours_clause.FL",
+        "result": "match",
+        "wording": 168
+      },
+      {
+        "booked": 168,
+        "citation": {
+          "clause_no": "END-1",
+          "page": 7,
+          "quote": "so that the period therein stated shall read: 168 CONSECUTIVE HOURS in place of the 72 consecutive hours previously stated.",
+          "status": "transcribed"
+        },
+        "field": "hours_clause.WS",
+        "result": "match",
+        "wording": 168
+      },
+      {
+        "booked": 72,
+        "citation": {
+          "clause_no": "5",
+          "page": 2,
+          "quote": "As respects Windstorm, all individual losses which first occur during 72 consecutive hours shall be deemed to constitute a single Loss Occurrence.",
+          "status": "verified"
+        },
+        "field": "hours_clause.WS.base",
+        "result": "match",
+        "wording": "72"
+      },
+      {
+        "booked": "2026-04-01",
+        "citation": {
+          "clause_no": "4",
+          "page": 1,
+          "quote": "This Agreement attaches at 00:00 hours local standard time on 2026-04-01 and expires at 24:00 hours local",
+          "status": "verified"
+        },
+        "field": "inception",
+        "result": "match",
+        "wording": "2026-04-01"
+      },
+      {
+        "booked": 25.8,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 1: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 18.6, but not more than 25.8 in respect of any one Loss Occurrence.",
+          "status": "verified"
+        },
+        "field": "layers.1.limit",
+        "result": "match",
+        "wording": "25.8"
+      },
+      {
+        "booked": 2.62,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 1: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 18.6, but not more than 25.8 in respect of any one Loss Occurrence. The premium for this layer is 2.62.",
+          "status": "verified"
+        },
+        "field": "layers.1.premium",
+        "result": "match",
+        "wording": "2.62"
+      },
+      {
+        "booked": 18.6,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 1: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 18.6, but not more than",
+          "status": "verified"
+        },
+        "field": "layers.1.retention",
+        "result": "match",
+        "wording": "18.6"
+      },
+      {
+        "booked": 81.1,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 2: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 44.4, but not more than 81.1 in respect of any one Loss Occurrence.",
+          "status": "verified"
+        },
+        "field": "layers.2.limit",
+        "result": "match",
+        "wording": "81.1"
+      },
+      {
+        "booked": 9.23,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 2: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 44.4, but not more than 81.1 in respect of any one Loss Occurrence. The premium for this layer is 9.23.",
+          "status": "verified"
+        },
+        "field": "layers.2.premium",
+        "result": "match",
+        "wording": "9.23"
+      },
+      {
+        "booked": 44.4,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 2: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 44.4, but not more than",
+          "status": "verified"
+        },
+        "field": "layers.2.retention",
+        "result": "match",
+        "wording": "44.4"
+      },
+      {
+        "booked": 237.8,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 3: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 125.5, but not more than 237.8 in respect of any one Loss Occurrence.",
+          "status": "verified"
+        },
+        "field": "layers.3.limit",
+        "result": "match",
+        "wording": "237.8"
+      },
+      {
+        "booked": 27.05,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 3: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 125.5, but not more than 237.8 in respect of any one Loss Occurrence. The premium for this layer is 27.05.",
+          "status": "verified"
+        },
+        "field": "layers.3.premium",
+        "result": "match",
+        "wording": "27.05"
+      },
+      {
+        "booked": 125.5,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 3: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 125.5, but not more than",
+          "status": "verified"
+        },
+        "field": "layers.3.retention",
+        "result": "match",
+        "wording": "125.5"
+      },
+      {
+        "booked": 578.1,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 4: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 363.3, but not more than 578.1 in respect of any one Loss Occurrence.",
+          "status": "verified"
+        },
+        "field": "layers.4.limit",
+        "result": "match",
+        "wording": "578.1"
+      },
+      {
+        "booked": 39.07,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 4: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 363.3, but not more than 578.1 in respect of any one Loss Occurrence. The premium for this layer is 39.07.",
+          "status": "verified"
+        },
+        "field": "layers.4.premium",
+        "result": "match",
+        "wording": "39.07"
+      },
+      {
+        "booked": 363.3,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 4: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 363.3, but not more than",
+          "status": "verified"
+        },
+        "field": "layers.4.retention",
+        "result": "match",
+        "wording": "363.3"
+      },
+      {
+        "booked": [
+          "WS",
+          "EQ"
+        ],
+        "citation": {
+          "clause_no": "2",
+          "page": 1,
+          "quote": "limited to loss arising from Windstorm and Earthquake",
+          "status": "verified"
+        },
+        "field": "perils",
+        "result": "match",
+        "wording": [
+          "WS",
+          "EQ"
+        ]
+      },
+      {
+        "booked": "pro rata as to amount",
+        "citation": {
+          "clause_no": "7",
+          "page": 2,
+          "quote": "Reinstatement premium is calculated pro rata as to amount, being the proportion that the amount of limit",
+          "status": "verified"
+        },
+        "field": "reinstatements.basis",
+        "result": "match",
+        "wording": "pro rata as to amount"
+      },
+      {
+        "booked": 2,
+        "citation": {
+          "clause_no": "7",
+          "page": 2,
+          "quote": "automatically reinstated from the moment of the Loss Occurrence giving rise to the loss, for 2 such reinstatements",
+          "status": "verified"
+        },
+        "field": "reinstatements.count",
+        "result": "match",
+        "wording": 2
+      },
+      {
+        "booked": 1.0,
+        "citation": {
+          "clause_no": "7",
+          "page": 2,
+          "quote": "reinstatements, at 100 per cent additional premium.",
+          "status": "verified"
+        },
+        "field": "reinstatements.rate",
+        "result": "match",
+        "wording": "1.0"
+      },
+      {
+        "booked": [],
+        "citation": {
+          "clause_no": "3",
+          "page": 1,
+          "quote": "No part of the territory stated above is carved out of this Agreement. Risks situate outside that territory are not",
+          "status": "verified"
+        },
+        "field": "territory.exclude",
+        "result": "match",
+        "wording": []
+      },
+      {
+        "booked": [
+          "JPN"
+        ],
+        "citation": {
+          "clause_no": "3",
+          "page": 1,
+          "quote": "The territorial scope of this Agreement is JPN, in respect of risks situate within that territory at the time of the",
+          "status": "verified"
+        },
+        "field": "territory.include",
+        "result": "match",
+        "wording": [
+          "JPN"
+        ]
+      },
+      {
+        "booked": "CAT_XL",
+        "citation": {
+          "clause_no": "2",
+          "page": 1,
+          "quote": "This Agreement provides excess of loss reinsurance in respect of the Reinsured's property account",
+          "status": "verified"
+        },
+        "field": "type",
+        "result": "match",
+        "wording": "CAT_XL"
+      }
+    ],
+    "status": "reconciled",
+    "treaty_id": "T-004",
+    "wording_id": "W4"
+  },
+  "T-005": {
+    "counts": {
+      "match": 25,
+      "unverified": 1
+    },
+    "fields": [
+      {
+        "booked": "USD",
+        "citation": {
+          "clause_no": "14",
+          "page": 4,
+          "quote": "All amounts stated in this Agreement are expressed in USD.",
+          "status": "verified"
+        },
+        "field": "currency",
+        "result": "match",
+        "wording": "USD"
+      },
+      {
+        "booked": [
+          "war",
+          "nuclear",
+          "earthquake"
+        ],
+        "citation": {
+          "clause_no": "8",
+          "page": 2,
+          "quote": "War, invasion, hostilities, civil war, rebellion or insurrection, whether war be declared or not. W5 / T-005 Nuclear reaction, nuclear radiation or radioactive contamination, however caused. Earthquake, earthquake shock, volcanic eruption and tsunami",
+          "status": "unverified"
+        },
+        "field": "exclusions",
+        "result": "unverified",
+        "wording": [
+          "war",
+          "nuclear",
+          "earthquake"
+        ]
+      },
+      {
+        "booked": "2026-12-31",
+        "citation": {
+          "clause_no": "4",
+          "page": 1,
+          "quote": "This Agreement attaches at 00:00 hours local standard time on 2026-01-01 and expires at 24:00 hours local standard time on 2026-12-31, both days inclusive.",
+          "status": "verified"
+        },
+        "field": "expiry",
+        "result": "match",
+        "wording": "2026-12-31"
+      },
+      {
+        "booked": 72,
+        "citation": {
+          "clause_no": "5",
+          "page": 2,
+          "quote": "As respects Earthquake, the corresponding period is seventy-two (72) consecutive hours.",
+          "status": "verified"
+        },
+        "field": "hours_clause.EQ",
+        "result": "match",
+        "wording": 72
+      },
+      {
+        "booked": 168,
+        "citation": {
+          "clause_no": "5",
+          "page": 2,
+          "quote": "As respects Flood, and as respects any other peril covered hereunder, the period is one hundred and sixty-eight (168) consecutive hours.",
+          "status": "verified"
+        },
+        "field": "hours_clause.FL",
+        "result": "match",
+        "wording": 168
+      },
+      {
+        "booked": 72,
+        "citation": {
+          "clause_no": "5",
+          "page": 2,
+          "quote": "As respects Windstorm, all individual losses which first occur during seventy-two (72) consecutive hours shall be deemed to constitute a single Loss Occurrence.",
+          "status": "verified"
+        },
+        "field": "hours_clause.WS",
+        "result": "match",
+        "wording": 72
+      },
+      {
+        "booked": "2026-01-01",
+        "citation": {
+          "clause_no": "4",
+          "page": 1,
+          "quote": "This Agreement attaches at 00:00 hours local standard time on 2026-01-01 and expires at 24:00 hours local",
+          "status": "verified"
+        },
+        "field": "inception",
+        "result": "match",
+        "wording": "2026-01-01"
+      },
+      {
+        "booked": 5.4,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "exceeds 4.8, but not more than 5.4",
+          "status": "verified"
+        },
+        "field": "layers.1.limit",
+        "result": "match",
+        "wording": "5.4"
+      },
+      {
+        "booked": 0.64,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "The premium for this layer is 0.64.",
+          "status": "verified"
+        },
+        "field": "layers.1.premium",
+        "result": "match",
+        "wording": "0.64"
+      },
+      {
+        "booked": 4.8,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 1: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 4.8",
+          "status": "verified"
+        },
+        "field": "layers.1.retention",
+        "result": "match",
+        "wording": "4.8"
+      },
+      {
+        "booked": 14.7,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "exceeds 10.2, but not more than 14.7",
+          "status": "verified"
+        },
+        "field": "layers.2.limit",
+        "result": "match",
+        "wording": "14.7"
+      },
+      {
+        "booked": 1.37,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "The premium for this layer is 1.37.",
+          "status": "verified"
+        },
+        "field": "layers.2.premium",
+        "result": "match",
+        "wording": "1.37"
+      },
+      {
+        "booked": 10.2,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 2: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 10.2",
+          "status": "verified"
+        },
+        "field": "layers.2.retention",
+        "result": "match",
+        "wording": "10.2"
+      },
+      {
+        "booked": 45.0,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "exceeds 24.9, but not more than 45.0",
+          "status": "verified"
+        },
+        "field": "layers.3.limit",
+        "result": "match",
+        "wording": "45.0"
+      },
+      {
+        "booked": 4.62,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "The premium for this layer is 4.62.",
+          "status": "verified"
+        },
+        "field": "layers.3.premium",
+        "result": "match",
+        "wording": "4.62"
+      },
+      {
+        "booked": 24.9,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 3: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 24.9",
+          "status": "verified"
+        },
+        "field": "layers.3.retention",
+        "result": "match",
+        "wording": "24.9"
+      },
+      {
+        "booked": 139.6,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "exceeds 69.9, but not more than 139.6",
+          "status": "verified"
+        },
+        "field": "layers.4.limit",
+        "result": "match",
+        "wording": "139.6"
+      },
+      {
+        "booked": 14.22,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "The premium for this layer is 14.22.",
+          "status": "verified"
+        },
+        "field": "layers.4.premium",
+        "result": "match",
+        "wording": "14.22"
+      },
+      {
+        "booked": 69.9,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 4: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 69.9",
+          "status": "verified"
+        },
+        "field": "layers.4.retention",
+        "result": "match",
+        "wording": "69.9"
+      },
+      {
+        "booked": [
+          "WS"
+        ],
+        "citation": {
+          "clause_no": "2",
+          "page": 1,
+          "quote": "limited to loss arising from Windstorm, written or renewed by the Reinsured during the Period and classified by the Reinsured in accordance with its own practice at inception.",
+          "status": "verified"
+        },
+        "field": "perils",
+        "result": "match",
+        "wording": [
+          "WS"
+        ]
+      },
+      {
+        "booked": "pro rata as to amount",
+        "citation": {
+          "clause_no": "7",
+          "page": 2,
+          "quote": "Reinstatement premium is calculated pro rata as to amount, being the proportion that the amount of limit",
+          "status": "verified"
+        },
+        "field": "reinstatements.basis",
+        "result": "match",
+        "wording": "pro rata as to amount"
+      },
+      {
+        "booked": 1,
+        "citation": {
+          "clause_no": "7",
+          "page": 2,
+          "quote": "automatically reinstated from the moment of the Loss Occurrence giving rise to the loss, for 1 such",
+          "status": "verified"
+        },
+        "field": "reinstatements.count",
+        "result": "match",
+        "wording": 1
+      },
+      {
+        "booked": 1.0,
+        "citation": {
+          "clause_no": "7",
+          "page": 2,
+          "quote": "reinstatement, at 100 per cent additional premium",
+          "status": "verified"
+        },
+        "field": "reinstatements.rate",
+        "result": "match",
+        "wording": "1.0"
+      },
+      {
+        "booked": [],
+        "citation": {
+          "clause_no": "3",
+          "page": 1,
+          "quote": "No part of the territory stated above is carved out of this Agreement.",
+          "status": "verified"
+        },
+        "field": "territory.exclude",
+        "result": "match",
+        "wording": []
+      },
+      {
+        "booked": [
+          "PHL"
+        ],
+        "citation": {
+          "clause_no": "3",
+          "page": 1,
+          "quote": "The territorial scope of this Agreement is PHL, in respect of risks situate within that territory at the time of the Loss Occurrence.",
+          "status": "verified"
+        },
+        "field": "territory.include",
+        "result": "match",
+        "wording": [
+          "PHL"
+        ]
+      },
+      {
+        "booked": "CAT_XL",
+        "citation": {
+          "clause_no": "2",
+          "page": 1,
+          "quote": "This Agreement provides excess of loss reinsurance in respect of the Reinsured's property account",
+          "status": "verified"
+        },
+        "field": "type",
+        "result": "match",
+        "wording": "CAT_XL"
+      }
+    ],
+    "status": "incomplete",
+    "treaty_id": "T-005",
+    "wording_id": "W5"
+  },
+  "T-006": {
+    "counts": {
+      "match": 12,
+      "unverified": 1
+    },
+    "fields": [
+      {
+        "booked": "USD",
+        "citation": {
+          "clause_no": "14",
+          "page": 4,
+          "quote": "All amounts stated in this Agreement are expressed in USD.",
+          "status": "verified"
+        },
+        "field": "currency",
+        "result": "match",
+        "wording": "USD"
+      },
+      {
+        "booked": [
+          "war",
+          "nuclear"
+        ],
+        "citation": {
+          "clause_no": "8",
+          "page": 2,
+          "quote": "This Agreement does not cover loss, damage, cost or expense directly or indirectly arising out of any of the following. War, invasion, hostilities, civil war, rebellion or insurrection, whether war be declared or not. Nuclear reaction, nuclear radiation or radioactive contamination, however caused.",
+          "status": "verified"
+        },
+        "field": "exclusions",
+        "result": "match",
+        "wording": [
+          "war",
+          "nuclear"
+        ]
+      },
+      {
+        "booked": "2026-12-31",
+        "citation": {
+          "clause_no": "4",
+          "page": 1,
+          "quote": "This Agreement attaches at 00:00 hours local standard time on 2026-01-01 and expires at 24:00 hours local",
+          "status": "verified"
+        },
+        "field": "expiry",
+        "result": "match",
+        "wording": "2026-12-31"
+      },
+      {
+        "booked": 0,
+        "citation": {
+          "clause_no": "5",
+          "page": 2,
+          "quote": "This Agreement is written on a proportional basis and does not respond per Loss Occurrence. No hours clause applies.",
+          "status": "verified"
+        },
+        "field": "hours_clause.EQ",
+        "result": "match",
+        "wording": 0
+      },
+      {
+        "booked": 0,
+        "citation": {
+          "clause_no": null,
+          "page": null,
+          "quote": null,
+          "status": "missing"
+        },
+        "field": "hours_clause.FL",
+        "result": "unverified",
+        "wording": 0
+      },
+      {
+        "booked": 0,
+        "citation": {
+          "clause_no": "5",
+          "page": 2,
+          "quote": "This Agreement is written on a proportional basis and does not respond per Loss Occurrence. No hours clause applies.",
+          "status": "verified"
+        },
+        "field": "hours_clause.WS",
+        "result": "match",
+        "wording": 0
+      },
+      {
+        "booked": "2026-01-01",
+        "citation": {
+          "clause_no": "4",
+          "page": 1,
+          "quote": "This Agreement attaches at 00:00 hours local standard time on 2026-01-01 and expires at 24:00 hours local",
+          "status": "verified"
+        },
+        "field": "inception",
+        "result": "match",
+        "wording": "2026-01-01"
+      },
+      {
+        "booked": [
+          "WS",
+          "EQ"
+        ],
+        "citation": {
+          "clause_no": "2",
+          "page": 1,
+          "quote": "property account, limited to loss arising from Windstorm and Earthquake, written or renewed by the Reinsured",
+          "status": "verified"
+        },
+        "field": "perils",
+        "result": "match",
+        "wording": [
+          "WS",
+          "EQ"
+        ]
+      },
+      {
+        "booked": 0.3,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "The Reinsured cedes and the Reinsurers accept 30 per cent of the Reinsured's property account",
+          "status": "verified"
+        },
+        "field": "qs.cession_pct",
+        "result": "match",
+        "wording": "0.3"
+      },
+      {
+        "booked": 19.8,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "The Reinsurers' liability in respect of all losses arising out of any one catastrophe event shall not exceed 19.8 million USD",
+          "status": "verified"
+        },
+        "field": "qs.event_limit",
+        "result": "match",
+        "wording": "19.8"
+      },
+      {
+        "booked": [],
+        "citation": {
+          "clause_no": "3",
+          "page": 1,
+          "quote": "No part of the territory stated above is carved out of this Agreement.",
+          "status": "verified"
+        },
+        "field": "territory.exclude",
+        "result": "match",
+        "wording": []
+      },
+      {
+        "booked": [
+          "PHL"
+        ],
+        "citation": {
+          "clause_no": "3",
+          "page": 1,
+          "quote": "The territorial scope of this Agreement is PHL, in respect of risks situate within that territory at the time of the",
+          "status": "verified"
+        },
+        "field": "territory.include",
+        "result": "match",
+        "wording": [
+          "PHL"
+        ]
+      },
+      {
+        "booked": "QS",
+        "citation": {
+          "clause_no": "2",
+          "page": 1,
+          "quote": "This Agreement provides a quota share of the Reinsured's retained account in respect of the Reinsured's property account",
+          "status": "verified"
+        },
+        "field": "type",
+        "result": "match",
+        "wording": "QS"
+      }
+    ],
+    "status": "incomplete",
+    "treaty_id": "T-006",
+    "wording_id": "W6"
+  },
+  "T-007": {
+    "counts": {
+      "match": 26
+    },
+    "fields": [
+      {
+        "booked": "USD",
+        "citation": {
+          "clause_no": "14",
+          "page": 4,
+          "quote": "All amounts stated in this Agreement are expressed in USD.",
+          "status": "verified"
+        },
+        "field": "currency",
+        "result": "match",
+        "wording": "USD"
+      },
+      {
+        "booked": [
+          "war",
+          "nuclear"
+        ],
+        "citation": {
+          "clause_no": "8",
+          "page": 3,
+          "quote": "War, invasion, hostilities, civil war, rebellion or insurrection, whether war be declared or not. Nuclear reaction, nuclear radiation or radioactive contamination, however caused.",
+          "status": "verified"
+        },
+        "field": "exclusions",
+        "result": "match",
+        "wording": [
+          "war",
+          "nuclear"
+        ]
+      },
+      {
+        "booked": "2026-12-31",
+        "citation": {
+          "clause_no": "4",
+          "page": 1,
+          "quote": "This Agreement attaches at 00:00 hours local standard time on 2026-01-01 and expires at 24:00 hours local",
+          "status": "verified"
+        },
+        "field": "expiry",
+        "result": "match",
+        "wording": "2026-12-31"
+      },
+      {
+        "booked": 168,
+        "citation": {
+          "clause_no": "5",
+          "page": 2,
+          "quote": "As respects Earthquake, the corresponding period is a period of one hundred and sixty-eight (168) consecutive hours.",
+          "status": "verified"
+        },
+        "field": "hours_clause.EQ",
+        "result": "match",
+        "wording": 168
+      },
+      {
+        "booked": 168,
+        "citation": {
+          "clause_no": "5",
+          "page": 2,
+          "quote": "As respects Flood, and as respects any other peril covered hereunder, the period is a period of one hundred and sixty-eight (168) consecutive hours.",
+          "status": "verified"
+        },
+        "field": "hours_clause.FL",
+        "result": "match",
+        "wording": 168
+      },
+      {
+        "booked": 168,
+        "citation": {
+          "clause_no": "5",
+          "page": 2,
+          "quote": "As respects Windstorm, all individual losses which first occur during a period of one hundred and sixty-eight (168) consecutive hours shall be deemed to constitute a single Loss Occurrence.",
+          "status": "verified"
+        },
+        "field": "hours_clause.WS",
+        "result": "match",
+        "wording": 168
+      },
+      {
+        "booked": "2026-01-01",
+        "citation": {
+          "clause_no": "4",
+          "page": 1,
+          "quote": "This Agreement attaches at 00:00 hours local standard time on 2026-01-01 and expires at 24:00 hours local",
+          "status": "verified"
+        },
+        "field": "inception",
+        "result": "match",
+        "wording": "2026-01-01"
+      },
+      {
+        "booked": 4.6,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 1: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 3.3, but not more than 4.6",
+          "status": "verified"
+        },
+        "field": "layers.1.limit",
+        "result": "match",
+        "wording": "4.6"
+      },
+      {
+        "booked": 0.41,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 1: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 3.3, but not more than 4.6 in respect of any one Loss Occurrence. The premium for this layer is 0.41.",
+          "status": "verified"
+        },
+        "field": "layers.1.premium",
+        "result": "match",
+        "wording": "0.41"
+      },
+      {
+        "booked": 3.3,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 1: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 3.3, but not more than 4.6",
+          "status": "verified"
+        },
+        "field": "layers.1.retention",
+        "result": "match",
+        "wording": "3.3"
+      },
+      {
+        "booked": 10.2,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 2: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 7.9, but not more than 10.2",
+          "status": "verified"
+        },
+        "field": "layers.2.limit",
+        "result": "match",
+        "wording": "10.2"
+      },
+      {
+        "booked": 1.21,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 2: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 7.9, but not more than 10.2 in respect of any one Loss Occurrence. The premium for this layer is 1.21.",
+          "status": "verified"
+        },
+        "field": "layers.2.premium",
+        "result": "match",
+        "wording": "1.21"
+      },
+      {
+        "booked": 7.9,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 2: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 7.9, but not more than 10.2",
+          "status": "verified"
+        },
+        "field": "layers.2.retention",
+        "result": "match",
+        "wording": "7.9"
+      },
+      {
+        "booked": 28.3,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 3: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 18.1, but not more than 28.3 in respect of any one Loss Occurrence. The premium for this layer is 3.18.",
+          "status": "verified"
+        },
+        "field": "layers.3.limit",
+        "result": "match",
+        "wording": "28.3"
+      },
+      {
+        "booked": 3.18,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 3: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 18.1, but not more than 28.3 in respect of any one Loss Occurrence. The premium for this layer is 3.18.",
+          "status": "verified"
+        },
+        "field": "layers.3.premium",
+        "result": "match",
+        "wording": "3.18"
+      },
+      {
+        "booked": 18.1,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 3: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 18.1, but not more than 28.3",
+          "status": "verified"
+        },
+        "field": "layers.3.retention",
+        "result": "match",
+        "wording": "18.1"
+      },
+      {
+        "booked": 70.2,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 4: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 46.4, but not more than 70.2 in respect of any one Loss Occurrence. The premium for this layer is 6.99.",
+          "status": "verified"
+        },
+        "field": "layers.4.limit",
+        "result": "match",
+        "wording": "70.2"
+      },
+      {
+        "booked": 6.99,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 4: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 46.4, but not more than 70.2 in respect of any one Loss Occurrence. The premium for this layer is 6.99.",
+          "status": "verified"
+        },
+        "field": "layers.4.premium",
+        "result": "match",
+        "wording": "6.99"
+      },
+      {
+        "booked": 46.4,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 4: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 46.4, but not more than 70.2",
+          "status": "verified"
+        },
+        "field": "layers.4.retention",
+        "result": "match",
+        "wording": "46.4"
+      },
+      {
+        "booked": [
+          "WS",
+          "EQ"
+        ],
+        "citation": {
+          "clause_no": "2",
+          "page": 1,
+          "quote": "limited to loss arising from Windstorm and Earthquake, written or renewed by the Reinsured during the Period",
+          "status": "verified"
+        },
+        "field": "perils",
+        "result": "match",
+        "wording": [
+          "WS",
+          "EQ"
+        ]
+      },
+      {
+        "booked": "pro rata as to amount",
+        "citation": {
+          "clause_no": "7",
+          "page": 2,
+          "quote": "Reinstatement premium is calculated pro rata as to amount, being the proportion that the amount of limit reinstated bears to the full limit of the layer",
+          "status": "verified"
+        },
+        "field": "reinstatements.basis",
+        "result": "match",
+        "wording": "pro rata as to amount"
+      },
+      {
+        "booked": 1,
+        "citation": {
+          "clause_no": "7",
+          "page": 2,
+          "quote": "automatically reinstated from the moment of the Loss Occurrence giving rise to the loss, for 1 such reinstatement, without additional premium.",
+          "status": "verified"
+        },
+        "field": "reinstatements.count",
+        "result": "match",
+        "wording": 1
+      },
+      {
+        "booked": 0.0,
+        "citation": {
+          "clause_no": "7",
+          "page": 2,
+          "quote": "automatically reinstated from the moment of the Loss Occurrence giving rise to the loss, for 1 such reinstatement, without additional premium.",
+          "status": "verified"
+        },
+        "field": "reinstatements.rate",
+        "result": "match",
+        "wording": "0"
+      },
+      {
+        "booked": [],
+        "citation": {
+          "clause_no": "3",
+          "page": 1,
+          "quote": "No part of the territory stated above is carved out of this Agreement.",
+          "status": "verified"
+        },
+        "field": "territory.exclude",
+        "result": "match",
+        "wording": []
+      },
+      {
+        "booked": [
+          "TWN"
+        ],
+        "citation": {
+          "clause_no": "3",
+          "page": 1,
+          "quote": "The territorial scope of this Agreement is TWN, in respect of risks situate within that territory at the time of the",
+          "status": "verified"
+        },
+        "field": "territory.include",
+        "result": "match",
+        "wording": [
+          "TWN"
+        ]
+      },
+      {
+        "booked": "CAT_XL",
+        "citation": {
+          "clause_no": "2",
+          "page": 1,
+          "quote": "This Agreement provides excess of loss reinsurance in respect of the Reinsured's property account",
+          "status": "verified"
+        },
+        "field": "type",
+        "result": "match",
+        "wording": "CAT_XL"
+      }
+    ],
+    "status": "reconciled",
+    "treaty_id": "T-007",
+    "wording_id": "W7"
+  },
+  "T-008": {
+    "counts": {
+      "match": 26
+    },
+    "fields": [
+      {
+        "booked": "USD",
+        "citation": {
+          "clause_no": "14",
+          "page": 4,
+          "quote": "All amounts stated in this Agreement are expressed in USD.",
+          "status": "verified"
+        },
+        "field": "currency",
+        "result": "match",
+        "wording": "USD"
+      },
+      {
+        "booked": [
+          "war",
+          "nuclear"
+        ],
+        "citation": {
+          "clause_no": "8",
+          "page": 2,
+          "quote": "War, invasion, hostilities, civil war, rebellion or insurrection, whether war be declared or not. Nuclear reaction, nuclear radiation or radioactive contamination, however caused.",
+          "status": "verified"
+        },
+        "field": "exclusions",
+        "result": "match",
+        "wording": [
+          "war",
+          "nuclear"
+        ]
+      },
+      {
+        "booked": "2025-12-31",
+        "citation": {
+          "clause_no": "4",
+          "page": 1,
+          "quote": "This Agreement attaches at 00:00 hours local standard time on 2025-01-01 and expires at 24:00 hours local standard time on 2025-12-31, both days inclusive.",
+          "status": "verified"
+        },
+        "field": "expiry",
+        "result": "match",
+        "wording": "2025-12-31"
+      },
+      {
+        "booked": 72,
+        "citation": {
+          "clause_no": "12",
+          "page": 4,
+          "quote": "Loss Occurrence, as respects Windstorm and as respects Earthquake alike, means all individual losses which first occur within seventy-two consecutive hours of one another",
+          "status": "verified"
+        },
+        "field": "hours_clause.EQ",
+        "result": "match",
+        "wording": 72
+      },
+      {
+        "booked": 168,
+        "citation": {
+          "clause_no": "5",
+          "page": 2,
+          "quote": "As respects Flood, and as respects any other peril covered hereunder, the period is one hundred and sixty-eight consecutive hours.",
+          "status": "verified"
+        },
+        "field": "hours_clause.FL",
+        "result": "match",
+        "wording": 168
+      },
+      {
+        "booked": 72,
+        "citation": {
+          "clause_no": "12",
+          "page": 4,
+          "quote": "Loss Occurrence, as respects Windstorm and as respects Earthquake alike, means all individual losses which first occur within seventy-two consecutive hours of one another",
+          "status": "verified"
+        },
+        "field": "hours_clause.WS",
+        "result": "match",
+        "wording": 72
+      },
+      {
+        "booked": "2025-01-01",
+        "citation": {
+          "clause_no": "4",
+          "page": 1,
+          "quote": "This Agreement attaches at 00:00 hours local standard time on 2025-01-01 and expires at 24:00 hours local",
+          "status": "verified"
+        },
+        "field": "inception",
+        "result": "match",
+        "wording": "2025-01-01"
+      },
+      {
+        "booked": 3.4,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "exceeds 2.6, but not more than 3.4 in respect of any one Loss Occurrence",
+          "status": "verified"
+        },
+        "field": "layers.1.limit",
+        "result": "match",
+        "wording": "3.4"
+      },
+      {
+        "booked": 0.32,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "The premium for this layer is 0.32.",
+          "status": "verified"
+        },
+        "field": "layers.1.premium",
+        "result": "match",
+        "wording": "0.32"
+      },
+      {
+        "booked": 2.6,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 1: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 2.6",
+          "status": "verified"
+        },
+        "field": "layers.1.retention",
+        "result": "match",
+        "wording": "2.6"
+      },
+      {
+        "booked": 9.5,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "exceeds 6.0, but not more than 9.5 in respect of any one Loss Occurrence",
+          "status": "verified"
+        },
+        "field": "layers.2.limit",
+        "result": "match",
+        "wording": "9.5"
+      },
+      {
+        "booked": 0.97,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "The premium for this layer is 0.97.",
+          "status": "verified"
+        },
+        "field": "layers.2.premium",
+        "result": "match",
+        "wording": "0.97"
+      },
+      {
+        "booked": 6.0,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 2: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 6.0",
+          "status": "verified"
+        },
+        "field": "layers.2.retention",
+        "result": "match",
+        "wording": "6.0"
+      },
+      {
+        "booked": 23.3,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "exceeds 15.5, but not more than 23.3 in respect of any one Loss Occurrence",
+          "status": "verified"
+        },
+        "field": "layers.3.limit",
+        "result": "match",
+        "wording": "23.3"
+      },
+      {
+        "booked": 2.12,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "The premium for this layer is 2.12.",
+          "status": "verified"
+        },
+        "field": "layers.3.premium",
+        "result": "match",
+        "wording": "2.12"
+      },
+      {
+        "booked": 15.5,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 3: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 15.5",
+          "status": "verified"
+        },
+        "field": "layers.3.retention",
+        "result": "match",
+        "wording": "15.5"
+      },
+      {
+        "booked": 55.3,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "exceeds 38.8, but not more than 55.3 in respect of any one Loss Occurrence",
+          "status": "verified"
+        },
+        "field": "layers.4.limit",
+        "result": "match",
+        "wording": "55.3"
+      },
+      {
+        "booked": 5.53,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "The premium for this layer is 5.53.",
+          "status": "verified"
+        },
+        "field": "layers.4.premium",
+        "result": "match",
+        "wording": "5.53"
+      },
+      {
+        "booked": 38.8,
+        "citation": {
+          "clause_no": "6",
+          "page": 2,
+          "quote": "Layer 4: the Reinsurers shall pay the amount by which the ultimate net loss exceeds 38.8",
+          "status": "verified"
+        },
+        "field": "layers.4.retention",
+        "result": "match",
+        "wording": "38.8"
+      },
+      {
+        "booked": [
+          "WS",
+          "EQ"
+        ],
+        "citation": {
+          "clause_no": "2",
+          "page": 1,
+          "quote": "limited to loss arising from Windstorm and Earthquake, written or renewed by the Reinsured during the Period",
+          "status": "verified"
+        },
+        "field": "perils",
+        "result": "match",
+        "wording": [
+          "WS",
+          "EQ"
+        ]
+      },
+      {
+        "booked": "pro rata as to amount",
+        "citation": {
+          "clause_no": "7",
+          "page": 2,
+          "quote": "Reinstatement premium is calculated pro rata as to amount, being the proportion that the amount of limit",
+          "status": "verified"
+        },
+        "field": "reinstatements.basis",
+        "result": "match",
+        "wording": "pro rata as to amount"
+      },
+      {
+        "booked": 1,
+        "citation": {
+          "clause_no": "7",
+          "page": 2,
+          "quote": "automatically reinstated from the moment of the Loss Occurrence giving rise to the loss, for 1 such",
+          "status": "verified"
+        },
+        "field": "reinstatements.count",
+        "result": "match",
+        "wording": 1
+      },
+      {
+        "booked": 1.0,
+        "citation": {
+          "clause_no": "7",
+          "page": 2,
+          "quote": "reinstatement, at 100 per cent additional premium.",
+          "status": "verified"
+        },
+        "field": "reinstatements.rate",
+        "result": "match",
+        "wording": "1.0"
+      },
+      {
+        "booked": [],
+        "citation": {
+          "clause_no": "3",
+          "page": 1,
+          "quote": "No part of the territory stated above is carved out of this Agreement.",
+          "status": "verified"
+        },
+        "field": "territory.exclude",
+        "result": "match",
+        "wording": []
+      },
+      {
+        "booked": [
+          "TWN"
+        ],
+        "citation": {
+          "clause_no": "3",
+          "page": 1,
+          "quote": "The territorial scope of this Agreement is TWN, in respect of risks situate within that territory at the time of the Loss Occurrence.",
+          "status": "verified"
+        },
+        "field": "territory.include",
+        "result": "match",
+        "wording": [
+          "TWN"
+        ]
+      },
+      {
+        "booked": "CAT_XL",
+        "citation": {
+          "clause_no": "2",
+          "page": 1,
+          "quote": "This Agreement provides excess of loss reinsurance in respect of the Reinsured's property account",
+          "status": "verified"
+        },
+        "field": "type",
+        "result": "match",
+        "wording": "CAT_XL"
+      }
+    ],
+    "status": "reconciled",
+    "treaty_id": "T-008",
+    "wording_id": "W8"
+  }
+}

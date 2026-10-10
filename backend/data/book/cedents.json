@@ -1,0 +1,75 @@
+[
+  {
+    "cedent_id": "C-SAKURA",
+    "country": "JPN",
+    "lines": [
+      "FIRE",
+      "MARINE",
+      "ENGINEERING"
+    ],
+    "name": "Sakura General Insurance"
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "country": "JPN",
+    "lines": [
+      "FIRE",
+      "MARINE"
+    ],
+    "name": "Kogane Fire & Marine"
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "country": "JPN",
+    "lines": [
+      "FIRE",
+      "PERSONAL_LINES"
+    ],
+    "name": "Tsurumi Mutual Insurance"
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "country": "JPN",
+    "lines": [
+      "FIRE",
+      "ENGINEERING"
+    ],
+    "name": "Yamabiko Casualty"
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "country": "PHL",
+    "lines": [
+      "FIRE",
+      "PERSONAL_LINES"
+    ],
+    "name": "Mariposa Seguros"
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "country": "PHL",
+    "lines": [
+      "FIRE",
+      "AGRICULTURE"
+    ],
+    "name": "Tamaraw Assurance"
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "country": "TWN",
+    "lines": [
+      "FIRE",
+      "ENGINEERING"
+    ],
+    "name": "Formosa Union Insurance"
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "country": "TWN",
+    "lines": [
+      "FIRE",
+      "MARINE"
+    ],
+    "name": "Black Bear Insurance (Taipei)"
+  }
+]

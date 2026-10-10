@@ -1,0 +1,5330 @@
+[
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-01_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 856,
+    "region_code": "JP-01",
+    "tsi_usd": 24276.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-01_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 856,
+    "region_code": "JP-01",
+    "tsi_usd": 24276.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-02_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 201,
+    "region_code": "JP-02",
+    "tsi_usd": 5712.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-02_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 201,
+    "region_code": "JP-02",
+    "tsi_usd": 5712.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-03_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 201,
+    "region_code": "JP-03",
+    "tsi_usd": 5712.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-03_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 201,
+    "region_code": "JP-03",
+    "tsi_usd": 5712.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-04_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 386,
+    "region_code": "JP-04",
+    "tsi_usd": 10948.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-04_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 386,
+    "region_code": "JP-04",
+    "tsi_usd": 10948.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-05_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 151,
+    "region_code": "JP-05",
+    "tsi_usd": 4284.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-05_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 151,
+    "region_code": "JP-05",
+    "tsi_usd": 4284.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-06_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 168,
+    "region_code": "JP-06",
+    "tsi_usd": 4760.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-06_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 168,
+    "region_code": "JP-06",
+    "tsi_usd": 4760.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-07_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 302,
+    "region_code": "JP-07",
+    "tsi_usd": 8568.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-07_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 302,
+    "region_code": "JP-07",
+    "tsi_usd": 8568.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-08_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 470,
+    "region_code": "JP-08",
+    "tsi_usd": 13328.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-08_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 470,
+    "region_code": "JP-08",
+    "tsi_usd": 13328.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-09_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 319,
+    "region_code": "JP-09",
+    "tsi_usd": 9044.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-09_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 319,
+    "region_code": "JP-09",
+    "tsi_usd": 9044.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-10_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 319,
+    "region_code": "JP-10",
+    "tsi_usd": 9044.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-10_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 319,
+    "region_code": "JP-10",
+    "tsi_usd": 9044.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-11_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 1226,
+    "region_code": "JP-11",
+    "tsi_usd": 34748.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-11_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 1226,
+    "region_code": "JP-11",
+    "tsi_usd": 34748.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-12_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 1058,
+    "region_code": "JP-12",
+    "tsi_usd": 29988.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-12_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 1058,
+    "region_code": "JP-12",
+    "tsi_usd": 29988.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-13_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 2352,
+    "region_code": "JP-13",
+    "tsi_usd": 66640.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-13_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 2352,
+    "region_code": "JP-13",
+    "tsi_usd": 66640.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-14_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 1545,
+    "region_code": "JP-14",
+    "tsi_usd": 43792.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-14_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 1545,
+    "region_code": "JP-14",
+    "tsi_usd": 43792.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-15_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 369,
+    "region_code": "JP-15",
+    "tsi_usd": 10472.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-15_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 369,
+    "region_code": "JP-15",
+    "tsi_usd": 10472.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-16_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 168,
+    "region_code": "JP-16",
+    "tsi_usd": 4760.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-16_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 168,
+    "region_code": "JP-16",
+    "tsi_usd": 4760.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-17_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 184,
+    "region_code": "JP-17",
+    "tsi_usd": 5236.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-17_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 184,
+    "region_code": "JP-17",
+    "tsi_usd": 5236.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-18_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 126,
+    "region_code": "JP-18",
+    "tsi_usd": 3570.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-18_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 126,
+    "region_code": "JP-18",
+    "tsi_usd": 3570.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-19_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 134,
+    "region_code": "JP-19",
+    "tsi_usd": 3808.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-19_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 134,
+    "region_code": "JP-19",
+    "tsi_usd": 3808.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-20_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 336,
+    "region_code": "JP-20",
+    "tsi_usd": 9520.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-20_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 336,
+    "region_code": "JP-20",
+    "tsi_usd": 9520.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-21_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 319,
+    "region_code": "JP-21",
+    "tsi_usd": 9044.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-21_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 319,
+    "region_code": "JP-21",
+    "tsi_usd": 9044.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-22_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 604,
+    "region_code": "JP-22",
+    "tsi_usd": 17136.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-22_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 604,
+    "region_code": "JP-22",
+    "tsi_usd": 17136.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-23_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 1260,
+    "region_code": "JP-23",
+    "tsi_usd": 35700.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-23_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 1260,
+    "region_code": "JP-23",
+    "tsi_usd": 35700.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-24_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 285,
+    "region_code": "JP-24",
+    "tsi_usd": 8092.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-24_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 285,
+    "region_code": "JP-24",
+    "tsi_usd": 8092.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-25_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 235,
+    "region_code": "JP-25",
+    "tsi_usd": 6664.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-25_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 235,
+    "region_code": "JP-25",
+    "tsi_usd": 6664.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-26_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 420,
+    "region_code": "JP-26",
+    "tsi_usd": 11900.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-26_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 420,
+    "region_code": "JP-26",
+    "tsi_usd": 11900.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-27_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 1478,
+    "region_code": "JP-27",
+    "tsi_usd": 41888.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-27_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 1478,
+    "region_code": "JP-27",
+    "tsi_usd": 41888.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-28_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 907,
+    "region_code": "JP-28",
+    "tsi_usd": 25704.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-28_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 907,
+    "region_code": "JP-28",
+    "tsi_usd": 25704.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-29_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 218,
+    "region_code": "JP-29",
+    "tsi_usd": 6188.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-29_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 218,
+    "region_code": "JP-29",
+    "tsi_usd": 6188.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-30_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 151,
+    "region_code": "JP-30",
+    "tsi_usd": 4284.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-30_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 151,
+    "region_code": "JP-30",
+    "tsi_usd": 4284.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-31_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 92,
+    "region_code": "JP-31",
+    "tsi_usd": 2618.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-31_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 92,
+    "region_code": "JP-31",
+    "tsi_usd": 2618.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-32_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 110,
+    "region_code": "JP-32",
+    "tsi_usd": 3141.6
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-32_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 110,
+    "region_code": "JP-32",
+    "tsi_usd": 3141.6
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-33_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 319,
+    "region_code": "JP-33",
+    "tsi_usd": 9044.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-33_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 319,
+    "region_code": "JP-33",
+    "tsi_usd": 9044.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-34_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 470,
+    "region_code": "JP-34",
+    "tsi_usd": 13328.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-34_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 470,
+    "region_code": "JP-34",
+    "tsi_usd": 13328.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-35_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 218,
+    "region_code": "JP-35",
+    "tsi_usd": 6188.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-35_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 218,
+    "region_code": "JP-35",
+    "tsi_usd": 6188.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-36_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 117,
+    "region_code": "JP-36",
+    "tsi_usd": 3332.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-36_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 117,
+    "region_code": "JP-36",
+    "tsi_usd": 3332.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-37_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 151,
+    "region_code": "JP-37",
+    "tsi_usd": 4284.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-37_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 151,
+    "region_code": "JP-37",
+    "tsi_usd": 4284.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-38_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 218,
+    "region_code": "JP-38",
+    "tsi_usd": 6188.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-38_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 218,
+    "region_code": "JP-38",
+    "tsi_usd": 6188.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-39_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 114,
+    "region_code": "JP-39",
+    "tsi_usd": 3236.8
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-39_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 114,
+    "region_code": "JP-39",
+    "tsi_usd": 3236.8
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-40_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 856,
+    "region_code": "JP-40",
+    "tsi_usd": 24276.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-40_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 856,
+    "region_code": "JP-40",
+    "tsi_usd": 24276.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-41_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 134,
+    "region_code": "JP-41",
+    "tsi_usd": 3808.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-41_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 134,
+    "region_code": "JP-41",
+    "tsi_usd": 3808.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-42_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 218,
+    "region_code": "JP-42",
+    "tsi_usd": 6188.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-42_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 218,
+    "region_code": "JP-42",
+    "tsi_usd": 6188.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-43_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 285,
+    "region_code": "JP-43",
+    "tsi_usd": 8092.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-43_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 285,
+    "region_code": "JP-43",
+    "tsi_usd": 8092.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-44_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 184,
+    "region_code": "JP-44",
+    "tsi_usd": 5236.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-44_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 184,
+    "region_code": "JP-44",
+    "tsi_usd": 5236.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-45_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 184,
+    "region_code": "JP-45",
+    "tsi_usd": 5236.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-45_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 184,
+    "region_code": "JP-45",
+    "tsi_usd": 5236.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-46_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 268,
+    "region_code": "JP-46",
+    "tsi_usd": 7616.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-46_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 268,
+    "region_code": "JP-46",
+    "tsi_usd": 7616.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-47_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 252,
+    "region_code": "JP-47",
+    "tsi_usd": 7140.0
+  },
+  {
+    "cedent_id": "C-SAKURA",
+    "exposure_id": "C-SAKURA_JP-47_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 252,
+    "region_code": "JP-47",
+    "tsi_usd": 7140.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-01_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 1101,
+    "region_code": "JP-01",
+    "tsi_usd": 31212.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-01_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 1101,
+    "region_code": "JP-01",
+    "tsi_usd": 31212.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-02_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 259,
+    "region_code": "JP-02",
+    "tsi_usd": 7344.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-02_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 259,
+    "region_code": "JP-02",
+    "tsi_usd": 7344.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-03_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 259,
+    "region_code": "JP-03",
+    "tsi_usd": 7344.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-03_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 259,
+    "region_code": "JP-03",
+    "tsi_usd": 7344.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-04_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 496,
+    "region_code": "JP-04",
+    "tsi_usd": 14076.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-04_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 496,
+    "region_code": "JP-04",
+    "tsi_usd": 14076.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-05_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 194,
+    "region_code": "JP-05",
+    "tsi_usd": 5508.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-05_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 194,
+    "region_code": "JP-05",
+    "tsi_usd": 5508.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-06_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 216,
+    "region_code": "JP-06",
+    "tsi_usd": 6120.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-06_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 216,
+    "region_code": "JP-06",
+    "tsi_usd": 6120.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-07_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 388,
+    "region_code": "JP-07",
+    "tsi_usd": 11016.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-07_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 388,
+    "region_code": "JP-07",
+    "tsi_usd": 11016.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-08_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 604,
+    "region_code": "JP-08",
+    "tsi_usd": 17136.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-08_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 604,
+    "region_code": "JP-08",
+    "tsi_usd": 17136.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-09_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 410,
+    "region_code": "JP-09",
+    "tsi_usd": 11628.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-09_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 410,
+    "region_code": "JP-09",
+    "tsi_usd": 11628.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-10_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 410,
+    "region_code": "JP-10",
+    "tsi_usd": 11628.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-10_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 410,
+    "region_code": "JP-10",
+    "tsi_usd": 11628.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-11_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 1576,
+    "region_code": "JP-11",
+    "tsi_usd": 44676.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-11_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 1576,
+    "region_code": "JP-11",
+    "tsi_usd": 44676.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-12_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 1360,
+    "region_code": "JP-12",
+    "tsi_usd": 38556.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-12_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 1360,
+    "region_code": "JP-12",
+    "tsi_usd": 38556.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-13_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 3024,
+    "region_code": "JP-13",
+    "tsi_usd": 85680.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-13_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 3024,
+    "region_code": "JP-13",
+    "tsi_usd": 85680.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-14_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 1987,
+    "region_code": "JP-14",
+    "tsi_usd": 56304.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-14_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 1987,
+    "region_code": "JP-14",
+    "tsi_usd": 56304.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-15_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 475,
+    "region_code": "JP-15",
+    "tsi_usd": 13464.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-15_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 475,
+    "region_code": "JP-15",
+    "tsi_usd": 13464.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-16_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 216,
+    "region_code": "JP-16",
+    "tsi_usd": 6120.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-16_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 216,
+    "region_code": "JP-16",
+    "tsi_usd": 6120.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-17_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 237,
+    "region_code": "JP-17",
+    "tsi_usd": 6732.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-17_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 237,
+    "region_code": "JP-17",
+    "tsi_usd": 6732.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-18_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 162,
+    "region_code": "JP-18",
+    "tsi_usd": 4590.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-18_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 162,
+    "region_code": "JP-18",
+    "tsi_usd": 4590.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-19_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 172,
+    "region_code": "JP-19",
+    "tsi_usd": 4896.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-19_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 172,
+    "region_code": "JP-19",
+    "tsi_usd": 4896.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-20_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 432,
+    "region_code": "JP-20",
+    "tsi_usd": 12240.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-20_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 432,
+    "region_code": "JP-20",
+    "tsi_usd": 12240.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-21_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 410,
+    "region_code": "JP-21",
+    "tsi_usd": 11628.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-21_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 410,
+    "region_code": "JP-21",
+    "tsi_usd": 11628.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-22_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 777,
+    "region_code": "JP-22",
+    "tsi_usd": 22032.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-22_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 777,
+    "region_code": "JP-22",
+    "tsi_usd": 22032.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-23_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 1620,
+    "region_code": "JP-23",
+    "tsi_usd": 45900.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-23_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 1620,
+    "region_code": "JP-23",
+    "tsi_usd": 45900.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-24_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 367,
+    "region_code": "JP-24",
+    "tsi_usd": 10404.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-24_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 367,
+    "region_code": "JP-24",
+    "tsi_usd": 10404.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-25_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 302,
+    "region_code": "JP-25",
+    "tsi_usd": 8568.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-25_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 302,
+    "region_code": "JP-25",
+    "tsi_usd": 8568.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-26_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 540,
+    "region_code": "JP-26",
+    "tsi_usd": 15300.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-26_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 540,
+    "region_code": "JP-26",
+    "tsi_usd": 15300.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-27_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 1900,
+    "region_code": "JP-27",
+    "tsi_usd": 53856.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-27_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 1900,
+    "region_code": "JP-27",
+    "tsi_usd": 53856.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-28_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 1166,
+    "region_code": "JP-28",
+    "tsi_usd": 33048.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-28_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 1166,
+    "region_code": "JP-28",
+    "tsi_usd": 33048.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-29_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 280,
+    "region_code": "JP-29",
+    "tsi_usd": 7956.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-29_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 280,
+    "region_code": "JP-29",
+    "tsi_usd": 7956.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-30_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 194,
+    "region_code": "JP-30",
+    "tsi_usd": 5508.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-30_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 194,
+    "region_code": "JP-30",
+    "tsi_usd": 5508.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-31_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 118,
+    "region_code": "JP-31",
+    "tsi_usd": 3366.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-31_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 118,
+    "region_code": "JP-31",
+    "tsi_usd": 3366.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-32_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 142,
+    "region_code": "JP-32",
+    "tsi_usd": 4039.2
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-32_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 142,
+    "region_code": "JP-32",
+    "tsi_usd": 4039.2
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-33_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 410,
+    "region_code": "JP-33",
+    "tsi_usd": 11628.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-33_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 410,
+    "region_code": "JP-33",
+    "tsi_usd": 11628.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-34_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 604,
+    "region_code": "JP-34",
+    "tsi_usd": 17136.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-34_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 604,
+    "region_code": "JP-34",
+    "tsi_usd": 17136.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-35_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 280,
+    "region_code": "JP-35",
+    "tsi_usd": 7956.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-35_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 280,
+    "region_code": "JP-35",
+    "tsi_usd": 7956.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-36_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 151,
+    "region_code": "JP-36",
+    "tsi_usd": 4284.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-36_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 151,
+    "region_code": "JP-36",
+    "tsi_usd": 4284.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-37_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 194,
+    "region_code": "JP-37",
+    "tsi_usd": 5508.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-37_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 194,
+    "region_code": "JP-37",
+    "tsi_usd": 5508.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-38_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 280,
+    "region_code": "JP-38",
+    "tsi_usd": 7956.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-38_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 280,
+    "region_code": "JP-38",
+    "tsi_usd": 7956.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-39_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 146,
+    "region_code": "JP-39",
+    "tsi_usd": 4161.6
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-39_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 146,
+    "region_code": "JP-39",
+    "tsi_usd": 4161.6
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-40_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 1101,
+    "region_code": "JP-40",
+    "tsi_usd": 31212.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-40_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 1101,
+    "region_code": "JP-40",
+    "tsi_usd": 31212.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-41_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 172,
+    "region_code": "JP-41",
+    "tsi_usd": 4896.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-41_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 172,
+    "region_code": "JP-41",
+    "tsi_usd": 4896.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-42_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 280,
+    "region_code": "JP-42",
+    "tsi_usd": 7956.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-42_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 280,
+    "region_code": "JP-42",
+    "tsi_usd": 7956.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-43_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 367,
+    "region_code": "JP-43",
+    "tsi_usd": 10404.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-43_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 367,
+    "region_code": "JP-43",
+    "tsi_usd": 10404.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-44_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 237,
+    "region_code": "JP-44",
+    "tsi_usd": 6732.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-44_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 237,
+    "region_code": "JP-44",
+    "tsi_usd": 6732.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-45_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 237,
+    "region_code": "JP-45",
+    "tsi_usd": 6732.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-45_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 237,
+    "region_code": "JP-45",
+    "tsi_usd": 6732.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-46_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 345,
+    "region_code": "JP-46",
+    "tsi_usd": 9792.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-46_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 345,
+    "region_code": "JP-46",
+    "tsi_usd": 9792.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-47_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 324,
+    "region_code": "JP-47",
+    "tsi_usd": 9180.0
+  },
+  {
+    "cedent_id": "C-KOGANE",
+    "exposure_id": "C-KOGANE_JP-47_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 324,
+    "region_code": "JP-47",
+    "tsi_usd": 9180.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-01_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 795,
+    "region_code": "JP-01",
+    "tsi_usd": 22542.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-01_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 795,
+    "region_code": "JP-01",
+    "tsi_usd": 22542.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-02_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 187,
+    "region_code": "JP-02",
+    "tsi_usd": 5304.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-02_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 187,
+    "region_code": "JP-02",
+    "tsi_usd": 5304.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-03_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 187,
+    "region_code": "JP-03",
+    "tsi_usd": 5304.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-03_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 187,
+    "region_code": "JP-03",
+    "tsi_usd": 5304.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-04_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 358,
+    "region_code": "JP-04",
+    "tsi_usd": 10166.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-04_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 358,
+    "region_code": "JP-04",
+    "tsi_usd": 10166.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-05_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 140,
+    "region_code": "JP-05",
+    "tsi_usd": 3978.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-05_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 140,
+    "region_code": "JP-05",
+    "tsi_usd": 3978.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-06_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 156,
+    "region_code": "JP-06",
+    "tsi_usd": 4420.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-06_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 156,
+    "region_code": "JP-06",
+    "tsi_usd": 4420.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-07_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 280,
+    "region_code": "JP-07",
+    "tsi_usd": 7956.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-07_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 280,
+    "region_code": "JP-07",
+    "tsi_usd": 7956.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-08_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 436,
+    "region_code": "JP-08",
+    "tsi_usd": 12376.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-08_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 436,
+    "region_code": "JP-08",
+    "tsi_usd": 12376.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-09_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 296,
+    "region_code": "JP-09",
+    "tsi_usd": 8398.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-09_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 296,
+    "region_code": "JP-09",
+    "tsi_usd": 8398.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-10_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 296,
+    "region_code": "JP-10",
+    "tsi_usd": 8398.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-10_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 296,
+    "region_code": "JP-10",
+    "tsi_usd": 8398.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-11_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 1138,
+    "region_code": "JP-11",
+    "tsi_usd": 32266.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-11_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 1138,
+    "region_code": "JP-11",
+    "tsi_usd": 32266.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-12_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 982,
+    "region_code": "JP-12",
+    "tsi_usd": 27846.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-12_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 982,
+    "region_code": "JP-12",
+    "tsi_usd": 27846.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-13_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 2184,
+    "region_code": "JP-13",
+    "tsi_usd": 61880.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-13_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 2184,
+    "region_code": "JP-13",
+    "tsi_usd": 61880.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-14_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 1435,
+    "region_code": "JP-14",
+    "tsi_usd": 40664.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-14_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 1435,
+    "region_code": "JP-14",
+    "tsi_usd": 40664.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-15_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 343,
+    "region_code": "JP-15",
+    "tsi_usd": 9724.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-15_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 343,
+    "region_code": "JP-15",
+    "tsi_usd": 9724.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-16_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 156,
+    "region_code": "JP-16",
+    "tsi_usd": 4420.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-16_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 156,
+    "region_code": "JP-16",
+    "tsi_usd": 4420.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-17_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 171,
+    "region_code": "JP-17",
+    "tsi_usd": 4862.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-17_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 171,
+    "region_code": "JP-17",
+    "tsi_usd": 4862.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-18_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 117,
+    "region_code": "JP-18",
+    "tsi_usd": 3315.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-18_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 117,
+    "region_code": "JP-18",
+    "tsi_usd": 3315.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-19_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 124,
+    "region_code": "JP-19",
+    "tsi_usd": 3536.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-19_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 124,
+    "region_code": "JP-19",
+    "tsi_usd": 3536.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-20_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 312,
+    "region_code": "JP-20",
+    "tsi_usd": 8840.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-20_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 312,
+    "region_code": "JP-20",
+    "tsi_usd": 8840.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-21_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 296,
+    "region_code": "JP-21",
+    "tsi_usd": 8398.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-21_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 296,
+    "region_code": "JP-21",
+    "tsi_usd": 8398.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-22_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 561,
+    "region_code": "JP-22",
+    "tsi_usd": 15912.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-22_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 561,
+    "region_code": "JP-22",
+    "tsi_usd": 15912.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-23_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 1170,
+    "region_code": "JP-23",
+    "tsi_usd": 33150.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-23_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 1170,
+    "region_code": "JP-23",
+    "tsi_usd": 33150.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-24_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 265,
+    "region_code": "JP-24",
+    "tsi_usd": 7514.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-24_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 265,
+    "region_code": "JP-24",
+    "tsi_usd": 7514.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-25_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 218,
+    "region_code": "JP-25",
+    "tsi_usd": 6188.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-25_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 218,
+    "region_code": "JP-25",
+    "tsi_usd": 6188.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-26_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 390,
+    "region_code": "JP-26",
+    "tsi_usd": 11050.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-26_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 390,
+    "region_code": "JP-26",
+    "tsi_usd": 11050.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-27_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 1372,
+    "region_code": "JP-27",
+    "tsi_usd": 38896.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-27_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 1372,
+    "region_code": "JP-27",
+    "tsi_usd": 38896.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-28_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 842,
+    "region_code": "JP-28",
+    "tsi_usd": 23868.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-28_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 842,
+    "region_code": "JP-28",
+    "tsi_usd": 23868.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-29_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 202,
+    "region_code": "JP-29",
+    "tsi_usd": 5746.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-29_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 202,
+    "region_code": "JP-29",
+    "tsi_usd": 5746.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-30_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 140,
+    "region_code": "JP-30",
+    "tsi_usd": 3978.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-30_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 140,
+    "region_code": "JP-30",
+    "tsi_usd": 3978.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-31_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 85,
+    "region_code": "JP-31",
+    "tsi_usd": 2431.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-31_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 85,
+    "region_code": "JP-31",
+    "tsi_usd": 2431.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-32_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 102,
+    "region_code": "JP-32",
+    "tsi_usd": 2917.2
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-32_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 102,
+    "region_code": "JP-32",
+    "tsi_usd": 2917.2
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-33_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 296,
+    "region_code": "JP-33",
+    "tsi_usd": 8398.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-33_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 296,
+    "region_code": "JP-33",
+    "tsi_usd": 8398.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-34_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 436,
+    "region_code": "JP-34",
+    "tsi_usd": 12376.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-34_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 436,
+    "region_code": "JP-34",
+    "tsi_usd": 12376.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-35_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 202,
+    "region_code": "JP-35",
+    "tsi_usd": 5746.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-35_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 202,
+    "region_code": "JP-35",
+    "tsi_usd": 5746.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-36_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 109,
+    "region_code": "JP-36",
+    "tsi_usd": 3094.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-36_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 109,
+    "region_code": "JP-36",
+    "tsi_usd": 3094.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-37_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 140,
+    "region_code": "JP-37",
+    "tsi_usd": 3978.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-37_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 140,
+    "region_code": "JP-37",
+    "tsi_usd": 3978.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-38_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 202,
+    "region_code": "JP-38",
+    "tsi_usd": 5746.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-38_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 202,
+    "region_code": "JP-38",
+    "tsi_usd": 5746.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-39_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 106,
+    "region_code": "JP-39",
+    "tsi_usd": 3005.6
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-39_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 106,
+    "region_code": "JP-39",
+    "tsi_usd": 3005.6
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-40_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 795,
+    "region_code": "JP-40",
+    "tsi_usd": 22542.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-40_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 795,
+    "region_code": "JP-40",
+    "tsi_usd": 22542.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-41_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 124,
+    "region_code": "JP-41",
+    "tsi_usd": 3536.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-41_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 124,
+    "region_code": "JP-41",
+    "tsi_usd": 3536.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-42_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 202,
+    "region_code": "JP-42",
+    "tsi_usd": 5746.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-42_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 202,
+    "region_code": "JP-42",
+    "tsi_usd": 5746.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-43_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 265,
+    "region_code": "JP-43",
+    "tsi_usd": 7514.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-43_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 265,
+    "region_code": "JP-43",
+    "tsi_usd": 7514.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-44_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 171,
+    "region_code": "JP-44",
+    "tsi_usd": 4862.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-44_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 171,
+    "region_code": "JP-44",
+    "tsi_usd": 4862.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-45_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 171,
+    "region_code": "JP-45",
+    "tsi_usd": 4862.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-45_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 171,
+    "region_code": "JP-45",
+    "tsi_usd": 4862.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-46_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 249,
+    "region_code": "JP-46",
+    "tsi_usd": 7072.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-46_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 249,
+    "region_code": "JP-46",
+    "tsi_usd": 7072.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-47_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 234,
+    "region_code": "JP-47",
+    "tsi_usd": 6630.0
+  },
+  {
+    "cedent_id": "C-TSURUMI",
+    "exposure_id": "C-TSURUMI_JP-47_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 234,
+    "region_code": "JP-47",
+    "tsi_usd": 6630.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-01_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 918,
+    "region_code": "JP-01",
+    "tsi_usd": 26010.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-01_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 918,
+    "region_code": "JP-01",
+    "tsi_usd": 26010.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-02_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 216,
+    "region_code": "JP-02",
+    "tsi_usd": 6120.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-02_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 216,
+    "region_code": "JP-02",
+    "tsi_usd": 6120.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-03_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 216,
+    "region_code": "JP-03",
+    "tsi_usd": 6120.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-03_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 216,
+    "region_code": "JP-03",
+    "tsi_usd": 6120.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-04_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 414,
+    "region_code": "JP-04",
+    "tsi_usd": 11730.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-04_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 414,
+    "region_code": "JP-04",
+    "tsi_usd": 11730.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-05_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 162,
+    "region_code": "JP-05",
+    "tsi_usd": 4590.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-05_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 162,
+    "region_code": "JP-05",
+    "tsi_usd": 4590.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-06_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 180,
+    "region_code": "JP-06",
+    "tsi_usd": 5100.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-06_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 180,
+    "region_code": "JP-06",
+    "tsi_usd": 5100.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-07_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 324,
+    "region_code": "JP-07",
+    "tsi_usd": 9180.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-07_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 324,
+    "region_code": "JP-07",
+    "tsi_usd": 9180.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-08_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 504,
+    "region_code": "JP-08",
+    "tsi_usd": 14280.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-08_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 504,
+    "region_code": "JP-08",
+    "tsi_usd": 14280.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-09_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 342,
+    "region_code": "JP-09",
+    "tsi_usd": 9690.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-09_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 342,
+    "region_code": "JP-09",
+    "tsi_usd": 9690.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-10_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 342,
+    "region_code": "JP-10",
+    "tsi_usd": 9690.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-10_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 342,
+    "region_code": "JP-10",
+    "tsi_usd": 9690.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-11_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 1314,
+    "region_code": "JP-11",
+    "tsi_usd": 37230.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-11_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 1314,
+    "region_code": "JP-11",
+    "tsi_usd": 37230.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-12_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 1134,
+    "region_code": "JP-12",
+    "tsi_usd": 32130.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-12_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 1134,
+    "region_code": "JP-12",
+    "tsi_usd": 32130.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-13_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 2520,
+    "region_code": "JP-13",
+    "tsi_usd": 71400.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-13_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 2520,
+    "region_code": "JP-13",
+    "tsi_usd": 71400.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-14_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 1656,
+    "region_code": "JP-14",
+    "tsi_usd": 46920.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-14_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 1656,
+    "region_code": "JP-14",
+    "tsi_usd": 46920.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-15_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 396,
+    "region_code": "JP-15",
+    "tsi_usd": 11220.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-15_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 396,
+    "region_code": "JP-15",
+    "tsi_usd": 11220.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-16_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 180,
+    "region_code": "JP-16",
+    "tsi_usd": 5100.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-16_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 180,
+    "region_code": "JP-16",
+    "tsi_usd": 5100.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-17_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 198,
+    "region_code": "JP-17",
+    "tsi_usd": 5610.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-17_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 198,
+    "region_code": "JP-17",
+    "tsi_usd": 5610.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-18_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 135,
+    "region_code": "JP-18",
+    "tsi_usd": 3825.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-18_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 135,
+    "region_code": "JP-18",
+    "tsi_usd": 3825.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-19_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 144,
+    "region_code": "JP-19",
+    "tsi_usd": 4080.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-19_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 144,
+    "region_code": "JP-19",
+    "tsi_usd": 4080.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-20_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 360,
+    "region_code": "JP-20",
+    "tsi_usd": 10200.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-20_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 360,
+    "region_code": "JP-20",
+    "tsi_usd": 10200.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-21_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 342,
+    "region_code": "JP-21",
+    "tsi_usd": 9690.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-21_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 342,
+    "region_code": "JP-21",
+    "tsi_usd": 9690.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-22_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 648,
+    "region_code": "JP-22",
+    "tsi_usd": 18360.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-22_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 648,
+    "region_code": "JP-22",
+    "tsi_usd": 18360.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-23_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 1350,
+    "region_code": "JP-23",
+    "tsi_usd": 38250.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-23_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 1350,
+    "region_code": "JP-23",
+    "tsi_usd": 38250.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-24_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 306,
+    "region_code": "JP-24",
+    "tsi_usd": 8670.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-24_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 306,
+    "region_code": "JP-24",
+    "tsi_usd": 8670.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-25_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 252,
+    "region_code": "JP-25",
+    "tsi_usd": 7140.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-25_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 252,
+    "region_code": "JP-25",
+    "tsi_usd": 7140.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-26_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 450,
+    "region_code": "JP-26",
+    "tsi_usd": 12750.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-26_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 450,
+    "region_code": "JP-26",
+    "tsi_usd": 12750.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-27_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 1584,
+    "region_code": "JP-27",
+    "tsi_usd": 44880.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-27_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 1584,
+    "region_code": "JP-27",
+    "tsi_usd": 44880.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-28_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 972,
+    "region_code": "JP-28",
+    "tsi_usd": 27540.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-28_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 972,
+    "region_code": "JP-28",
+    "tsi_usd": 27540.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-29_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 234,
+    "region_code": "JP-29",
+    "tsi_usd": 6630.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-29_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 234,
+    "region_code": "JP-29",
+    "tsi_usd": 6630.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-30_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 162,
+    "region_code": "JP-30",
+    "tsi_usd": 4590.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-30_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 162,
+    "region_code": "JP-30",
+    "tsi_usd": 4590.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-31_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 99,
+    "region_code": "JP-31",
+    "tsi_usd": 2805.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-31_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 99,
+    "region_code": "JP-31",
+    "tsi_usd": 2805.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-32_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 118,
+    "region_code": "JP-32",
+    "tsi_usd": 3366.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-32_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 118,
+    "region_code": "JP-32",
+    "tsi_usd": 3366.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-33_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 342,
+    "region_code": "JP-33",
+    "tsi_usd": 9690.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-33_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 342,
+    "region_code": "JP-33",
+    "tsi_usd": 9690.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-34_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 504,
+    "region_code": "JP-34",
+    "tsi_usd": 14280.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-34_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 504,
+    "region_code": "JP-34",
+    "tsi_usd": 14280.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-35_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 234,
+    "region_code": "JP-35",
+    "tsi_usd": 6630.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-35_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 234,
+    "region_code": "JP-35",
+    "tsi_usd": 6630.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-36_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 126,
+    "region_code": "JP-36",
+    "tsi_usd": 3570.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-36_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 126,
+    "region_code": "JP-36",
+    "tsi_usd": 3570.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-37_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 162,
+    "region_code": "JP-37",
+    "tsi_usd": 4590.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-37_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 162,
+    "region_code": "JP-37",
+    "tsi_usd": 4590.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-38_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 234,
+    "region_code": "JP-38",
+    "tsi_usd": 6630.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-38_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 234,
+    "region_code": "JP-38",
+    "tsi_usd": 6630.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-39_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 122,
+    "region_code": "JP-39",
+    "tsi_usd": 3468.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-39_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 122,
+    "region_code": "JP-39",
+    "tsi_usd": 3468.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-40_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 918,
+    "region_code": "JP-40",
+    "tsi_usd": 26010.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-40_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 918,
+    "region_code": "JP-40",
+    "tsi_usd": 26010.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-41_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 144,
+    "region_code": "JP-41",
+    "tsi_usd": 4080.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-41_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 144,
+    "region_code": "JP-41",
+    "tsi_usd": 4080.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-42_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 234,
+    "region_code": "JP-42",
+    "tsi_usd": 6630.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-42_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 234,
+    "region_code": "JP-42",
+    "tsi_usd": 6630.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-43_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 306,
+    "region_code": "JP-43",
+    "tsi_usd": 8670.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-43_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 306,
+    "region_code": "JP-43",
+    "tsi_usd": 8670.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-44_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 198,
+    "region_code": "JP-44",
+    "tsi_usd": 5610.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-44_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 198,
+    "region_code": "JP-44",
+    "tsi_usd": 5610.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-45_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 198,
+    "region_code": "JP-45",
+    "tsi_usd": 5610.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-45_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 198,
+    "region_code": "JP-45",
+    "tsi_usd": 5610.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-46_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 288,
+    "region_code": "JP-46",
+    "tsi_usd": 8160.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-46_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 288,
+    "region_code": "JP-46",
+    "tsi_usd": 8160.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-47_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 270,
+    "region_code": "JP-47",
+    "tsi_usd": 7650.0
+  },
+  {
+    "cedent_id": "C-YAMABIKO",
+    "exposure_id": "C-YAMABIKO_JP-47_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 270,
+    "region_code": "JP-47",
+    "tsi_usd": 7650.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-00_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 3240,
+    "region_code": "PH-00",
+    "tsi_usd": 91800.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-00_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 3240,
+    "region_code": "PH-00",
+    "tsi_usd": 22950.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-CAV_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 1032,
+    "region_code": "PH-CAV",
+    "tsi_usd": 29240.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-CAV_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 1032,
+    "region_code": "PH-CAV",
+    "tsi_usd": 7310.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-BUL_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 888,
+    "region_code": "PH-BUL",
+    "tsi_usd": 25160.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-BUL_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 888,
+    "region_code": "PH-BUL",
+    "tsi_usd": 6290.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-LAG_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 816,
+    "region_code": "PH-LAG",
+    "tsi_usd": 23120.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-LAG_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 816,
+    "region_code": "PH-LAG",
+    "tsi_usd": 5780.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-CEB_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 792,
+    "region_code": "PH-CEB",
+    "tsi_usd": 22440.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-CEB_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 792,
+    "region_code": "PH-CEB",
+    "tsi_usd": 5610.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-RIZ_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 792,
+    "region_code": "PH-RIZ",
+    "tsi_usd": 22440.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-RIZ_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 792,
+    "region_code": "PH-RIZ",
+    "tsi_usd": 5610.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-PAN_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 768,
+    "region_code": "PH-PAN",
+    "tsi_usd": 21760.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-PAN_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 768,
+    "region_code": "PH-PAN",
+    "tsi_usd": 5440.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-BTG_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 696,
+    "region_code": "PH-BTG",
+    "tsi_usd": 19720.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-BTG_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 696,
+    "region_code": "PH-BTG",
+    "tsi_usd": 4930.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-NEC_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 624,
+    "region_code": "PH-NEC",
+    "tsi_usd": 17680.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-NEC_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 624,
+    "region_code": "PH-NEC",
+    "tsi_usd": 4420.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-PAM_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 576,
+    "region_code": "PH-PAM",
+    "tsi_usd": 16320.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-PAM_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 576,
+    "region_code": "PH-PAM",
+    "tsi_usd": 4080.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-NUE_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 552,
+    "region_code": "PH-NUE",
+    "tsi_usd": 15640.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-NUE_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 552,
+    "region_code": "PH-NUE",
+    "tsi_usd": 3910.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-ILI_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 504,
+    "region_code": "PH-ILI",
+    "tsi_usd": 14280.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-ILI_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 504,
+    "region_code": "PH-ILI",
+    "tsi_usd": 3570.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-CAS_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 480,
+    "region_code": "PH-CAS",
+    "tsi_usd": 13600.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-CAS_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 480,
+    "region_code": "PH-CAS",
+    "tsi_usd": 3400.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-QUE_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 480,
+    "region_code": "PH-QUE",
+    "tsi_usd": 13600.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-QUE_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 480,
+    "region_code": "PH-QUE",
+    "tsi_usd": 3400.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-LEY_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 432,
+    "region_code": "PH-LEY",
+    "tsi_usd": 12240.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-LEY_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 432,
+    "region_code": "PH-LEY",
+    "tsi_usd": 3060.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-ISA_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 408,
+    "region_code": "PH-ISA",
+    "tsi_usd": 11560.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-ISA_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 408,
+    "region_code": "PH-ISA",
+    "tsi_usd": 2890.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-BUK_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 360,
+    "region_code": "PH-BUK",
+    "tsi_usd": 10200.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-BUK_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 360,
+    "region_code": "PH-BUK",
+    "tsi_usd": 2550.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-TAR_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 360,
+    "region_code": "PH-TAR",
+    "tsi_usd": 10200.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-TAR_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 360,
+    "region_code": "PH-TAR",
+    "tsi_usd": 2550.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-ALB_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 336,
+    "region_code": "PH-ALB",
+    "tsi_usd": 9520.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-ALB_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 336,
+    "region_code": "PH-ALB",
+    "tsi_usd": 2380.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-BOH_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 336,
+    "region_code": "PH-BOH",
+    "tsi_usd": 9520.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-BOH_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 336,
+    "region_code": "PH-BOH",
+    "tsi_usd": 2380.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-NER_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 336,
+    "region_code": "PH-NER",
+    "tsi_usd": 9520.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-NER_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 336,
+    "region_code": "PH-NER",
+    "tsi_usd": 2380.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-CAG_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 312,
+    "region_code": "PH-CAG",
+    "tsi_usd": 8840.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-CAG_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 312,
+    "region_code": "PH-CAG",
+    "tsi_usd": 2210.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-ZSI_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 264,
+    "region_code": "PH-ZSI",
+    "tsi_usd": 7480.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-ZSI_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 264,
+    "region_code": "PH-ZSI",
+    "tsi_usd": 1870.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-PLW_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 264,
+    "region_code": "PH-PLW",
+    "tsi_usd": 7480.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-PLW_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 264,
+    "region_code": "PH-PLW",
+    "tsi_usd": 1870.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-MSR_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 240,
+    "region_code": "PH-MSR",
+    "tsi_usd": 6800.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-MSR_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 240,
+    "region_code": "PH-MSR",
+    "tsi_usd": 1700.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-WSA_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 192,
+    "region_code": "PH-WSA",
+    "tsi_usd": 5440.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-WSA_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 192,
+    "region_code": "PH-WSA",
+    "tsi_usd": 1360.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-SOR_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 192,
+    "region_code": "PH-SOR",
+    "tsi_usd": 5440.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-SOR_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 192,
+    "region_code": "PH-SOR",
+    "tsi_usd": 1360.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-CAP_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 192,
+    "region_code": "PH-CAP",
+    "tsi_usd": 5440.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-CAP_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 192,
+    "region_code": "PH-CAP",
+    "tsi_usd": 1360.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-NSA_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 144,
+    "region_code": "PH-NSA",
+    "tsi_usd": 4080.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-NSA_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 144,
+    "region_code": "PH-NSA",
+    "tsi_usd": 1020.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-EAS_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 120,
+    "region_code": "PH-EAS",
+    "tsi_usd": 3400.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-EAS_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 120,
+    "region_code": "PH-EAS",
+    "tsi_usd": 850.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-AKL_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 144,
+    "region_code": "PH-AKL",
+    "tsi_usd": 4080.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-AKL_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 144,
+    "region_code": "PH-AKL",
+    "tsi_usd": 1020.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-ANT_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 144,
+    "region_code": "PH-ANT",
+    "tsi_usd": 4080.0
+  },
+  {
+    "cedent_id": "C-MARIPOSA",
+    "exposure_id": "C-MARIPOSA_PH-ANT_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 144,
+    "region_code": "PH-ANT",
+    "tsi_usd": 1020.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-00_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 2592,
+    "region_code": "PH-00",
+    "tsi_usd": 73440.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-00_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 2592,
+    "region_code": "PH-00",
+    "tsi_usd": 18360.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-CAV_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 825,
+    "region_code": "PH-CAV",
+    "tsi_usd": 23392.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-CAV_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 825,
+    "region_code": "PH-CAV",
+    "tsi_usd": 5848.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-BUL_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 710,
+    "region_code": "PH-BUL",
+    "tsi_usd": 20128.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-BUL_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 710,
+    "region_code": "PH-BUL",
+    "tsi_usd": 5032.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-LAG_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 652,
+    "region_code": "PH-LAG",
+    "tsi_usd": 18496.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-LAG_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 652,
+    "region_code": "PH-LAG",
+    "tsi_usd": 4624.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-CEB_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 633,
+    "region_code": "PH-CEB",
+    "tsi_usd": 17952.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-CEB_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 633,
+    "region_code": "PH-CEB",
+    "tsi_usd": 4488.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-RIZ_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 633,
+    "region_code": "PH-RIZ",
+    "tsi_usd": 17952.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-RIZ_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 633,
+    "region_code": "PH-RIZ",
+    "tsi_usd": 4488.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-PAN_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 614,
+    "region_code": "PH-PAN",
+    "tsi_usd": 17408.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-PAN_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 614,
+    "region_code": "PH-PAN",
+    "tsi_usd": 4352.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-BTG_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 556,
+    "region_code": "PH-BTG",
+    "tsi_usd": 15776.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-BTG_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 556,
+    "region_code": "PH-BTG",
+    "tsi_usd": 3944.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-NEC_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 499,
+    "region_code": "PH-NEC",
+    "tsi_usd": 14144.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-NEC_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 499,
+    "region_code": "PH-NEC",
+    "tsi_usd": 3536.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-PAM_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 460,
+    "region_code": "PH-PAM",
+    "tsi_usd": 13056.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-PAM_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 460,
+    "region_code": "PH-PAM",
+    "tsi_usd": 3264.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-NUE_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 441,
+    "region_code": "PH-NUE",
+    "tsi_usd": 12512.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-NUE_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 441,
+    "region_code": "PH-NUE",
+    "tsi_usd": 3128.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-ILI_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 403,
+    "region_code": "PH-ILI",
+    "tsi_usd": 11424.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-ILI_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 403,
+    "region_code": "PH-ILI",
+    "tsi_usd": 2856.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-CAS_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 384,
+    "region_code": "PH-CAS",
+    "tsi_usd": 10880.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-CAS_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 384,
+    "region_code": "PH-CAS",
+    "tsi_usd": 2720.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-QUE_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 384,
+    "region_code": "PH-QUE",
+    "tsi_usd": 10880.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-QUE_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 384,
+    "region_code": "PH-QUE",
+    "tsi_usd": 2720.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-LEY_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 345,
+    "region_code": "PH-LEY",
+    "tsi_usd": 9792.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-LEY_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 345,
+    "region_code": "PH-LEY",
+    "tsi_usd": 2448.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-ISA_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 326,
+    "region_code": "PH-ISA",
+    "tsi_usd": 9248.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-ISA_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 326,
+    "region_code": "PH-ISA",
+    "tsi_usd": 2312.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-BUK_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 288,
+    "region_code": "PH-BUK",
+    "tsi_usd": 8160.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-BUK_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 288,
+    "region_code": "PH-BUK",
+    "tsi_usd": 2040.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-TAR_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 288,
+    "region_code": "PH-TAR",
+    "tsi_usd": 8160.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-TAR_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 288,
+    "region_code": "PH-TAR",
+    "tsi_usd": 2040.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-ALB_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 268,
+    "region_code": "PH-ALB",
+    "tsi_usd": 7616.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-ALB_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 268,
+    "region_code": "PH-ALB",
+    "tsi_usd": 1904.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-BOH_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 268,
+    "region_code": "PH-BOH",
+    "tsi_usd": 7616.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-BOH_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 268,
+    "region_code": "PH-BOH",
+    "tsi_usd": 1904.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-NER_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 268,
+    "region_code": "PH-NER",
+    "tsi_usd": 7616.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-NER_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 268,
+    "region_code": "PH-NER",
+    "tsi_usd": 1904.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-CAG_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 249,
+    "region_code": "PH-CAG",
+    "tsi_usd": 7072.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-CAG_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 249,
+    "region_code": "PH-CAG",
+    "tsi_usd": 1768.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-ZSI_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 211,
+    "region_code": "PH-ZSI",
+    "tsi_usd": 5984.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-ZSI_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 211,
+    "region_code": "PH-ZSI",
+    "tsi_usd": 1496.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-PLW_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 211,
+    "region_code": "PH-PLW",
+    "tsi_usd": 5984.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-PLW_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 211,
+    "region_code": "PH-PLW",
+    "tsi_usd": 1496.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-MSR_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 192,
+    "region_code": "PH-MSR",
+    "tsi_usd": 5440.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-MSR_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 192,
+    "region_code": "PH-MSR",
+    "tsi_usd": 1360.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-WSA_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 153,
+    "region_code": "PH-WSA",
+    "tsi_usd": 4352.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-WSA_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 153,
+    "region_code": "PH-WSA",
+    "tsi_usd": 1088.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-SOR_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 153,
+    "region_code": "PH-SOR",
+    "tsi_usd": 4352.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-SOR_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 153,
+    "region_code": "PH-SOR",
+    "tsi_usd": 1088.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-CAP_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 153,
+    "region_code": "PH-CAP",
+    "tsi_usd": 4352.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-CAP_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 153,
+    "region_code": "PH-CAP",
+    "tsi_usd": 1088.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-NSA_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 115,
+    "region_code": "PH-NSA",
+    "tsi_usd": 3264.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-NSA_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 115,
+    "region_code": "PH-NSA",
+    "tsi_usd": 816.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-EAS_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 96,
+    "region_code": "PH-EAS",
+    "tsi_usd": 2720.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-EAS_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 96,
+    "region_code": "PH-EAS",
+    "tsi_usd": 680.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-AKL_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 115,
+    "region_code": "PH-AKL",
+    "tsi_usd": 3264.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-AKL_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 115,
+    "region_code": "PH-AKL",
+    "tsi_usd": 816.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-ANT_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 115,
+    "region_code": "PH-ANT",
+    "tsi_usd": 3264.0
+  },
+  {
+    "cedent_id": "C-TAMARAW",
+    "exposure_id": "C-TAMARAW_PH-ANT_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 115,
+    "region_code": "PH-ANT",
+    "tsi_usd": 816.0
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-NWT_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 816,
+    "region_code": "TW-NWT",
+    "tsi_usd": 23120.0
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-NWT_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 816,
+    "region_code": "TW-NWT",
+    "tsi_usd": 23120.0
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-TXG_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 571,
+    "region_code": "TW-TXG",
+    "tsi_usd": 16184.0
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-TXG_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 571,
+    "region_code": "TW-TXG",
+    "tsi_usd": 16184.0
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-KHH_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 550,
+    "region_code": "TW-KHH",
+    "tsi_usd": 15606.0
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-KHH_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 550,
+    "region_code": "TW-KHH",
+    "tsi_usd": 15606.0
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-TPE_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 510,
+    "region_code": "TW-TPE",
+    "tsi_usd": 14450.0
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-TPE_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 510,
+    "region_code": "TW-TPE",
+    "tsi_usd": 14450.0
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-TAO_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 469,
+    "region_code": "TW-TAO",
+    "tsi_usd": 13294.0
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-TAO_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 469,
+    "region_code": "TW-TAO",
+    "tsi_usd": 13294.0
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-TNN_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 377,
+    "region_code": "TW-TNN",
+    "tsi_usd": 10693.0
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-TNN_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 377,
+    "region_code": "TW-TNN",
+    "tsi_usd": 10693.0
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-CHA_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 255,
+    "region_code": "TW-CHA",
+    "tsi_usd": 7225.0
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-CHA_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 255,
+    "region_code": "TW-CHA",
+    "tsi_usd": 7225.0
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-PIF_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 163,
+    "region_code": "TW-PIF",
+    "tsi_usd": 4624.0
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-PIF_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 163,
+    "region_code": "TW-PIF",
+    "tsi_usd": 4624.0
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-YUN_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 134,
+    "region_code": "TW-YUN",
+    "tsi_usd": 3814.8
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-YUN_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 134,
+    "region_code": "TW-YUN",
+    "tsi_usd": 3814.8
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-HSQ_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 118,
+    "region_code": "TW-HSQ",
+    "tsi_usd": 3352.4
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-HSQ_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 118,
+    "region_code": "TW-HSQ",
+    "tsi_usd": 3352.4
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-MIA_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 110,
+    "region_code": "TW-MIA",
+    "tsi_usd": 3121.2
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-MIA_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 110,
+    "region_code": "TW-MIA",
+    "tsi_usd": 3121.2
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-CYQ_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 97,
+    "region_code": "TW-CYQ",
+    "tsi_usd": 2774.4
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-CYQ_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 97,
+    "region_code": "TW-CYQ",
+    "tsi_usd": 2774.4
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-NAN_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 97,
+    "region_code": "TW-NAN",
+    "tsi_usd": 2774.4
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-NAN_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 97,
+    "region_code": "TW-NAN",
+    "tsi_usd": 2774.4
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-ILA_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 91,
+    "region_code": "TW-ILA",
+    "tsi_usd": 2601.0
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-ILA_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 91,
+    "region_code": "TW-ILA",
+    "tsi_usd": 2601.0
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-HSZ_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 91,
+    "region_code": "TW-HSZ",
+    "tsi_usd": 2601.0
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-HSZ_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 91,
+    "region_code": "TW-HSZ",
+    "tsi_usd": 2601.0
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-KEE_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 73,
+    "region_code": "TW-KEE",
+    "tsi_usd": 2080.8
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-KEE_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 73,
+    "region_code": "TW-KEE",
+    "tsi_usd": 2080.8
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-HUA_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 65,
+    "region_code": "TW-HUA",
+    "tsi_usd": 1849.6
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-HUA_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 65,
+    "region_code": "TW-HUA",
+    "tsi_usd": 1849.6
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-CYI_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 53,
+    "region_code": "TW-CYI",
+    "tsi_usd": 1502.8
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-CYI_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 53,
+    "region_code": "TW-CYI",
+    "tsi_usd": 1502.8
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-TTT_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 42,
+    "region_code": "TW-TTT",
+    "tsi_usd": 1213.8
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-TTT_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 42,
+    "region_code": "TW-TTT",
+    "tsi_usd": 1213.8
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-KIN_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 28,
+    "region_code": "TW-KIN",
+    "tsi_usd": 809.2
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-KIN_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 28,
+    "region_code": "TW-KIN",
+    "tsi_usd": 809.2
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-PEN_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 22,
+    "region_code": "TW-PEN",
+    "tsi_usd": 635.8
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-PEN_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 22,
+    "region_code": "TW-PEN",
+    "tsi_usd": 635.8
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-LIE_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 2,
+    "region_code": "TW-LIE",
+    "tsi_usd": 75.14
+  },
+  {
+    "cedent_id": "C-FORMOSA",
+    "exposure_id": "C-FORMOSA_TW-LIE_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 2,
+    "region_code": "TW-LIE",
+    "tsi_usd": 75.14
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-NWT_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 720,
+    "region_code": "TW-NWT",
+    "tsi_usd": 20400.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-NWT_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 720,
+    "region_code": "TW-NWT",
+    "tsi_usd": 20400.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-TXG_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 504,
+    "region_code": "TW-TXG",
+    "tsi_usd": 14280.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-TXG_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 504,
+    "region_code": "TW-TXG",
+    "tsi_usd": 14280.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-KHH_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 486,
+    "region_code": "TW-KHH",
+    "tsi_usd": 13770.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-KHH_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 486,
+    "region_code": "TW-KHH",
+    "tsi_usd": 13770.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-TPE_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 450,
+    "region_code": "TW-TPE",
+    "tsi_usd": 12750.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-TPE_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 450,
+    "region_code": "TW-TPE",
+    "tsi_usd": 12750.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-TAO_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 414,
+    "region_code": "TW-TAO",
+    "tsi_usd": 11730.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-TAO_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 414,
+    "region_code": "TW-TAO",
+    "tsi_usd": 11730.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-TNN_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 333,
+    "region_code": "TW-TNN",
+    "tsi_usd": 9435.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-TNN_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 333,
+    "region_code": "TW-TNN",
+    "tsi_usd": 9435.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-CHA_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 225,
+    "region_code": "TW-CHA",
+    "tsi_usd": 6375.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-CHA_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 225,
+    "region_code": "TW-CHA",
+    "tsi_usd": 6375.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-PIF_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 144,
+    "region_code": "TW-PIF",
+    "tsi_usd": 4080.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-PIF_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 144,
+    "region_code": "TW-PIF",
+    "tsi_usd": 4080.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-YUN_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 118,
+    "region_code": "TW-YUN",
+    "tsi_usd": 3366.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-YUN_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 118,
+    "region_code": "TW-YUN",
+    "tsi_usd": 3366.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-HSQ_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 104,
+    "region_code": "TW-HSQ",
+    "tsi_usd": 2958.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-HSQ_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 104,
+    "region_code": "TW-HSQ",
+    "tsi_usd": 2958.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-MIA_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 97,
+    "region_code": "TW-MIA",
+    "tsi_usd": 2754.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-MIA_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 97,
+    "region_code": "TW-MIA",
+    "tsi_usd": 2754.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-CYQ_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 86,
+    "region_code": "TW-CYQ",
+    "tsi_usd": 2448.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-CYQ_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 86,
+    "region_code": "TW-CYQ",
+    "tsi_usd": 2448.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-NAN_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 86,
+    "region_code": "TW-NAN",
+    "tsi_usd": 2448.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-NAN_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 86,
+    "region_code": "TW-NAN",
+    "tsi_usd": 2448.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-ILA_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 81,
+    "region_code": "TW-ILA",
+    "tsi_usd": 2295.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-ILA_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 81,
+    "region_code": "TW-ILA",
+    "tsi_usd": 2295.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-HSZ_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 81,
+    "region_code": "TW-HSZ",
+    "tsi_usd": 2295.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-HSZ_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 81,
+    "region_code": "TW-HSZ",
+    "tsi_usd": 2295.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-KEE_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 64,
+    "region_code": "TW-KEE",
+    "tsi_usd": 1836.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-KEE_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 64,
+    "region_code": "TW-KEE",
+    "tsi_usd": 1836.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-HUA_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 57,
+    "region_code": "TW-HUA",
+    "tsi_usd": 1632.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-HUA_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 57,
+    "region_code": "TW-HUA",
+    "tsi_usd": 1632.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-CYI_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 46,
+    "region_code": "TW-CYI",
+    "tsi_usd": 1326.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-CYI_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 46,
+    "region_code": "TW-CYI",
+    "tsi_usd": 1326.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-TTT_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 37,
+    "region_code": "TW-TTT",
+    "tsi_usd": 1071.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-TTT_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 37,
+    "region_code": "TW-TTT",
+    "tsi_usd": 1071.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-KIN_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 25,
+    "region_code": "TW-KIN",
+    "tsi_usd": 714.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-KIN_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 25,
+    "region_code": "TW-KIN",
+    "tsi_usd": 714.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-PEN_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 19,
+    "region_code": "TW-PEN",
+    "tsi_usd": 561.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-PEN_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 19,
+    "region_code": "TW-PEN",
+    "tsi_usd": 561.0
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-LIE_WS",
+    "lob": "FIRE",
+    "peril": "WS",
+    "policy_count": 2,
+    "region_code": "TW-LIE",
+    "tsi_usd": 66.3
+  },
+  {
+    "cedent_id": "C-BLACKBEAR",
+    "exposure_id": "C-BLACKBEAR_TW-LIE_EQ",
+    "lob": "FIRE",
+    "peril": "EQ",
+    "policy_count": 2,
+    "region_code": "TW-LIE",
+    "tsi_usd": 66.3
+  }
+]

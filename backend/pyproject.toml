@@ -1,0 +1,25 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q --strict-markers"
+markers = [
+    "live: calls real GCP services (Gemini, Firestore). Skipped unless RUN_LIVE=1.",
+]
+
+[tool.coverage.run]
+branch = true
+# `app` must be listed or the API is simply not measured: coverage
+# reports 100% while ignoring the module entirely.
+source = ["app", "catsight_agent", "ingest", "qa"]
+
+[tool.coverage.report]
+show_missing = true
+# `exclude_also` APPENDS to coverage's defaults. `exclude_lines` REPLACES
+# them, which silently drops the built-in "pragma: no cover" rule and makes
+# every deliberately-unexercised adapter look like missing coverage.
+exclude_also = [
+    "if TYPE_CHECKING:",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "raise SystemExit",
+]

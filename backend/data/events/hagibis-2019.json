@@ -1,0 +1,1179 @@
+{
+  "event_id": "hagibis-2019",
+  "name": "Typhoon Hagibis",
+  "peril": "WS",
+  "sid": "2019278N16165",
+  "start": "2019-10-11T21:00:00Z",
+  "end": "2019-10-13T00:00:00Z",
+  "duration_h": 27.0,
+  "duration_basis": "span of track points at which at least one in-scope region experiences wind of 25.7 m/s or more; not the track lifetime",
+  "track_start": "2019-10-04T12:00:00Z",
+  "track_end": "2019-10-13T12:00:00Z",
+  "damaging_points": 10,
+  "peak": {
+    "t": "2019-10-07T10:00:00Z",
+    "lat": 15.9,
+    "lon": 147.1,
+    "vmax_ms": 82.31
+  },
+  "track": [
+    {
+      "t": "2019-10-04T12:00:00Z",
+      "lat": 15.8,
+      "lon": 164.6,
+      "vmax_ms": 7.72,
+      "rmw_km": 0.0,
+      "r34_km": 0.0,
+      "r50_km": 0.0,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2019-10-04T15:00:00Z",
+      "lat": 15.8,
+      "lon": 164.1,
+      "vmax_ms": 9.26,
+      "rmw_km": 0.0,
+      "r34_km": 0.0,
+      "r50_km": 0.0,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2019-10-04T18:00:00Z",
+      "lat": 15.7,
+      "lon": 163.8,
+      "vmax_ms": 10.29,
+      "rmw_km": 74.1,
+      "r34_km": 0.0,
+      "r50_km": 0.0,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2019-10-04T21:00:00Z",
+      "lat": 15.4,
+      "lon": 163.2,
+      "vmax_ms": 11.83,
+      "rmw_km": 70.4,
+      "r34_km": 0.0,
+      "r50_km": 0.0,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2019-10-05T00:00:00Z",
+      "lat": 15.1,
+      "lon": 162.5,
+      "vmax_ms": 12.86,
+      "rmw_km": 64.8,
+      "r34_km": 0.0,
+      "r50_km": 0.0,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2019-10-05T03:00:00Z",
+      "lat": 15.1,
+      "lon": 161.8,
+      "vmax_ms": 12.86,
+      "rmw_km": 61.1,
+      "r34_km": 0.0,
+      "r50_km": 0.0,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2019-10-05T06:00:00Z",
+      "lat": 15.2,
+      "lon": 161.1,
+      "vmax_ms": 12.86,
+      "rmw_km": 55.6,
+      "r34_km": 0.0,
+      "r50_km": 0.0,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2019-10-05T09:00:00Z",
+      "lat": 15.2,
+      "lon": 160.4,
+      "vmax_ms": 14.4,
+      "rmw_km": 55.6,
+      "r34_km": 0.0,
+      "r50_km": 0.0,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2019-10-05T12:00:00Z",
+      "lat": 15.2,
+      "lon": 159.7,
+      "vmax_ms": 15.43,
+      "rmw_km": 55.6,
+      "r34_km": 0.0,
+      "r50_km": 0.0,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2019-10-05T15:00:00Z",
+      "lat": 15.2,
+      "lon": 158.8,
+      "vmax_ms": 16.98,
+      "rmw_km": 51.9,
+      "r34_km": 0.0,
+      "r50_km": 0.0,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2019-10-05T18:00:00Z",
+      "lat": 15.1,
+      "lon": 157.8,
+      "vmax_ms": 18.01,
+      "rmw_km": 46.3,
+      "r34_km": 97.2,
+      "r50_km": 0.0,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2019-10-05T21:00:00Z",
+      "lat": 14.9,
+      "lon": 156.8,
+      "vmax_ms": 20.58,
+      "rmw_km": 46.3,
+      "r34_km": 120.4,
+      "r50_km": 0.0,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2019-10-06T00:00:00Z",
+      "lat": 14.7,
+      "lon": 155.8,
+      "vmax_ms": 23.15,
+      "rmw_km": 46.3,
+      "r34_km": 143.5,
+      "r50_km": 0.0,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2019-10-06T03:00:00Z",
+      "lat": 14.5,
+      "lon": 154.9,
+      "vmax_ms": 24.69,
+      "rmw_km": 42.6,
+      "r34_km": 157.4,
+      "r50_km": 0.0,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2019-10-06T06:00:00Z",
+      "lat": 14.4,
+      "lon": 154.1,
+      "vmax_ms": 25.72,
+      "rmw_km": 37.0,
+      "r34_km": 171.3,
+      "r50_km": 80.6,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2019-10-06T09:00:00Z",
+      "lat": 14.4,
+      "lon": 153.4,
+      "vmax_ms": 28.29,
+      "rmw_km": 37.0,
+      "r34_km": 182.9,
+      "r50_km": 89.4,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2019-10-06T12:00:00Z",
+      "lat": 14.5,
+      "lon": 152.7,
+      "vmax_ms": 30.87,
+      "rmw_km": 37.0,
+      "r34_km": 194.5,
+      "r50_km": 96.3,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2019-10-06T15:00:00Z",
+      "lat": 14.7,
+      "lon": 151.9,
+      "vmax_ms": 33.44,
+      "rmw_km": 33.3,
+      "r34_km": 203.7,
+      "r50_km": 103.7,
+      "r64_km": 27.8
+    },
+    {
+      "t": "2019-10-06T18:00:00Z",
+      "lat": 14.9,
+      "lon": 151.1,
+      "vmax_ms": 36.01,
+      "rmw_km": 27.8,
+      "r34_km": 213.0,
+      "r50_km": 109.3,
+      "r64_km": 56.9
+    },
+    {
+      "t": "2019-10-06T21:00:00Z",
+      "lat": 15.0,
+      "lon": 150.3,
+      "vmax_ms": 45.27,
+      "rmw_km": 18.5,
+      "r34_km": 236.1,
+      "r50_km": 125.9,
+      "r64_km": 66.2
+    },
+    {
+      "t": "2019-10-07T00:00:00Z",
+      "lat": 15.1,
+      "lon": 149.6,
+      "vmax_ms": 54.02,
+      "rmw_km": 9.3,
+      "r34_km": 259.3,
+      "r50_km": 141.7,
+      "r64_km": 75.0
+    },
+    {
+      "t": "2019-10-07T03:00:00Z",
+      "lat": 15.3,
+      "lon": 148.9,
+      "vmax_ms": 63.28,
+      "rmw_km": 9.3,
+      "r34_km": 275.5,
+      "r50_km": 154.2,
+      "r64_km": 82.9
+    },
+    {
+      "t": "2019-10-07T06:00:00Z",
+      "lat": 15.5,
+      "lon": 148.2,
+      "vmax_ms": 72.02,
+      "rmw_km": 9.3,
+      "r34_km": 291.7,
+      "r50_km": 165.8,
+      "r64_km": 89.4
+    },
+    {
+      "t": "2019-10-07T09:00:00Z",
+      "lat": 15.8,
+      "lon": 147.4,
+      "vmax_ms": 79.74,
+      "rmw_km": 9.3,
+      "r34_km": 312.1,
+      "r50_km": 180.1,
+      "r64_km": 98.6
+    },
+    {
+      "t": "2019-10-07T10:00:00Z",
+      "lat": 15.9,
+      "lon": 147.1,
+      "vmax_ms": 82.31,
+      "rmw_km": 9.3,
+      "r34_km": 319.5,
+      "r50_km": 184.7,
+      "r64_km": 101.4
+    },
+    {
+      "t": "2019-10-07T12:00:00Z",
+      "lat": 16.1,
+      "lon": 146.6,
+      "vmax_ms": 82.31,
+      "rmw_km": 9.3,
+      "r34_km": 338.0,
+      "r50_km": 196.8,
+      "r64_km": 107.4
+    },
+    {
+      "t": "2019-10-07T15:00:00Z",
+      "lat": 16.3,
+      "lon": 145.7,
+      "vmax_ms": 78.71,
+      "rmw_km": 11.1,
+      "r34_km": 358.8,
+      "r50_km": 209.7,
+      "r64_km": 114.8
+    },
+    {
+      "t": "2019-10-07T18:00:00Z",
+      "lat": 16.5,
+      "lon": 144.9,
+      "vmax_ms": 74.59,
+      "rmw_km": 13.0,
+      "r34_km": 379.7,
+      "r50_km": 221.3,
+      "r64_km": 121.3
+    },
+    {
+      "t": "2019-10-07T21:00:00Z",
+      "lat": 16.7,
+      "lon": 144.3,
+      "vmax_ms": 70.99,
+      "rmw_km": 11.1,
+      "r34_km": 395.9,
+      "r50_km": 231.0,
+      "r64_km": 126.4
+    },
+    {
+      "t": "2019-10-08T00:00:00Z",
+      "lat": 16.9,
+      "lon": 143.8,
+      "vmax_ms": 66.88,
+      "rmw_km": 9.3,
+      "r34_km": 412.1,
+      "r50_km": 240.3,
+      "r64_km": 130.6
+    },
+    {
+      "t": "2019-10-08T03:00:00Z",
+      "lat": 17.3,
+      "lon": 143.2,
+      "vmax_ms": 64.31,
+      "rmw_km": 11.1,
+      "r34_km": 421.3,
+      "r50_km": 245.9,
+      "r64_km": 134.3
+    },
+    {
+      "t": "2019-10-08T06:00:00Z",
+      "lat": 17.7,
+      "lon": 142.7,
+      "vmax_ms": 61.73,
+      "rmw_km": 13.0,
+      "r34_km": 430.6,
+      "r50_km": 250.9,
+      "r64_km": 137.5
+    },
+    {
+      "t": "2019-10-08T09:00:00Z",
+      "lat": 18.0,
+      "lon": 142.2,
+      "vmax_ms": 63.28,
+      "rmw_km": 29.6,
+      "r34_km": 442.2,
+      "r50_km": 259.3,
+      "r64_km": 142.1
+    },
+    {
+      "t": "2019-10-08T12:00:00Z",
+      "lat": 18.4,
+      "lon": 141.8,
+      "vmax_ms": 64.31,
+      "rmw_km": 46.3,
+      "r34_km": 453.7,
+      "r50_km": 266.2,
+      "r64_km": 144.9
+    },
+    {
+      "t": "2019-10-08T15:00:00Z",
+      "lat": 18.8,
+      "lon": 141.3,
+      "vmax_ms": 68.42,
+      "rmw_km": 37.0,
+      "r34_km": 463.0,
+      "r50_km": 273.6,
+      "r64_km": 148.6
+    },
+    {
+      "t": "2019-10-08T18:00:00Z",
+      "lat": 19.2,
+      "lon": 140.8,
+      "vmax_ms": 72.02,
+      "rmw_km": 27.8,
+      "r34_km": 472.3,
+      "r50_km": 279.2,
+      "r64_km": 152.3
+    },
+    {
+      "t": "2019-10-08T21:00:00Z",
+      "lat": 19.5,
+      "lon": 140.6,
+      "vmax_ms": 73.57,
+      "rmw_km": 27.8,
+      "r34_km": 481.5,
+      "r50_km": 285.2,
+      "r64_km": 156.5
+    },
+    {
+      "t": "2019-10-09T00:00:00Z",
+      "lat": 19.8,
+      "lon": 140.4,
+      "vmax_ms": 74.59,
+      "rmw_km": 27.8,
+      "r34_km": 490.8,
+      "r50_km": 290.8,
+      "r64_km": 160.2
+    },
+    {
+      "t": "2019-10-09T03:00:00Z",
+      "lat": 20.2,
+      "lon": 140.2,
+      "vmax_ms": 76.65,
+      "rmw_km": 27.8,
+      "r34_km": 495.9,
+      "r50_km": 294.9,
+      "r64_km": 161.6
+    },
+    {
+      "t": "2019-10-09T04:00:00Z",
+      "lat": 20.3,
+      "lon": 140.1,
+      "vmax_ms": 77.17,
+      "rmw_km": 27.8,
+      "r34_km": 497.7,
+      "r50_km": 296.3,
+      "r64_km": 162.5
+    },
+    {
+      "t": "2019-10-09T06:00:00Z",
+      "lat": 20.6,
+      "lon": 139.9,
+      "vmax_ms": 74.59,
+      "rmw_km": 27.8,
+      "r34_km": 500.0,
+      "r50_km": 297.2,
+      "r64_km": 163.4
+    },
+    {
+      "t": "2019-10-09T09:00:00Z",
+      "lat": 20.9,
+      "lon": 139.7,
+      "vmax_ms": 73.57,
+      "rmw_km": 27.8,
+      "r34_km": 502.4,
+      "r50_km": 299.1,
+      "r64_km": 164.4
+    },
+    {
+      "t": "2019-10-09T12:00:00Z",
+      "lat": 21.2,
+      "lon": 139.6,
+      "vmax_ms": 72.02,
+      "rmw_km": 27.8,
+      "r34_km": 504.7,
+      "r50_km": 299.6,
+      "r64_km": 163.9
+    },
+    {
+      "t": "2019-10-09T15:00:00Z",
+      "lat": 21.6,
+      "lon": 139.7,
+      "vmax_ms": 70.99,
+      "rmw_km": 27.8,
+      "r34_km": 509.3,
+      "r50_km": 302.3,
+      "r64_km": 165.8
+    },
+    {
+      "t": "2019-10-09T18:00:00Z",
+      "lat": 22.0,
+      "lon": 139.8,
+      "vmax_ms": 69.45,
+      "rmw_km": 27.8,
+      "r34_km": 513.9,
+      "r50_km": 304.7,
+      "r64_km": 167.1
+    },
+    {
+      "t": "2019-10-09T21:00:00Z",
+      "lat": 22.6,
+      "lon": 139.9,
+      "vmax_ms": 68.42,
+      "rmw_km": 29.6,
+      "r34_km": 520.9,
+      "r50_km": 308.8,
+      "r64_km": 169.9
+    },
+    {
+      "t": "2019-10-10T00:00:00Z",
+      "lat": 23.2,
+      "lon": 139.9,
+      "vmax_ms": 66.88,
+      "rmw_km": 31.5,
+      "r34_km": 527.8,
+      "r50_km": 313.0,
+      "r64_km": 170.8
+    },
+    {
+      "t": "2019-10-10T03:00:00Z",
+      "lat": 23.8,
+      "lon": 139.7,
+      "vmax_ms": 66.88,
+      "rmw_km": 29.6,
+      "r34_km": 532.5,
+      "r50_km": 316.2,
+      "r64_km": 172.7
+    },
+    {
+      "t": "2019-10-10T06:00:00Z",
+      "lat": 24.4,
+      "lon": 139.4,
+      "vmax_ms": 66.88,
+      "rmw_km": 27.8,
+      "r34_km": 537.1,
+      "r50_km": 319.0,
+      "r64_km": 174.6
+    },
+    {
+      "t": "2019-10-10T09:00:00Z",
+      "lat": 24.9,
+      "lon": 139.2,
+      "vmax_ms": 65.85,
+      "rmw_km": 27.8,
+      "r34_km": 544.0,
+      "r50_km": 323.2,
+      "r64_km": 177.3
+    },
+    {
+      "t": "2019-10-10T12:00:00Z",
+      "lat": 25.3,
+      "lon": 139.0,
+      "vmax_ms": 64.31,
+      "rmw_km": 27.8,
+      "r34_km": 551.0,
+      "r50_km": 327.3,
+      "r64_km": 179.2
+    },
+    {
+      "t": "2019-10-10T15:00:00Z",
+      "lat": 25.8,
+      "lon": 138.8,
+      "vmax_ms": 63.28,
+      "rmw_km": 33.3,
+      "r34_km": 548.7,
+      "r50_km": 326.0,
+      "r64_km": 178.7
+    },
+    {
+      "t": "2019-10-10T18:00:00Z",
+      "lat": 26.3,
+      "lon": 138.5,
+      "vmax_ms": 61.73,
+      "rmw_km": 37.0,
+      "r34_km": 546.3,
+      "r50_km": 324.1,
+      "r64_km": 177.8
+    },
+    {
+      "t": "2019-10-10T21:00:00Z",
+      "lat": 26.9,
+      "lon": 138.3,
+      "vmax_ms": 60.7,
+      "rmw_km": 38.9,
+      "r34_km": 546.3,
+      "r50_km": 324.1,
+      "r64_km": 177.8
+    },
+    {
+      "t": "2019-10-11T00:00:00Z",
+      "lat": 27.5,
+      "lon": 138.0,
+      "vmax_ms": 59.16,
+      "rmw_km": 40.7,
+      "r34_km": 546.3,
+      "r50_km": 323.6,
+      "r64_km": 176.9
+    },
+    {
+      "t": "2019-10-11T03:00:00Z",
+      "lat": 28.1,
+      "lon": 137.7,
+      "vmax_ms": 58.13,
+      "rmw_km": 37.0,
+      "r34_km": 548.7,
+      "r50_km": 325.0,
+      "r64_km": 177.8
+    },
+    {
+      "t": "2019-10-11T06:00:00Z",
+      "lat": 28.8,
+      "lon": 137.5,
+      "vmax_ms": 56.59,
+      "rmw_km": 31.5,
+      "r34_km": 551.0,
+      "r50_km": 326.0,
+      "r64_km": 178.3
+    },
+    {
+      "t": "2019-10-11T09:00:00Z",
+      "lat": 29.4,
+      "lon": 137.3,
+      "vmax_ms": 55.56,
+      "rmw_km": 20.4,
+      "r34_km": 555.6,
+      "r50_km": 328.7,
+      "r64_km": 179.6
+    },
+    {
+      "t": "2019-10-11T12:00:00Z",
+      "lat": 29.9,
+      "lon": 137.1,
+      "vmax_ms": 54.02,
+      "rmw_km": 9.3,
+      "r34_km": 560.2,
+      "r50_km": 331.5,
+      "r64_km": 180.6
+    },
+    {
+      "t": "2019-10-11T15:00:00Z",
+      "lat": 30.3,
+      "lon": 137.0,
+      "vmax_ms": 52.99,
+      "rmw_km": 9.3,
+      "r34_km": 553.3,
+      "r50_km": 327.3,
+      "r64_km": 178.7
+    },
+    {
+      "t": "2019-10-11T18:00:00Z",
+      "lat": 30.8,
+      "lon": 137.0,
+      "vmax_ms": 51.44,
+      "rmw_km": 9.3,
+      "r34_km": 546.3,
+      "r50_km": 322.2,
+      "r64_km": 175.9
+    },
+    {
+      "t": "2019-10-11T21:00:00Z",
+      "lat": 31.4,
+      "lon": 137.1,
+      "vmax_ms": 50.42,
+      "rmw_km": 9.3,
+      "r34_km": 553.3,
+      "r50_km": 326.9,
+      "r64_km": 178.7
+    },
+    {
+      "t": "2019-10-12T00:00:00Z",
+      "lat": 32.1,
+      "lon": 137.4,
+      "vmax_ms": 48.87,
+      "rmw_km": 9.3,
+      "r34_km": 560.2,
+      "r50_km": 330.6,
+      "r64_km": 181.0
+    },
+    {
+      "t": "2019-10-12T03:00:00Z",
+      "lat": 32.8,
+      "lon": 137.7,
+      "vmax_ms": 46.3,
+      "rmw_km": 18.5,
+      "r34_km": 557.9,
+      "r50_km": 329.2,
+      "r64_km": 180.1
+    },
+    {
+      "t": "2019-10-12T06:00:00Z",
+      "lat": 33.7,
+      "lon": 138.2,
+      "vmax_ms": 43.73,
+      "rmw_km": 27.8,
+      "r34_km": 555.6,
+      "r50_km": 326.4,
+      "r64_km": 177.8
+    },
+    {
+      "t": "2019-10-12T09:00:00Z",
+      "lat": 34.6,
+      "lon": 138.7,
+      "vmax_ms": 41.16,
+      "rmw_km": 37.0,
+      "r34_km": 562.5,
+      "r50_km": 330.6,
+      "r64_km": 180.1
+    },
+    {
+      "t": "2019-10-12T12:00:00Z",
+      "lat": 35.6,
+      "lon": 139.4,
+      "vmax_ms": 38.58,
+      "rmw_km": 46.3,
+      "r34_km": 569.5,
+      "r50_km": 334.3,
+      "r64_km": 182.4
+    },
+    {
+      "t": "2019-10-12T15:00:00Z",
+      "lat": 36.9,
+      "lon": 140.5,
+      "vmax_ms": 36.01,
+      "rmw_km": 92.6,
+      "r34_km": 583.4,
+      "r50_km": 342.6,
+      "r64_km": 187.5
+    },
+    {
+      "t": "2019-10-12T18:00:00Z",
+      "lat": 38.2,
+      "lon": 141.8,
+      "vmax_ms": 33.44,
+      "rmw_km": 138.9,
+      "r34_km": 597.3,
+      "r50_km": 350.0,
+      "r64_km": 191.2
+    },
+    {
+      "t": "2019-10-12T21:00:00Z",
+      "lat": 39.2,
+      "lon": 143.3,
+      "vmax_ms": 30.87,
+      "rmw_km": 125.9,
+      "r34_km": 613.5,
+      "r50_km": 360.7,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2019-10-13T00:00:00Z",
+      "lat": 40.0,
+      "lon": 145.0,
+      "vmax_ms": 28.29,
+      "rmw_km": 111.1,
+      "r34_km": 629.7,
+      "r50_km": 370.4,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2019-10-13T03:00:00Z",
+      "lat": 41.0,
+      "lon": 147.3,
+      "vmax_ms": 27.27,
+      "rmw_km": 111.1,
+      "r34_km": 625.1,
+      "r50_km": 367.2,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2019-10-13T06:00:00Z",
+      "lat": 42.0,
+      "lon": 149.9,
+      "vmax_ms": 25.72,
+      "rmw_km": 111.1,
+      "r34_km": 620.4,
+      "r50_km": 363.5,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2019-10-13T09:00:00Z",
+      "lat": 43.0,
+      "lon": 152.9,
+      "vmax_ms": 24.69,
+      "rmw_km": 111.1,
+      "r34_km": 652.8,
+      "r50_km": 0.0,
+      "r64_km": 0.0
+    },
+    {
+      "t": "2019-10-13T12:00:00Z",
+      "lat": 44.2,
+      "lon": 156.1,
+      "vmax_ms": 23.15,
+      "rmw_km": 111.1,
+      "r34_km": 685.2,
+      "r50_km": 0.0,
+      "r64_km": 0.0
+    }
+  ],
+  "regions": [
+    {
+      "code": "JP-22",
+      "name": "Shizuoka",
+      "country": "JPN",
+      "intensity": {
+        "wind_ms": 40.8
+      },
+      "band": 3,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-11",
+      "name": "Saitama",
+      "country": "JPN",
+      "intensity": {
+        "wind_ms": 38.58
+      },
+      "band": 3,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-13",
+      "name": "Tokyo",
+      "country": "JPN",
+      "intensity": {
+        "wind_ms": 38.58
+      },
+      "band": 3,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-14",
+      "name": "Kanagawa",
+      "country": "JPN",
+      "intensity": {
+        "wind_ms": 38.58
+      },
+      "band": 3,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-19",
+      "name": "Yamanashi",
+      "country": "JPN",
+      "intensity": {
+        "wind_ms": 37.5
+      },
+      "band": 3,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-12",
+      "name": "Chiba",
+      "country": "JPN",
+      "intensity": {
+        "wind_ms": 37.46
+      },
+      "band": 3,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-07",
+      "name": "Fukushima",
+      "country": "JPN",
+      "intensity": {
+        "wind_ms": 36.01
+      },
+      "band": 3,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-08",
+      "name": "Ibaraki",
+      "country": "JPN",
+      "intensity": {
+        "wind_ms": 36.01
+      },
+      "band": 3,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-09",
+      "name": "Tochigi",
+      "country": "JPN",
+      "intensity": {
+        "wind_ms": 36.01
+      },
+      "band": 3,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-10",
+      "name": "Gunma",
+      "country": "JPN",
+      "intensity": {
+        "wind_ms": 35.95
+      },
+      "band": 3,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-20",
+      "name": "Nagano",
+      "country": "JPN",
+      "intensity": {
+        "wind_ms": 35.12
+      },
+      "band": 3,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-23",
+      "name": "Aichi",
+      "country": "JPN",
+      "intensity": {
+        "wind_ms": 34.5
+      },
+      "band": 3,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-15",
+      "name": "Niigata",
+      "country": "JPN",
+      "intensity": {
+        "wind_ms": 33.93
+      },
+      "band": 3,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-06",
+      "name": "Yamagata",
+      "country": "JPN",
+      "intensity": {
+        "wind_ms": 33.48
+      },
+      "band": 3,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-04",
+      "name": "Miyagi",
+      "country": "JPN",
+      "intensity": {
+        "wind_ms": 33.44
+      },
+      "band": 3,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-03",
+      "name": "Iwate",
+      "country": "JPN",
+      "intensity": {
+        "wind_ms": 33.22
+      },
+      "band": 3,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-24",
+      "name": "Mie",
+      "country": "JPN",
+      "intensity": {
+        "wind_ms": 32.03
+      },
+      "band": 2,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-05",
+      "name": "Akita",
+      "country": "JPN",
+      "intensity": {
+        "wind_ms": 31.84
+      },
+      "band": 2,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-21",
+      "name": "Gifu",
+      "country": "JPN",
+      "intensity": {
+        "wind_ms": 31.78
+      },
+      "band": 2,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-16",
+      "name": "Toyama",
+      "country": "JPN",
+      "intensity": {
+        "wind_ms": 30.82
+      },
+      "band": 2,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-29",
+      "name": "Nara",
+      "country": "JPN",
+      "intensity": {
+        "wind_ms": 30.77
+      },
+      "band": 2,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-25",
+      "name": "Shiga",
+      "country": "JPN",
+      "intensity": {
+        "wind_ms": 29.76
+      },
+      "band": 2,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-30",
+      "name": "Wakayama",
+      "country": "JPN",
+      "intensity": {
+        "wind_ms": 29.73
+      },
+      "band": 2,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-18",
+      "name": "Fukui",
+      "country": "JPN",
+      "intensity": {
+        "wind_ms": 28.94
+      },
+      "band": 2,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-17",
+      "name": "Ishikawa",
+      "country": "JPN",
+      "intensity": {
+        "wind_ms": 28.7
+      },
+      "band": 2,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-27",
+      "name": "Osaka",
+      "country": "JPN",
+      "intensity": {
+        "wind_ms": 28.56
+      },
+      "band": 2,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-02",
+      "name": "Aomori",
+      "country": "JPN",
+      "intensity": {
+        "wind_ms": 27.92
+      },
+      "band": 2,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-26",
+      "name": "Kyoto",
+      "country": "JPN",
+      "intensity": {
+        "wind_ms": 27.1
+      },
+      "band": 2,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-36",
+      "name": "Tokushima",
+      "country": "JPN",
+      "intensity": {
+        "wind_ms": 25.38
+      },
+      "band": 2,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-28",
+      "name": "Hyogo",
+      "country": "JPN",
+      "intensity": {
+        "wind_ms": 25.09
+      },
+      "band": 2,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-01",
+      "name": "Hokkaido",
+      "country": "JPN",
+      "intensity": {
+        "wind_ms": 24.47
+      },
+      "band": 1,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-37",
+      "name": "Kagawa",
+      "country": "JPN",
+      "intensity": {
+        "wind_ms": 24.01
+      },
+      "band": 1,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-39",
+      "name": "Kochi",
+      "country": "JPN",
+      "intensity": {
+        "wind_ms": 23.06
+      },
+      "band": 1,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-33",
+      "name": "Okayama",
+      "country": "JPN",
+      "intensity": {
+        "wind_ms": 22.16
+      },
+      "band": 1,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-31",
+      "name": "Tottori",
+      "country": "JPN",
+      "intensity": {
+        "wind_ms": 21.76
+      },
+      "band": 1,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-38",
+      "name": "Ehime",
+      "country": "JPN",
+      "intensity": {
+        "wind_ms": 21.22
+      },
+      "band": 1,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-34",
+      "name": "Hiroshima",
+      "country": "JPN",
+      "intensity": {
+        "wind_ms": 19.74
+      },
+      "band": 1,
+      "intensity_source": "computed"
+    },
+    {
+      "code": "JP-32",
+      "name": "Shimane",
+      "country": "JPN",
+      "intensity": {
+        "wind_ms": 18.48
+      },
+      "band": 1,
+      "intensity_source": "computed"
+    }
+  ],
+  "facts": [
+    {
+      "text": "Landfall just before 19:00 JST on 12 October on the Izu Peninsula.",
+      "source": "JMA",
+      "url": "https://www.jma.go.jp/jma/indexe.html"
+    },
+    {
+      "text": "Hakone recorded about 1,000 mm of rainfall.",
+      "source": "JMA",
+      "url": "https://www.jma.go.jp/jma/indexe.html"
+    }
+  ],
+  "reference_losses": [
+    {
+      "source": "GIAJ",
+      "value": "264,359 claims, JPY 395.9bn",
+      "as_of": "2019-12-09",
+      "note": "a later third-party figure gives JPY 582.6bn",
+      "url": "https://www.sonpo.or.jp/en/"
+    }
+  ],
+  "attribution": [
+    "NOAA IBTrACS v04r01 (Knapp et al. 2010), doi:10.25921/82ty-9e16",
+    "Source: Japan Meteorological Agency website"
+  ],
+  "disclaimer": "Indicative first view on synthetic data. Not a catastrophe-model output. Reference losses are published figures, cited for credibility and back-testing only, and are never model inputs."
+}

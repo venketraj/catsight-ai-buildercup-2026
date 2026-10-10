@@ -1,0 +1,52 @@
+# Runtime dependencies. All pinned (REQUIREMENTS C-5).
+#
+# The loss engine (S2) is deliberately stdlib-only -- see FR-LOSS-6.
+
+# ── Data build (S1) ─────────────────────────────────────────────────────────
+reportlab==4.2.5   # treaty wording PDFs (DR-2)
+pillow==11.0.0     # the scanned endorsement raster (FR-ENDORSE)
+pypdf==5.1.0       # reading page numbers back out of rendered PDFs
+
+# ── API (S0, S4) ────────────────────────────────────────────────────────────
+# Both arrive as google-adk dependencies and are pinned explicitly because the
+# service is deployed from this file: an unpinned transitive is a redeploy that
+# changes behaviour for reasons nobody recorded.
+fastapi==0.141.1
+uvicorn==0.54.0
+
+# ── GCP data services (S1 seed, runtime reads) ──────────────────────────────
+# The treaty book, events, method versions and reconciliations live in
+# Firestore; wording PDFs live in Cloud Storage. Service-account auth only.
+google-cloud-firestore==2.34.1
+google-cloud-storage==3.17.0
+
+# ── Report export (FR-EXPORT) ───────────────────────────────────────────────
+# The Word (.docx) analyst report is generated server-side from the stored run
+# and the engine's figures, so the document cannot drift from the computation.
+python-docx==1.2.0
+lxml==6.1.3
+
+# ── Agent framework (S4) ────────────────────────────────────────────────────
+# Verified 2026-10-05: installs clean on Python 3.12.10, and the graph API
+# REQUIREMENTS_V2 §2 assumes is real -- `google.adk.workflow` exports
+# Workflow, Node, Edge, JoinNode, START and RetryConfig. That matters because
+# the AG-5 verifier loop needs a cycle and the AG-6/AG-7 counsels need a
+# fan-out with a join, neither of which SequentialAgent can express.
+google-adk==2.11.0
+google-genai==2.28.0
+
+# Pinned explicitly although it arrives as a google-adk dependency. Every
+# agent contract in schemas.py is a strict Pydantic v2 model used as a Gemini
+# `response_schema`, so a silent minor bump changes validation behaviour at
+# the point where it is hardest to notice. Installing google-adk moved this
+# from 2.10.3 to 2.13.5; the suite was re-run and stayed green.
+pydantic==2.13.5
+
+# ── Observability (Cloud Trace) ─────────────────────────────────────────────
+# ADK's built-in Cloud Trace exporter (google.adk.telemetry.google_cloud) needs
+# the OTLP/HTTP exporter, which google-adk does not install. 1.45.1 rather than
+# the SDK's 1.42.1, because 1.42.1 would downgrade protobuf 7 -> 6; this moves
+# opentelemetry-sdk 1.42.1 -> 1.45.1 instead (suite re-run, green). Only used
+# when ENABLE_CLOUD_TRACE=true.
+opentelemetry-exporter-otlp-proto-http==1.45.1
+opentelemetry-sdk==1.45.1
