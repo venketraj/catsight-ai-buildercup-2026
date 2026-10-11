@@ -132,6 +132,15 @@ def test_an_exclusion_share_reduces_the_loss_and_is_labelled_an_assumption():
     assert abs(Decimal(r["scenario"]["occurrence_losses"][0]) - gross * Decimal("0.7")) <= Decimal("0.01")
     assert r["label"].startswith("ASSUMPTION: 30% of the loss is attributed to storm surge")
     assert Decimal(r["money_at_stake"]["total_ceded"]) < 0
+    # The excluded loss is the insurer's own: excluding cover never makes the
+    # insurer better off. Its cost rises by the excluded loss less the
+    # reinstatement premium it no longer pays.
+    excluded = Decimal(r["scenario"]["excluded_loss"])
+    assert abs(excluded - gross * Decimal("0.3")) <= Decimal("0.01")
+    assert Decimal(r["money_at_stake"]["cedent_net_cost"]) > 0
+    rip_saved = (Decimal(r["base"]["cedent_net_cost"]) - Decimal(r["base"]["cedent_retention"])) - (
+        Decimal(r["scenario"]["cedent_net_cost"]) - excluded - Decimal(r["scenario"]["cedent_retention"]))
+    assert Decimal(r["money_at_stake"]["cedent_net_cost"]) == excluded - rip_saved
     none = run_scenario("jebi-2018", ScenarioRequest(treaty_id="T-004", mode="exclusion",
                                                      excluded_share=0), store=STORE)
     assert set(none["money_at_stake"].values()) == {"0.00"} and "the excluded cause" in none["label"]

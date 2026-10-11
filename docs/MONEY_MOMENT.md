@@ -4,6 +4,8 @@
 >
 > Every figure here is derived below from the `DOMAIN_PRIMER.md` worked example. **None of it goes on a slide until it comes out of a real engine run** (`QA-11`). This document exists so the engine can be built to produce it.
 >
+> **How this maps to the live site.** §3–4 are the hours-clause mechanics on the `DOMAIN_PRIMER.md` worked example — engine-tested (QA-1, QA-11), not a Jebi run. On the real Jebi timeline no hours clause moves money: the damaging window is about 9 hours, inside every 72-hour clause (`backend/data/ASSUMPTIONS.md` Z1). So the site's **Courtroom** argues the clause that does move money for Jebi — the **T-004 storm-surge exclusion** (§7) — and the hours clause appears in **What-if**, labelled HYPOTHETICAL, where a cut on the real timeline gives its own figures, not the 35.0 / 19.4 split below. Present §3–4 as *the mechanics*, never as Jebi's result.
+>
 > **Status: resolved.** The reinstatement-premium basis is settled in §4 from the primer's own arithmetic — the convention was recoverable from the published one-event figures, so it needed deriving rather than deciding. §4.5 lists two items a reinsurance practitioner should still sanity-check; neither blocks the build, and neither moves the headline.
 
 ---
@@ -161,9 +163,9 @@ If a practitioner rejects §4.1, **only Lion Re's net figures move.** The headli
 
 | Where | Treatment |
 |---|---|
-| **Product** (`FR-COURT`) | Both readings, both quotes verified, both priced by the engine, `money_at_stake` computed per party in Python. The analyst records a position. |
-| **Video** 1:05–1:40 | The Courtroom on the hours clause. Two readings side by side, both cited. The engine prices both. Caption: *"Gemini reads. Tested code calculates."* |
-| **Deck** slide 7 | "The money moment: one clause, one number." Lead with −$10.0M / −22.5%, then reveal the per-party asymmetry. |
+| **Product** (`FR-COURT`) | Both readings, both quotes verified, both priced by the engine, `money_at_stake` computed per party in Python. The analyst records a position. For Jebi the disputed clause is the T-004 storm-surge exclusion (§7). |
+| **Video** 1:05–1:40 | The Courtroom on the **T-004 storm-surge exclusion**. Two readings side by side, both cited. The engine prices both; figures read off the recorded run. Then What-if on the hours clause, labelled HYPOTHETICAL. Caption: *"Gemini reads. Tested code calculates."* |
+| **Deck** slide 7 | "The money moment: one clause, one number." Lead with the recorded T-004 Courtroom figures (§7). §3–4 may appear as *how an hours clause works*, labelled as the worked example — never as Jebi's result. |
 | **Q&A** | *"What is Gen AI doing that rules can't?"* — constructing both sides of a genuinely ambiguous reading from heterogeneous wordings, with machine-checked citations, then letting tested code price each one. |
 
 **Framing guardrails.** Issue-spotting, not legal advice. The human decides. Synthetic contracts, fictional cedent. The event is real and people died in it — state the number plainly, with no triumph in the voice-over.
@@ -179,3 +181,24 @@ If a practitioner rejects §4.1, **only Lion Re's net figures move.** The headli
 - All four perspectives — total ceded, cedent retention, Lion Re gross, Lion Re net — are returned, because the story needs all four.
 
 **QA-11 asserts these exact figures.** If a code change moves them, the test fails and the slide is wrong.
+
+## 7. On the site: the Jebi Courtroom (T-004 storm-surge exclusion)
+
+Jebi drove a record 329 cm storm tide into Osaka Bay. Treaty T-004 (wording W4, p. 2, cl. 8) excludes storm surge outright, and the wording check raises it as a verified HIGH flag.
+
+- **The insurer's counsel** argues the damage is windstorm and the exclusion does not bite.
+- **The reinsurers' counsel** argues part of the loss is surge and falls outside the cover.
+
+The data does not separate wind damage from water damage, so each side states the share it claims as an **assumption**, bounded at 0–50% by the tool schema. The counsel agents choose that share on each run, so **the figures on screen come from the recorded run**.
+
+Reference only — the engine's output for T-004 on Jebi with a 30% surge share (`excluded_share=0.3`), all figures $M:
+
+| | Nothing excluded | 30% surge excluded | Move |
+|---|---|---|---|
+| Loss to the treaty | 58.18 | 40.72 | −17.46 |
+| **Total ceded** | 39.58 | 22.12 | **−17.46** |
+| **Insurer's net cost** — retention + RIP + excluded loss | 22.79 | 38.30 | **+15.51** |
+| **All reinsurers** — recoveries − RIP | 35.39 | 19.88 | **−15.51** |
+| **Lion Re net** | 7.61 | 5.17 | **−2.44** |
+
+Here, unlike §4.4, Lion Re's interest sits with the rest of the market: the exclusion reading saves every reinsurer money, and the insurer carries the excluded loss itself. The excluded loss is counted in the insurer's net cost; without it the insurer would appear to *save* money when cover is taken away.

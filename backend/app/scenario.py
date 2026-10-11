@@ -184,6 +184,14 @@ def run_scenario(event_id: str, request: ScenarioRequest, *, store: DataStore) -
     base = apply_cat_xl([sum((inc.amount for inc in timeline), Decimal(0))], layers)
     scenario = apply_cat_xl(scenario_losses or [Decimal(0)], layers)
     base_p, scen_p = _priced(base), _priced(scenario)
+    if request.mode == "exclusion":
+        # The excluded loss leaves the treaty, not the insurer: it is paid in
+        # full out of the insurer's own pocket. Without this the insurer would
+        # appear to save money when cover is taken away.
+        excluded = sum((inc.amount for inc in timeline), Decimal(0)) - scenario_losses[0]
+        scen_p["excluded_loss"] = str(quantise(excluded))
+        scen_p["cedent_net_cost"] = str(quantise(Decimal(scen_p["cedent_net_cost"]) + excluded))
+        base_p["excluded_loss"] = "0.00"
     stake = {k: str(quantise(Decimal(scen_p[k]) - Decimal(base_p[k]))) for k in PARTIES}
     return {
         "event_id": event_id, "treaty_id": treaty.treaty_id, "mode": request.mode,
