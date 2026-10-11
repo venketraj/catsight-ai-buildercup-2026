@@ -193,7 +193,11 @@ CLAUSES (each starts with its chunk_id)
 {clauses}
 
 Return:
-  reading         one sentence: how the clause should be read, for {client}
+  reading         one sentence: what the clause you cite establishes on its
+                  own terms, for {client}. State only what that clause itself
+                  says - do not claim it speaks to another clause or to a
+                  matter it does not mention. Put any argument that combines
+                  clauses or facts in argument_md, not here.
   chunk_id        the clause your reading rests on
   quoted_text     the EXACT words from that clause you rely on - 5 to 40
                   whole words, copied character for character. It is checked
@@ -239,7 +243,10 @@ Answer supports=false only if the quote is misrepresented: taken out of
 context, saying something different or narrower than counsel claims, or used
 to assert wording the clause does not contain. Do NOT fail it because the
 overall argument is weak, contested, or relies on other clauses as well - the
-merits are for the arbiter. Give a one-sentence reason either way.
+merits are for the arbiter. A clause need not mention the disputed exclusion
+to support a reading: if the reading states what the clause establishes (for
+example, that a peril is covered business), the quote supports it. Give a
+one-sentence reason either way.
 """
 
 
