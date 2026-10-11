@@ -300,7 +300,10 @@ def create_app(config: Settings | None = None, store: DataStore | None = None) -
 
     # ----------------------------------------------------------------- API-1 #
 
+    # `/health` is the one to call on Cloud Run: Google's front end reserves
+    # paths ending in "z" on *.run.app, so `/healthz` 404s before reaching us.
     @api.get("/healthz")
+    @api.get("/health")
     def healthz() -> dict[str, Any]:
         """Liveness plus enough configuration to diagnose a bad deploy.
 

@@ -29,7 +29,8 @@ import type {
  * source - the same rule the backend follows.
  */
 export const API_BASE: string = (
-  import.meta.env.VITE_API_BASE_URL ?? "http://localhost:8080"
+  import.meta.env.VITE_API_BASE_URL ??
+  (import.meta.env.PROD ? "" : "http://localhost:8080")
 ).replace(/\/$/, "");
 
 export const BUILD_LABEL: string = import.meta.env.VITE_BUILD_LABEL ?? "dev";
@@ -55,7 +56,7 @@ export function unlessAborted(show: (message: string) => void) {
 }
 
 export function fetchHealth(signal?: AbortSignal): Promise<Health> {
-  return getJSON<Health>("/healthz", signal);
+  return getJSON<Health>("/health", signal);
 }
 
 export function fetchEvents(signal?: AbortSignal): Promise<{ events: EventSummary[] }> {

@@ -24,12 +24,12 @@ echo "======================================================================"
 # -- API-1 ------------------------------------------------------------------ #
 echo
 echo "1. Health"
-HEALTH="$(curl -fsS --max-time 30 "${BASE}/healthz" 2>/dev/null)" || HEALTH=""
+HEALTH="$(curl -fsS --max-time 30 "${BASE}/health" 2>/dev/null)" || HEALTH=""
 if [[ -z "${HEALTH}" ]]; then
-  bad "GET /healthz" "no response - is the service up?"
+  bad "GET /health" "no response - is the service up?"
   echo; echo "Cannot continue."; exit 1
 fi
-grep -q '"status":"ok"' <<<"${HEALTH}" && ok "GET /healthz" || bad "GET /healthz" "${HEALTH:0:200}"
+grep -q '"status":"ok"' <<<"${HEALTH}" && ok "GET /health" || bad "GET /health" "${HEALTH:0:200}"
 
 if grep -q '"configured":true' <<<"${HEALTH}"; then
   ok "project configured"
