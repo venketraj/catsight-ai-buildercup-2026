@@ -43,19 +43,28 @@ PARTY_KEYS = ("cedent_net_cost", "market_net", "our_net", "total_ceded")
 
 
 def pick_disputed_flag(verified: list[Mapping[str, Any]], price_at_max) -> tuple[dict | None, str]:
-    """FR-COURT-1: a HIGH exclusion flag (its applicability turns on an event
-    fact), the one with the largest engine-priced swing. Returns the flag and,
-    if none qualifies, why the Courtroom is skipped."""
+    """FR-COURT-1: a verified exclusion flag whose applicability turns on an
+    event fact, the one with the largest engine-priced swing (HIGH before
+    MEDIUM on a tie). Returns the flag and, if none qualifies, why the
+    Courtroom is skipped.
+
+    MEDIUM qualifies as well as HIGH: severity is the wording agent's
+    judgement and varies between runs on the same clause (ASSUMPTIONS M8),
+    whereas a verified quote does not. LOW flags are not argued."""
     candidates = [v["flag"] for v in verified
-                  if v["flag"]["issue_type"] == "EXCLUSION" and v["flag"]["severity"] == "HIGH"]
+                  if v["flag"]["issue_type"] == "EXCLUSION" and v["flag"]["severity"] in DISPUTED]
     if not candidates:
         hours = any(v["flag"]["issue_type"] in ("HOURS", "PERIOD") for v in verified)
-        return None, ("No HIGH exclusion flag was raised and verified for this event."
+        return None, ("No HIGH or MEDIUM exclusion flag was raised and verified for this event."
                       + (" Hours-clause questions are explored in the What-if panel." if hours else ""))
     priced = [(abs(Decimal(price_at_max(f["treaty_id"])["money_at_stake"]["our_net"])), f)
               for f in candidates]
-    priced.sort(key=lambda pair: (-pair[0], pair[1]["treaty_id"]))
+    priced.sort(key=lambda pair: (-pair[0], DISPUTED.index(pair[1]["severity"]), pair[1]["treaty_id"]))
     return priced[0][1], ""
+
+
+#: Severities the Courtroom will argue, strongest first.
+DISPUTED = ("HIGH", "MEDIUM")
 
 
 def build_courtroom(

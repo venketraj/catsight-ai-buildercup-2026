@@ -6,6 +6,11 @@
 
 Google Cloud AI Builder Cup 2026 · BFSI: Intelligent Risk, Fraud & Financial Experiences · Team Techno Crackers.
 
+**▶ Live demo:** https://catsight-api-tzvix6sejq-uc.a.run.app — press **Instant replay** for a recorded real run in about 6 seconds, or **Run live** to watch the agents work (about a minute).
+**▶ Video (under 3 min):** *link added at submission* · **Deck (PDF):** [`docs/CatSight_deck.pdf`](docs/CatSight_deck.pdf)
+
+**Where it fits.** CatSight is not a catastrophe model and does not compete with one. Cat models (Moody's RMS, Verisk and others) estimate *how big* the loss is. CatSight is the layer after that: it joins an event's footprint to the reinsurer's own treaties and their contract wording, so the analyst sees *who pays what, and which clause could change it*. Here the footprint comes from public data (NOAA IBTrACS, USGS ShakeMap); a licensed cat-model footprint could be plugged in behind the same typed interface.
+
 ---
 
 ## What it does
@@ -66,14 +71,14 @@ Detail in [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 | Measure | Result | Notes |
 |---|---|---|
 | Loss engine vs the hand-checked worked example | exact | QA-1 |
-| Treaty-term extraction (RAG-first) | **99.5%** (185/186 fields) | on the 8 wordings the prompts were developed against; not measured on a held-out set |
+| Treaty-term extraction (RAG-first) | **99.5%** (185/186 fields) | an upper bound: measured on the 8 wordings the prompts were developed against; no blind set yet |
 | Governing clause retrieved | **186/186** | Firestore vector search |
-| Citations verified against the page | **185/187** | 1 scanned page labelled "transcribed" |
+| Citation coverage | **186/188** fields cited; **185/186** check out against the page | per-field audit in [`docs/RESULTS.md`](docs/RESULTS.md) §3; 1 scanned page is labelled "transcribed" |
 | Extraction time, 8 wordings | **57 s** | vs ~25 min for whole-document extraction |
-| Live analysis (Jebi) | **20-50 s**, about **$0.01** in model cost | from measured token counts |
-| Follow-up question | about **$0.003** | |
-| Clause Courtroom | about **15 s**, about **$0.004** | |
-| Automated tests | **864 passing** | plus an opt-in live suite against real GCP |
+| Live analysis (Jebi), 5 runs | money in **0.7 s**; complete in **9.8 s** p50 (8-18 s); **$0.010** p50 model cost | warm service; [`docs/RESULTS.md`](docs/RESULTS.md) §1 |
+| Clause Courtroom | **20 s**, **$0.004** | one measured run; opens on a verified HIGH or MEDIUM exclusion flag |
+| Follow-up question | about **$0.003** | from token counts, not benchmarked |
+| Automated tests | **865 passing** | plus an opt-in live suite against real GCP |
 
 ## Run it yourself
 
@@ -109,7 +114,7 @@ npm run dev        # open http://localhost:5173
 **4. Tests** - in `backend/`:
 
 ```powershell
-uv run --no-sync pytest -q                                   # 864 tests, no cloud calls
+uv run --no-sync pytest -q                                   # 865 tests, no cloud calls
 $env:RUN_LIVE="1"; uv run --no-sync --env-file .env pytest -m live -q   # real Gemini + Firestore, a few cents
 ```
 
@@ -131,14 +136,22 @@ PROJECT_ID=techno-crackers-catsight MIN_INSTANCES=1 ./scripts/deploy.sh    # jud
 ./scripts/smoke_test.sh <service-url>
 ```
 
-The script builds the UI into the image, so one Cloud Run service serves both the UI and the API. It runs as the dedicated `catsight-run` service account, turns on Cloud Trace, and applies the cost guards. Logs and traces then appear in the Cloud Run, Cloud Logging and Cloud Trace consoles - no extra dashboard is built into the app.
+The script builds the UI into the image, so one Cloud Run service serves both the UI and the API. It runs as the dedicated `catsight-run` service account, turns on Cloud Trace, and applies the cost guards.
+
+**Observability** (once per project):
+
+```bash
+PROJECT_ID=techno-crackers-catsight ./scripts/setup_observability.sh
+```
+
+This turns the service's structured logs into Cloud Monitoring metrics and a **"CatSight - live service"** dashboard: analyses by mode, live latency and model cost, citations verified and withheld, Courtroom outcomes, guardrail trips (unsupported figures, limits, errors), and Cloud Run requests, latency and instances. Add `BILLING_ACCOUNT=… BUDGET_INR=…` for a budget alert. Per-agent timelines are in **Cloud Trace**; nothing is built into the app itself.
 
 ## Limitations
 
 - No real event in the data makes an hours clause move money (Jebi's damage lasted 9 hours; Noto's real aftershock causes no loss in our model). The hours-clause what-if is therefore shown as labelled *hypothetical*; the Courtroom argues the real storm-surge exclusion instead.
 - Courtroom surge shares are bounded assumptions (0-50%) - the data does not separate wind from surge damage.
 - Typhoon Haiyan (Philippines) is in the data but not offered in the demo. The synthetic Philippine book is sized like Japan's and the wind curve is an economic-damage calibration, so modelled claims (~$94B) are far above the real ~$1.5B insured loss. A per-country insurance-penetration and insured-loss calibration is future work ([`ASSUMPTIONS.md`](backend/data/ASSUMPTIONS.md) X11).
-- Agent output varies between runs; it is measured, not tuned to known answers.
+- Agent output varies between runs, even at temperature 0. Extraction prompts were revised against the same eight wordings they are scored on, so those scores are an upper bound ([`docs/RESULTS.md`](docs/RESULTS.md)).
 - Every modelling assumption is recorded in [`backend/data/ASSUMPTIONS.md`](backend/data/ASSUMPTIONS.md).
 - Manual-effort comparisons in the app are labelled *simulated*: an estimate of the analyst workflow, not a timed study.
 
@@ -146,21 +159,33 @@ The script builds the UI into the image, so one Cloud Run service serves both th
 
 Designed or investigated, not built:
 
-- **More events and countries from data alone.** The 2024 Hualien earthquake (Taiwan) has been investigated: its real aftershock cluster about 20 days later is a genuine second occurrence worth about $11-15M per treaty under the hours clause - the dispute the Courtroom is built for.
+- **More events and countries from data alone.** The 2024 Hualien earthquake (Taiwan) has been investigated: its real aftershock cluster about 20 days later is a genuine second occurrence worth about $11-15M per treaty under the hours clause. That would give the Courtroom a real hours-clause dispute alongside Jebi's storm-surge exclusion.
 - **Per-treaty hours clauses and multi-shock earthquakes** applied in the base analysis, not only in What-if.
 - **Calibrated vulnerability per country** - insurance penetration and insured-loss wind curves - which would bring Haiyan back into the demo.
 - **Upload your own wordings.** The RAG pipeline already ingests any PDF; public upload is held back for cost and safety.
 - **Live event feeds** - a USGS or JTWC alert starts an analysis automatically.
+
+## How it maps to the judging criteria
+
+| Criterion | Where to look |
+|---|---|
+| **Technical merit** | ADK 2.11 `Workflow` with a verification loop and a parallel Courtroom fan-out; RAG on Firestore vector search; a citation verifier that withholds anything it cannot match; a deterministic loss engine with 865 tests; guardrail events, traces and a dashboard in Cloud Logging, Trace and Monitoring — [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md), [`docs/RESULTS.md`](docs/RESULTS.md) |
+| **Problem alignment & impact** | The first-view question a reinsurer faces after a catastrophe, answered per treaty and per party, with the clause that could change it — [`docs/BUSINESS_IMPACT.md`](docs/BUSINESS_IMPACT.md), [`docs/DOMAIN_PRIMER.md`](docs/DOMAIN_PRIMER.md) |
+| **Innovation** | Two AI counsel argue a disputed clause from verified wording, and tested code prices both readings; Gemini reads a scanned endorsement that changes the contract — [`docs/MONEY_MOMENT.md`](docs/MONEY_MOMENT.md) |
+| **User experience** | Five-step layout, sticky summary, guided tour, instant replay, light and dark themes with colour-blind-checked palettes, keyboard navigation, Word export |
 
 ## Documentation
 
 | | |
 |---|---|
 | [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) | Agent graph, data flows and service topology |
+| [`docs/RESULTS.md`](docs/RESULTS.md) | Every measured figure, the per-field citation audit, and what is not yet measured |
+| [`docs/BUSINESS_IMPACT.md`](docs/BUSINESS_IMPACT.md) | Who uses it, what it saves, and how that was estimated |
 | [`docs/DOMAIN_PRIMER.md`](docs/DOMAIN_PRIMER.md) | Reinsurance terms and the worked example |
 | [`docs/MONEY_MOMENT.md`](docs/MONEY_MOMENT.md) | The per-party money story, derived number by number |
 | [`backend/data/ASSUMPTIONS.md`](backend/data/ASSUMPTIONS.md) | Every modelling assumption and decision, with its status |
-| [`docs/README.md`](docs/README.md) | Full documentation index |
+
+IDs such as `FR-LOSS-2`, `QA-1` or `B6` in code, tests and commit messages refer to the team's internal requirement list: `FR` a functional requirement, `QA` an acceptance test, `B` a benchmark.
 
 ## Data
 

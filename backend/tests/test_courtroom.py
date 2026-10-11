@@ -146,6 +146,20 @@ def test_flag_selection_follows_fr_court_1():
     assert none is None and "What-if" not in why
 
 
+def test_a_medium_exclusion_is_argued_and_a_low_one_is_not():
+    """Live Jebi runs rated the same verified T-004 surge exclusion HIGH in
+    some runs and MEDIUM in others; the Courtroom must not depend on that."""
+    medium = {**FLAG, "severity": "MEDIUM"}
+    flag, why = pick_disputed_flag([{"flag": medium}], lambda tid: _price(tid, 0.5, "x"))
+    assert flag["treaty_id"] == "T-004" and why == ""
+    none, why = pick_disputed_flag([{"flag": {**FLAG, "severity": "LOW"}}], lambda t: None)
+    assert none is None and "HIGH or MEDIUM" in why
+    # Same swing: HIGH is preferred over MEDIUM.
+    high = {**FLAG, "severity": "HIGH"}
+    flag, _ = pick_disputed_flag([{"flag": medium}, {"flag": high}], lambda tid: _price(tid, 0.5, "x"))
+    assert flag["severity"] == "HIGH"
+
+
 # --------------------------------------------------------------------------- #
 # API
 # --------------------------------------------------------------------------- #

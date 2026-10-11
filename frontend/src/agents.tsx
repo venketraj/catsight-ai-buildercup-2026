@@ -313,7 +313,7 @@ export function ReportPanel({
   );
 }
 
-/** A deliberately small Markdown renderer: headings, bullets, bold. */
+/** A deliberately small Markdown renderer: headings, bullets, bold, inline code. */
 export function Markdown({ text }: { text: string }) {
   const blocks: JSX.Element[] = [];
   let list: string[] = [];
@@ -337,17 +337,24 @@ export function Markdown({ text }: { text: string }) {
       continue;
     }
     flush();
-    if (line.startsWith("## ")) blocks.push(<h3 key={blocks.length}>{line.slice(3)}</h3>);
-    else if (line.startsWith("# ")) blocks.push(<h3 key={blocks.length}>{line.slice(2)}</h3>);
-    else if (line.trim()) blocks.push(<p key={blocks.length}>{inline(line)}</p>);
+    // Any heading level: model output uses ### as often as ##.
+    const heading = /^(#{1,6})\s+(.*)$/.exec(line);
+    if (heading) {
+      const body = inline(heading[2] ?? "");
+      blocks.push(heading[1]!.length <= 2
+        ? <h3 key={blocks.length}>{body}</h3>
+        : <h4 key={blocks.length}>{body}</h4>);
+    } else if (line.trim()) blocks.push(<p key={blocks.length}>{inline(line)}</p>);
   }
   flush();
   return <div className="md">{blocks}</div>;
 }
 
 function inline(text: string): (string | JSX.Element)[] {
-  return text.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
-    part.startsWith("**") && part.endsWith("**") ? <strong key={i}>{part.slice(2, -2)}</strong> : part,
+  return text.split(/(\*\*[^*]+\*\*|`[^`]+`)/g).map((part, i) =>
+    part.startsWith("**") && part.endsWith("**") ? <strong key={i}>{part.slice(2, -2)}</strong>
+      : part.length > 1 && part.startsWith("`") && part.endsWith("`") ? <code key={i}>{part.slice(1, -1)}</code>
+      : part,
   );
 }
 

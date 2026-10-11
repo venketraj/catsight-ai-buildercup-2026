@@ -1,296 +1,227 @@
-# CatSight — Architecture
+# CatSight — Architecture (as built)
 
-> Judge-facing architecture reference. Service topology, the agent graph, data flows, and the design decisions behind them.
->
+Service topology, the agent graph, data flows, and the decisions behind them.
+Everything here is what runs on the live service; planned work is in section 7
+and labelled as such.
 
 ---
 
 ## 1. One picture
 
 ```
-                        ┌───────────────────────────────────────────────┐
-  Analyst / judge       │  Firebase Hosting — React + Vite SPA          │
-  (browser)      ──────►│  https://techno-crackers-catsight.web.app     │
-                        └────────────────────┬──────────────────────────┘
-                                             │  HTTPS · REST + SSE via fetch streaming
-                                             │  CORS allow-list · NO Hosting rewrite
-                                             ▼
-                        ┌───────────────────────────────────────────────┐
-                        │  Cloud Run — catsight-api   (us-central1)     │
-                        │  FastAPI + Google ADK 2.11 graph Workflow     │
-                        │  service-account auth · no API keys           │
-                        │  min-instances 0 · max-instances 3 · t/o 300s │
-                        └──┬─────────┬──────────┬──────────┬────────────┘
-                           │         │          │          │
-            ┌──────────────▼─┐ ┌─────▼─────┐ ┌──▼───────┐ ┌▼─────────────────┐
-            │ Gemini on      │ │ Firestore │ │ Cloud    │ │ Google Search    │
-            │ Agent Platform │ │ (native)  │ │ Storage  │ │ grounding        │
-            │ (Vertex AI)    │ │ treaties  │ │ treaty   │ │ event context    │
-            │ global endpoint│ │ exposures │ │ PDFs     │ │ ONLY — never a   │
-            │ 3.5 Flash-Lite │ │ chunks +  │ │ exports  │ │ number or a flag │
-            │ 3.8 Flash      │ │  vectors  │ └──────────┘ └──────────────────┘
-            │ embedding-001  │ │ analyses  │
-            └────────────────┘ └───────────┘
+  Analyst / judge (browser)
+          │  HTTPS · same origin · REST + SSE (fetch streaming)
+          ▼
+  ┌──────────────────────────────────────────────────────────────┐
+  │  Cloud Run — catsight-api  (us-central1)                     │
+  │  FastAPI: the API, the SSE stream AND the built React UI     │
+  │  Google ADK 2.11 graph Workflows · deterministic loss engine │
+  │  dedicated service account · no API keys                     │
+  │  max-instances 3 · timeout 300 s · per-visitor + daily caps  │
+  └──────┬──────────────────┬───────────────────┬────────────────┘
+         │                  │                   │
+  ┌──────▼─────────┐ ┌──────▼──────────┐ ┌──────▼─────────┐
+  │ Gemini on      │ │ Firestore       │ │ Cloud Storage  │
+  │ Vertex AI      │ │ (native)        │ │ treaty PDFs    │
+  │ global endpoint│ │ treaty book     │ └────────────────┘
+  │ 3.5 Flash-Lite │ │ events, methods │
+  │ 3.8 Flash      │ │ 252 clause      │
+  │ embedding-001  │ │ vectors (768-d) │
+  └────────────────┘ │ completed runs  │
+                     └─────────────────┘
 
-  Cross-cutting: Cloud Logging (structured JSON) · Cloud Trace (ADK OTel) ·
-                 Secret Manager · Artifact Registry · Cloud Build · budget alerts
+  Cross-cutting: Cloud Logging (structured JSON, one line per stage) ·
+                 Cloud Trace (ADK OpenTelemetry spans) · Cloud Monitoring
+                 (log-based metrics + dashboard) · Cloud Build
 ```
 
-**Why the browser calls Cloud Run directly.** Firebase Hosting rewrites impose a 60-second timeout and do not stream. A full analysis runs longer than that and its value is in watching it stream. So the SPA calls the `*.run.app` URL with `fetch()` + `ReadableStream` — not `EventSource`, which is GET-only — against a CORS allow-list.
+**One service, one origin.** The deploy script builds the React app into
+the container, and FastAPI serves it next to the API. The browser streams
+from the same origin, with no proxy timeout in between. The stream uses
+`fetch()` with a `ReadableStream` rather than `EventSource`, because the
+analysis is a POST.
 
-## 2. The agent graph
+**Health check:** `GET /health`. (`/healthz` also exists for local use, but
+Cloud Run's front end reserves paths ending in `z` on `*.run.app`.)
 
-ADK 2.x graph `Workflow`. Not a linear chain: there is a verification **loop** and an adversarial **fan-out / fan-in**.
+## 2. The agent graphs
+
+Two ADK 2.x `Workflow` graphs of function nodes. Model calls happen inside
+nodes with structured output (`response_schema`) rather than as a free
+tool-calling loop: the retrieval queries per clause type are fixed, so a loop
+would add calls and latency without adding judgement.
+
+### Analysis
 
 ```
-            user request (replay: event injected into state · live: query)
-                                    │
-  ┌─────────────────────────────────▼──────────────────────────────────┐
-  │ AG-1  event_intel            MODEL_MAIN   [google_search] only     │
-  │       skipped in replay mode · disallow_transfer_to_parent/peers   │
-  │       → state.event                                                │
-  └─────────────────────────────────┬──────────────────────────────────┘
-                                    │
-  ┌─────────────────────────────────▼──────────────────────────────────┐
-  │ AG-2  exposure_analyst       MODEL_MAIN                             │
-  │       match_treaties · estimate_layer_losses ──► LOSS ENGINE [tool] │
-  │       → state.impact                                               │
-  └─────────────────────────────────┬──────────────────────────────────┘
-                                    │
-  ┌─────────────────────────────────▼──────────────────────────────────┐
-  │ AG-3  wording_checker        MODEL_REASON                           │
-  │       search_treaty_clauses ──► Firestore vector search             │
-  │       split_occurrence_scenario ──► LOSS ENGINE [tool]              │
-  │       → state.wording_flags  (candidates)                           │
-  └─────────────────────────────────┬──────────────────────────────────┘
-                                    │
-       ┌────────────── LOOP ────────┴──────────────┐
-       │  AG-5  verifier          MODEL_REASON     │
-       │  1. deterministic normalised quote-match  │  ◄── free, runs first
-       │  2. checker → {supports, reason}          │
-       │  fail → retry once with feedback          │
-       │  fail again → ABSTAIN → withheld tray     │
-       │  → state.verified_flags / withheld_flags  │
-       └────────────────────┬──────────────────────┘
-                            │
-              ┌─ triggered only on an interpretable ambiguity ─┐
-              │                                                 │
-  ┌───────────▼─────────────┐      ┌──────────────────────────┐ │
-  │ AG-6 cedent_counsel     │      │ AG-7 reinsurer_counsel   │ │  PARALLEL
-  │ MODEL_MAIN              │      │ MODEL_MAIN               │ │  cannot see
-  │ argues the cedent's     │      │ argues the reinsurer's   │ │  each other
-  │ reading, cites verified │      │ reading, cites verified  │ │
-  └───────────┬─────────────┘      └────────────┬─────────────┘ │
-              └──────────────┬───────────────────┘               │
-  ┌──────────────────────────▼─────────────────────────────────┐ │
-  │ AG-8  arbiter            MODEL_REASON                       │ │
-  │       price_scenario ──► LOSS ENGINE [typed bounded tool]    │ │
-  │       summarises dispute risk · DOES NOT DECIDE              │ │
-  │       money_at_stake computed in PYTHON, per party           │ │
-  │       → state.courtroom                                      │ │
-  └──────────────────────────┬─────────────────────────────────┘ │
-              └──────────────┴───────────────────────────────────┘
-                            │
-  ┌─────────────────────────▼──────────────────────────────────────────┐
-  │ AG-4  reporter               MODEL_MAIN   no tools                 │
-  │       copies every number from tool output · disclaimer            │
-  │       code asserts each number appears in state.impact             │
-  │       → state.report                                              │
-  └────────────────────────────────────────────────────────────────────┘
-                            │
-                      SSE → browser · analysis persisted → Firestore
-                      green run → cached replay fixture written
+  START
+    │
+  event_intel        loads the event record (track or ShakeMap, observed facts)
+    │
+  exposure_analyst   NO MODEL · match_treaties → LOSS ENGINE
+    │                peril ∩ territory ∩ period; per-layer ceded, burn,
+    │                reinstatements, reinstatement premium, each party's position
+    │
+  wording_checker    3.5 Flash-Lite · Firestore vector search per treaty
+    │                (equality pre-filter on treaty_id) → candidate flags,
+    │                each citing treaty, page, clause and a quote
+    │
+  verifier           1. deterministic normalised quote match against the stored clause
+    │  ◄── loop ──┐  2. 3.8 Flash: does the quote SUPPORT the claim?
+    │   reviser   │  fail → one revision (3.5 Flash-Lite) → re-verify
+    │  ───────────┘  fail again → withheld, with the reason, never shown as a finding
+    │
+  reporter           3.5 Flash-Lite · writes the report from verified facts;
+                     code checks every figure against engine output, one rewrite,
+                     anything still untraceable is listed as unsupported
+    │
+  SSE → browser · run saved to Firestore · a complete run refreshes the replay recording
+```
+
+### Clause Courtroom (on demand, on a completed run)
+
+```
+  brief      picks the most material verified exclusion flag
+    │
+    ├──► cedent_counsel     3.5 Flash-Lite ┐  in PARALLEL, blind to each other;
+    └──► reinsurer_counsel  3.5 Flash-Lite ┘  each cites a retrieved clause and
+                                               states its excluded share (0-50%)
+    │
+  quote check   deterministic match + 3.8 Flash: does the quote say what
+    │           counsel uses it to say? A side that fails is dropped.
+    │
+  price         LOSS ENGINE prices each verified reading (typed, bounded tool)
+    │           money_at_stake per party = a Python subtraction
+    │
+  arbiter       3.8 Flash · summarises the dispute; does NOT decide;
+                any figure not in the engine output is flagged
+    │
+  analyst records a position (insurer's reading / reinsurers' / unresolved)
 ```
 
 ### Why this shape
 
 | Decision | What it buys |
 |---|---|
-| **LLM orchestrates, Python computes** | No hallucinated money. The first question a finance judge asks is already answered. |
-| **Verifier loop, not a filter** | The model gets one chance to correct itself with specific feedback, then abstains. Abstention is counted and shown, which turns a silent safety rule into a measurable feature. |
-| **Counsels in parallel and blind to each other** | Two independent readings, not one model talking to itself. Also the only way the latency budget closes. |
-| **Counsels on `MODEL_MAIN`, arbiter on `MODEL_REASON`** | Keeps the Courtroom path under $0.08. The reasoning model is needed to weigh the two readings, not to construct each one. |
-| **Arbiter cannot decide** | Issue-spotting, not legal advice. The analyst records the position, and it persists on the analysis. |
-| **`money_at_stake` in Python** | The headline number of the whole demo is a subtraction over engine output, never a token prediction. |
-| **Conditional Courtroom** | A standard analysis costs $0.037, not $0.058. And when no clause is genuinely ambiguous, the UI says so rather than inventing a dispute. |
-| **Typed bounded scenario tool** | The LLM picks parameters inside a schema that refuses out-of-range values. One tool serves both the Courtroom and what-if. |
-| **Idempotent tools** | Failed graph nodes re-run on resume. |
+| **Models read, Python computes** | No model-generated money. Every figure is a tested `Decimal` calculation. |
+| **Verifier loop, not a filter** | One chance to correct a flag with specific feedback, then withhold. Withholding is counted and shown, so a safety rule becomes a visible feature. |
+| **Counsel in parallel and blind** | Two independent readings, not one model talking to itself, at the latency of one. |
+| **Counsel on Flash-Lite, judging on 3.8 Flash** | Cheap generation, stronger checking. The Courtroom costs well under a cent per run (see `RESULTS.md`). |
+| **The arbiter cannot decide** | Issue-spotting, not legal advice. The analyst's position is saved on the run. |
+| **Typed, bounded scenario tool** | The model picks parameters inside a schema that refuses out-of-range values. One tool serves the Courtroom and What-if. |
 
 ## 3. Data flows
 
-### Flow A — treaty ingestion (admin, once per document)
+### A — treaty ingestion (offline, scripts in `backend/ingest/`)
 
 ```
-treaty_*.pdf ──► POST /api/admin/ingest (X-Admin-Token) ──► GCS gs://…-docs/treaties/
-                     │
-                     ├─[A1] Gemini MODEL_MAIN · Part.from_uri(gs://…)
-                     │      response_schema=TreatyTerms · temperature 0
-                     │      media_resolution MEDIUM · page_number on EVERY field
-                     │      → cedent, type, perils[], territory{}, inception, expiry,
-                     │        currency, layers[], qs{}, hours_clause{}, exclusions[]
-                     │      → validate (limit>0, retention≥0, layers contiguous)
-                     │        invalid → re-ask once → else extraction.confidence=low
-                     │
-                     ├─[A2] scanned endorsement page (no text layer)
-                     │      native image understanding → transcription stored as a
-                     │      chunk with source="transcription"
-                     │      contradicts base wording → effective term = endorsement,
-                     │      both retained with provenance
-                     │
-                     └─[A3] split by clause (fallback: by page)
-                            gemini-embedding-001 · 768 dims · L2-normalised
-                            task_type=RETRIEVAL_DOCUMENT · one input per request
-                            → treaty_chunks{treaty_id, page, clause_no, clause_title,
-                                            clause_type, text, embedding}
+synthetic treaty PDFs ──► split into clauses with page numbers
+                           │  scanned page with no text layer → Gemini transcribes it once,
+                           │  stored as a clause with source="transcription"
+                           ▼
+                     gemini-embedding-001 · 768 dims · cached by text hash
+                           ▼
+                     Firestore treaty_chunks {treaty_id, page, clause_no, text, embedding}
+                           ▼
+              RAG-first extraction: per term group, top-4 clauses → Gemini reads only
+              those → every answer cites a retrieved clause; quote matched before accepted
+                           ▼
+              reconciliation: the treaty book is the data of record; each extracted
+              term is compared field by field, and a verified disagreement is flagged
 ```
 
-Vector index is created with **gcloud**, not the Firebase CLI: `treaty_chunks`, `treaty_id ASC` + `embedding` flat 768. Pre-filters are **equality only**, which is why retrieval filters on `treaty_id` and nothing else.
+The vector index is created with gcloud (`treaty_id` + `embedding`, flat,
+768). Firestore pre-filters are equality only, which is why retrieval filters
+on `treaty_id` alone.
 
-### Flow B — analysis (the demo path)
-
-```
-POST /api/analyses {mode:"replay", event_id:"jebi-2018", as_if:true}
-   │
-   ├─ guards: Pydantic validation · per-IP 20/h · DAILY_ANALYSIS_CAP · query ≤300 chars
-   │
-   ├─ replay: load data/events/jebi-2018.json → inject into state (NO search call)
-   │  live:   AG-1 with google_search → Event + facts + source URLs
-   │          intensities flagged intensity_source="llm_estimate" + warning badge
-   │
-   ├─ hazard: per-region wind (piecewise radial profile over track points) or MMI
-   │          (nearest ShakeMap grid cell) → intensity bands
-   │
-   ├─ AG-2 → match_treaties (peril ∩ territory ∩ period-unless-as_if)
-   │       → estimate_layer_losses → LOSS ENGINE
-   │          gross = Σ tsi_usd × damage_ratio(intensity, country)
-   │          Cat XL: ceded = min(max(loss−retention,0), limit)
-   │          QS:     ceded = min(gross × cession_pct, event_limit)
-   │          per-layer burn, exhaustion, reinstatements, RIP, our_share
-   │
-   ├─ AG-3 → retrieval (hours clause · exclusions · territory · reinstatement · period)
-   │       → candidate flags, each with treaty_id, page, clause_no, quote ≤300 chars
-   │       → hours clause vs event.duration_h → split scenario if longer
-   │
-   ├─ AG-5 → verify every candidate → verified_flags | withheld_flags
-   │
-   ├─ [if ambiguity] AG-6 ∥ AG-7 → AG-8 → courtroom{priced, money_at_stake, arbiter_md}
-   │
-   ├─ AG-4 → report_md + structured key_numbers + disclaimer
-   │
-   └─ persist analyses/{id} · write cached replay fixture · SSE "done"
-```
-
-### SSE event contract
+### B — analysis
 
 ```
-{"type":"stage","agent":"…","status":"started|completed","ts":…}
-{"type":"tool","agent":"…","name":"…","summary":"12 matched, 3 excluded"}
-{"type":"partial","agent":"reporter","text":"…"}      ← REPLACES, never appends
-{"type":"result","key":"event|impact|wording_flags|courtroom|report","data":{…}}
-{"type":"error","message":"…","retryable":true}
-{"type":"done","analysis_id":"…"}
+POST /api/analyses {event_id, as_if}
+   ├─ guards: validation · per-visitor hourly limit · daily cap
+   │          (over a limit → the recorded replay, labelled, if one exists)
+   ├─ hazard: wind per region from the IBTrACS track, or MMI from the ShakeMap grid
+   ├─ graph above → SSE frames
+   └─ run saved · replay recording refreshed
 ```
 
-Headers: `Cache-Control: no-cache`, `X-Accel-Buffering: no`.
+SSE frames, in order: `stage` (each agent started/completed), `tool`
+(e.g. "13 matched, 11 excluded"), `result` (`event`, `impact`), `retrieval`,
+`flag`, `verification` (verified and withheld counts), `report` (markdown,
+cost, unsupported figures), `done` (run id).
 
-### Flow C — cached instant replay
+### C — instant replay
 
-Load-bearing infrastructure, not an optimisation. Every green analysis writes its SSE stream to `data/replays/{event_id}.jsonl`. The client falls back to the fixture when the first event misses `FIRST_EVENT_TIMEOUT_MS`, the daily cap is hit, or the request errors. Anonymous visitors are served fixtures at **zero LLM cost**.
-
-One mechanism, three risks closed: cold starts across three weeks of unattended remote judging; the daily cap being exhausted by public traffic from a launch post; a dead backend or network on stage at the finale. Cached runs are always labelled as cached, with the timestamp of the run they came from.
+Every complete live run records its stream to `data/replays/{event_id}.json`.
+**Instant replay** plays it back in about 6 seconds, labelled with when it
+was recorded and how long the live run took. It covers cold starts, the daily
+cap under public traffic, and a dead network on stage. Replays cost nothing
+in model calls.
 
 ## 4. Trust architecture
 
-What a regulated-industry judge is actually looking for:
-
-1. **The LLM never calculates.** Every number originates in tested, deterministic Python with full branch coverage. The reporter is checked in code: each number it prints must appear in `state.impact`.
-2. **Every wording claim is cited** to `treaty_id`, page and clause, with a quote ≤ 300 characters.
-3. **Every citation is machine-verified** — normalised substring match, then a semantic check. Failures retry once, then abstain.
-4. **Unverifiable claims are withheld, visibly.** `"n of n verified · k withheld"` sits in the report header, and the withheld tray shows the reason.
+1. **The model never calculates.** Every figure comes from deterministic Python (`Decimal`, half-up rounding) tested against a hand-checked worked example.
+2. **Every wording claim is cited** to treaty, page and clause, with a quote.
+3. **Every citation is machine-checked**: exact normalised match first, then a model check that the quote supports the claim.
+4. **What fails is withheld, visibly**: "n of n displayed citations verified · k withheld", with the reason for each.
 5. **Transcribed sources are badged differently** from text-layer sources.
-6. **Grounded web search touches event context only** — never a number, never a flag — and is displayed in its own panel.
-7. **Retrieved text is data, not instructions.** Agents are told to ignore instructions found inside documents; ingestion is admin-token-protected.
-8. **A human approves** before anything leaves. Approve / Needs changes with a note, persisted.
-9. **Synthetic data throughout.** Fictional cedents, paraphrased wordings, public hazard data with attribution.
-10. **The disclaimer is on every report and in the footer.**
+6. **Every figure in AI-written text is checked** against engine output; anything untraceable is listed as unsupported.
+7. **Retrieved text is data, not instructions.** Agents are told to ignore instructions inside documents.
+8. **A human decides.** The Courtroom records the analyst's position; the arbiter only summarises.
+9. **Synthetic data throughout.** Fictional insurers and wordings, public hazard data with attribution.
+10. **The disclaimer is on every report, export and page footer.**
 
 ## 5. Service configuration
 
 | Concern | Setting |
 |---|---|
-| Region | Cloud Run, Firestore, GCS: `us-central1`. **Gemini: `global`** — 3.x is not served from us-central1. |
-| Auth | Cloud Run service account; `GOOGLE_GENAI_USE_ENTERPRISE=true`; no API keys anywhere |
-| Scaling | `--min-instances 0 --max-instances 3 --cpu-boost --timeout 300` |
-| Cost guards | Daily analysis cap, per-IP 20/h, budget alerts, `CACHED_REPLAY_ONLY` kill switch |
-| Firestore rules | **Deny all** client access; everything goes through the API |
-| Secrets | `ADMIN_TOKEN` in Secret Manager, never in git |
-| Retries | `HttpRetryOptions(attempts=5, initial_delay=1)` — google-genai retries are off by default |
-| Model failover | `FallbackModel`: 3.8 Flash → 3.5 Flash-Lite |
-| Thinking | `ThinkingConfig(thinking_level=LOW)`; thinking tokens bill as output |
-| Observability | Structured JSON logs (`analysis_id`, stage, latency, tokens); Cloud Trace via ADK OTel |
+| Region | Cloud Run, Firestore, Cloud Storage: `us-central1`. **Gemini: `global`** (3.x is not served from us-central1). |
+| Auth | Dedicated `catsight-run` service account (Vertex AI user, Firestore user, storage, logging, trace); `GOOGLE_GENAI_USE_ENTERPRISE=true`; no API keys |
+| Scaling | `--min-instances 0` (1 during judging) `--max-instances 3 --timeout 300`, startup CPU boost |
+| Cost guards | Daily analysis cap (300), per-visitor limit (20/hour), `CACHED_REPLAY_ONLY` kill switch |
+| Firestore rules | Deny all client access; everything goes through the API |
+| Retries | 429 / 500 / 503 and dropped connections retried with backoff; a 400 is never retried |
+| Thinking | `thinking_level=LOW` on Gemini 3 |
+| Observability | Structured JSON logs with the run id; guardrail events (`citation_withheld`, `unsupported_figures`, `counsel_dropped`, `limit_refused`); ADK spans to Cloud Trace. `scripts/setup_observability.sh` builds log-based metrics, a Cloud Monitoring dashboard and an optional budget alert from them. No raw IPs, questions or prompts logged. |
 
-## 6. Performance and cost
+Measured latency and cost are in [`RESULTS.md`](RESULTS.md) §1.
 
-| Path | p50 | p95 | Cost |
-|---|---|---|---|
-| Standard analysis (warm) | ≤ 50 s | ≤ 95 s | ≈ $0.037 |
-| Courtroom path (warm) | ≤ 70 s | ≤ 120 s | ≈ $0.058 |
-| What-if re-run | — | — | ≈ $0.004 |
-| Cached replay | instant | instant | $0 |
-
-Time to first SSE event ≤ 3 s; cold start to first response ≤ 15 s. The added stages sit at the **end** of the pipeline, so they do not delay the first event — the stream starts moving while the expensive work is still ahead.
-
-
-
-## 7. Scalability path
-
-What production would need, stated as roadmap rather than claimed as built:
-
-- **Ingestion at scale** — real treaty packs and exposure schedules through an authenticated API; bordereaux upload; BigQuery for portfolio-scale exposure.
-- **Multi-tenancy** — per-tenant Firestore collections or project-per-tenant; today there are no user accounts by design.
-- **Event triggers** — Pub/Sub from public disaster alerts (GDACS, USGS feeds) via Cloud Scheduler for automatic runs on new events.
-- **Vendor feeds** — the hazard layer is an interface; a licensed cat-model footprint (Moody's RMS, Verisk) can replace IBTrACS/ShakeMap without touching the engine or the wording agents. **CatSight is complementary to those products, not a replacement.**
-- **Integration surface** — A2A / MCP endpoint so a broker's or modeller's agent can call CatSight as a tool.
-- **Loss development** — re-run as cedent loss advices arrive over months and track reserve drift.
-- **Managed runtime** — Agent Engine for the agent pipeline.
-
-## 8. Repository layout
+## 6. Repository layout
 
 ```
 /
-├── README.md                      # judge-facing · FR-DOC
-├── LICENSE                        # Apache-2.0
+├── README.md
+├── LICENSE                         Apache-2.0
 ├── backend/
-│   ├── catsight_agent/            # ADK package · root_agent in agent.py
-│   │   ├── agent.py               # the graph Workflow
-│   │   ├── prompts.py             # every instruction, in one place
-│   │   ├── schemas.py             # Pydantic models
-│   │   └── tools/
-│   │       ├── exposure.py        # match_treaties
-│   │       ├── loss_engine.py     # deterministic maths · FR-LOSS · no I/O
-│   │       ├── hazard.py          # wind / MMI at region centroids
-│   │       ├── retrieval.py       # search_treaty_clauses (+ local fallback)
-│   │       └── verify.py          # deterministic quote-match · FR-VERIFY-1
-│   ├── app/
-│   │   ├── main.py                # FastAPI routes
-│   │   ├── streaming.py           # ADK events → SSE
-│   │   ├── guards.py              # rate limit, daily cap, validation
-│   │   └── settings.py            # env config
-│   ├── ingest/                    # build_* and ingest_treaty scripts
-│   ├── data/                      # committed synthetic + derived (small files only)
-│   │   ├── events/ · synthetic/wordings/ · replays/ · ASSUMPTIONS.md
-│   │   └── raw/                   # git-ignored: IBTrACS ~114MB, Natural Earth ~40MB
-│   ├── tests/                     # pytest + ADK eval sets
-│   ├── requirements.txt           # pinned · google-adk==2.11.0
+│   ├── app/                        FastAPI: main (routes), analysis (stream), scenario
+│   │                               (What-if and Courtroom pricing), replay, runs,
+│   │                               report_docx, config, logs
+│   ├── catsight_agent/             agent.py (analysis graph), courtroom.py, agents.py
+│   │   │                           (model calls), prompts.py, schemas.py, store.py
+│   │   └── tools/                  loss_engine · hazard · vulnerability · retrieval · verify
+│   ├── ingest/                     wordings, embedding, RAG extraction, reconciliation, seeding
+│   ├── qa/                         extraction accuracy and the per-field citation audit
+│   ├── data/                       book, events, replays, extracted terms, ASSUMPTIONS.md
+│   ├── tests/                      865 pytest tests (+ an opt-in live suite)
 │   └── Dockerfile
-├── frontend/                      # Vite + React + TypeScript
-├── benchmarks/                    # B2–B7 harness + human templates + results/
-├── docs/                          # this pack
-├── scripts/                       # setup_gcp.sh · deploy.sh · smoke_test.sh
-└── firebase.json · .firebaserc · firestore.rules
+├── frontend/                       Vite + React + TypeScript
+├── benchmarks/                     run_all.py — live latency, cost and Courtroom runs
+├── docs/                           this documentation
+└── scripts/                        deploy.sh · smoke_test.sh · setup_observability.sh
+                                    · create_video.py · build_deck.py
 ```
 
-## 9. Data sources and attribution
+## 7. Not built — the path to production
+
+- **Live event intake.** Today the event comes from its stored record. Next: Pub/Sub from USGS or GDACS alerts, and grounded web search for event context in a separate panel (never touching a number or a flag).
+- **Model failover.** A fallback from 3.8 Flash to 3.5 Flash-Lite on outage.
+- **Vendor hazard feeds.** The hazard layer is an interface: a licensed cat-model footprint (Moody's RMS, Verisk) can replace IBTrACS / ShakeMap without touching the engine or the agents. **CatSight complements those products; it does not replace them.**
+- **Ingestion at scale.** An authenticated upload API for real treaty packs and exposure schedules; BigQuery for portfolio-scale exposure.
+- **Multi-tenancy.** There are no user accounts today, by design.
+- **Integration.** An A2A / MCP endpoint so a broker's or modeller's agent can call CatSight as a tool.
+- **Loss development.** Re-run as loss advices arrive, and track reserve drift.
+
+## 8. Data sources and attribution
 
 | Source | Use | Licence |
 |---|---|---|
@@ -299,8 +230,10 @@ What production would need, stated as roadmap rather than claimed as built:
 | **Natural Earth** 10m admin-1 | Region geometry | Public domain |
 | **JMA** | Event facts | "Source: Japan Meteorological Agency website" |
 | **e-Stat** | Dwelling counts for exposure calibration | 出典：政府統計の総合窓口(e-Stat) |
-| **GIROJ / GIAJ / JER** | Calibration and back-test references | Cited only; not redistributed |
+| **GIROJ / GIAJ** | Calibration references | Cited only; not redistributed |
 | **Eberenz et al. 2021** | Wind vulnerability V_half | CC BY 4.0 |
 | SEC EDGAR contracts | Style reference only — wordings are paraphrased, never copied | — |
 
-Portfolio, cedents and treaty wordings are **entirely synthetic**. Events are real and so are the referenced market losses, which are used for credibility and the B5 back-test only — never as model inputs.
+Portfolio, insurers and treaty wordings are **entirely synthetic**. Events are
+real, and so are the referenced market losses, which are used for context
+only — never as model inputs.

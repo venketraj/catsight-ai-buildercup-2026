@@ -1,12 +1,10 @@
 # The money moment
 
-> The climax of the demo, the video and the deck: **one clause, one number.**
+> **One clause, one number** — how a single contract clause moves money between the insurer, the reinsurance market and us, derived figure by figure.
 >
-> Every figure here is derived below from the `DOMAIN_PRIMER.md` worked example. **None of it goes on a slide until it comes out of a real engine run** (`QA-11`). This document exists so the engine can be built to produce it.
+> **Two parts.** Sections 1–6 are the *mechanics* of an hours clause, on the `DOMAIN_PRIMER.md` worked example; the loss engine's tests reproduce every figure exactly. They are **not** a Jebi result: on Jebi's real timeline the damaging window is about 9 hours, inside every 72-hour clause, so no hours clause moves money (`backend/data/ASSUMPTIONS.md` Z1). On the live site the hours clause appears only in **What-if**, labelled HYPOTHETICAL. Section 7 is what the site's **Clause Courtroom** argues for Jebi: the **T-004 storm-surge exclusion**.
 >
-> **How this maps to the live site.** §3–4 are the hours-clause mechanics on the `DOMAIN_PRIMER.md` worked example — engine-tested (QA-1, QA-11), not a Jebi run. On the real Jebi timeline no hours clause moves money: the damaging window is about 9 hours, inside every 72-hour clause (`backend/data/ASSUMPTIONS.md` Z1). So the site's **Courtroom** argues the clause that does move money for Jebi — the **T-004 storm-surge exclusion** (§7) — and the hours clause appears in **What-if**, labelled HYPOTHETICAL, where a cut on the real timeline gives its own figures, not the 35.0 / 19.4 split below. Present §3–4 as *the mechanics*, never as Jebi's result.
->
-> **Status: resolved.** The reinstatement-premium basis is settled in §4 from the primer's own arithmetic — the convention was recoverable from the published one-event figures, so it needed deriving rather than deciding. §4.5 lists two items a reinsurance practitioner should still sanity-check; neither blocks the build, and neither moves the headline.
+> The reinstatement-premium basis is derived in §4 from the worked example's own published figures; §4.5 lists two points a practitioner should still sanity-check. Neither moves the headline.
 
 ---
 
@@ -16,9 +14,9 @@ Every catastrophe team argues about it after a big storm:
 
 > **Is this one event or two — and which losses belong to which?**
 
-It is not academic. In 2024 the English Court of Appeal ruled on how a 168-hour clause works in *UnipolSai v Covéa*, holding that "occur" means "first occur". Jebi's own loss development was driven partly by overlapping Typhoon Trami claims arriving weeks later, and the market's insured-loss estimate moved from roughly $6bn at end-2018 to around $15bn by mid-2019.
+It is not academic. In 2024 the English Court of Appeal ruled on how a 168-hour clause works in *UnipolSai v Covéa*, holding that "occur" means "first occur". Jebi's own loss development was driven partly by overlapping Typhoon Trami claims arriving weeks later, and the insured-loss estimate grew from a first modelled range of $3–5.5bn (Moody's RMS, about ten days after landfall) to about $13bn (Swiss Re).
 
-The hours clause is the clause that decides the answer. CatSight finds it, verifies the quote, and prices both readings.
+When an event's losses span more than one hours window, the hours clause decides the answer. CatSight finds it, verifies the quote, and prices both readings.
 
 ## 2. The setup
 
@@ -164,11 +162,8 @@ If a practitioner rejects §4.1, **only Lion Re's net figures move.** The headli
 | Where | Treatment |
 |---|---|
 | **Product** (`FR-COURT`) | Both readings, both quotes verified, both priced by the engine, `money_at_stake` computed per party in Python. The analyst records a position. For Jebi the disputed clause is the T-004 storm-surge exclusion (§7). |
-| **Video** 1:05–1:40 | The Courtroom on the **T-004 storm-surge exclusion**. Two readings side by side, both cited. The engine prices both; figures read off the recorded run. Then What-if on the hours clause, labelled HYPOTHETICAL. Caption: *"Gemini reads. Tested code calculates."* |
-| **Deck** slide 7 | "The money moment: one clause, one number." Lead with the recorded T-004 Courtroom figures (§7). §3–4 may appear as *how an hours clause works*, labelled as the worked example — never as Jebi's result. |
-| **Q&A** | *"What is Gen AI doing that rules can't?"* — constructing both sides of a genuinely ambiguous reading from heterogeneous wordings, with machine-checked citations, then letting tested code price each one. |
 
-**Framing guardrails.** Issue-spotting, not legal advice. The human decides. Synthetic contracts, fictional cedent. The event is real and people died in it — state the number plainly, with no triumph in the voice-over.
+**Framing.** Issue-spotting, not legal advice. The human decides. Synthetic contracts, fictional insurer. The event is real and people died in it.
 
 ## 6. Engine requirements this implies
 
@@ -180,7 +175,7 @@ If a practitioner rejects §4.1, **only Lion Re's net figures move.** The headli
 - The engine returns the **full result set for both readings in one call**, so the UI never has to recombine numbers — and `money_at_stake` is a Python subtraction over those results, per party, never an LLM output.
 - All four perspectives — total ceded, cedent retention, Lion Re gross, Lion Re net — are returned, because the story needs all four.
 
-**QA-11 asserts these exact figures.** If a code change moves them, the test fails and the slide is wrong.
+**The engine's tests assert these exact figures.** If a code change moves them, the test fails.
 
 ## 7. On the site: the Jebi Courtroom (T-004 storm-surge exclusion)
 

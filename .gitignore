@@ -46,3 +46,6 @@ frontend/dist/
 # Internal planning docs and tool configuration: kept locally, never published.
 CLAUDE.md
 docs/internal/
+
+# Demo video working files (clips, audio, capture, tool venv)
+scratch/
