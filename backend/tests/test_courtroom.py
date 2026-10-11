@@ -61,7 +61,8 @@ class CourtModel:
                                "excluded_share": 0.0 if side == "cedent" else 0.3,
                                "argument_md": f"{side} argues."})
         if "relies on a quotation" in prompt:
-            assert "Do NOT fail it because the" in prompt and "- Osaka recorded" in prompt
+            # The observed facts reach the quote check (stubbed or from the event record).
+            assert "Do NOT fail it because the" in prompt and "329 cm" in prompt
             return json.dumps({"supports": self.supports, "reason": "checked"})
         if "claims arbiter" in prompt:
             stake = json.loads(prompt.split("PRICED OUTCOMES (USD millions, from the deterministic loss engine)")[1])

@@ -147,7 +147,7 @@ EVENTS: tuple[EventSpec, ...] = (
                 "url": "https://www.jma.go.jp/jma/indexe.html",
             },
             {
-                "text": "Osaka recorded a tide of 329 cm, a record for the station.",
+                "text": "Storm surge raised the tide at Osaka to 329 cm, a record for the station; the surge flooded Kansai International Airport.",
                 "source": "JMA",
                 "url": "https://www.jma.go.jp/jma/indexe.html",
             },

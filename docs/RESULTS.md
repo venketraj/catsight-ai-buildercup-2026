@@ -303,6 +303,7 @@ This replaces the 77.4% coverage measured on the earlier whole-document extracto
 | Corrupted quotes withheld by the verifier (unit suite) | **40/40**, 0 false withholds — the deterministic quote match; the model support check runs on stubs in this suite |
 | Jebi live runs raising the storm-surge flag | **8 runs**: the T-004 exclusion was raised in all 8 and verified in 7. It was rated HIGH in the 3 runs of 2026-10-10 and in 1 of the 5 benchmark runs of 2026-10-11, MEDIUM in the other 3; once the verifier withheld it. No false flag was displayed. |
 | Courtroom availability | In the benchmark of section 1 the Courtroom required a verified **HIGH** exclusion flag and so ran in 1 of 5 runs, because the agent rated the same verified clause HIGH or MEDIUM from run to run. It now opens on a verified HIGH **or MEDIUM** exclusion flag (ASSUMPTIONS M8); by the section 1 flags that would have been 4 of 5 runs. |
+| Event fact wording | A further live run had the verifier withhold the T-004 flag because the event fact said only "a tide of 329 cm", not that it was storm surge. The fact now states it as JMA reports it — storm surge raised the tide, flooding Kansai Airport (ASSUMPTIONS X12). **Re-check, 3 live Jebi runs (2026-10-11):** flag verified and rated HIGH 3/3; Courtroom ran 3/3; both counsel verified in 1/3 (the insurer's counsel was dropped for a misused quote in the other 2). |
 | Report figures not traceable to the engine | **0** in every live run recorded |
 | First live Jebi run (cold) | 52 s, 13 model calls |
 
