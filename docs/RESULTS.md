@@ -55,6 +55,8 @@ The counsel agents choose their surge share each run (bounded 0-50%), so money a
 - Flag recall/precision over a labelled corpus, and a blind-set extraction score.
 <!-- benchmarks:end -->
 
+*Note on the table above:* these runs used the earlier rule, which opened the Courtroom only on a **HIGH** exclusion flag, so runs 1, 4 and 5 show "not run" despite a verified MEDIUM flag. The Courtroom now argues HIGH or MEDIUM, and the Jebi fact now states the storm surge explicitly; the re-check in section 4 ran the Courtroom in 3 of 3 runs.
+
 ## 2. Treaty-term extraction — current pipeline (RAG-first)
 
 Measured 2026-10-10 with Firestore vector search live. Each term group

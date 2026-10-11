@@ -49,3 +49,8 @@ docs/internal/
 
 # Demo video working files (clips, audio, capture, tool venv)
 scratch/
+
+# Demo video (published on YouTube) and Office lock files
+docs/demo/
+~$*
+backend/uv.lock

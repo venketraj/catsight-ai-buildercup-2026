@@ -182,7 +182,8 @@ in model calls.
 | Firestore rules | Deny all client access; everything goes through the API |
 | Retries | 429 / 500 / 503 and dropped connections retried with backoff; a 400 is never retried |
 | Thinking | `thinking_level=LOW` on Gemini 3 |
-| Observability | Structured JSON logs with the run id; guardrail events (`citation_withheld`, `unsupported_figures`, `counsel_dropped`, `limit_refused`); ADK spans to Cloud Trace. `scripts/setup_observability.sh` builds log-based metrics, a Cloud Monitoring dashboard and an optional budget alert from them. No raw IPs, questions or prompts logged. |
+| Cold start | The standard retrieval queries ship pre-embedded (`backend/data/query_embeddings.jsonl`), so a fresh instance makes no embedding calls during an analysis; the SSE stream sends a `: keepalive` comment after 15 s of silence |
+| Observability | Structured JSON logs with the run id; guardrail events (`citation_withheld`, `unsupported_figures`, `counsel_dropped`, `limit_refused`); ADK spans to Cloud Trace. `scripts/setup_observability.sh` builds log-based metrics, a Cloud Monitoring dashboard and an optional budget alert from them; the dashboard's per-run table is a Log Analytics SQL query (`scripts/observability_runs.sql`): seconds per agent, model and tool calls, tokens, cost, flags and the Courtroom outcome for each run. No raw IPs, questions or prompts logged. |
 
 Measured latency and cost are in [`RESULTS.md`](RESULTS.md) §1.
 
@@ -202,12 +203,13 @@ Measured latency and cost are in [`RESULTS.md`](RESULTS.md) §1.
 │   ├── ingest/                     wordings, embedding, RAG extraction, reconciliation, seeding
 │   ├── qa/                         extraction accuracy and the per-field citation audit
 │   ├── data/                       book, events, replays, extracted terms, ASSUMPTIONS.md
-│   ├── tests/                      869 pytest tests (+ an opt-in live suite)
+│   ├── tests/                      870 pytest tests (+ an opt-in live suite)
 │   └── Dockerfile
 ├── frontend/                       Vite + React + TypeScript
 ├── benchmarks/                     run_all.py — live latency, cost and Courtroom runs
 ├── docs/                           this documentation
 └── scripts/                        deploy.sh · smoke_test.sh · setup_observability.sh
+                                    · observability_dashboard.json · observability_runs.sql
                                     · create_video.py · build_deck.py
 ```
 

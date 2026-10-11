@@ -7,7 +7,7 @@
 Google Cloud AI Builder Cup 2026 · BFSI: Intelligent Risk, Fraud & Financial Experiences · **Team Techno Crackers:** Venket Raj S, Malik Chandra Pandian, Arun Veerappan, Nagaraj.
 
 **▶ Live demo:** https://catsight-api-342162443546.us-central1.run.app — press **Instant replay** for a recorded real run in about 6 seconds, or **Run live** to watch the agents work (about a minute).
-**▶ Video (under 3 min):** *link added at submission* · **Deck (PDF):** [`docs/CatSight_deck.pdf`](docs/CatSight_deck.pdf)
+**▶ Deck (PDF):** [`docs/CatSight_deck.pdf`](docs/CatSight_deck.pdf)
 
 **Where it fits.** CatSight is not a catastrophe model and does not compete with one. Cat models (Moody's RMS, Verisk and others) estimate *how big* the loss is. CatSight is the layer after that: it joins an event's footprint to the reinsurer's own treaties and their contract wording, so the analyst sees *who pays what, and which clause could change it*. Here the footprint comes from public data (NOAA IBTrACS, USGS ShakeMap); a licensed cat-model footprint could be plugged in behind the same typed interface.
 
@@ -78,7 +78,7 @@ Detail in [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 | Live analysis (Jebi), 5 runs | money in **0.7 s**; complete in **9.8 s** p50 (8-18 s); **$0.010** p50 model cost | warm service; [`docs/RESULTS.md`](docs/RESULTS.md) §1 |
 | Clause Courtroom | **20 s**, **$0.004** | one measured run; opens on a verified HIGH or MEDIUM exclusion flag |
 | Follow-up question | about **$0.003** | from token counts, not benchmarked |
-| Automated tests | **869 passing** | plus an opt-in live suite against real GCP |
+| Automated tests | **870 passing** | plus an opt-in live suite against real GCP |
 
 ## Run it yourself
 
@@ -114,7 +114,7 @@ npm run dev        # open http://localhost:5173
 **4. Tests** - in `backend/`:
 
 ```powershell
-uv run --no-sync pytest -q                                   # 869 tests, no cloud calls
+uv run --no-sync pytest -q                                   # 870 tests, no cloud calls
 $env:RUN_LIVE="1"; uv run --no-sync --env-file .env pytest -m live -q   # real Gemini + Firestore, a few cents
 ```
 
@@ -144,7 +144,7 @@ The script builds the UI into the image, so one Cloud Run service serves both th
 PROJECT_ID=techno-crackers-catsight ./scripts/setup_observability.sh
 ```
 
-This turns the service's structured logs into Cloud Monitoring metrics and a **"CatSight - live service"** dashboard: four headline numbers (analyses, median live time, median model cost, citations withheld), a donut of analyses by mode, bar charts of citations verified vs withheld and of Courtroom outcomes, and a table of guardrail trips. The layout is [`scripts/observability_dashboard.json`](scripts/observability_dashboard.json). Add `BILLING_ACCOUNT=… BUDGET_INR=…` for a budget alert. Per-agent timelines are in **Cloud Trace**; nothing is built into the app itself.
+This turns the service's structured logs into Cloud Monitoring metrics and a **"CatSight - live service"** dashboard: four headline numbers (analyses, median live time, median model cost, citations withheld), a donut of analyses by mode, bar charts of citations verified vs withheld and of Courtroom outcomes, and a per-run table from **Log Analytics** (seconds per agent, model and tool calls, tokens, cost, flags, Courtroom outcome; query in [`scripts/observability_runs.sql`](scripts/observability_runs.sql)). The layout is [`scripts/observability_dashboard.json`](scripts/observability_dashboard.json). Add `BILLING_ACCOUNT=… BUDGET_INR=…` for a budget alert. Per-agent timelines are in **Cloud Trace**; nothing is built into the app itself.
 
 ## Limitations
 
@@ -169,7 +169,7 @@ Designed or investigated, not built:
 
 | Criterion | Where to look |
 |---|---|
-| **Technical merit** | ADK 2.11 `Workflow` with a verification loop and a parallel Courtroom fan-out; RAG on Firestore vector search; a citation verifier that withholds anything it cannot match; a deterministic loss engine with 869 tests; guardrail events, traces and a dashboard in Cloud Logging, Trace and Monitoring — [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md), [`docs/RESULTS.md`](docs/RESULTS.md) |
+| **Technical merit** | ADK 2.11 `Workflow` with a verification loop and a parallel Courtroom fan-out; RAG on Firestore vector search; a citation verifier that withholds anything it cannot match; a deterministic loss engine with 870 tests; guardrail events, traces and a dashboard in Cloud Logging, Trace and Monitoring — [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md), [`docs/RESULTS.md`](docs/RESULTS.md) |
 | **Problem alignment & impact** | The first-view question a reinsurer faces after a catastrophe, answered per treaty and per party, with the clause that could change it — [`docs/BUSINESS_IMPACT.md`](docs/BUSINESS_IMPACT.md), [`docs/DOMAIN_PRIMER.md`](docs/DOMAIN_PRIMER.md) |
 | **Innovation** | Two AI counsel argue a disputed clause from verified wording, and tested code prices both readings; Gemini reads a scanned endorsement that changes the contract — [`docs/MONEY_MOMENT.md`](docs/MONEY_MOMENT.md) |
 | **User experience** | Five-step layout, sticky summary, guided tour, instant replay, light and dark themes with colour-blind-checked palettes, keyboard navigation, Word export |

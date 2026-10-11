@@ -141,7 +141,7 @@ Treaty structures "might only exist in their capital model, a homegrown tool, or
     s.append(f"""
 <div class=kicker>Trust architecture</div><h1>Why a finance team can let an LLM near a loss report</h1>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:44px"><ul>
-<li><b>The model never calculates.</b> Every figure from tested <code>Decimal</code> Python — 869 tests.</li>
+<li><b>The model never calculates.</b> Every figure from tested <code>Decimal</code> Python — 870 tests.</li>
 <li><b>Every wording claim is cited</b> to treaty, page and clause.</li>
 <li><b>Every citation is machine-checked</b>: exact quote match, then a model support check; one revision, then withheld.</li>
 <li><b>Withheld, visibly</b>: "n of n verified · k withheld", with reasons.</li>
