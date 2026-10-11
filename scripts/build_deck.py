@@ -187,7 +187,8 @@ Treaty structures "might only exist in their capital model, a homegrown tool, or
 <p style="font-size:21px;color:#94a3b8">Decision support, not a payout engine.</p>""")
     s.append(f"""
 <div class=kicker>Team, ask, next steps</div><h1>Techno Crackers</h1>
-<p>A two-person team: reinsurance domain knowledge and engineering, building with Gemini and Google ADK.</p>
+<p style="font-size:34px"><b>Venket Raj S · Malik Chandra Pandian · Arun Veerappan · Nagaraj</b></p>
+<p>Reinsurance domain knowledge and engineering, building with Gemini and Google ADK.</p>
 <p><b>Next:</b> pilot on an anonymised treaty pack · a timed manual baseline · a blind extraction set · pre-landfall mode on forecast tracks.</p>
 <p style="margin-top:50px;font-size:26px">Live: <b>{LIVE}</b><br>Code: <b>{REPO}</b></p>
 <p style="font-size:20px;color:#94a3b8;margin-top:50px">{DISCLAIMER} Issue-spotting only — not legal advice.<br>
