@@ -99,43 +99,9 @@ EOF
 upsert_metric catsight_live_cost_usd "${TMP}/catsight_live_cost_usd.yaml"
 
 # ------------------------------------------------------------- dashboard -- #
-
-user() { echo "logging.googleapis.com/user/$1"; }
-
-line_tile() {  # title, metric filter, aligner, reducer, groupBy-json
-  cat <<EOF
-{"title": "$1", "xyChart": {"dataSets": [{"plotType": "LINE", "timeSeriesQuery": {"timeSeriesFilter": {
-  "filter": "$2",
-  "aggregation": {"alignmentPeriod": "3600s", "perSeriesAligner": "$3",
-                  "crossSeriesReducer": "$4", "groupByFields": $5}}}}]}}
-EOF
-}
-
-UF="resource.type=\\\"cloud_run_revision\\\" AND resource.labels.service_name=\\\"${SERVICE}\\\""
-TILES=(
-  "$(line_tile 'Analyses per hour, by mode' "metric.type=\\\"$(user catsight_analyses)\\\"" ALIGN_SUM REDUCE_SUM '["metric.label.mode"]')"
-  "$(line_tile 'Live analysis seconds (p50)' "metric.type=\\\"$(user catsight_live_seconds)\\\"" ALIGN_PERCENTILE_50 REDUCE_MEAN '[]')"
-  "$(line_tile 'Live analysis model cost, USD (p50)' "metric.type=\\\"$(user catsight_live_cost_usd)\\\"" ALIGN_PERCENTILE_50 REDUCE_MEAN '[]')"
-  "$(line_tile 'Citations verified per hour' "metric.type=\\\"$(user catsight_citations_verified)\\\"" ALIGN_SUM REDUCE_SUM '[]')"
-  "$(line_tile 'Citations withheld per hour' "metric.type=\\\"$(user catsight_citations_withheld)\\\"" ALIGN_SUM REDUCE_SUM '[]')"
-  "$(line_tile 'Courtroom: done / skipped / counsel dropped' "metric.type=one_of(\\\"$(user catsight_courtroom_done)\\\",\\\"$(user catsight_courtroom_skipped)\\\",\\\"$(user catsight_counsel_dropped)\\\")" ALIGN_SUM REDUCE_SUM '["metric.type"]')"
-  "$(line_tile 'Guardrail trips: unsupported figures, limits, errors' "metric.type=one_of(\\\"$(user catsight_unsupported_figures)\\\",\\\"$(user catsight_limit_refused)\\\",\\\"$(user catsight_analysis_errors)\\\")" ALIGN_SUM REDUCE_SUM '["metric.type"]')"
-  "$(line_tile 'Cloud Run requests per hour, by status' "metric.type=\\\"run.googleapis.com/request_count\\\" AND ${UF}" ALIGN_SUM REDUCE_SUM '["metric.label.response_code_class"]')"
-  "$(line_tile 'Cloud Run request latency p95 (ms)' "metric.type=\\\"run.googleapis.com/request_latencies\\\" AND ${UF}" ALIGN_PERCENTILE_95 REDUCE_MEAN '[]')"
-  "$(line_tile 'Cloud Run instances' "metric.type=\\\"run.googleapis.com/container/instance_count\\\" AND ${UF}" ALIGN_MAX REDUCE_SUM '["metric.label.state"]')"
-)
-
-{
-  echo '{"displayName": "CatSight - live service", "mosaicLayout": {"columns": 12, "tiles": ['
-  i=0
-  for tile in "${TILES[@]}"; do
-    x=$(( (i % 2) * 6 )); y=$(( (i / 2) * 4 ))
-    [[ $i -gt 0 ]] && echo ","
-    echo "{\"xPos\": ${x}, \"yPos\": ${y}, \"width\": 6, \"height\": 4, \"widget\": ${tile}}"
-    i=$((i + 1))
-  done
-  echo ']}}'
-} >"${TMP}/dashboard.json"
+# Layout lives in scripts/observability_dashboard.json: four headline numbers,
+# a donut of analyses by mode, bar charts of citations and Courtroom outcomes,
+# and a table of guardrail trips.
 
 echo
 echo "Dashboard:"
@@ -143,7 +109,8 @@ for old in $(gcloud monitoring dashboards list --project "${PROJECT_ID}" \
                --filter='displayName="CatSight - live service"' --format='value(name)'); do
   gcloud monitoring dashboards delete "${old}" --project "${PROJECT_ID}" --quiet >/dev/null
 done
-gcloud monitoring dashboards create --project "${PROJECT_ID}" --config-from-file "${TMP}/dashboard.json" >/dev/null
+gcloud monitoring dashboards create --project "${PROJECT_ID}" \
+  --config-from-file "$(dirname "${BASH_SOURCE[0]}")/observability_dashboard.json" >/dev/null
 echo "  created  CatSight - live service"
 
 # ---------------------------------------------------------- budget alert -- #

@@ -144,7 +144,7 @@ The script builds the UI into the image, so one Cloud Run service serves both th
 PROJECT_ID=techno-crackers-catsight ./scripts/setup_observability.sh
 ```
 
-This turns the service's structured logs into Cloud Monitoring metrics and a **"CatSight - live service"** dashboard: analyses by mode, live latency and model cost, citations verified and withheld, Courtroom outcomes, guardrail trips (unsupported figures, limits, errors), and Cloud Run requests, latency and instances. Add `BILLING_ACCOUNT=… BUDGET_INR=…` for a budget alert. Per-agent timelines are in **Cloud Trace**; nothing is built into the app itself.
+This turns the service's structured logs into Cloud Monitoring metrics and a **"CatSight - live service"** dashboard: four headline numbers (analyses, median live time, median model cost, citations withheld), a donut of analyses by mode, bar charts of citations verified vs withheld and of Courtroom outcomes, and a table of guardrail trips. The layout is [`scripts/observability_dashboard.json`](scripts/observability_dashboard.json). Add `BILLING_ACCOUNT=… BUDGET_INR=…` for a budget alert. Per-agent timelines are in **Cloud Trace**; nothing is built into the app itself.
 
 ## Limitations
 

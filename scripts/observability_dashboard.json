@@ -1,0 +1,164 @@
+{
+  "displayName": "CatSight - live service",
+  "mosaicLayout": {
+    "columns": 12,
+    "tiles": [
+      {
+        "xPos": 0, "yPos": 0, "width": 3, "height": 3,
+        "widget": {
+          "title": "Analyses - last 24 h",
+          "scorecard": {
+            "timeSeriesQuery": {
+              "timeSeriesFilter": {
+                "filter": "metric.type=\"logging.googleapis.com/user/catsight_analyses\"",
+                "aggregation": {"alignmentPeriod": "86400s", "perSeriesAligner": "ALIGN_SUM", "crossSeriesReducer": "REDUCE_SUM"}
+              }
+            },
+            "sparkChartView": {"sparkChartType": "SPARK_BAR"}
+          }
+        }
+      },
+      {
+        "xPos": 3, "yPos": 0, "width": 3, "height": 3,
+        "widget": {
+          "title": "Live analysis time, median (s)",
+          "scorecard": {
+            "timeSeriesQuery": {
+              "timeSeriesFilter": {
+                "filter": "metric.type=\"logging.googleapis.com/user/catsight_live_seconds\"",
+                "aggregation": {"alignmentPeriod": "86400s", "perSeriesAligner": "ALIGN_PERCENTILE_50", "crossSeriesReducer": "REDUCE_MEAN"}
+              }
+            },
+            "thresholds": [{"value": 30, "color": "YELLOW", "direction": "ABOVE"}, {"value": 90, "color": "RED", "direction": "ABOVE"}]
+          }
+        }
+      },
+      {
+        "xPos": 6, "yPos": 0, "width": 3, "height": 3,
+        "widget": {
+          "title": "Model cost per live analysis, median (USD)",
+          "scorecard": {
+            "timeSeriesQuery": {
+              "timeSeriesFilter": {
+                "filter": "metric.type=\"logging.googleapis.com/user/catsight_live_cost_usd\"",
+                "aggregation": {"alignmentPeriod": "86400s", "perSeriesAligner": "ALIGN_PERCENTILE_50", "crossSeriesReducer": "REDUCE_MEAN"}
+              }
+            },
+            "thresholds": [{"value": 0.05, "color": "RED", "direction": "ABOVE"}]
+          }
+        }
+      },
+      {
+        "xPos": 9, "yPos": 0, "width": 3, "height": 3,
+        "widget": {
+          "title": "Citations withheld - last 24 h",
+          "scorecard": {
+            "timeSeriesQuery": {
+              "timeSeriesFilter": {
+                "filter": "metric.type=\"logging.googleapis.com/user/catsight_citations_withheld\"",
+                "aggregation": {"alignmentPeriod": "86400s", "perSeriesAligner": "ALIGN_SUM", "crossSeriesReducer": "REDUCE_SUM"}
+              }
+            }
+          }
+        }
+      },
+      {
+        "xPos": 0, "yPos": 3, "width": 4, "height": 5,
+        "widget": {
+          "title": "Analyses by mode - last 24 h",
+          "pieChart": {
+            "chartType": "DONUT",
+            "showLabels": true,
+            "dataSets": [{
+              "timeSeriesQuery": {
+                "timeSeriesFilter": {
+                  "filter": "metric.type=\"logging.googleapis.com/user/catsight_analyses\"",
+                  "aggregation": {"alignmentPeriod": "86400s", "perSeriesAligner": "ALIGN_SUM", "crossSeriesReducer": "REDUCE_SUM", "groupByFields": ["metric.label.mode"]}
+                }
+              },
+              "sliceNameTemplate": "${metric.labels.mode}"
+            }]
+          }
+        }
+      },
+      {
+        "xPos": 4, "yPos": 3, "width": 4, "height": 5,
+        "widget": {
+          "title": "Wording citations per hour",
+          "xyChart": {
+            "chartOptions": {"mode": "COLOR"},
+            "dataSets": [
+              {
+                "plotType": "STACKED_BAR", "legendTemplate": "Verified",
+                "timeSeriesQuery": {"timeSeriesFilter": {
+                  "filter": "metric.type=\"logging.googleapis.com/user/catsight_citations_verified\"",
+                  "aggregation": {"alignmentPeriod": "3600s", "perSeriesAligner": "ALIGN_SUM", "crossSeriesReducer": "REDUCE_SUM"}}}
+              },
+              {
+                "plotType": "STACKED_BAR", "legendTemplate": "Withheld",
+                "timeSeriesQuery": {"timeSeriesFilter": {
+                  "filter": "metric.type=\"logging.googleapis.com/user/catsight_citations_withheld\"",
+                  "aggregation": {"alignmentPeriod": "3600s", "perSeriesAligner": "ALIGN_SUM", "crossSeriesReducer": "REDUCE_SUM"}}}
+              }
+            ]
+          }
+        }
+      },
+      {
+        "xPos": 8, "yPos": 3, "width": 4, "height": 5,
+        "widget": {
+          "title": "Clause Courtroom outcomes per hour",
+          "xyChart": {
+            "chartOptions": {"mode": "COLOR"},
+            "dataSets": [
+              {
+                "plotType": "STACKED_BAR", "legendTemplate": "Argued and priced",
+                "timeSeriesQuery": {"timeSeriesFilter": {
+                  "filter": "metric.type=\"logging.googleapis.com/user/catsight_courtroom_done\"",
+                  "aggregation": {"alignmentPeriod": "3600s", "perSeriesAligner": "ALIGN_SUM", "crossSeriesReducer": "REDUCE_SUM"}}}
+              },
+              {
+                "plotType": "STACKED_BAR", "legendTemplate": "Skipped (no qualifying flag)",
+                "timeSeriesQuery": {"timeSeriesFilter": {
+                  "filter": "metric.type=\"logging.googleapis.com/user/catsight_courtroom_skipped\"",
+                  "aggregation": {"alignmentPeriod": "3600s", "perSeriesAligner": "ALIGN_SUM", "crossSeriesReducer": "REDUCE_SUM"}}}
+              },
+              {
+                "plotType": "STACKED_BAR", "legendTemplate": "Counsel dropped (bad quote)",
+                "timeSeriesQuery": {"timeSeriesFilter": {
+                  "filter": "metric.type=\"logging.googleapis.com/user/catsight_counsel_dropped\"",
+                  "aggregation": {"alignmentPeriod": "3600s", "perSeriesAligner": "ALIGN_SUM", "crossSeriesReducer": "REDUCE_SUM"}}}
+              }
+            ]
+          }
+        }
+      },
+      {
+        "xPos": 0, "yPos": 8, "width": 12, "height": 4,
+        "widget": {
+          "title": "Guardrail trips - last 24 h (each row is one safety check)",
+          "timeSeriesTable": {
+            "metricVisualization": "NUMBER",
+            "dataSets": [
+              {"tableTemplate": "Citation withheld - quote did not check out",
+               "timeSeriesQuery": {"timeSeriesFilter": {"filter": "metric.type=\"logging.googleapis.com/user/catsight_citations_withheld\"",
+                 "aggregation": {"alignmentPeriod": "86400s", "perSeriesAligner": "ALIGN_SUM", "crossSeriesReducer": "REDUCE_SUM"}}}},
+              {"tableTemplate": "Unsupported figure - AI text quoted a number the engine did not produce",
+               "timeSeriesQuery": {"timeSeriesFilter": {"filter": "metric.type=\"logging.googleapis.com/user/catsight_unsupported_figures\"",
+                 "aggregation": {"alignmentPeriod": "86400s", "perSeriesAligner": "ALIGN_SUM", "crossSeriesReducer": "REDUCE_SUM"}}}},
+              {"tableTemplate": "Counsel dropped - Courtroom argument without verified wording",
+               "timeSeriesQuery": {"timeSeriesFilter": {"filter": "metric.type=\"logging.googleapis.com/user/catsight_counsel_dropped\"",
+                 "aggregation": {"alignmentPeriod": "86400s", "perSeriesAligner": "ALIGN_SUM", "crossSeriesReducer": "REDUCE_SUM"}}}},
+              {"tableTemplate": "Limit refused - per-visitor or daily cap",
+               "timeSeriesQuery": {"timeSeriesFilter": {"filter": "metric.type=\"logging.googleapis.com/user/catsight_limit_refused\"",
+                 "aggregation": {"alignmentPeriod": "86400s", "perSeriesAligner": "ALIGN_SUM", "crossSeriesReducer": "REDUCE_SUM"}}}},
+              {"tableTemplate": "Analysis error",
+               "timeSeriesQuery": {"timeSeriesFilter": {"filter": "metric.type=\"logging.googleapis.com/user/catsight_analysis_errors\"",
+                 "aggregation": {"alignmentPeriod": "86400s", "perSeriesAligner": "ALIGN_SUM", "crossSeriesReducer": "REDUCE_SUM"}}}}
+            ]
+          }
+        }
+      }
+    ]
+  }
+}
