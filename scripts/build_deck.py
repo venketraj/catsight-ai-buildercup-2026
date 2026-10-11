@@ -16,7 +16,7 @@ from playwright.sync_api import sync_playwright
 ROOT = Path(__file__).resolve().parents[1]
 FRAMES = ROOT / "scratch" / "frames"
 OUT = ROOT / "docs" / "CatSight_deck.pdf"
-LIVE = "https://catsight-api-tzvix6sejq-uc.a.run.app"
+LIVE = "https://catsight-api-342162443546.us-central1.run.app"
 REPO = os.environ.get("CATSIGHT_REPO", "https://github.com/venketraj/catsight-ai-buildercup-2026")
 DISCLAIMER = "Indicative first view on synthetic data. Not a catastrophe-model output. Not underwriting or claims advice."
 

@@ -89,17 +89,11 @@ gcloud run deploy "${SERVICE}" \
   --set-env-vars "^|^ALLOWED_ORIGINS=${ORIGINS}" \
   --set-env-vars "BUILD_LABEL=${BUILD_LABEL}"
 
-URL="$(gcloud run services describe "${SERVICE}" \
-  --project "${PROJECT_ID}" --region "${REGION}" --format 'value(status.url)')"
+# The project-number URL is the one published everywhere (README, deck,
+# video). `status.url` returns the older hash-style URL of the same service.
+PROJECT_NUMBER="$(gcloud projects describe "${PROJECT_ID}" --format 'value(projectNumber)')"
+URL="https://${SERVICE}-${PROJECT_NUMBER}.${REGION}.run.app"
 
 echo
-echo "Service URL: ${URL}"
-echo
-echo "The UI and the API are the SAME origin, so there is nothing to configure:"
-echo "  open ${URL}"
-echo
+echo "Live: ${URL}"
 echo "Verify: ./scripts/smoke_test.sh ${URL}"
-echo
-echo "ALLOWED_ORIGINS is still set, but only matters if the UI is ever served"
-echo "from a different origin (e.g. Firebase Hosting). Served from this"
-echo "service there is no cross-origin request to allow."

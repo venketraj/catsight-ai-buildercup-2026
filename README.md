@@ -6,7 +6,7 @@
 
 Google Cloud AI Builder Cup 2026 · BFSI: Intelligent Risk, Fraud & Financial Experiences · Team Techno Crackers.
 
-**▶ Live demo:** https://catsight-api-tzvix6sejq-uc.a.run.app — press **Instant replay** for a recorded real run in about 6 seconds, or **Run live** to watch the agents work (about a minute).
+**▶ Live demo:** https://catsight-api-342162443546.us-central1.run.app — press **Instant replay** for a recorded real run in about 6 seconds, or **Run live** to watch the agents work (about a minute).
 **▶ Video (under 3 min):** *link added at submission* · **Deck (PDF):** [`docs/CatSight_deck.pdf`](docs/CatSight_deck.pdf)
 
 **Where it fits.** CatSight is not a catastrophe model and does not compete with one. Cat models (Moody's RMS, Verisk and others) estimate *how big* the loss is. CatSight is the layer after that: it joins an event's footprint to the reinsurer's own treaties and their contract wording, so the analyst sees *who pays what, and which clause could change it*. Here the footprint comes from public data (NOAA IBTrACS, USGS ShakeMap); a licensed cat-model footprint could be plugged in behind the same typed interface.
