@@ -75,7 +75,7 @@ Detail in [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 | Governing clause retrieved | **186/186** | Firestore vector search |
 | Citation coverage | **186/188** fields cited; **185/186** check out against the page | per-field audit in [`docs/RESULTS.md`](docs/RESULTS.md) §3; 1 scanned page is labelled "transcribed" |
 | Extraction time, 8 wordings | **57 s** | vs ~25 min for whole-document extraction |
-| Live analysis (Jebi), 5 runs | money in **0.7 s**; complete in **9.8 s** p50 (8-18 s); **$0.010** p50 model cost | warm service; [`docs/RESULTS.md`](docs/RESULTS.md) §1 |
+| Live analysis (Jebi), two 5-run benchmarks | money in about **1 s**; complete in about **10-12 s** p50 (9.8 s and 12.1 s; runs 8-31 s); about **$0.01** p50 model cost | warm service; latest run in [`docs/RESULTS.md`](docs/RESULTS.md) §1 |
 | Clause Courtroom | **20 s**, **$0.004** | one measured run; opens on a verified HIGH or MEDIUM exclusion flag |
 | Follow-up question | about **$0.003** | from token counts, not benchmarked |
 | Automated tests | **870 passing** | plus an opt-in live suite against real GCP |

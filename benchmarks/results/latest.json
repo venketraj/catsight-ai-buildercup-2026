@@ -1,66 +1,20 @@
 {
-  "api_url": "https://catsight-api-tzvix6sejq-uc.a.run.app",
-  "build": "f11630f",
+  "api_url": "https://catsight-api-342162443546.us-central1.run.app",
+  "build": "e01eb7b",
   "event_id": "jebi-2018",
-  "measured_at": "2026-10-11 13:14 UTC",
+  "measured_at": "2026-10-11 20:08 UTC",
   "analyses": [
     {
       "event_id": "jebi-2018",
-      "money_s": 0.75,
-      "flags_verified": 1,
-      "flags_withheld": 1,
-      "cost_usd": "0.0102",
-      "unsupported_figures": 0,
-      "run_id": "run-e73b1ebf069a",
-      "agents": true,
-      "replay": false,
-      "total_s": 9.78,
-      "flags": [
-        {
-          "treaty_id": "T-004",
-          "issue_type": "EXCLUSION",
-          "severity": "MEDIUM",
-          "status": "verified"
-        },
-        {
-          "treaty_id": "T-003",
-          "issue_type": "HOURS",
-          "severity": null,
-          "status": "withheld"
-        }
-      ]
-    },
-    {
-      "event_id": "jebi-2018",
-      "money_s": 0.67,
-      "flags_verified": 0,
-      "flags_withheld": 1,
-      "cost_usd": "0.0081",
-      "unsupported_figures": 0,
-      "run_id": "run-9d656e613082",
-      "agents": true,
-      "replay": false,
-      "total_s": 17.8,
-      "flags": [
-        {
-          "treaty_id": "T-004",
-          "issue_type": "EXCLUSION",
-          "severity": null,
-          "status": "withheld"
-        }
-      ]
-    },
-    {
-      "event_id": "jebi-2018",
-      "money_s": 0.91,
+      "money_s": 1.03,
       "flags_verified": 1,
       "flags_withheld": 0,
-      "cost_usd": "0.0082",
+      "cost_usd": "0.0081",
       "unsupported_figures": 0,
-      "run_id": "run-5b2be2cbaccc",
+      "run_id": "run-7bf4a6314eb6",
       "agents": true,
       "replay": false,
-      "total_s": 8.25,
+      "total_s": 7.98,
       "flags": [
         {
           "treaty_id": "T-004",
@@ -72,91 +26,173 @@
     },
     {
       "event_id": "jebi-2018",
-      "money_s": 0.67,
+      "money_s": 1.03,
       "flags_verified": 1,
-      "flags_withheld": 0,
-      "cost_usd": "0.0115",
+      "flags_withheld": 1,
+      "cost_usd": "0.0113",
       "unsupported_figures": 0,
-      "run_id": "run-15a439824af6",
+      "run_id": "run-850841d11aef",
       "agents": true,
       "replay": false,
-      "total_s": 9.47,
+      "total_s": 13.83,
       "flags": [
+        {
+          "treaty_id": "T-002",
+          "issue_type": "EXCLUSION",
+          "severity": "LOW",
+          "status": "candidate"
+        },
         {
           "treaty_id": "T-004",
           "issue_type": "EXCLUSION",
-          "severity": "MEDIUM",
+          "severity": "HIGH",
           "status": "verified"
         }
       ]
     },
     {
       "event_id": "jebi-2018",
-      "money_s": 0.61,
+      "money_s": 1.05,
       "flags_verified": 1,
-      "flags_withheld": 0,
-      "cost_usd": "0.0115",
+      "flags_withheld": 1,
+      "cost_usd": "0.0094",
       "unsupported_figures": 0,
-      "run_id": "run-8f4e3d12643a",
+      "run_id": "run-5fe0529e9fb9",
       "agents": true,
       "replay": false,
-      "total_s": 9.77,
+      "total_s": 11.12,
       "flags": [
         {
           "treaty_id": "T-004",
           "issue_type": "EXCLUSION",
-          "severity": "MEDIUM",
+          "severity": "HIGH",
           "status": "verified"
+        },
+        {
+          "treaty_id": "T-003",
+          "issue_type": "HOURS",
+          "severity": "LOW",
+          "status": "candidate"
+        }
+      ]
+    },
+    {
+      "event_id": "jebi-2018",
+      "money_s": 0.83,
+      "flags_verified": 1,
+      "flags_withheld": 0,
+      "cost_usd": "0.0083",
+      "unsupported_figures": 0,
+      "run_id": "run-5db80712be52",
+      "agents": true,
+      "replay": false,
+      "total_s": 31.24,
+      "flags": [
+        {
+          "treaty_id": "T-004",
+          "issue_type": "EXCLUSION",
+          "severity": "HIGH",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "event_id": "jebi-2018",
+      "money_s": 0.75,
+      "flags_verified": 1,
+      "flags_withheld": 1,
+      "cost_usd": "0.0126",
+      "unsupported_figures": 0,
+      "run_id": "run-4ba773bc513b",
+      "agents": true,
+      "replay": false,
+      "total_s": 12.14,
+      "flags": [
+        {
+          "treaty_id": "T-004",
+          "issue_type": "EXCLUSION",
+          "severity": "HIGH",
+          "status": "verified"
+        },
+        {
+          "treaty_id": "T-003",
+          "issue_type": "HOURS",
+          "severity": "LOW",
+          "status": "candidate"
         }
       ]
     }
   ],
   "courtrooms": [
     {
-      "seconds": 0.59,
-      "skipped": true,
-      "cost_usd": null,
-      "unsupported_figures": 0,
-      "money_at_stake": null,
-      "reason": "No HIGH exclusion flag was raised and verified for this event."
-    },
-    {
-      "seconds": 0.62,
-      "skipped": true,
-      "cost_usd": null,
-      "unsupported_figures": 0,
-      "money_at_stake": null,
-      "reason": "No HIGH exclusion flag was raised and verified for this event."
-    },
-    {
-      "seconds": 20.28,
+      "seconds": 21.72,
       "skipped": false,
-      "cost_usd": "0.0040",
+      "reason": null,
+      "cost_usd": "0.0042",
       "unsupported_figures": 0,
-      "reinsurer_verified": true,
-      "reinsurer_share": 0.2,
-      "reinsurer_our_net_move": "-1.34",
       "cedent_verified": false,
       "cedent_share": null,
       "cedent_our_net_move": null,
+      "reinsurer_verified": true,
+      "reinsurer_share": 0.5,
+      "reinsurer_our_net_move": "-5.16",
       "money_at_stake": null
     },
     {
-      "seconds": 0.47,
-      "skipped": true,
-      "cost_usd": null,
+      "seconds": 6.12,
+      "skipped": false,
+      "reason": null,
+      "cost_usd": "0.0040",
       "unsupported_figures": 0,
-      "money_at_stake": null,
-      "reason": "No HIGH exclusion flag was raised and verified for this event."
+      "cedent_verified": false,
+      "cedent_share": null,
+      "cedent_our_net_move": null,
+      "reinsurer_verified": true,
+      "reinsurer_share": 0.5,
+      "reinsurer_our_net_move": "-5.16",
+      "money_at_stake": null
     },
     {
-      "seconds": 0.52,
-      "skipped": true,
-      "cost_usd": null,
+      "seconds": 6.38,
+      "skipped": false,
+      "reason": null,
+      "cost_usd": "0.0040",
       "unsupported_figures": 0,
-      "money_at_stake": null,
-      "reason": "No HIGH exclusion flag was raised and verified for this event."
+      "cedent_verified": false,
+      "cedent_share": null,
+      "cedent_our_net_move": null,
+      "reinsurer_verified": true,
+      "reinsurer_share": 0.5,
+      "reinsurer_our_net_move": "-5.16",
+      "money_at_stake": null
+    },
+    {
+      "seconds": 6.64,
+      "skipped": false,
+      "reason": null,
+      "cost_usd": "0.0034",
+      "unsupported_figures": 0,
+      "cedent_verified": true,
+      "cedent_share": 0.0,
+      "cedent_our_net_move": "0.00",
+      "reinsurer_verified": false,
+      "reinsurer_share": null,
+      "reinsurer_our_net_move": null,
+      "money_at_stake": null
+    },
+    {
+      "seconds": 5.86,
+      "skipped": false,
+      "reason": null,
+      "cost_usd": "0.0040",
+      "unsupported_figures": 0,
+      "cedent_verified": false,
+      "cedent_share": null,
+      "cedent_our_net_move": null,
+      "reinsurer_verified": true,
+      "reinsurer_share": 0.5,
+      "reinsurer_our_net_move": "-5.16",
+      "money_at_stake": null
     }
-  ],
-  "backfilled": "flags and skip reasons read from each run's report.docx and saved Courtroom"
+  ]
 }
