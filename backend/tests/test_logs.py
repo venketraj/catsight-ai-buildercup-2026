@@ -71,6 +71,37 @@ def test_observe_passes_the_stream_through_and_logs_the_guardrail_trips(capsys):
     assert all(e.get("run_id") == "run-9" for e in logged)
 
 
+def test_the_run_summary_carries_the_per_run_breakdown(capsys):
+    """The dashboard's run table reads these fields from analysis_done."""
+    frames = [
+        {"type": "stage", "agent": "exposure_analyst", "status": "started"},
+        {"type": "tool", "agent": "exposure_analyst", "name": "match_treaties"},
+        {"type": "tool", "agent": "exposure_analyst", "name": "loss_engine"},
+        {"type": "result", "key": "impact", "data": {}},
+        {"type": "stage", "agent": "exposure_analyst", "status": "completed"},
+        {"type": "retrieval", "treaty_id": "T-004", "hits": [1, 2]},
+        {"type": "report", "calls": {"wording_checker": 4, "reporter": 1}, "cost_usd": "0.0083",
+         "usage": {"gemini-3.5-flash-lite": {"input": 15000, "output": 1000},
+                   "gemini-3.8-flash": {"input": 600, "output": 70}}},
+    ]
+
+    async def stream():
+        for f in frames:
+            yield _sse(f)
+
+    async def drain():
+        return [c async for c in observe(stream(), run_id="run-7", event_id="jebi-2018", mode="live")]
+
+    asyncio.run(drain())
+    done = _lines(capsys)[-1]
+    assert done["event"] == "analysis_done"
+    assert set(done["agent_seconds"]) == {"exposure_analyst"}
+    assert done["money_seconds"] >= 0
+    assert (done["tool_calls"], done["retrievals"]) == (2, 1)
+    assert done["calls_by_agent"] == {"wording_checker": 4, "reporter": 1} and done["calls"] == 5
+    assert (done["tokens_in"], done["tokens_out"]) == (15600, 1070)
+
+
 def test_observe_accepts_a_plain_generator_too(capsys):
     def stream():
         yield _sse({"type": "done"})

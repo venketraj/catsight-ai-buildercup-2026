@@ -78,25 +78,56 @@ async def observe(stream: Any, *, run_id: str, event_id: str, mode: str) -> Asyn
     `mode` is live, replay or cap_replay."""
     started = time.monotonic()
     log_event("analysis_started", run_id=run_id, event_id=event_id, mode=mode)
-    outcome = {"verified": 0, "withheld": 0, "calls": None, "cost_usd": None, "error": None}
+    outcome: dict[str, Any] = {"verified": 0, "withheld": 0, "calls": None, "cost_usd": None,
+                               "error": None, "tool_calls": 0, "retrievals": 0}
+    # Per-run breakdown for the dashboard's run table: seconds per agent stage
+    # and to the first engine result, measured as frames pass through.
+    stage_started: dict[str, float] = {}
+    agent_seconds: dict[str, float] = {}
     async for chunk in _aiter(stream):
         frame = _frame(chunk)
         if frame is not None:
+            now = time.monotonic()
+            if frame.get("type") == "stage" and frame.get("agent"):
+                agent = str(frame["agent"])
+                if frame.get("status") == "started":
+                    stage_started[agent] = now
+                elif frame.get("status") == "completed" and agent in stage_started:
+                    agent_seconds[agent] = round(now - stage_started.pop(agent), 2)
+            elif (frame.get("type") == "result" and frame.get("key") == "impact"
+                  and "money_seconds" not in outcome):
+                outcome["money_seconds"] = round(now - started, 2)
             _log_frame(frame, run_id, outcome)
         yield chunk
     log_event(
         "analysis_done", severity="ERROR" if outcome["error"] else "INFO",
         run_id=run_id, event_id=event_id, mode=mode,
         seconds=round(time.monotonic() - started, 2),
+        agent_seconds=agent_seconds or None,
         **{k: v for k, v in outcome.items() if v is not None},
     )
+
+
+def _token_totals(usage: Any) -> tuple[int | None, int | None]:
+    """Input and output tokens summed across models, from the report frame's
+    usage map ({model: {"input": n, "output": n}}). Anything else -> None."""
+    if not isinstance(usage, dict):
+        return None, None
+    rows = [u for u in usage.values() if isinstance(u, dict)]
+    if not rows:
+        return None, None
+    return (sum(int(u.get("input") or 0) for u in rows),
+            sum(int(u.get("output") or 0) for u in rows))
 
 
 def _log_frame(frame: dict[str, Any], run_id: str, outcome: dict[str, Any]) -> None:
     kind = frame.get("type")
     if kind == "stage":
         log_event("stage", run_id=run_id, agent=frame.get("agent"), status=frame.get("status"))
+    elif kind == "tool":
+        outcome["tool_calls"] += 1
     elif kind == "retrieval":
+        outcome["retrievals"] += 1
         log_event("retrieval", run_id=run_id, treaty_id=frame.get("treaty_id"),
                   hits=len(frame.get("hits") or []))
     elif kind == "flag" and frame.get("status") == "verified":
@@ -113,9 +144,12 @@ def _log_frame(frame: dict[str, Any], run_id: str, outcome: dict[str, Any]) -> N
                       treaty_id=flag.get("treaty_id"), issue_type=flag.get("issue_type"),
                       reason=(item.get("reason") if isinstance(item, dict) else None))
     elif kind == "report":
-        outcome["calls"] = sum((frame.get("calls") or {}).values())
+        calls = frame.get("calls") or {}
+        outcome["calls"] = sum(calls.values())
+        outcome["calls_by_agent"] = calls or None
         outcome["cost_usd"] = frame.get("cost_usd")
         outcome["tokens"] = frame.get("usage")
+        outcome["tokens_in"], outcome["tokens_out"] = _token_totals(frame.get("usage"))
         figures = frame.get("unsupported_figures") or []
         if figures:
             log_event("unsupported_figures", severity="WARNING", run_id=run_id, where="report",

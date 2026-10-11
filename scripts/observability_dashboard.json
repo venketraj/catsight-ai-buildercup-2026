@@ -4,158 +4,262 @@
     "columns": 12,
     "tiles": [
       {
-        "xPos": 0, "yPos": 0, "width": 3, "height": 3,
+        "xPos": 0,
+        "yPos": 0,
+        "width": 3,
+        "height": 3,
         "widget": {
           "title": "Analyses - last 24 h",
           "scorecard": {
             "timeSeriesQuery": {
               "timeSeriesFilter": {
                 "filter": "metric.type=\"logging.googleapis.com/user/catsight_analyses\"",
-                "aggregation": {"alignmentPeriod": "86400s", "perSeriesAligner": "ALIGN_SUM", "crossSeriesReducer": "REDUCE_SUM"}
+                "aggregation": {
+                  "alignmentPeriod": "86400s",
+                  "perSeriesAligner": "ALIGN_SUM",
+                  "crossSeriesReducer": "REDUCE_SUM"
+                }
               }
             },
-            "sparkChartView": {"sparkChartType": "SPARK_BAR"}
+            "sparkChartView": {
+              "sparkChartType": "SPARK_BAR"
+            }
           }
         }
       },
       {
-        "xPos": 3, "yPos": 0, "width": 3, "height": 3,
+        "xPos": 3,
+        "yPos": 0,
+        "width": 3,
+        "height": 3,
         "widget": {
           "title": "Live analysis time, median (s)",
           "scorecard": {
             "timeSeriesQuery": {
               "timeSeriesFilter": {
                 "filter": "metric.type=\"logging.googleapis.com/user/catsight_live_seconds\"",
-                "aggregation": {"alignmentPeriod": "86400s", "perSeriesAligner": "ALIGN_PERCENTILE_50", "crossSeriesReducer": "REDUCE_MEAN"}
+                "aggregation": {
+                  "alignmentPeriod": "86400s",
+                  "perSeriesAligner": "ALIGN_PERCENTILE_50",
+                  "crossSeriesReducer": "REDUCE_MEAN"
+                }
               }
             },
-            "thresholds": [{"value": 30, "color": "YELLOW", "direction": "ABOVE"}, {"value": 90, "color": "RED", "direction": "ABOVE"}]
+            "thresholds": [
+              {
+                "value": 30,
+                "color": "YELLOW",
+                "direction": "ABOVE"
+              },
+              {
+                "value": 90,
+                "color": "RED",
+                "direction": "ABOVE"
+              }
+            ]
           }
         }
       },
       {
-        "xPos": 6, "yPos": 0, "width": 3, "height": 3,
+        "xPos": 6,
+        "yPos": 0,
+        "width": 3,
+        "height": 3,
         "widget": {
           "title": "Model cost per live analysis, median (USD)",
           "scorecard": {
             "timeSeriesQuery": {
               "timeSeriesFilter": {
                 "filter": "metric.type=\"logging.googleapis.com/user/catsight_live_cost_usd\"",
-                "aggregation": {"alignmentPeriod": "86400s", "perSeriesAligner": "ALIGN_PERCENTILE_50", "crossSeriesReducer": "REDUCE_MEAN"}
+                "aggregation": {
+                  "alignmentPeriod": "86400s",
+                  "perSeriesAligner": "ALIGN_PERCENTILE_50",
+                  "crossSeriesReducer": "REDUCE_MEAN"
+                }
               }
             },
-            "thresholds": [{"value": 0.05, "color": "RED", "direction": "ABOVE"}]
+            "thresholds": [
+              {
+                "value": 0.05,
+                "color": "RED",
+                "direction": "ABOVE"
+              }
+            ]
           }
         }
       },
       {
-        "xPos": 9, "yPos": 0, "width": 3, "height": 3,
+        "xPos": 9,
+        "yPos": 0,
+        "width": 3,
+        "height": 3,
         "widget": {
           "title": "Citations withheld - last 24 h",
           "scorecard": {
             "timeSeriesQuery": {
               "timeSeriesFilter": {
                 "filter": "metric.type=\"logging.googleapis.com/user/catsight_citations_withheld\"",
-                "aggregation": {"alignmentPeriod": "86400s", "perSeriesAligner": "ALIGN_SUM", "crossSeriesReducer": "REDUCE_SUM"}
+                "aggregation": {
+                  "alignmentPeriod": "86400s",
+                  "perSeriesAligner": "ALIGN_SUM",
+                  "crossSeriesReducer": "REDUCE_SUM"
+                }
               }
             }
           }
         }
       },
       {
-        "xPos": 0, "yPos": 3, "width": 4, "height": 5,
+        "xPos": 0,
+        "yPos": 3,
+        "width": 4,
+        "height": 5,
         "widget": {
           "title": "Analyses by mode - last 24 h",
           "pieChart": {
             "chartType": "DONUT",
             "showLabels": true,
-            "dataSets": [{
-              "timeSeriesQuery": {
-                "timeSeriesFilter": {
-                  "filter": "metric.type=\"logging.googleapis.com/user/catsight_analyses\"",
-                  "aggregation": {"alignmentPeriod": "86400s", "perSeriesAligner": "ALIGN_SUM", "crossSeriesReducer": "REDUCE_SUM", "groupByFields": ["metric.label.mode"]}
-                }
-              },
-              "sliceNameTemplate": "${metric.labels.mode}"
-            }]
+            "dataSets": [
+              {
+                "timeSeriesQuery": {
+                  "timeSeriesFilter": {
+                    "filter": "metric.type=\"logging.googleapis.com/user/catsight_analyses\"",
+                    "aggregation": {
+                      "alignmentPeriod": "86400s",
+                      "perSeriesAligner": "ALIGN_SUM",
+                      "crossSeriesReducer": "REDUCE_SUM",
+                      "groupByFields": [
+                        "metric.label.mode"
+                      ]
+                    }
+                  }
+                },
+                "sliceNameTemplate": "${metric.labels.mode}"
+              }
+            ]
           }
         }
       },
       {
-        "xPos": 4, "yPos": 3, "width": 4, "height": 5,
+        "xPos": 4,
+        "yPos": 3,
+        "width": 4,
+        "height": 5,
         "widget": {
           "title": "Wording citations per hour",
           "xyChart": {
-            "chartOptions": {"mode": "COLOR"},
+            "chartOptions": {
+              "mode": "COLOR"
+            },
             "dataSets": [
               {
-                "plotType": "STACKED_BAR", "legendTemplate": "Verified",
-                "timeSeriesQuery": {"timeSeriesFilter": {
-                  "filter": "metric.type=\"logging.googleapis.com/user/catsight_citations_verified\"",
-                  "aggregation": {"alignmentPeriod": "3600s", "perSeriesAligner": "ALIGN_SUM", "crossSeriesReducer": "REDUCE_SUM"}}}
+                "plotType": "STACKED_BAR",
+                "legendTemplate": "Verified",
+                "timeSeriesQuery": {
+                  "timeSeriesFilter": {
+                    "filter": "metric.type=\"logging.googleapis.com/user/catsight_citations_verified\"",
+                    "aggregation": {
+                      "alignmentPeriod": "3600s",
+                      "perSeriesAligner": "ALIGN_SUM",
+                      "crossSeriesReducer": "REDUCE_SUM"
+                    }
+                  }
+                }
               },
               {
-                "plotType": "STACKED_BAR", "legendTemplate": "Withheld",
-                "timeSeriesQuery": {"timeSeriesFilter": {
-                  "filter": "metric.type=\"logging.googleapis.com/user/catsight_citations_withheld\"",
-                  "aggregation": {"alignmentPeriod": "3600s", "perSeriesAligner": "ALIGN_SUM", "crossSeriesReducer": "REDUCE_SUM"}}}
+                "plotType": "STACKED_BAR",
+                "legendTemplate": "Withheld",
+                "timeSeriesQuery": {
+                  "timeSeriesFilter": {
+                    "filter": "metric.type=\"logging.googleapis.com/user/catsight_citations_withheld\"",
+                    "aggregation": {
+                      "alignmentPeriod": "3600s",
+                      "perSeriesAligner": "ALIGN_SUM",
+                      "crossSeriesReducer": "REDUCE_SUM"
+                    }
+                  }
+                }
               }
             ]
           }
         }
       },
       {
-        "xPos": 8, "yPos": 3, "width": 4, "height": 5,
+        "xPos": 8,
+        "yPos": 3,
+        "width": 4,
+        "height": 5,
         "widget": {
           "title": "Clause Courtroom outcomes per hour",
           "xyChart": {
-            "chartOptions": {"mode": "COLOR"},
+            "chartOptions": {
+              "mode": "COLOR"
+            },
             "dataSets": [
               {
-                "plotType": "STACKED_BAR", "legendTemplate": "Argued and priced",
-                "timeSeriesQuery": {"timeSeriesFilter": {
-                  "filter": "metric.type=\"logging.googleapis.com/user/catsight_courtroom_done\"",
-                  "aggregation": {"alignmentPeriod": "3600s", "perSeriesAligner": "ALIGN_SUM", "crossSeriesReducer": "REDUCE_SUM"}}}
+                "plotType": "STACKED_BAR",
+                "legendTemplate": "Argued and priced",
+                "timeSeriesQuery": {
+                  "timeSeriesFilter": {
+                    "filter": "metric.type=\"logging.googleapis.com/user/catsight_courtroom_done\"",
+                    "aggregation": {
+                      "alignmentPeriod": "3600s",
+                      "perSeriesAligner": "ALIGN_SUM",
+                      "crossSeriesReducer": "REDUCE_SUM"
+                    }
+                  }
+                }
               },
               {
-                "plotType": "STACKED_BAR", "legendTemplate": "Skipped (no qualifying flag)",
-                "timeSeriesQuery": {"timeSeriesFilter": {
-                  "filter": "metric.type=\"logging.googleapis.com/user/catsight_courtroom_skipped\"",
-                  "aggregation": {"alignmentPeriod": "3600s", "perSeriesAligner": "ALIGN_SUM", "crossSeriesReducer": "REDUCE_SUM"}}}
+                "plotType": "STACKED_BAR",
+                "legendTemplate": "Skipped (no qualifying flag)",
+                "timeSeriesQuery": {
+                  "timeSeriesFilter": {
+                    "filter": "metric.type=\"logging.googleapis.com/user/catsight_courtroom_skipped\"",
+                    "aggregation": {
+                      "alignmentPeriod": "3600s",
+                      "perSeriesAligner": "ALIGN_SUM",
+                      "crossSeriesReducer": "REDUCE_SUM"
+                    }
+                  }
+                }
               },
               {
-                "plotType": "STACKED_BAR", "legendTemplate": "Counsel dropped (bad quote)",
-                "timeSeriesQuery": {"timeSeriesFilter": {
-                  "filter": "metric.type=\"logging.googleapis.com/user/catsight_counsel_dropped\"",
-                  "aggregation": {"alignmentPeriod": "3600s", "perSeriesAligner": "ALIGN_SUM", "crossSeriesReducer": "REDUCE_SUM"}}}
+                "plotType": "STACKED_BAR",
+                "legendTemplate": "Counsel dropped (bad quote)",
+                "timeSeriesQuery": {
+                  "timeSeriesFilter": {
+                    "filter": "metric.type=\"logging.googleapis.com/user/catsight_counsel_dropped\"",
+                    "aggregation": {
+                      "alignmentPeriod": "3600s",
+                      "perSeriesAligner": "ALIGN_SUM",
+                      "crossSeriesReducer": "REDUCE_SUM"
+                    }
+                  }
+                }
               }
             ]
           }
         }
       },
       {
-        "xPos": 0, "yPos": 8, "width": 12, "height": 4,
+        "xPos": 0,
+        "yPos": 8,
+        "width": 12,
+        "height": 6,
         "widget": {
-          "title": "Guardrail trips - last 24 h (each row is one safety check)",
+          "title": "Runs - one row per analysis (agent seconds, model and tool calls, tokens, cost, flags, Courtroom)",
           "timeSeriesTable": {
-            "metricVisualization": "NUMBER",
             "dataSets": [
-              {"tableTemplate": "Citation withheld - quote did not check out",
-               "timeSeriesQuery": {"timeSeriesFilter": {"filter": "metric.type=\"logging.googleapis.com/user/catsight_citations_withheld\"",
-                 "aggregation": {"alignmentPeriod": "86400s", "perSeriesAligner": "ALIGN_SUM", "crossSeriesReducer": "REDUCE_SUM"}}}},
-              {"tableTemplate": "Unsupported figure - AI text quoted a number the engine did not produce",
-               "timeSeriesQuery": {"timeSeriesFilter": {"filter": "metric.type=\"logging.googleapis.com/user/catsight_unsupported_figures\"",
-                 "aggregation": {"alignmentPeriod": "86400s", "perSeriesAligner": "ALIGN_SUM", "crossSeriesReducer": "REDUCE_SUM"}}}},
-              {"tableTemplate": "Counsel dropped - Courtroom argument without verified wording",
-               "timeSeriesQuery": {"timeSeriesFilter": {"filter": "metric.type=\"logging.googleapis.com/user/catsight_counsel_dropped\"",
-                 "aggregation": {"alignmentPeriod": "86400s", "perSeriesAligner": "ALIGN_SUM", "crossSeriesReducer": "REDUCE_SUM"}}}},
-              {"tableTemplate": "Limit refused - per-visitor or daily cap",
-               "timeSeriesQuery": {"timeSeriesFilter": {"filter": "metric.type=\"logging.googleapis.com/user/catsight_limit_refused\"",
-                 "aggregation": {"alignmentPeriod": "86400s", "perSeriesAligner": "ALIGN_SUM", "crossSeriesReducer": "REDUCE_SUM"}}}},
-              {"tableTemplate": "Analysis error",
-               "timeSeriesQuery": {"timeSeriesFilter": {"filter": "metric.type=\"logging.googleapis.com/user/catsight_analysis_errors\"",
-                 "aggregation": {"alignmentPeriod": "86400s", "perSeriesAligner": "ALIGN_SUM", "crossSeriesReducer": "REDUCE_SUM"}}}}
-            ]
+              {
+                "timeSeriesQuery": {
+                  "opsAnalyticsQuery": {
+                    "sql": "WITH runs AS (\n  SELECT\n    timestamp,\n    JSON_VALUE(json_payload, '$.run_id')                                   AS run_id,\n    JSON_VALUE(json_payload, '$.event_id')                                 AS event,\n    JSON_VALUE(json_payload, '$.mode')                                     AS mode,\n    SAFE_CAST(JSON_VALUE(json_payload, '$.money_seconds') AS FLOAT64)      AS money_s,\n    SAFE_CAST(JSON_VALUE(json_payload, '$.seconds') AS FLOAT64)            AS total_s,\n    SAFE_CAST(JSON_VALUE(json_payload, '$.agent_seconds.exposure_analyst') AS FLOAT64) AS exposure_s,\n    SAFE_CAST(JSON_VALUE(json_payload, '$.agent_seconds.wording_checker') AS FLOAT64)  AS wording_s,\n    SAFE_CAST(JSON_VALUE(json_payload, '$.agent_seconds.verifier') AS FLOAT64)         AS verifier_s,\n    SAFE_CAST(JSON_VALUE(json_payload, '$.agent_seconds.reporter') AS FLOAT64)         AS reporter_s,\n    SAFE_CAST(JSON_VALUE(json_payload, '$.calls') AS INT64)                AS model_calls,\n    SAFE_CAST(JSON_VALUE(json_payload, '$.tool_calls') AS INT64)           AS tool_calls,\n    SAFE_CAST(JSON_VALUE(json_payload, '$.retrievals') AS INT64)           AS retrievals,\n    SAFE_CAST(JSON_VALUE(json_payload, '$.tokens_in') AS INT64)            AS tokens_in,\n    SAFE_CAST(JSON_VALUE(json_payload, '$.tokens_out') AS INT64)           AS tokens_out,\n    SAFE_CAST(JSON_VALUE(json_payload, '$.cost_usd') AS FLOAT64)           AS cost_usd,\n    SAFE_CAST(JSON_VALUE(json_payload, '$.verified') AS INT64)             AS flags_verified,\n    SAFE_CAST(JSON_VALUE(json_payload, '$.withheld') AS INT64)             AS flags_withheld\n  FROM `techno-crackers-catsight.global._Default._AllLogs`\n  WHERE JSON_VALUE(json_payload, '$.component') = 'catsight-api'\n    AND JSON_VALUE(json_payload, '$.event') = 'analysis_done'\n),\ncourt AS (\n  SELECT\n    JSON_VALUE(json_payload, '$.run_id') AS run_id,\n    ANY_VALUE(CASE JSON_VALUE(json_payload, '$.event')\n      WHEN 'courtroom_done' THEN CONCAT('argued, ', JSON_VALUE(json_payload, '$.sides_verified'), ' of 2 sides verified')\n      ELSE 'skipped' END) AS courtroom,\n    SUM(SAFE_CAST(JSON_VALUE(json_payload, '$.cost_usd') AS FLOAT64)) AS courtroom_cost_usd\n  FROM `techno-crackers-catsight.global._Default._AllLogs`\n  WHERE JSON_VALUE(json_payload, '$.component') = 'catsight-api'\n    AND JSON_VALUE(json_payload, '$.event') IN ('courtroom_done', 'courtroom_skipped')\n  GROUP BY run_id\n)\nSELECT\n  FORMAT_TIMESTAMP('%d %b %H:%M', r.timestamp, 'Asia/Kolkata') AS time_ist,\n  r.event, r.mode, r.money_s, r.total_s,\n  r.exposure_s, r.wording_s, r.verifier_s, r.reporter_s,\n  r.model_calls, r.tool_calls, r.retrievals, r.tokens_in, r.tokens_out,\n  r.cost_usd, r.flags_verified, r.flags_withheld,\n  IFNULL(c.courtroom, '-') AS courtroom, c.courtroom_cost_usd,\n  r.run_id\nFROM runs r LEFT JOIN court c USING (run_id)\nORDER BY r.timestamp DESC\nLIMIT 50"
+                  }
+                }
+              }
+            ],
+            "metricVisualization": "NUMBER"
           }
         }
       }
