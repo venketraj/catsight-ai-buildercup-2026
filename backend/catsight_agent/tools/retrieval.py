@@ -163,6 +163,9 @@ class GeminiEmbedder:
     #: Optional on-disk cache (JSON lines keyed by task type + text hash), so
     #: a re-run never re-embeds an unchanged clause.
     cache_path: str | None = None
+    #: Read-only vectors shipped with the app (the standard queries), loaded
+    #: into the cache at start so a fresh instance makes no embed calls for them.
+    seed_path: str | None = None
     #: Steady pace under the project's per-minute embed quota (EMBED_RPM).
     #: Observed ~14/min sustainable on this project; 0 disables pacing.
     requests_per_minute: float = 12.0
@@ -204,7 +207,7 @@ class GeminiEmbedder:
         with _SETUP_LOCK:
             if self._lock is None:
                 self._gate = threading.BoundedSemaphore(self.max_concurrency)
-                self._cache = _EmbeddingCache(self.cache_path)
+                self._cache = _EmbeddingCache(self.cache_path, seed=self.seed_path)
                 self._lock = threading.Lock()
 
     def _embed(self, text: str, task_type: str) -> list[float]:  # pragma: no cover
@@ -257,19 +260,29 @@ class GeminiEmbedder:
 
 class _EmbeddingCache:
     """Append-only JSON-lines cache of embeddings, keyed by a hash of the
-    model, dimensions, task type and text. In memory only when no path."""
+    model, dimensions, task type and text. In memory only when no path.
 
-    def __init__(self, path: str | None) -> None:
-        import json
+    `seed` is a read-only file of vectors shipped with the app - the standard
+    retrieval queries - loaded first and never written to. Without it a fresh
+    Cloud Run instance re-embeds every query under the paced embed quota, and
+    its first analysis takes minutes instead of seconds."""
+
+    def __init__(self, path: str | None, seed: str | None = None) -> None:
         from pathlib import Path
 
         self._path = Path(path) if path else None
         self._rows: dict[str, list[float]] = {}
-        if self._path and self._path.exists():
-            for line in self._path.read_text(encoding="utf-8").splitlines():
-                if line.strip():
-                    row = json.loads(line)
-                    self._rows[row["k"]] = row["v"]
+        for source in (Path(seed) if seed else None, self._path):
+            if source and source.exists():
+                self._load(source)
+
+    def _load(self, source: Any) -> None:
+        import json
+
+        for line in source.read_text(encoding="utf-8").splitlines():
+            if line.strip():
+                row = json.loads(line)
+                self._rows[row["k"]] = row["v"]
 
     @staticmethod
     def _hash(key: str) -> str:

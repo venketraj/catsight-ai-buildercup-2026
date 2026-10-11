@@ -202,7 +202,7 @@ Measured latency and cost are in [`RESULTS.md`](RESULTS.md) §1.
 │   ├── ingest/                     wordings, embedding, RAG extraction, reconciliation, seeding
 │   ├── qa/                         extraction accuracy and the per-field citation audit
 │   ├── data/                       book, events, replays, extracted terms, ASSUMPTIONS.md
-│   ├── tests/                      865 pytest tests (+ an opt-in live suite)
+│   ├── tests/                      869 pytest tests (+ an opt-in live suite)
 │   └── Dockerfile
 ├── frontend/                       Vite + React + TypeScript
 ├── benchmarks/                     run_all.py — live latency, cost and Courtroom runs

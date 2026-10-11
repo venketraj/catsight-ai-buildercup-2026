@@ -158,9 +158,43 @@ def open_store(config: Settings) -> DataStore:
     return LocalStore(config.data_dir)
 
 
+#: The standard retrieval queries, embedded once (`ingest/build_query_embeddings.py`).
+QUERY_EMBEDDINGS = "query_embeddings.jsonl"
+
+#: Seconds of silence before the stream sends an SSE comment. Keeps proxies
+#: and networks from dropping a connection while a slow stage works.
+HEARTBEAT_SECONDS = 15.0
+
+
+async def with_heartbeat(stream: Any, every: float = HEARTBEAT_SECONDS):
+    """Pass the stream through, adding `: keepalive` comment lines whenever it
+    is silent for `every` seconds. Browsers and the frontend parser ignore
+    comment lines. The pending read is never cancelled - cancelling it would
+    abort the generator underneath."""
+    iterator = stream.__aiter__()
+    pending: asyncio.Future | None = None
+    try:
+        while True:
+            if pending is None:
+                pending = asyncio.ensure_future(iterator.__anext__())
+            done, _ = await asyncio.wait({pending}, timeout=every)
+            if not done:
+                yield ": keepalive\n\n"
+                continue
+            try:
+                chunk = pending.result()
+            except StopAsyncIteration:
+                return
+            pending = None
+            yield chunk
+    finally:
+        if pending is not None and not pending.done():
+            pending.cancel()
+
+
 def _sse_response(stream: Any) -> StreamingResponse:
     return StreamingResponse(
-        stream,
+        with_heartbeat(stream),
         media_type="text/event-stream",
         headers={
             "Cache-Control": "no-cache",
@@ -224,6 +258,7 @@ def create_app(config: Settings | None = None, store: DataStore | None = None) -
                     project=config.project, location=config.location,
                     model=config.embed_model,
                     cache_path=os.environ.get("EMBED_CACHE") or None,
+                    seed_path=str(Path(config.data_dir) / QUERY_EMBEDDINGS),
                 ),
                 "vectors": FirestoreVectorStore(firestore.Client(
                     project=config.project, database=config.firestore_database)),

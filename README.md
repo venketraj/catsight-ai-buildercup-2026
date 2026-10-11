@@ -78,7 +78,7 @@ Detail in [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 | Live analysis (Jebi), 5 runs | money in **0.7 s**; complete in **9.8 s** p50 (8-18 s); **$0.010** p50 model cost | warm service; [`docs/RESULTS.md`](docs/RESULTS.md) §1 |
 | Clause Courtroom | **20 s**, **$0.004** | one measured run; opens on a verified HIGH or MEDIUM exclusion flag |
 | Follow-up question | about **$0.003** | from token counts, not benchmarked |
-| Automated tests | **865 passing** | plus an opt-in live suite against real GCP |
+| Automated tests | **869 passing** | plus an opt-in live suite against real GCP |
 
 ## Run it yourself
 
@@ -114,7 +114,7 @@ npm run dev        # open http://localhost:5173
 **4. Tests** - in `backend/`:
 
 ```powershell
-uv run --no-sync pytest -q                                   # 865 tests, no cloud calls
+uv run --no-sync pytest -q                                   # 869 tests, no cloud calls
 $env:RUN_LIVE="1"; uv run --no-sync --env-file .env pytest -m live -q   # real Gemini + Firestore, a few cents
 ```
 
@@ -169,7 +169,7 @@ Designed or investigated, not built:
 
 | Criterion | Where to look |
 |---|---|
-| **Technical merit** | ADK 2.11 `Workflow` with a verification loop and a parallel Courtroom fan-out; RAG on Firestore vector search; a citation verifier that withholds anything it cannot match; a deterministic loss engine with 865 tests; guardrail events, traces and a dashboard in Cloud Logging, Trace and Monitoring — [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md), [`docs/RESULTS.md`](docs/RESULTS.md) |
+| **Technical merit** | ADK 2.11 `Workflow` with a verification loop and a parallel Courtroom fan-out; RAG on Firestore vector search; a citation verifier that withholds anything it cannot match; a deterministic loss engine with 869 tests; guardrail events, traces and a dashboard in Cloud Logging, Trace and Monitoring — [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md), [`docs/RESULTS.md`](docs/RESULTS.md) |
 | **Problem alignment & impact** | The first-view question a reinsurer faces after a catastrophe, answered per treaty and per party, with the clause that could change it — [`docs/BUSINESS_IMPACT.md`](docs/BUSINESS_IMPACT.md), [`docs/DOMAIN_PRIMER.md`](docs/DOMAIN_PRIMER.md) |
 | **Innovation** | Two AI counsel argue a disputed clause from verified wording, and tested code prices both readings; Gemini reads a scanned endorsement that changes the contract — [`docs/MONEY_MOMENT.md`](docs/MONEY_MOMENT.md) |
 | **User experience** | Five-step layout, sticky summary, guided tour, instant replay, light and dark themes with colour-blind-checked palettes, keyboard navigation, Word export |
