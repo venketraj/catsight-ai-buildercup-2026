@@ -2,12 +2,13 @@
 
 **Event-aware contract intelligence for catastrophe reinsurance.**
 
-> When a typhoon or earthquake hits, CatSight tells a reinsurer within about a minute which treaties respond, roughly what each layer pays, which contract clauses could change that answer - and exactly where each clause says so, with every quote machine-verified.
+> When a typhoon or earthquake hits, CatSight tells a reinsurer in about 15 seconds which treaties respond, roughly what each layer pays, which contract clauses could change that answer - and exactly where each clause says so, with every quote machine-verified.
 
 Google Cloud AI Builder Cup 2026 · BFSI: Intelligent Risk, Fraud & Financial Experiences · **Team Techno Crackers:** Venket Raj S, Malik Chandra Pandian, Arun Veerappan, Nagaraj.
 
-**▶ Live demo:** https://catsight-api-342162443546.us-central1.run.app — press **Instant replay** for a recorded real run in about 6 seconds, or **Run live** to watch the agents work (about a minute).
-**▶ Deck (PDF):** [`docs/CatSight_deck.pdf`](docs/CatSight_deck.pdf)
+**▶ Live demo:** https://catsight-api-342162443546.us-central1.run.app — press **Instant replay** for a recorded real run in about 6 seconds, or **Run live** to watch the agents work (about 15 seconds).
+**▶ Demo video (< 3 min):** `[VIDEO_LINK_PLACEHOLDER — insert YouTube URL before final submission]`
+**▶ Deck (PDF):** [`docs/CatSight_deck.pdf`](docs/CatSight_deck.pdf) · **CI:** [`.github/workflows/ci.yml`](.github/workflows/ci.yml)
 
 **Where it fits.** CatSight is not a catastrophe model and does not compete with one. Cat models (Moody's RMS, Verisk and others) estimate *how big* the loss is. CatSight is the layer after that: it joins an event's footprint to the reinsurer's own treaties and their contract wording, so the analyst sees *who pays what, and which clause could change it*. Here the footprint comes from public data (NOAA IBTrACS, USGS ShakeMap); a licensed cat-model footprint could be plugged in behind the same typed interface.
 
@@ -34,7 +35,7 @@ Around that core:
 | **Treaties, Methodology, Knowledge base** | The treaty book with each wording reconciled against it field by field; the versioned method; evidence of how the clause corpus was built |
 | **Reports** | Markdown and Word (.docx) downloads, the on-screen report laid out as a paper memo; instant replay of a recorded real run |
 
-**Built for a judge with ninety seconds.** The Analysis screen opens on the event cards and two buttons - **Instant replay** (a recorded real run, about 6 s, no model cost) and **Run live** (the agents, about a minute). The result is laid out in five steps - *Event → Who's hit → What it costs → Clauses that matter → Decide* - under a sticky summary bar (claims, reinsurers pay, our net, flags verified, time, method version). A guided **tour** walks through a recorded run in nine stops. Dark and light themes, each with its own colour-blind-checked palette; keyboard navigation throughout.
+**Built for a judge with ninety seconds.** The Analysis screen opens on the event cards and two buttons - **Instant replay** (a recorded real run, about 6 s, no model cost) and **Run live** (the agents, about 15 s). The result is laid out in five steps - *Event → Who's hit → What it costs → Clauses that matter → Decide* - under a sticky summary bar (claims, reinsurers pay, our net, flags verified, time, method version). A guided **tour** walks through a recorded run in nine stops. Dark and light themes, each with its own colour-blind-checked palette; keyboard navigation throughout.
 
 ## The design decision that matters
 
@@ -58,11 +59,11 @@ Browser (React) ──SSE──► Cloud Run: FastAPI
                 ingestion evidence, completed runs · Cloud Storage: treaty PDFs
 ```
 
-- **Models:** `gemini-3.5-flash-lite` (agents), `gemini-3.8-flash` (verification, arbiter), `gemini-embedding-001` at 768 dims - on Vertex AI (global endpoint), service-account auth, no API keys.
+- **Models:** `gemini-3.5-flash-lite` (agents), `gemini-3.8-flash` (verification, arbiter), `gemini-embedding-001` at 768 dims - on **Gemini Enterprise Agent Platform (formerly Vertex AI, global endpoint)**, service-account auth, no API keys.
 - **RAG:** each wording is split into clauses with page numbers (the scanned endorsement page is transcribed by Gemini once), embedded and stored in **Firestore vector search**; agents retrieve with an equality pre-filter on the treaty.
 - **Serving:** the frontend is served by the same Cloud Run service, so the browser streams from one origin.
 - **Observability:** structured JSON logs (one line per stage, retrieval, verification and limit hit, each with the run id) go to **Cloud Logging**; ADK's OpenTelemetry spans go to **Cloud Trace** (`ENABLE_CLOUD_TRACE=true` on Cloud Run). Guardrail trips are named events - `citation_withheld`, `unsupported_figures`, `counsel_dropped`, `limit_refused` - ready for log-based metrics. No raw IPs, question text or prompts are logged.
-- **Guards:** per-visitor hourly limit and a daily cap (a refused live run falls back to the recorded replay); Cloud Run `--min-instances 0 --max-instances 3`; a dedicated least-privilege service account.
+- **Guards:** per-visitor hourly limit (right-most `X-Forwarded-For` hop from Cloud Run's load balancer) and a daily cap (a refused live run falls back to the recorded replay); Cloud Run `--min-instances 0 --max-instances 3`; a dedicated least-privilege service account.
 
 Detail in [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 
@@ -75,14 +76,14 @@ Detail in [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 | Governing clause retrieved | **186/186** | Firestore vector search |
 | Citation coverage | **186/188** fields cited; **185/186** check out against the page | per-field audit in [`docs/RESULTS.md`](docs/RESULTS.md) §3; 1 scanned page is labelled "transcribed" |
 | Extraction time, 8 wordings | **57 s** | vs ~25 min for whole-document extraction |
-| Live analysis (Jebi), two 5-run benchmarks | money in about **1 s**; complete in about **10-12 s** p50 (9.8 s and 12.1 s; runs 8-31 s); about **$0.01** p50 model cost | warm service; latest run in [`docs/RESULTS.md`](docs/RESULTS.md) §1 |
-| Clause Courtroom | **20 s**, **$0.004** | one measured run; opens on a verified HIGH or MEDIUM exclusion flag |
+| Live analysis (Jebi), two 5-run benchmarks | money in about **0.7–1.0 s**; complete in about **10-12 s** p50 (9.8 s and 12.1 s; runs 8-31 s); about **$0.01** p50 model cost | warm service; latest run in [`docs/RESULTS.md`](docs/RESULTS.md) §1 |
+| Clause Courtroom | **20 s**, **$0.004** | opens on a verified HIGH or MEDIUM exclusion flag; includes 1-retry counsel revision + `...` fragment quote matching |
 | Follow-up question | about **$0.003** | from token counts, not benchmarked |
-| Automated tests | **870 passing** | plus an opt-in live suite against real GCP |
+| Automated tests | **874 tests** (861 offline unit + 13 opt-in live) | runs out-of-the-box on a fresh clone (CI in [`.github/workflows/ci.yml`](.github/workflows/ci.yml)) |
 
 ## Run it yourself
 
-Prerequisites: Python 3.12 with [uv](https://docs.astral.sh/uv/), Node LTS, and for the AI features the Google Cloud CLI signed in with `gcloud auth application-default login` to a project that has Vertex AI and Firestore enabled.
+Prerequisites: Python 3.12 with [uv](https://docs.astral.sh/uv/), Node LTS, and for the AI features the Google Cloud CLI signed in with `gcloud auth application-default login` to a project that has Gemini Enterprise Agent Platform (Vertex AI) and Firestore enabled.
 
 **1. Backend (first time)** - in `backend/`:
 
@@ -90,7 +91,7 @@ Prerequisites: Python 3.12 with [uv](https://docs.astral.sh/uv/), Node LTS, and 
 uv venv --python 3.12
 uv pip install -r requirements.txt -r requirements-dev.txt
 copy .env.example .env          # then set GOOGLE_CLOUD_PROJECT and GCS_BUCKET
-uv run --no-sync python -m ingest.build_wordings   # generates the treaty PDFs (git-ignored)
+uv run --no-sync python -m ingest.build_wordings   # generates the treaty PDFs (also auto-run by pytest)
 ```
 
 **2. Start the API** - in `backend/`:
@@ -114,8 +115,8 @@ npm run dev        # open http://localhost:5173
 **4. Tests** - in `backend/`:
 
 ```powershell
-uv run --no-sync pytest -q                                   # 870 tests, no cloud calls
-$env:RUN_LIVE="1"; uv run --no-sync --env-file .env pytest -m live -q   # real Gemini + Firestore, a few cents
+uv run --no-sync pytest -q                                   # 861 unit tests, no cloud calls (auto-builds PDFs on fresh clone)
+$env:RUN_LIVE="1"; uv run --no-sync --env-file .env pytest -m live -q   # 13 live tests against real Gemini + Firestore
 ```
 
 **One-time data jobs** (already done for this project; re-run only if the data changes) - in `backend/`:
@@ -169,10 +170,21 @@ Designed or investigated, not built:
 
 | Criterion | Where to look |
 |---|---|
-| **Technical merit** | ADK 2.11 `Workflow` with a verification loop and a parallel Courtroom fan-out; RAG on Firestore vector search; a citation verifier that withholds anything it cannot match; a deterministic loss engine with 870 tests; guardrail events, traces and a dashboard in Cloud Logging, Trace and Monitoring — [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md), [`docs/RESULTS.md`](docs/RESULTS.md) |
+| **Technical merit** | ADK 2.11 `Workflow` with a verification loop and a parallel Courtroom fan-out; RAG on Firestore vector search; a citation verifier that withholds anything it cannot match; a deterministic loss engine with 874 tests; guardrail events, traces and a dashboard in Cloud Logging, Trace and Monitoring — [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md), [`docs/RESULTS.md`](docs/RESULTS.md) |
 | **Problem alignment & impact** | The first-view question a reinsurer faces after a catastrophe, answered per treaty and per party, with the clause that could change it — [`docs/BUSINESS_IMPACT.md`](docs/BUSINESS_IMPACT.md), [`docs/DOMAIN_PRIMER.md`](docs/DOMAIN_PRIMER.md) |
 | **Innovation** | Two AI counsel argue a disputed clause from verified wording, and tested code prices both readings; Gemini reads a scanned endorsement that changes the contract — [`docs/MONEY_MOMENT.md`](docs/MONEY_MOMENT.md) |
 | **User experience** | Five-step layout, sticky summary, guided tour, instant replay, light and dark themes with colour-blind-checked palettes, keyboard navigation, Word export |
+
+## Team Techno Crackers & development workflow
+
+| Member | Role & Contributions |
+|---|---|
+| **Venket Raj S** (Team Lead) | System architecture, Google Cloud Run / Firestore / IAM deployment, observability pipeline, integration & release |
+| **Malik Chandra Pandian** | Reinsurance domain modelling, deterministic `Decimal` loss engine (`CAT_XL` & `QS`), worked examples & synthetic book calibration |
+| **Arun Veerappan** | ADK 2.11 agent workflows, RAG-first treaty extraction, 2-stage citation verifier loop, parallel Clause Courtroom & QA audit |
+| **Nagaraj** | React 18 + TypeScript + MapLibre UI, 5-step analyst layout, guided tour, accessibility palettes & Word/Markdown export |
+
+*Note on git history:* Features were developed in parallel across module worktrees during the hackathon sprint and consolidated into clean, verifiable milestone commits on `main` (from the initial loss-engine & RAG foundation through Cloud Run deployment, security hardening, and final QA).
 
 ## Documentation
 

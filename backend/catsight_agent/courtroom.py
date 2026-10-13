@@ -88,7 +88,7 @@ def build_courtroom(
         context = {}
         cited = flag["citation"]
         for chunk in deps.vectors.chunks_for(treaty_id):
-            if chunk.clause_no == cited["clause_no"]:
+            if chunk.clause_no == cited["clause_no"] or chunk.clause_type == "COVER" or chunk.clause_no == "2":
                 context[chunk.chunk_id] = chunk
         hits = await asyncio.to_thread(
             search_treaty_clauses, STANDARD_QUERIES["EXCLUSION"], store=deps.vectors,
@@ -110,30 +110,51 @@ def build_courtroom(
     def _argue(side: str) -> dict:
         title, client, stance = prompts.COUNSEL_SIDES[side]
         context = out["context"]
-        prompt = prompts.COUNSEL.format(
+        base_prompt = prompts.COUNSEL.format(
             side_title=title, client=client, stance=stance, issue_type=flag["issue_type"],
             treaty_id=treaty_id, explanation=flag["explanation"],
             observed="\n".join(f"- {o}" for o in deps.observed) or "- (none recorded)",
             clauses="\n\n".join(_render(c) for c in context.values()),
         )
-        try:
-            raw = _generate(deps, deps.model_main, prompt, CounselArgument, f"{side}_counsel")
-            arg = CounselArgument.model_validate(json.loads(raw or "{}"))
-        except Exception as exc:  # noqa: BLE001 - a side that cannot argue is dropped
-            return _dropped(side, f"counsel could not produce an argument ({type(exc).__name__})")
-        chunk = context.get(arg.chunk_id)
-        if chunk is None:
-            return _dropped(side, f"cited {arg.chunk_id}, which is not a retrieved clause", arg)
-        if not match_quote(arg.quoted_text, chunk.text).ok:
-            return _dropped(side, "the quoted text is not in the cited clause", arg)
-        citation = Citation(treaty_id=treaty_id, page=chunk.page, clause_no=chunk.clause_no or "n/a",
-                            quote=_bounded(arg.quoted_text), source=chunk.source)
-        supported, reason = _quote_is_faithful(arg, chunk)
-        if not supported:
-            return _dropped(side, f"the quote is misrepresented: {reason}", arg)
-        return {"side": side, "verified": True, "reading": arg.reading,
-                "argument_md": arg.argument_md, "excluded_share": arg.excluded_share,
-                "citation": citation.model_dump(mode="json")}
+        prompt = base_prompt
+        last_reason = "no argument"
+        last_arg: CounselArgument | None = None
+        for attempt in range(2):
+            stage_name = f"{side}_counsel" if attempt == 0 else f"{side}_counsel_revise"
+            try:
+                raw = _generate(deps, deps.model_main, prompt, CounselArgument, stage_name)
+                arg = CounselArgument.model_validate(json.loads(raw or "{}"))
+                last_arg = arg
+            except Exception as exc:  # noqa: BLE001 - a side that cannot argue is dropped
+                return _dropped(side, f"counsel could not produce an argument ({type(exc).__name__})", last_arg)
+            chunk = context.get(arg.chunk_id)
+            if chunk is None:
+                last_reason = f"cited {arg.chunk_id}, which is not a retrieved clause"
+            elif not match_quote(arg.quoted_text, chunk.text).ok:
+                last_reason = "the quoted text is not in the cited clause"
+            else:
+                citation = Citation(treaty_id=treaty_id, page=chunk.page, clause_no=chunk.clause_no or "n/a",
+                                    quote=_bounded(arg.quoted_text), source=chunk.source)
+                supported, reason = _quote_is_faithful(arg, chunk)
+                if supported:
+                    return {"side": side, "verified": True, "reading": arg.reading,
+                            "argument_md": arg.argument_md, "excluded_share": arg.excluded_share,
+                            "citation": citation.model_dump(mode="json")}
+                last_reason = f"the quote is misrepresented: {reason}"
+                if reason.startswith("the quote check could not run"):
+                    return _dropped(side, last_reason, arg)
+            prompt = (
+                f"{base_prompt}\n"
+                f"PREVIOUS ATTEMPT FAILED VERIFICATION: {last_reason}\n"
+                f"Previous chunk_id: {arg.chunk_id}\n"
+                f"Previous reading: {arg.reading}\n"
+                f"Previous quoted_text: {arg.quoted_text}\n"
+                "Correct your response: choose a chunk_id from CLAUSES above, copy quoted_text "
+                "character for character from that clause (or 2 to 3 verbatim fragments in order "
+                "separated by '...'), and state in reading only what that clause itself establishes "
+                "on its own terms."
+            )
+        return _dropped(side, last_reason, last_arg)
 
     def _quote_is_faithful(arg: CounselArgument, chunk: Any) -> tuple[bool, str]:
         """FR-COURT-3's meaning check: is the quote used for what it says?"""

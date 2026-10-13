@@ -407,7 +407,7 @@ export default function App() {
                 running={running}
                 onOpen={setOpened}
               />
-              {run.runId && !running && run.agents && (
+              {run.runId && !running && run.agents && health?.features?.courtroom !== false && (
                 <CourtroomPanel key={run.runId} runId={run.runId} />
               )}
             </>

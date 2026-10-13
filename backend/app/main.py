@@ -206,8 +206,36 @@ def _sse_response(stream: Any) -> StreamingResponse:
     )
 
 
+def _client_ip(request: Request) -> str:
+    """Right-most hop of X-Forwarded-For (appended by Google's front end on
+    Cloud Run, which the client cannot spoof), falling back to client.host."""
+    forwarded = request.headers.get("x-forwarded-for", "")
+    hops = [part.strip() for part in forwarded.split(",") if part.strip()]
+    if hops:
+        return hops[-1]
+    return request.client.host if request.client else "unknown"
+
+
 def create_app(config: Settings | None = None, store: DataStore | None = None) -> FastAPI:
+    from contextlib import asynccontextmanager
+    import threading
+
     config = config if config is not None else settings
+
+    @asynccontextmanager
+    async def lifespan(app_instance: FastAPI):
+        """Read the book once at start-up, in the background, so the first
+        analysis does not wait on ~600 Firestore reads."""
+        def load() -> None:
+            try:
+                app_instance.state.store.portfolio()
+            except Exception:  # noqa: BLE001 - surfaced on first request instead
+                pass
+
+        threading.Thread(target=load, daemon=True).start()
+        yield
+
+    hide_docs = config.data_backend == "firestore"
     api = FastAPI(
         title="CatSight API",
         version=API_VERSION,
@@ -215,6 +243,10 @@ def create_app(config: Settings | None = None, store: DataStore | None = None) -
             "Treaty-level catastrophe impact with a machine-verified citation "
             "for every wording claim."
         ),
+        lifespan=lifespan,
+        docs_url=None if hide_docs else "/docs",
+        redoc_url=None,
+        openapi_url=None if hide_docs else "/openapi.json",
     )
 
     api.add_middleware(
@@ -222,7 +254,7 @@ def create_app(config: Settings | None = None, store: DataStore | None = None) -
         allow_origins=list(config.allowed_origins),
         allow_credentials=False,
         allow_methods=["GET", "POST", "OPTIONS"],
-        allow_headers=["Content-Type", "X-Admin-Token"],
+        allow_headers=["Content-Type"],
     )
 
     setup_tracing(config.enable_cloud_trace)
@@ -318,20 +350,6 @@ def create_app(config: Settings | None = None, store: DataStore | None = None) -
              "source": c.source, "text": c.text}
             for c in chunks
         ]}
-
-    @api.on_event("startup")
-    def warm_book() -> None:
-        """Read the book once at start-up, in the background, so the first
-        analysis does not wait on ~600 Firestore reads."""
-        import threading
-
-        def load() -> None:
-            try:
-                api.state.store.portfolio()
-            except Exception:  # noqa: BLE001 - surfaced on first request instead
-                pass
-
-        threading.Thread(target=load, daemon=True).start()
 
     # ----------------------------------------------------------------- API-1 #
 
@@ -542,11 +560,16 @@ def create_app(config: Settings | None = None, store: DataStore | None = None) -
     def create_analysis(body: AnalysisRequest, request: Request) -> StreamingResponse:
         """SSE stream. The client uses `fetch()` with a ReadableStream, not
         `EventSource`, because EventSource cannot POST."""
+        if body.event_query and len(body.event_query) > config.max_query_chars:
+            raise HTTPException(
+                status_code=422,
+                detail=f"event_query exceeds {config.max_query_chars} characters.",
+            )
         if body.mode == "live":
             raise HTTPException(
                 status_code=501,
                 detail=(
-                    "Live mode is not implemented yet. Pick a replay event "
+                    "Live web-feed ingestion is outside v1 scope. Pick a replay event "
                     "from GET /api/events."
                 ),
             )
@@ -567,7 +590,7 @@ def create_app(config: Settings | None = None, store: DataStore | None = None) -
                                                  run_store(), run_id, event_id),
                                          run_id=run_id, event_id=event_id, mode="replay"))
 
-        client_ip = request.client.host if request.client else "unknown"
+        client_ip = _client_ip(request)
         allowed, message = api.state.limiter.check(client_ip)
         if not allowed:
             _refused(message, client_ip, "analysis")
@@ -645,6 +668,9 @@ def create_app(config: Settings | None = None, store: DataStore | None = None) -
         """FR-COURT on a completed run: picks the disputed flag, runs the two
         counsel in parallel and the arbiter, prices both readings. Saved on
         the run, so re-opening it does not pay for the agents again."""
+        if not config.courtroom_enabled:
+            return {"skipped": True, "reason": "The Clause Courtroom is switched off on this instance.",
+                    "label": LABEL}
         if not agents_available():
             raise HTTPException(status_code=400,
                                 detail="The Courtroom needs GOOGLE_CLOUD_PROJECT and DATA_BACKEND=firestore.")
@@ -654,7 +680,7 @@ def create_app(config: Settings | None = None, store: DataStore | None = None) -
             raise HTTPException(status_code=404, detail=f"no completed run {run_id}")
         if run.get("courtroom") and not rerun:
             return run["courtroom"]
-        client_ip = request.client.host if request.client else "unknown"
+        client_ip = _client_ip(request)
         allowed, message = api.state.limiter.check(client_ip)
         if not allowed:
             _refused(message, client_ip, "courtroom")
@@ -668,7 +694,10 @@ def create_app(config: Settings | None = None, store: DataStore | None = None) -
             result: dict[str, Any] = {"skipped": True, "reason": skipped, "label": LABEL}
         else:
             deps = api.state.make_deps(lambda frame: None)
-            deps.observed = [f["text"] for f in event.get("facts", [])]
+            deps.observed = [
+                f"Event window: {event.get('start')} to {event.get('end')} (duration {event.get('duration_h')} hours).",
+                *[f["text"] for f in event.get("facts", [])],
+            ]
             graph, out = build_courtroom(event_id=run["event_id"], flag=flag, deps=deps, price=price)
             await api.state.run_graph(graph)
             out.pop("context", None)
@@ -721,13 +750,18 @@ def create_app(config: Settings | None = None, store: DataStore | None = None) -
         """FR-ASK: a follow-up question, answered from the engine's figures
         and live clause retrieval, with checked citations. Stateless: the
         replay analysis is recomputed (deterministic, so identical)."""
+        if len(body.question) > config.max_query_chars:
+            raise HTTPException(
+                status_code=422,
+                detail=f"question exceeds {config.max_query_chars} characters.",
+            )
         prefix = "replay-"
         if not analysis_id.startswith(prefix):
             raise HTTPException(status_code=404, detail="analyses are addressed as replay-{event_id}")
         if not agents_available():
             raise HTTPException(status_code=400,
                                 detail="Questions need GOOGLE_CLOUD_PROJECT and DATA_BACKEND=firestore.")
-        client_ip = request.client.host if request.client else "unknown"
+        client_ip = _client_ip(request)
         allowed, message = api.state.limiter.check(client_ip)
         if not allowed:
             _refused(message, client_ip, "ask")

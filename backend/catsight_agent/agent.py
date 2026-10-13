@@ -129,7 +129,11 @@ def build_workflow(ctx: AnalysisContext) -> Any:
                  "end": event["end"], "duration_h": event["duration_h"],
                  "regions_hit": event["regions"],
                  "observed": [f["text"] for f in event.get("facts", [])]}
-        deps.observed = list(brief["observed"])  # for the verifier's event check
+        # Include the event window and duration so the verifier can check HOURS flags.
+        deps.observed = [
+            f"Event window: {event.get('start')} to {event.get('end')} (duration {event.get('duration_h')} hours).",
+            *brief["observed"],
+        ]
         targets = [t for t in impact["treaties"] if book.treaty(t["treaty_id"]).wording_id]
         emit({"type": "tool", "agent": "wording_checker", "name": "search_treaty_clauses",
               "summary": f"{len(targets)} matched treaties have wordings"})
@@ -183,7 +187,10 @@ def build_workflow(ctx: AnalysisContext) -> Any:
         impact = node_input["impact"]
         facts = {
             "event": impact["event"]["name"],
-            "event_dates": [impact["event"]["start"], impact["event"]["end"]],
+            "event_dates": [
+                str(d).replace("T", " ").replace("Z", " UTC")
+                for d in (impact["event"]["start"], impact["event"]["end"])
+            ],
             "totals_usd_m": impact["totals"],
             "as_if_on_current_book": impact["as_if"],
             "methodology_version": impact["methodology"]["version"],

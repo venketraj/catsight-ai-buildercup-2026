@@ -145,26 +145,11 @@ class QuoteMatch:
     reason: str | None = None
 
 
-def match_quote(quote: str, chunk_text: str) -> QuoteMatch:
-    """Whether `quote` appears verbatim in `chunk_text`, word-aligned.
-
-    Word alignment is what separates a quote from a cut. "the loss occurrenc"
-    is a substring of "the loss occurrence" and must still fail, because a
-    citation that stops mid-word cannot be checked by a human against the
-    page.
-    """
-    needle = normalise_for_match(quote)
-    haystack = normalise_for_match(chunk_text)
-
-    if not needle:
-        return QuoteMatch(False, reason="the quote is empty once normalised")
-
-    # Every occurrence is considered, not just the first. A short quote can
-    # appear mid-word early in a clause and cleanly later ("ment" inside
-    # "reinstatement", then as its own word); accepting only the first hit
-    # would withhold a faithful quote.
+def _find_word_aligned(needle: str, haystack: str, start: int = 0) -> tuple[int | None, str | None]:
+    """First word-aligned occurrence of `needle` in `haystack[start:]`, or the
+    truncation reason if only mid-word hits exist."""
     truncation_reason: str | None = None
-    offset = haystack.find(needle)
+    offset = haystack.find(needle, start)
     while offset >= 0:
         before = haystack[offset - 1] if offset > 0 else ""
         after_index = offset + len(needle)
@@ -178,7 +163,7 @@ def match_quote(quote: str, chunk_text: str) -> QuoteMatch:
         )
 
         if not starts_mid_word and not ends_mid_word:
-            return QuoteMatch(True, offset=offset)
+            return offset, None
 
         if truncation_reason is None:
             truncation_reason = (
@@ -187,6 +172,51 @@ def match_quote(quote: str, chunk_text: str) -> QuoteMatch:
                 else "the quote ends mid-word, so it is truncated rather than quoted"
             )
         offset = haystack.find(needle, offset + 1)
+    return None, truncation_reason
+
+
+def match_quote(quote: str, chunk_text: str) -> QuoteMatch:
+    """Whether `quote` appears verbatim in `chunk_text`, word-aligned.
+
+    Word alignment is what separates a quote from a cut. "the loss occurrenc"
+    is a substring of "the loss occurrence" and must still fail, because a
+    citation that stops mid-word cannot be checked by a human against the
+    page.
+
+    Also accepts 2 to 3 verbatim fragments separated by `...` when each
+    fragment has at least two words and appears word-aligned in order within
+    the clause (for example, a clause's opening words and a listed item
+    beneath them).
+    """
+    needle = normalise_for_match(quote)
+    haystack = normalise_for_match(chunk_text)
+
+    if not needle:
+        return QuoteMatch(False, reason="the quote is empty once normalised")
+
+    offset, truncation_reason = _find_word_aligned(needle, haystack)
+    if offset is not None:
+        return QuoteMatch(True, offset=offset)
+
+    if "..." in needle:
+        fragments = [part.strip() for part in needle.split("...") if part.strip()]
+        if 2 <= len(fragments) <= 3 and all(len(part.split()) >= 2 for part in fragments):
+            cursor = 0
+            first_offset: int | None = None
+            frag_truncation: str | None = None
+            for part in fragments:
+                hit, reason = _find_word_aligned(part, haystack, cursor)
+                if hit is None:
+                    frag_truncation = reason
+                    first_offset = None
+                    break
+                if first_offset is None:
+                    first_offset = hit
+                cursor = hit + len(part)
+            if first_offset is not None:
+                return QuoteMatch(True, offset=first_offset)
+            if frag_truncation is not None:
+                truncation_reason = frag_truncation
 
     if truncation_reason is not None:
         return QuoteMatch(False, reason=truncation_reason)

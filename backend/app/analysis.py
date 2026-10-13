@@ -1,4 +1,4 @@
-"""The analysis pipeline â€” FR-MATCH and FR-LOSS, end to end, deterministically.
+"""The analysis pipeline — FR-MATCH and FR-LOSS, end to end, deterministically.
 
 This is the spine of an analysis: an event, the treaties it touches, and what
 each one pays. It is built entirely on tested modules - `hazard`,

@@ -45,8 +45,8 @@ export function Landing({
         ▶ Instant replay <small>about 6 s · recorded real run</small>
       </button>
       <button className="secondary big" onClick={onLive} disabled={running} aria-busy={running}
-              title="Runs the agents live: Gemini, Firestore vector search, about a minute">
-        ⚡ {liveLabel} <small>Gemini agents · about a minute</small>
+              title="Runs the agents live: Gemini, Firestore vector search, about 15 seconds">
+        ⚡ {liveLabel} <small>Gemini agents · about 15 s</small>
       </button>
       {status && <span className="note" style={{ margin: 0 }}>{status}</span>}
     </div>

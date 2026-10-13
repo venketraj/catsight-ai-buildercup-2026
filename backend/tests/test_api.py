@@ -865,3 +865,24 @@ def test_warming_an_unseeded_book_does_not_crash_start_up(tmp_path):
     api = create_app(load_settings({"GOOGLE_CLOUD_PROJECT": "p"}), store=LocalStore(tmp_path))
     with TestClient(api) as live:
         assert live.get("/healthz").status_code == 200
+
+
+def test_rate_limiter_uses_rightmost_x_forwarded_for_hop(portfolio, tmp_path):
+    """A client cannot bypass the per-IP rate limit by spoofing the left-most
+    X-Forwarded-For entry when Google's front end appends the real IP on the right."""
+    api = create_app(
+        load_settings({"GOOGLE_CLOUD_PROJECT": "p", "RATE_LIMIT_PER_HOUR": "1",
+                       "REPLAY_FIXTURE_DIR": str(tmp_path)})
+    )
+    api.state.portfolio = portfolio
+    limited = TestClient(api)
+
+    with limited.stream("POST", "/api/analyses", json={},
+                        headers={"X-Forwarded-For": "10.0.0.1, 203.0.113.9"}) as r1:
+        assert r1.status_code == 200
+        list(r1.iter_lines())
+
+    # Spoofing a different left-most hop with the same right-most GFE hop is still blocked.
+    r2 = limited.post("/api/analyses", json={},
+                      headers={"X-Forwarded-For": "10.0.0.2, 203.0.113.9"})
+    assert r2.status_code == 429

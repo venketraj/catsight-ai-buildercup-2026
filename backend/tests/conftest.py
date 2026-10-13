@@ -3,8 +3,21 @@
 from __future__ import annotations
 
 import os
+from pathlib import Path
 
 import pytest
+
+
+def pytest_configure(config):
+    """Ensure working directory is backend/ and derived wording PDFs exist on a
+    fresh clone before modules that read them at import time are collected."""
+    backend_dir = Path(__file__).resolve().parent.parent
+    os.chdir(backend_dir)
+    wordings = backend_dir / "data" / "synthetic" / "wordings"
+    if not (wordings / "manifest.json").is_file() or not (wordings / "w1.pdf").is_file():
+        from ingest.build_wordings import build_all
+
+        build_all(out_dir=wordings)
 
 
 @pytest.fixture(autouse=True)

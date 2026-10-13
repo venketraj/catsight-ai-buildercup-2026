@@ -265,6 +265,34 @@ def test_an_empty_quote_is_rejected_rather_than_matching_everything():
     assert isinstance(outcome, QuoteMatch)
 
 
+def test_ordered_verbatim_fragments_joined_by_ellipsis_match():
+    """Clause 8 lists excluded causes beneath an opening line; quoting the
+    opening words and a listed item separated by '...' is faithful so long as
+    each fragment is verbatim, word-aligned and in order."""
+    exclusions = (
+        "This Agreement does not cover loss, damage, cost or expense directly "
+        "or indirectly arising out of any of the following. "
+        "War, invasion, hostilities, civil war. "
+        "Storm surge, being the rise in sea level caused by meteorological conditions."
+    )
+    joined = (
+        "This Agreement does not cover loss, damage, cost or expense ... "
+        "Storm surge, being the rise in sea level"
+    )
+    assert match_quote(joined, exclusions).ok
+    # Reversed order or paraphrased fragment must still fail.
+    reversed_order = (
+        "Storm surge, being the rise in sea level ... "
+        "This Agreement does not cover loss, damage"
+    )
+    assert not match_quote(reversed_order, exclusions).ok
+    paraphrased_frag = (
+        "This Agreement does not cover loss, damage ... "
+        "coastal flooding from high tide"
+    )
+    assert not match_quote(paraphrased_frag, exclusions).ok
+
+
 # --------------------------------------------------------------------------- #
 # Scoping — locate_citation
 # --------------------------------------------------------------------------- #

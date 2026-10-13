@@ -193,18 +193,27 @@ CLAUSES (each starts with its chunk_id)
 {clauses}
 
 Return:
-  reading         one sentence: how the clause should be read, for {client}
+  reading         one sentence: what the clause you cite establishes on its
+                  own terms, for {client} (for example, if citing the covering
+                  clause, state accurately that it covers loss arising from
+                  Windstorm and Earthquake without dropping a peril; if citing
+                  the exclusion clause, state what cause of loss it excludes).
+                  Put any proximate-cause or loss-apportionment contention in
+                  argument_md, not here.
   chunk_id        the clause your reading rests on
   quoted_text     the EXACT words from that clause you rely on - 5 to 40
-                  whole words, copied character for character. It is checked
-                  against the clause; an argument without a matching quote is
-                  dropped from the debate.
+                  whole words copied character for character, or 2 to 3
+                  verbatim fragments from that clause in order separated by
+                  '...' (for example, a clause's opening words and a listed
+                  item beneath them). It is checked against the clause; an
+                  argument without a matching quote is dropped from the debate.
   excluded_share  the share of the loss you contend falls under the excluded
                   cause, as a decimal between 0 and 0.5. This is a position
                   for pricing, not a calculation - choose what your reading
                   implies and justify it in the argument. Do not compute money.
-  argument_md     3 to 5 short sentences of argument. No figures except the
-                  share you chose and facts quoted above.
+  argument_md     3 to 5 short sentences of argument (such as proximate cause
+                  or loss split). No figures except the share you chose and
+                  facts quoted above.
 """
 
 COUNSEL_SIDES = {
@@ -239,7 +248,11 @@ Answer supports=false only if the quote is misrepresented: taken out of
 context, saying something different or narrower than counsel claims, or used
 to assert wording the clause does not contain. Do NOT fail it because the
 overall argument is weak, contested, or relies on other clauses as well - the
-merits are for the arbiter. Give a one-sentence reason either way.
+merits are for the arbiter. A clause need not mention the disputed exclusion
+to support a reading: if the reading states what the clause establishes (for
+example, that Windstorm and Earthquake are covered business, or how loss
+settlements apply) while the advocate argues proximate cause, supports=true.
+Give a one-sentence reason either way.
 """
 
 

@@ -227,7 +227,8 @@ class GeminiEmbedder:
         for attempt in range(attempts):
             try:
                 with self._gate:
-                    self._pace()
+                    if task_type == "RETRIEVAL_DOCUMENT":
+                        self._pace()
                     response = client.models.embed_content(
                         model=self.model,
                         contents=text,

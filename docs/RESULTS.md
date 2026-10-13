@@ -6,7 +6,7 @@ quoted.
 
 - **Project** `techno-crackers-catsight` · Firestore Native, us-central1 · Cloud Run, us-central1
 - **Models** `gemini-3.5-flash-lite` (agents), `gemini-3.8-flash` (verification, arbiter),
-  `gemini-embedding-001` at 768 dims — Vertex AI, `location=global`
+  `gemini-embedding-001` at 768 dims — Gemini Enterprise Agent Platform (formerly Vertex AI), `location=global`
 
 ## Read this before quoting a headline number
 
@@ -31,11 +31,11 @@ Measured 2026-10-11 20:08 UTC against `https://catsight-api-342162443546.us-cent
 | Model cost per analysis | p50 $0.0094 · min $0.0081 · max $0.0126 (n=5) |
 | Report figures not traceable to the engine | 0 across all runs |
 
-Times are measured from this client and include network and any cold start.
+Times are measured from this client and include network and any cold start. *(An earlier 5-run warm benchmark on the same service recorded p50 `0.7 s` time-to-money, p50 `9.8 s` [8.2–17.8 s] end-to-end, and p50 `$0.0102` model cost; across both 5-run benchmarks p50 is `0.7–1.0 s` time-to-money and `9.8–12.1 s` end-to-end.)*
 
 ### Per run - flags and the Clause Courtroom
 
-Both Courtroom sides verified and priced in **0/5** runs.
+Both Courtroom sides verified and priced in **0/5** runs in build `e01eb7b` (before the post-benchmark root-cause fixes below).
 
 | Run | Total (s) | Cost ($) | Wording flags | Insurer side | Reinsurer side | Reinsurer share | Our net move ($M) |
 |---|---|---|---|---|---|---|---|
@@ -55,7 +55,7 @@ The counsel agents choose their surge share each run (bounded 0-50%), so money a
 - Flag recall/precision over a labelled corpus, and a blind-set extraction score.
 <!-- benchmarks:end -->
 
-*Note on the table above:* these runs use the current rule (HIGH or MEDIUM exclusion flag, ASSUMPTIONS M8) and the storm-surge fact (X12), and the Courtroom ran in 5 of 5. In every run exactly one side's quote verified - the reinsurers' in four, the cedent's in one - so each surviving reading was priced but money at stake, which needs both, was not shown. Typical failures: the cedent narrows Clause 2 ("Windstorm and Earthquake") to windstorm alone, or the reinsurers join Clause 8's opening words to the "Storm surge" item listed beneath them, which is not a contiguous quote. Both are caught by the checks as designed. Run 4's 31 s total is a slow outlier; the other four completed in 8-14 s.
+*Note on the table above and subsequent root-cause fixes:* these runs used build `e01eb7b` (HIGH or MEDIUM exclusion flag, ASSUMPTIONS M8, and the storm-surge fact, X12), and the Courtroom ran in 5 of 5. In that build, one side's quote was dropped in each run for two specific reasons: (1) `cedent_counsel` cited Clause 2 (`"Windstorm and Earthquake"`) and wrote its proximate-cause allocation thesis inside `reading`, which `COUNSEL_QUOTE_CHECK` rejected as narrowing the clause; or (2) `reinsurer_counsel` joined Clause 8's opening line to the `"Storm surge..."` bullet with `...`, which exact contiguous substring matching rejected. **Both root causes have now been fixed in code (and unit-tested):** `match_quote` now verifies 2–3 word-aligned `...` fragments in order within the cited clause; `brief` always supplies Clause 2 (`Business Covered`) context; `COUNSEL` and `COUNSEL_QUOTE_CHECK` separate what the cited clause establishes on its own terms (`reading`) from the proximate-cause argument (`argument_md`); and `_argue` gives each counsel 1 revision retry with the checker's failure reason before dropping. In addition, `event_intel` now prepends the event's `start`, `end` and `duration_h` to `observed` so `HOURS` flags (such as `T-003` on Jebi's 9-hour window) verify cleanly. Run 4's 31 s total is a slow outlier; the other four completed in 8–14 s.
 
 ## 2. Treaty-term extraction — current pipeline (RAG-first)
 

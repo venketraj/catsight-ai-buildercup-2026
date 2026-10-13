@@ -76,7 +76,6 @@ class Settings:
     embed_dim: int = 768
 
     allowed_origins: tuple[str, ...] = (LOCAL_ORIGIN,)
-    admin_token: str | None = None
 
     #: FR-GUARD. A cap and a per-IP limit, both visible in config per NFR-9.
     daily_analysis_cap: int = 300
@@ -91,7 +90,6 @@ class Settings:
     #: Send ADK spans to Cloud Trace (app/logs.py). Off locally and in tests.
     enable_cloud_trace: bool = False
     replay_fixture_dir: str = "data/replays"
-    first_event_timeout_ms: int = 4000
 
     build_label: str = "dev"
     #: Where the local data lives when Firestore is not in use.
@@ -180,15 +178,14 @@ def load_settings(env: dict[str, str] | None = None) -> Settings:
         embed_model=os.environ.get("EMBED_MODEL") or "gemini-embedding-001",
         embed_dim=_integer("EMBED_DIM", 768),
         allowed_origins=origins,
-        admin_token=os.environ.get("ADMIN_TOKEN") or None,
         daily_analysis_cap=_integer("DAILY_ANALYSIS_CAP", 300),
         rate_limit_per_hour=_integer("RATE_LIMIT_PER_HOUR", 20),
+        max_query_chars=_integer("MAX_QUERY_CHARS", 300),
         courtroom_enabled=_flag("COURTROOM_ENABLED", True),
         verifier_max_retries=_integer("VERIFIER_MAX_RETRIES", 1),
         cached_replay_only=_flag("CACHED_REPLAY_ONLY", False),
         enable_cloud_trace=_flag("ENABLE_CLOUD_TRACE", False),
         replay_fixture_dir=os.environ.get("REPLAY_FIXTURE_DIR") or DEFAULT_REPLAY_DIR,
-        first_event_timeout_ms=_integer("FIRST_EVENT_TIMEOUT_MS", 4000),
         build_label=os.environ.get("BUILD_LABEL") or "dev",
         data_dir=os.environ.get("DATA_DIR") or "data",
         data_backend=data_backend,

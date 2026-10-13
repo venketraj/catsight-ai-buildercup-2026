@@ -1,0 +1,98 @@
+[
+  {
+    "wording_id": "W1",
+    "treaty_id": "T-001",
+    "pdf": "w1.pdf",
+    "markdown": "w1.md",
+    "pages": 6,
+    "clauses": 31,
+    "fields": 23,
+    "decoys": 10,
+    "has_scanned_endorsement": false,
+    "note": "Storm surge covered when caused by a named windstorm. The worked example."
+  },
+  {
+    "wording_id": "W2",
+    "treaty_id": "T-002",
+    "pdf": "w2.pdf",
+    "markdown": "w2.md",
+    "pages": 6,
+    "clauses": 31,
+    "fields": 23,
+    "decoys": 10,
+    "has_scanned_endorsement": false,
+    "note": "WS 96h, not the assumed 72h. Flood-when-written-as-such excluded."
+  },
+  {
+    "wording_id": "W3",
+    "treaty_id": "T-003",
+    "pdf": "w3.pdf",
+    "markdown": "w3.md",
+    "pages": 6,
+    "clauses": 31,
+    "fields": 23,
+    "decoys": 10,
+    "has_scanned_endorsement": false,
+    "note": "WS 120h. Territory excludes Okinawa Prefecture."
+  },
+  {
+    "wording_id": "W4",
+    "treaty_id": "T-004",
+    "pdf": "w4.pdf",
+    "markdown": "w4.md",
+    "pages": 7,
+    "clauses": 32,
+    "fields": 28,
+    "decoys": 10,
+    "has_scanned_endorsement": true,
+    "note": "Storm surge excluded outright. Two reinstatements. Carries a scanned, image-only endorsement that overrides the windstorm hours clause from 72 to 168 - the FR-ENDORSE case."
+  },
+  {
+    "wording_id": "W5",
+    "treaty_id": "T-005",
+    "pdf": "w5.pdf",
+    "markdown": "w5.md",
+    "pages": 6,
+    "clauses": 31,
+    "fields": 26,
+    "decoys": 10,
+    "has_scanned_endorsement": false,
+    "note": "Wind only. Earthquake excluded."
+  },
+  {
+    "wording_id": "W6",
+    "treaty_id": "T-006",
+    "pdf": "w6.pdf",
+    "markdown": "w6.md",
+    "pages": 6,
+    "clauses": 33,
+    "fields": 11,
+    "decoys": 10,
+    "has_scanned_endorsement": false,
+    "note": "Proportional 30% quota share. No hours clause. Cat event limit."
+  },
+  {
+    "wording_id": "W7",
+    "treaty_id": "T-007",
+    "pdf": "w7.pdf",
+    "markdown": "w7.md",
+    "pages": 6,
+    "clauses": 31,
+    "fields": 26,
+    "decoys": 10,
+    "has_scanned_endorsement": false,
+    "note": "168h for all perils. Free first reinstatement."
+  },
+  {
+    "wording_id": "W8",
+    "treaty_id": "T-008",
+    "pdf": "w8.pdf",
+    "markdown": "w8.md",
+    "pages": 6,
+    "clauses": 31,
+    "fields": 26,
+    "decoys": 10,
+    "has_scanned_endorsement": false,
+    "note": "Hours clause spelled \"seventy-two (72) consecutive hours\" inside a \"Loss Occurrence\" definition, to test extraction robustness. Expired period."
+  }
+]

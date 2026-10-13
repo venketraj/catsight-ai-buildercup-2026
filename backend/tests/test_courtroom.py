@@ -229,3 +229,29 @@ def test_the_arbiter_may_use_facts_and_figures_it_was_given():
     assert out["unsupported_figures"] == [], out["unsupported_figures"]
     prompt = next(p for p in model.prompts if "claims arbiter" in p)
     assert "base_nothing_excluded" in prompt
+
+
+def test_a_dropped_counsel_gets_one_revision_with_the_checkers_reason():
+    """FR-COURT-3: a counsel whose first quote fails gets one retry carrying
+    the failure reason, so a recoverable quote error does not drop the side."""
+    class RecoversOnRetry(CourtModel):
+        def respond(self, prompt):
+            if "counsel for the cedent" in prompt and "PREVIOUS ATTEMPT FAILED VERIFICATION" not in prompt:
+                return json.dumps({"reading": "bad first try", "chunk_id": "T-004#c8",
+                                   "quoted_text": "not in the clause at all",
+                                   "excluded_share": 0.0, "argument_md": "first try"})
+            return super().respond(prompt)
+
+    out, deps = _court(RecoversOnRetry())
+    assert out["sides"]["cedent"]["verified"] is True
+    assert out["sides"]["reinsurer"]["verified"] is True
+    assert "money_at_stake" in out
+    assert deps.calls["cedent_counsel"] == 1
+    assert deps.calls["cedent_counsel_revise"] == 1
+
+
+def test_courtroom_kill_switch_skips_cleanly():
+    _, disabled = _api(CourtModel(), COURTROOM_ENABLED="false")
+    resp = disabled.post("/api/runs/run-1/courtroom").json()
+    assert resp["skipped"] is True
+    assert "switched off" in resp["reason"]

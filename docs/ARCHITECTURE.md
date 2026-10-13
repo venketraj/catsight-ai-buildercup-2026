@@ -22,13 +22,13 @@ and labelled as such.
          │                  │                   │
   ┌──────▼─────────┐ ┌──────▼──────────┐ ┌──────▼─────────┐
   │ Gemini on      │ │ Firestore       │ │ Cloud Storage  │
-  │ Vertex AI      │ │ (native)        │ │ treaty PDFs    │
-  │ global endpoint│ │ treaty book     │ └────────────────┘
-  │ 3.5 Flash-Lite │ │ events, methods │
-  │ 3.8 Flash      │ │ 252 clause      │
-  │ embedding-001  │ │ vectors (768-d) │
-  └────────────────┘ │ completed runs  │
-                     └─────────────────┘
+  │ Enterprise     │ │ (native)        │ │ treaty PDFs    │
+  │ Agent Platform │ │ treaty book     │ └────────────────┘
+  │ (Vertex AI)    │ │ events, methods │
+  │ 3.5 Flash-Lite │ │ 252 clause      │
+  │ 3.8 Flash      │ │ vectors (768-d) │
+  │ embedding-001  │ │ completed runs  │
+  └────────────────┘ └─────────────────┘
 
   Cross-cutting: Cloud Logging (structured JSON, one line per stage) ·
                  Cloud Trace (ADK OpenTelemetry spans) · Cloud Monitoring
@@ -56,7 +56,7 @@ would add calls and latency without adding judgement.
 ```
   START
     │
-  event_intel        loads the event record (track or ShakeMap, observed facts)
+  event_intel        loads the event record (track or ShakeMap, event window + observed facts)
     │
   exposure_analyst   NO MODEL · match_treaties → LOSS ENGINE
     │                peril ∩ territory ∩ period; per-layer ceded, burn,
@@ -67,9 +67,10 @@ would add calls and latency without adding judgement.
     │                each citing treaty, page, clause and a quote
     │
   verifier           1. deterministic normalised quote match against the stored clause
-    │  ◄── loop ──┐  2. 3.8 Flash: does the quote SUPPORT the claim?
-    │   reviser   │  fail → one revision (3.5 Flash-Lite) → re-verify
-    │  ───────────┘  fail again → withheld, with the reason, never shown as a finding
+    │  ◄── loop ──┐     (including word-aligned '...' ellipsis fragments)
+    │   reviser   │  2. 3.8 Flash: does the quote SUPPORT the claim?
+    │  ───────────┘  fail → one revision (3.5 Flash-Lite) → re-verify
+    │                fail again → withheld, with the reason, never shown as a finding
     │
   reporter           3.5 Flash-Lite · writes the report from verified facts;
                      code checks every figure against engine output, one rewrite,
@@ -81,14 +82,15 @@ would add calls and latency without adding judgement.
 ### Clause Courtroom (on demand, on a completed run)
 
 ```
-  brief      picks the most material verified exclusion flag
-    │
+  brief      picks the most material verified exclusion flag (and includes
+    │        Clause 2 / Business Covered context alongside exclusions)
     ├──► cedent_counsel     3.5 Flash-Lite ┐  in PARALLEL, blind to each other;
     └──► reinsurer_counsel  3.5 Flash-Lite ┘  each cites a retrieved clause and
-                                               states its excluded share (0-50%)
-    │
-  quote check   deterministic match + 3.8 Flash: does the quote say what
-    │           counsel uses it to say? A side that fails is dropped.
+    │                                          states its excluded share (0-50%)
+  quote check   deterministic match (including '...' fragments) + 3.8 Flash:
+    │           does the quote say what counsel uses it to say? On failure,
+    │           counsel gets 1 revision retry with the checker's feedback;
+    │           a side that still fails is dropped.
     │
   price         LOSS ENGINE prices each verified reading (typed, bounded tool)
     │           money_at_stake per party = a Python subtraction
@@ -175,14 +177,14 @@ in model calls.
 
 | Concern | Setting |
 |---|---|
-| Region | Cloud Run, Firestore, Cloud Storage: `us-central1`. **Gemini: `global`** (3.x is not served from us-central1). |
+| Region | Cloud Run, Firestore, Cloud Storage: `us-central1`. **Gemini on Gemini Enterprise Agent Platform (formerly Vertex AI): `global`** (3.x is not served from us-central1). |
 | Auth | Dedicated `catsight-run` service account (Vertex AI user, Firestore user, storage, logging, trace); `GOOGLE_GENAI_USE_ENTERPRISE=true`; no API keys |
 | Scaling | `--min-instances 0` (1 during judging) `--max-instances 3 --timeout 300`, startup CPU boost |
-| Cost guards | Daily analysis cap (300), per-visitor limit (20/hour), `CACHED_REPLAY_ONLY` kill switch |
+| Cost guards | Daily analysis cap (300), per-visitor limit (20/hour, using right-most `X-Forwarded-For` hop from Cloud Run LB), `CACHED_REPLAY_ONLY` kill switch |
 | Firestore rules | Deny all client access; everything goes through the API |
 | Retries | 429 / 500 / 503 and dropped connections retried with backoff; a 400 is never retried |
 | Thinking | `thinking_level=LOW` on Gemini 3 |
-| Cold start | The standard retrieval queries ship pre-embedded (`backend/data/query_embeddings.jsonl`), so a fresh instance makes no embedding calls during an analysis; the SSE stream sends a `: keepalive` comment after 15 s of silence |
+| Cold start | The standard retrieval queries ship pre-embedded (`backend/data/query_embeddings.jsonl`), so a fresh instance makes no embedding calls during an analysis; interactive `/ask` queries run without batch pacing sleep; the SSE stream sends a `: keepalive` comment after 15 s of silence |
 | Observability | Structured JSON logs with the run id; guardrail events (`citation_withheld`, `unsupported_figures`, `counsel_dropped`, `limit_refused`); ADK spans to Cloud Trace. `scripts/setup_observability.sh` builds log-based metrics, a Cloud Monitoring dashboard and an optional budget alert from them; the dashboard's per-run table is a Log Analytics SQL query (`scripts/observability_runs.sql`): seconds per agent, model and tool calls, tokens, cost, flags and the Courtroom outcome for each run. No raw IPs, questions or prompts logged. |
 
 Measured latency and cost are in [`RESULTS.md`](RESULTS.md) §1.
@@ -193,6 +195,7 @@ Measured latency and cost are in [`RESULTS.md`](RESULTS.md) §1.
 /
 ├── README.md
 ├── LICENSE                         Apache-2.0
+├── .github/workflows/ci.yml        Backend pytest + Frontend tsc & vite build
 ├── backend/
 │   ├── app/                        FastAPI: main (routes), analysis (stream), scenario
 │   │                               (What-if and Courtroom pricing), replay, runs,
@@ -203,7 +206,7 @@ Measured latency and cost are in [`RESULTS.md`](RESULTS.md) §1.
 │   ├── ingest/                     wordings, embedding, RAG extraction, reconciliation, seeding
 │   ├── qa/                         extraction accuracy and the per-field citation audit
 │   ├── data/                       book, events, replays, extracted terms, ASSUMPTIONS.md
-│   ├── tests/                      870 pytest tests (+ an opt-in live suite)
+│   ├── tests/                      874 pytest tests (861 offline unit + 13 opt-in live)
 │   └── Dockerfile
 ├── frontend/                       Vite + React + TypeScript
 ├── benchmarks/                     run_all.py — live latency, cost and Courtroom runs

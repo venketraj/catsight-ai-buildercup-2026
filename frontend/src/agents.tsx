@@ -237,22 +237,36 @@ export function ClauseViewer({ citation, onClose }: { citation: Citation; onClos
   );
 }
 
-/** Highlight the quote in the clause, tolerant of whitespace differences. */
+/** Highlight the quote (or '...' separated fragments) in the clause, tolerant of whitespace differences. */
 function Highlighted({ text, quote }: { text: string; quote: string }) {
-  const pattern = quote
-    .trim()
-    .split(/\s+/)
-    .map((w) => w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
-    .join("\\s+");
-  const match = pattern ? new RegExp(pattern, "i").exec(text) : null;
-  if (!match) return <pre className="clause">{text}</pre>;
-  return (
-    <pre className="clause">
-      {text.slice(0, match.index)}
-      <mark>{match[0]}</mark>
-      {text.slice(match.index + match[0].length)}
-    </pre>
-  );
+  const fragments = quote
+    .split(/(?:\.\.\.|…)/)
+    .map((f) => f.trim())
+    .filter(Boolean);
+  if (fragments.length === 0) return <pre className="clause">{text}</pre>;
+
+  const nodes: (string | JSX.Element)[] = [];
+  let cursor = 0;
+  let matchedAny = false;
+  fragments.forEach((frag, idx) => {
+    const pattern = frag
+      .split(/\s+/)
+      .map((w) => w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
+      .join("\\s+");
+    if (!pattern) return;
+    const sub = text.slice(cursor);
+    const match = new RegExp(pattern, "i").exec(sub);
+    if (!match) return;
+    matchedAny = true;
+    const start = cursor + match.index;
+    const end = start + match[0].length;
+    if (start > cursor) nodes.push(text.slice(cursor, start));
+    nodes.push(<mark key={idx}>{text.slice(start, end)}</mark>);
+    cursor = end;
+  });
+  if (!matchedAny) return <pre className="clause">{text}</pre>;
+  if (cursor < text.length) nodes.push(text.slice(cursor));
+  return <pre className="clause">{nodes}</pre>;
 }
 
 // --------------------------------------------------------------- report -- //
@@ -313,27 +327,84 @@ export function ReportPanel({
   );
 }
 
-/** A deliberately small Markdown renderer: headings, bullets, bold, inline code. */
+/** Markdown renderer: headings, unordered & ordered lists, pipe tables, bold, inline code. */
 export function Markdown({ text }: { text: string }) {
   const blocks: JSX.Element[] = [];
-  let list: string[] = [];
+  let ul: string[] = [];
+  let ol: string[] = [];
+  let tableRows: string[][] = [];
   const flush = () => {
-    if (list.length) {
+    if (ul.length) {
       blocks.push(
         <ul key={blocks.length}>
-          {list.map((item, i) => (
+          {ul.map((item, i) => (
             <li key={i}>{inline(item)}</li>
           ))}
         </ul>,
       );
-      list = [];
+      ul = [];
+    }
+    if (ol.length) {
+      blocks.push(
+        <ol key={blocks.length}>
+          {ol.map((item, i) => (
+            <li key={i}>{inline(item)}</li>
+          ))}
+        </ol>,
+      );
+      ol = [];
+    }
+    if (tableRows.length) {
+      const [head, ...body] = tableRows;
+      blocks.push(
+        <table key={blocks.length}>
+          {head && (
+            <thead>
+              <tr>
+                {head.map((cell, i) => (
+                  <th key={i}>{inline(cell)}</th>
+                ))}
+              </tr>
+            </thead>
+          )}
+          <tbody>
+            {body.map((row, rIdx) => (
+              <tr key={rIdx}>
+                {row.map((cell, cIdx) => (
+                  <td key={cIdx}>{inline(cell)}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>,
+      );
+      tableRows = [];
     }
   };
   for (const raw of text.split("\n")) {
     const line = raw.trimEnd();
     const bullet = /^\s*[*-]\s+(.*)$/.exec(line);
     if (bullet) {
-      list.push(bullet[1] ?? "");
+      if (ol.length || tableRows.length) flush();
+      ul.push(bullet[1] ?? "");
+      continue;
+    }
+    const numbered = /^\s*\d+\.\s+(.*)$/.exec(line);
+    if (numbered) {
+      if (ul.length || tableRows.length) flush();
+      ol.push(numbered[1] ?? "");
+      continue;
+    }
+    if (line.trim().startsWith("|") && line.trim().endsWith("|")) {
+      if (ul.length || ol.length) flush();
+      const cells = line
+        .trim()
+        .slice(1, -1)
+        .split("|")
+        .map((c) => c.trim());
+      if (!cells.every((c) => /^[-:]+$/.test(c))) {
+        tableRows.push(cells);
+      }
       continue;
     }
     flush();

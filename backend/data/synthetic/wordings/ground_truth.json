@@ -1,0 +1,2496 @@
+{
+  "_note": "Answer key for QA-3 (field accuracy) and QA-4 (flag quality). Page numbers are read back out of the rendered PDFs, not predicted, so they cannot drift from the documents. Rows with source=transcription come from the scanned endorsement, which has no text layer.",
+  "fields": [
+    {
+      "treaty_id": "T-001",
+      "wording_id": "W1",
+      "field": "type",
+      "expected_value": "CAT_XL",
+      "page": 1,
+      "clause_no": "2",
+      "clause_type": "OTHER",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-001",
+      "wording_id": "W1",
+      "field": "perils",
+      "expected_value": [
+        "WS",
+        "EQ"
+      ],
+      "page": 1,
+      "clause_no": "2",
+      "clause_type": "OTHER",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-001",
+      "wording_id": "W1",
+      "field": "territory.include",
+      "expected_value": [
+        "JPN"
+      ],
+      "page": 1,
+      "clause_no": "3",
+      "clause_type": "TERRITORY",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-001",
+      "wording_id": "W1",
+      "field": "territory.exclude",
+      "expected_value": [],
+      "page": 1,
+      "clause_no": "3",
+      "clause_type": "TERRITORY",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-001",
+      "wording_id": "W1",
+      "field": "inception",
+      "expected_value": "2026-04-01",
+      "page": 1,
+      "clause_no": "4",
+      "clause_type": "PERIOD",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-001",
+      "wording_id": "W1",
+      "field": "expiry",
+      "expected_value": "2027-03-31",
+      "page": 1,
+      "clause_no": "4",
+      "clause_type": "PERIOD",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-001",
+      "wording_id": "W1",
+      "field": "hours_clause.EQ",
+      "expected_value": 72,
+      "page": 2,
+      "clause_no": "5",
+      "clause_type": "HOURS",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-001",
+      "wording_id": "W1",
+      "field": "hours_clause.FL",
+      "expected_value": 168,
+      "page": 2,
+      "clause_no": "5",
+      "clause_type": "HOURS",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-001",
+      "wording_id": "W1",
+      "field": "hours_clause.WS",
+      "expected_value": 72,
+      "page": 2,
+      "clause_no": "5",
+      "clause_type": "HOURS",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-001",
+      "wording_id": "W1",
+      "field": "layers.1.retention",
+      "expected_value": 10.0,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-001",
+      "wording_id": "W1",
+      "field": "layers.1.limit",
+      "expected_value": 20.0,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-001",
+      "wording_id": "W1",
+      "field": "layers.1.premium",
+      "expected_value": 2.0,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-001",
+      "wording_id": "W1",
+      "field": "layers.2.retention",
+      "expected_value": 30.0,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-001",
+      "wording_id": "W1",
+      "field": "layers.2.limit",
+      "expected_value": 30.0,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-001",
+      "wording_id": "W1",
+      "field": "layers.2.premium",
+      "expected_value": 1.5,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-001",
+      "wording_id": "W1",
+      "field": "layers.3.retention",
+      "expected_value": 60.0,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-001",
+      "wording_id": "W1",
+      "field": "layers.3.limit",
+      "expected_value": 40.0,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-001",
+      "wording_id": "W1",
+      "field": "layers.3.premium",
+      "expected_value": 1.0,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-001",
+      "wording_id": "W1",
+      "field": "reinstatements.count",
+      "expected_value": 1,
+      "page": 2,
+      "clause_no": "7",
+      "clause_type": "REINSTATEMENT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-001",
+      "wording_id": "W1",
+      "field": "reinstatements.rate",
+      "expected_value": 1.0,
+      "page": 2,
+      "clause_no": "7",
+      "clause_type": "REINSTATEMENT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-001",
+      "wording_id": "W1",
+      "field": "reinstatements.basis",
+      "expected_value": "pro rata as to amount",
+      "page": 2,
+      "clause_no": "7",
+      "clause_type": "REINSTATEMENT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-001",
+      "wording_id": "W1",
+      "field": "exclusions",
+      "expected_value": [
+        "war",
+        "nuclear",
+        "cyber"
+      ],
+      "page": 2,
+      "clause_no": "8",
+      "clause_type": "EXCLUSION",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-001",
+      "wording_id": "W1",
+      "field": "currency",
+      "expected_value": "USD",
+      "page": 4,
+      "clause_no": "14",
+      "clause_type": "OTHER",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-002",
+      "wording_id": "W2",
+      "field": "type",
+      "expected_value": "CAT_XL",
+      "page": 1,
+      "clause_no": "2",
+      "clause_type": "OTHER",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-002",
+      "wording_id": "W2",
+      "field": "perils",
+      "expected_value": [
+        "WS",
+        "EQ"
+      ],
+      "page": 1,
+      "clause_no": "2",
+      "clause_type": "OTHER",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-002",
+      "wording_id": "W2",
+      "field": "territory.include",
+      "expected_value": [
+        "JPN"
+      ],
+      "page": 1,
+      "clause_no": "3",
+      "clause_type": "TERRITORY",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-002",
+      "wording_id": "W2",
+      "field": "territory.exclude",
+      "expected_value": [],
+      "page": 1,
+      "clause_no": "3",
+      "clause_type": "TERRITORY",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-002",
+      "wording_id": "W2",
+      "field": "inception",
+      "expected_value": "2026-04-01",
+      "page": 1,
+      "clause_no": "4",
+      "clause_type": "PERIOD",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-002",
+      "wording_id": "W2",
+      "field": "expiry",
+      "expected_value": "2027-03-31",
+      "page": 1,
+      "clause_no": "4",
+      "clause_type": "PERIOD",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-002",
+      "wording_id": "W2",
+      "field": "hours_clause.EQ",
+      "expected_value": 168,
+      "page": 2,
+      "clause_no": "5",
+      "clause_type": "HOURS",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-002",
+      "wording_id": "W2",
+      "field": "hours_clause.FL",
+      "expected_value": 168,
+      "page": 2,
+      "clause_no": "5",
+      "clause_type": "HOURS",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-002",
+      "wording_id": "W2",
+      "field": "hours_clause.WS",
+      "expected_value": 96,
+      "page": 2,
+      "clause_no": "5",
+      "clause_type": "HOURS",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-002",
+      "wording_id": "W2",
+      "field": "layers.1.retention",
+      "expected_value": 11.2,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-002",
+      "wording_id": "W2",
+      "field": "layers.1.limit",
+      "expected_value": 14.6,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-002",
+      "wording_id": "W2",
+      "field": "layers.1.premium",
+      "expected_value": 1.12,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-002",
+      "wording_id": "W2",
+      "field": "layers.2.retention",
+      "expected_value": 25.8,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-002",
+      "wording_id": "W2",
+      "field": "layers.2.limit",
+      "expected_value": 45.0,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-002",
+      "wording_id": "W2",
+      "field": "layers.2.premium",
+      "expected_value": 4.51,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-002",
+      "wording_id": "W2",
+      "field": "layers.3.retention",
+      "expected_value": 70.8,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-002",
+      "wording_id": "W2",
+      "field": "layers.3.limit",
+      "expected_value": 137.7,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-002",
+      "wording_id": "W2",
+      "field": "layers.3.premium",
+      "expected_value": 13.19,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-002",
+      "wording_id": "W2",
+      "field": "reinstatements.count",
+      "expected_value": 1,
+      "page": 2,
+      "clause_no": "7",
+      "clause_type": "REINSTATEMENT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-002",
+      "wording_id": "W2",
+      "field": "reinstatements.rate",
+      "expected_value": 1.0,
+      "page": 2,
+      "clause_no": "7",
+      "clause_type": "REINSTATEMENT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-002",
+      "wording_id": "W2",
+      "field": "reinstatements.basis",
+      "expected_value": "pro rata as to amount",
+      "page": 2,
+      "clause_no": "7",
+      "clause_type": "REINSTATEMENT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-002",
+      "wording_id": "W2",
+      "field": "exclusions",
+      "expected_value": [
+        "war",
+        "nuclear",
+        "flood when written as such"
+      ],
+      "page": 2,
+      "clause_no": "8",
+      "clause_type": "EXCLUSION",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-002",
+      "wording_id": "W2",
+      "field": "currency",
+      "expected_value": "USD",
+      "page": 4,
+      "clause_no": "14",
+      "clause_type": "OTHER",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-003",
+      "wording_id": "W3",
+      "field": "type",
+      "expected_value": "CAT_XL",
+      "page": 1,
+      "clause_no": "2",
+      "clause_type": "OTHER",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-003",
+      "wording_id": "W3",
+      "field": "perils",
+      "expected_value": [
+        "WS",
+        "EQ"
+      ],
+      "page": 1,
+      "clause_no": "2",
+      "clause_type": "OTHER",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-003",
+      "wording_id": "W3",
+      "field": "territory.include",
+      "expected_value": [
+        "JPN"
+      ],
+      "page": 1,
+      "clause_no": "3",
+      "clause_type": "TERRITORY",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-003",
+      "wording_id": "W3",
+      "field": "territory.exclude",
+      "expected_value": [
+        "JP-47"
+      ],
+      "page": 1,
+      "clause_no": "3",
+      "clause_type": "TERRITORY",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-003",
+      "wording_id": "W3",
+      "field": "inception",
+      "expected_value": "2026-04-01",
+      "page": 1,
+      "clause_no": "4",
+      "clause_type": "PERIOD",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-003",
+      "wording_id": "W3",
+      "field": "expiry",
+      "expected_value": "2027-03-31",
+      "page": 1,
+      "clause_no": "4",
+      "clause_type": "PERIOD",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-003",
+      "wording_id": "W3",
+      "field": "hours_clause.EQ",
+      "expected_value": 72,
+      "page": 2,
+      "clause_no": "5",
+      "clause_type": "HOURS",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-003",
+      "wording_id": "W3",
+      "field": "hours_clause.FL",
+      "expected_value": 168,
+      "page": 2,
+      "clause_no": "5",
+      "clause_type": "HOURS",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-003",
+      "wording_id": "W3",
+      "field": "hours_clause.WS",
+      "expected_value": 120,
+      "page": 2,
+      "clause_no": "5",
+      "clause_type": "HOURS",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-003",
+      "wording_id": "W3",
+      "field": "layers.1.retention",
+      "expected_value": 10.1,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-003",
+      "wording_id": "W3",
+      "field": "layers.1.limit",
+      "expected_value": 11.9,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-003",
+      "wording_id": "W3",
+      "field": "layers.1.premium",
+      "expected_value": 1.0,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-003",
+      "wording_id": "W3",
+      "field": "layers.2.retention",
+      "expected_value": 22.0,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-003",
+      "wording_id": "W3",
+      "field": "layers.2.limit",
+      "expected_value": 36.1,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-003",
+      "wording_id": "W3",
+      "field": "layers.2.premium",
+      "expected_value": 3.97,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-003",
+      "wording_id": "W3",
+      "field": "layers.3.retention",
+      "expected_value": 58.1,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-003",
+      "wording_id": "W3",
+      "field": "layers.3.limit",
+      "expected_value": 82.9,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-003",
+      "wording_id": "W3",
+      "field": "layers.3.premium",
+      "expected_value": 6.81,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-003",
+      "wording_id": "W3",
+      "field": "reinstatements.count",
+      "expected_value": 1,
+      "page": 2,
+      "clause_no": "7",
+      "clause_type": "REINSTATEMENT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-003",
+      "wording_id": "W3",
+      "field": "reinstatements.rate",
+      "expected_value": 1.0,
+      "page": 2,
+      "clause_no": "7",
+      "clause_type": "REINSTATEMENT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-003",
+      "wording_id": "W3",
+      "field": "reinstatements.basis",
+      "expected_value": "pro rata as to amount",
+      "page": 2,
+      "clause_no": "7",
+      "clause_type": "REINSTATEMENT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-003",
+      "wording_id": "W3",
+      "field": "exclusions",
+      "expected_value": [
+        "war",
+        "nuclear"
+      ],
+      "page": 2,
+      "clause_no": "8",
+      "clause_type": "EXCLUSION",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-003",
+      "wording_id": "W3",
+      "field": "currency",
+      "expected_value": "USD",
+      "page": 4,
+      "clause_no": "14",
+      "clause_type": "OTHER",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-004",
+      "wording_id": "W4",
+      "field": "type",
+      "expected_value": "CAT_XL",
+      "page": 1,
+      "clause_no": "2",
+      "clause_type": "OTHER",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-004",
+      "wording_id": "W4",
+      "field": "perils",
+      "expected_value": [
+        "WS",
+        "EQ"
+      ],
+      "page": 1,
+      "clause_no": "2",
+      "clause_type": "OTHER",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-004",
+      "wording_id": "W4",
+      "field": "territory.include",
+      "expected_value": [
+        "JPN"
+      ],
+      "page": 1,
+      "clause_no": "3",
+      "clause_type": "TERRITORY",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-004",
+      "wording_id": "W4",
+      "field": "territory.exclude",
+      "expected_value": [],
+      "page": 1,
+      "clause_no": "3",
+      "clause_type": "TERRITORY",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-004",
+      "wording_id": "W4",
+      "field": "inception",
+      "expected_value": "2026-04-01",
+      "page": 1,
+      "clause_no": "4",
+      "clause_type": "PERIOD",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-004",
+      "wording_id": "W4",
+      "field": "expiry",
+      "expected_value": "2027-03-31",
+      "page": 1,
+      "clause_no": "4",
+      "clause_type": "PERIOD",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-004",
+      "wording_id": "W4",
+      "field": "hours_clause.EQ",
+      "expected_value": 72,
+      "page": 2,
+      "clause_no": "5",
+      "clause_type": "HOURS",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-004",
+      "wording_id": "W4",
+      "field": "hours_clause.FL",
+      "expected_value": 168,
+      "page": 2,
+      "clause_no": "5",
+      "clause_type": "HOURS",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-004",
+      "wording_id": "W4",
+      "field": "hours_clause.WS.base",
+      "expected_value": 72,
+      "page": 2,
+      "clause_no": "5",
+      "clause_type": "HOURS",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-004",
+      "wording_id": "W4",
+      "field": "layers.1.retention",
+      "expected_value": 18.6,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-004",
+      "wording_id": "W4",
+      "field": "layers.1.limit",
+      "expected_value": 25.8,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-004",
+      "wording_id": "W4",
+      "field": "layers.1.premium",
+      "expected_value": 2.62,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-004",
+      "wording_id": "W4",
+      "field": "layers.2.retention",
+      "expected_value": 44.4,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-004",
+      "wording_id": "W4",
+      "field": "layers.2.limit",
+      "expected_value": 81.1,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-004",
+      "wording_id": "W4",
+      "field": "layers.2.premium",
+      "expected_value": 9.23,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-004",
+      "wording_id": "W4",
+      "field": "layers.3.retention",
+      "expected_value": 125.5,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-004",
+      "wording_id": "W4",
+      "field": "layers.3.limit",
+      "expected_value": 237.8,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-004",
+      "wording_id": "W4",
+      "field": "layers.3.premium",
+      "expected_value": 27.05,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-004",
+      "wording_id": "W4",
+      "field": "layers.4.retention",
+      "expected_value": 363.3,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-004",
+      "wording_id": "W4",
+      "field": "layers.4.limit",
+      "expected_value": 578.1,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-004",
+      "wording_id": "W4",
+      "field": "layers.4.premium",
+      "expected_value": 39.07,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-004",
+      "wording_id": "W4",
+      "field": "reinstatements.count",
+      "expected_value": 2,
+      "page": 2,
+      "clause_no": "7",
+      "clause_type": "REINSTATEMENT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-004",
+      "wording_id": "W4",
+      "field": "reinstatements.rate",
+      "expected_value": 1.0,
+      "page": 2,
+      "clause_no": "7",
+      "clause_type": "REINSTATEMENT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-004",
+      "wording_id": "W4",
+      "field": "reinstatements.basis",
+      "expected_value": "pro rata as to amount",
+      "page": 2,
+      "clause_no": "7",
+      "clause_type": "REINSTATEMENT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-004",
+      "wording_id": "W4",
+      "field": "exclusions",
+      "expected_value": [
+        "war",
+        "nuclear",
+        "storm surge"
+      ],
+      "page": 2,
+      "clause_no": "8",
+      "clause_type": "EXCLUSION",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-004",
+      "wording_id": "W4",
+      "field": "currency",
+      "expected_value": "USD",
+      "page": 4,
+      "clause_no": "14",
+      "clause_type": "OTHER",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-004",
+      "wording_id": "W4",
+      "field": "hours_clause.WS",
+      "expected_value": 168,
+      "page": 7,
+      "clause_no": "END-1",
+      "clause_type": "HOURS",
+      "source": "transcription"
+    },
+    {
+      "treaty_id": "T-004",
+      "wording_id": "W4",
+      "field": "endorsement.overrides",
+      "expected_value": "hours_clause.WS",
+      "page": 7,
+      "clause_no": "END-1",
+      "clause_type": "HOURS",
+      "source": "transcription"
+    },
+    {
+      "treaty_id": "T-005",
+      "wording_id": "W5",
+      "field": "type",
+      "expected_value": "CAT_XL",
+      "page": 1,
+      "clause_no": "2",
+      "clause_type": "OTHER",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-005",
+      "wording_id": "W5",
+      "field": "perils",
+      "expected_value": [
+        "WS"
+      ],
+      "page": 1,
+      "clause_no": "2",
+      "clause_type": "OTHER",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-005",
+      "wording_id": "W5",
+      "field": "territory.include",
+      "expected_value": [
+        "PHL"
+      ],
+      "page": 1,
+      "clause_no": "3",
+      "clause_type": "TERRITORY",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-005",
+      "wording_id": "W5",
+      "field": "territory.exclude",
+      "expected_value": [],
+      "page": 1,
+      "clause_no": "3",
+      "clause_type": "TERRITORY",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-005",
+      "wording_id": "W5",
+      "field": "inception",
+      "expected_value": "2026-01-01",
+      "page": 1,
+      "clause_no": "4",
+      "clause_type": "PERIOD",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-005",
+      "wording_id": "W5",
+      "field": "expiry",
+      "expected_value": "2026-12-31",
+      "page": 1,
+      "clause_no": "4",
+      "clause_type": "PERIOD",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-005",
+      "wording_id": "W5",
+      "field": "hours_clause.EQ",
+      "expected_value": 72,
+      "page": 2,
+      "clause_no": "5",
+      "clause_type": "HOURS",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-005",
+      "wording_id": "W5",
+      "field": "hours_clause.FL",
+      "expected_value": 168,
+      "page": 2,
+      "clause_no": "5",
+      "clause_type": "HOURS",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-005",
+      "wording_id": "W5",
+      "field": "hours_clause.WS",
+      "expected_value": 72,
+      "page": 2,
+      "clause_no": "5",
+      "clause_type": "HOURS",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-005",
+      "wording_id": "W5",
+      "field": "layers.1.retention",
+      "expected_value": 4.8,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-005",
+      "wording_id": "W5",
+      "field": "layers.1.limit",
+      "expected_value": 5.4,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-005",
+      "wording_id": "W5",
+      "field": "layers.1.premium",
+      "expected_value": 0.64,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-005",
+      "wording_id": "W5",
+      "field": "layers.2.retention",
+      "expected_value": 10.2,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-005",
+      "wording_id": "W5",
+      "field": "layers.2.limit",
+      "expected_value": 14.7,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-005",
+      "wording_id": "W5",
+      "field": "layers.2.premium",
+      "expected_value": 1.37,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-005",
+      "wording_id": "W5",
+      "field": "layers.3.retention",
+      "expected_value": 24.9,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-005",
+      "wording_id": "W5",
+      "field": "layers.3.limit",
+      "expected_value": 45.0,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-005",
+      "wording_id": "W5",
+      "field": "layers.3.premium",
+      "expected_value": 4.62,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-005",
+      "wording_id": "W5",
+      "field": "layers.4.retention",
+      "expected_value": 69.9,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-005",
+      "wording_id": "W5",
+      "field": "layers.4.limit",
+      "expected_value": 139.6,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-005",
+      "wording_id": "W5",
+      "field": "layers.4.premium",
+      "expected_value": 14.22,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-005",
+      "wording_id": "W5",
+      "field": "reinstatements.count",
+      "expected_value": 1,
+      "page": 2,
+      "clause_no": "7",
+      "clause_type": "REINSTATEMENT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-005",
+      "wording_id": "W5",
+      "field": "reinstatements.rate",
+      "expected_value": 1.0,
+      "page": 2,
+      "clause_no": "7",
+      "clause_type": "REINSTATEMENT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-005",
+      "wording_id": "W5",
+      "field": "reinstatements.basis",
+      "expected_value": "pro rata as to amount",
+      "page": 2,
+      "clause_no": "7",
+      "clause_type": "REINSTATEMENT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-005",
+      "wording_id": "W5",
+      "field": "exclusions",
+      "expected_value": [
+        "war",
+        "nuclear",
+        "earthquake"
+      ],
+      "page": 2,
+      "clause_no": "8",
+      "clause_type": "EXCLUSION",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-005",
+      "wording_id": "W5",
+      "field": "currency",
+      "expected_value": "USD",
+      "page": 4,
+      "clause_no": "14",
+      "clause_type": "OTHER",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-006",
+      "wording_id": "W6",
+      "field": "type",
+      "expected_value": "QS",
+      "page": 1,
+      "clause_no": "2",
+      "clause_type": "OTHER",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-006",
+      "wording_id": "W6",
+      "field": "perils",
+      "expected_value": [
+        "WS",
+        "EQ"
+      ],
+      "page": 1,
+      "clause_no": "2",
+      "clause_type": "OTHER",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-006",
+      "wording_id": "W6",
+      "field": "territory.include",
+      "expected_value": [
+        "PHL"
+      ],
+      "page": 1,
+      "clause_no": "3",
+      "clause_type": "TERRITORY",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-006",
+      "wording_id": "W6",
+      "field": "territory.exclude",
+      "expected_value": [],
+      "page": 1,
+      "clause_no": "3",
+      "clause_type": "TERRITORY",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-006",
+      "wording_id": "W6",
+      "field": "inception",
+      "expected_value": "2026-01-01",
+      "page": 1,
+      "clause_no": "4",
+      "clause_type": "PERIOD",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-006",
+      "wording_id": "W6",
+      "field": "expiry",
+      "expected_value": "2026-12-31",
+      "page": 1,
+      "clause_no": "4",
+      "clause_type": "PERIOD",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-006",
+      "wording_id": "W6",
+      "field": "qs.cession_pct",
+      "expected_value": 0.3,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-006",
+      "wording_id": "W6",
+      "field": "qs.event_limit",
+      "expected_value": 19.8,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-006",
+      "wording_id": "W6",
+      "field": "hours_clause.WS",
+      "expected_value": 0,
+      "page": 2,
+      "clause_no": "5",
+      "clause_type": "HOURS",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-006",
+      "wording_id": "W6",
+      "field": "exclusions",
+      "expected_value": [
+        "war",
+        "nuclear"
+      ],
+      "page": 2,
+      "clause_no": "8",
+      "clause_type": "EXCLUSION",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-006",
+      "wording_id": "W6",
+      "field": "currency",
+      "expected_value": "USD",
+      "page": 4,
+      "clause_no": "14",
+      "clause_type": "OTHER",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-007",
+      "wording_id": "W7",
+      "field": "type",
+      "expected_value": "CAT_XL",
+      "page": 1,
+      "clause_no": "2",
+      "clause_type": "OTHER",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-007",
+      "wording_id": "W7",
+      "field": "perils",
+      "expected_value": [
+        "WS",
+        "EQ"
+      ],
+      "page": 1,
+      "clause_no": "2",
+      "clause_type": "OTHER",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-007",
+      "wording_id": "W7",
+      "field": "territory.include",
+      "expected_value": [
+        "TWN"
+      ],
+      "page": 1,
+      "clause_no": "3",
+      "clause_type": "TERRITORY",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-007",
+      "wording_id": "W7",
+      "field": "territory.exclude",
+      "expected_value": [],
+      "page": 1,
+      "clause_no": "3",
+      "clause_type": "TERRITORY",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-007",
+      "wording_id": "W7",
+      "field": "inception",
+      "expected_value": "2026-01-01",
+      "page": 1,
+      "clause_no": "4",
+      "clause_type": "PERIOD",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-007",
+      "wording_id": "W7",
+      "field": "expiry",
+      "expected_value": "2026-12-31",
+      "page": 1,
+      "clause_no": "4",
+      "clause_type": "PERIOD",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-007",
+      "wording_id": "W7",
+      "field": "hours_clause.EQ",
+      "expected_value": 168,
+      "page": 2,
+      "clause_no": "5",
+      "clause_type": "HOURS",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-007",
+      "wording_id": "W7",
+      "field": "hours_clause.FL",
+      "expected_value": 168,
+      "page": 2,
+      "clause_no": "5",
+      "clause_type": "HOURS",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-007",
+      "wording_id": "W7",
+      "field": "hours_clause.WS",
+      "expected_value": 168,
+      "page": 2,
+      "clause_no": "5",
+      "clause_type": "HOURS",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-007",
+      "wording_id": "W7",
+      "field": "layers.1.retention",
+      "expected_value": 3.3,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-007",
+      "wording_id": "W7",
+      "field": "layers.1.limit",
+      "expected_value": 4.6,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-007",
+      "wording_id": "W7",
+      "field": "layers.1.premium",
+      "expected_value": 0.41,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-007",
+      "wording_id": "W7",
+      "field": "layers.2.retention",
+      "expected_value": 7.9,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-007",
+      "wording_id": "W7",
+      "field": "layers.2.limit",
+      "expected_value": 10.2,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-007",
+      "wording_id": "W7",
+      "field": "layers.2.premium",
+      "expected_value": 1.21,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-007",
+      "wording_id": "W7",
+      "field": "layers.3.retention",
+      "expected_value": 18.1,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-007",
+      "wording_id": "W7",
+      "field": "layers.3.limit",
+      "expected_value": 28.3,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-007",
+      "wording_id": "W7",
+      "field": "layers.3.premium",
+      "expected_value": 3.18,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-007",
+      "wording_id": "W7",
+      "field": "layers.4.retention",
+      "expected_value": 46.4,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-007",
+      "wording_id": "W7",
+      "field": "layers.4.limit",
+      "expected_value": 70.2,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-007",
+      "wording_id": "W7",
+      "field": "layers.4.premium",
+      "expected_value": 6.99,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-007",
+      "wording_id": "W7",
+      "field": "reinstatements.count",
+      "expected_value": 1,
+      "page": 2,
+      "clause_no": "7",
+      "clause_type": "REINSTATEMENT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-007",
+      "wording_id": "W7",
+      "field": "reinstatements.rate",
+      "expected_value": 0.0,
+      "page": 2,
+      "clause_no": "7",
+      "clause_type": "REINSTATEMENT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-007",
+      "wording_id": "W7",
+      "field": "reinstatements.basis",
+      "expected_value": "pro rata as to amount",
+      "page": 2,
+      "clause_no": "7",
+      "clause_type": "REINSTATEMENT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-007",
+      "wording_id": "W7",
+      "field": "exclusions",
+      "expected_value": [
+        "war",
+        "nuclear"
+      ],
+      "page": 2,
+      "clause_no": "8",
+      "clause_type": "EXCLUSION",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-007",
+      "wording_id": "W7",
+      "field": "currency",
+      "expected_value": "USD",
+      "page": 4,
+      "clause_no": "14",
+      "clause_type": "OTHER",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-008",
+      "wording_id": "W8",
+      "field": "type",
+      "expected_value": "CAT_XL",
+      "page": 1,
+      "clause_no": "2",
+      "clause_type": "OTHER",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-008",
+      "wording_id": "W8",
+      "field": "perils",
+      "expected_value": [
+        "WS",
+        "EQ"
+      ],
+      "page": 1,
+      "clause_no": "2",
+      "clause_type": "OTHER",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-008",
+      "wording_id": "W8",
+      "field": "territory.include",
+      "expected_value": [
+        "TWN"
+      ],
+      "page": 1,
+      "clause_no": "3",
+      "clause_type": "TERRITORY",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-008",
+      "wording_id": "W8",
+      "field": "territory.exclude",
+      "expected_value": [],
+      "page": 1,
+      "clause_no": "3",
+      "clause_type": "TERRITORY",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-008",
+      "wording_id": "W8",
+      "field": "inception",
+      "expected_value": "2025-01-01",
+      "page": 1,
+      "clause_no": "4",
+      "clause_type": "PERIOD",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-008",
+      "wording_id": "W8",
+      "field": "expiry",
+      "expected_value": "2025-12-31",
+      "page": 1,
+      "clause_no": "4",
+      "clause_type": "PERIOD",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-008",
+      "wording_id": "W8",
+      "field": "hours_clause.FL",
+      "expected_value": 168,
+      "page": 2,
+      "clause_no": "5",
+      "clause_type": "HOURS",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-008",
+      "wording_id": "W8",
+      "field": "layers.1.retention",
+      "expected_value": 2.6,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-008",
+      "wording_id": "W8",
+      "field": "layers.1.limit",
+      "expected_value": 3.4,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-008",
+      "wording_id": "W8",
+      "field": "layers.1.premium",
+      "expected_value": 0.32,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-008",
+      "wording_id": "W8",
+      "field": "layers.2.retention",
+      "expected_value": 6.0,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-008",
+      "wording_id": "W8",
+      "field": "layers.2.limit",
+      "expected_value": 9.5,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-008",
+      "wording_id": "W8",
+      "field": "layers.2.premium",
+      "expected_value": 0.97,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-008",
+      "wording_id": "W8",
+      "field": "layers.3.retention",
+      "expected_value": 15.5,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-008",
+      "wording_id": "W8",
+      "field": "layers.3.limit",
+      "expected_value": 23.3,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-008",
+      "wording_id": "W8",
+      "field": "layers.3.premium",
+      "expected_value": 2.12,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-008",
+      "wording_id": "W8",
+      "field": "layers.4.retention",
+      "expected_value": 38.8,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-008",
+      "wording_id": "W8",
+      "field": "layers.4.limit",
+      "expected_value": 55.3,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-008",
+      "wording_id": "W8",
+      "field": "layers.4.premium",
+      "expected_value": 5.53,
+      "page": 2,
+      "clause_no": "6",
+      "clause_type": "LIMIT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-008",
+      "wording_id": "W8",
+      "field": "reinstatements.count",
+      "expected_value": 1,
+      "page": 2,
+      "clause_no": "7",
+      "clause_type": "REINSTATEMENT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-008",
+      "wording_id": "W8",
+      "field": "reinstatements.rate",
+      "expected_value": 1.0,
+      "page": 2,
+      "clause_no": "7",
+      "clause_type": "REINSTATEMENT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-008",
+      "wording_id": "W8",
+      "field": "reinstatements.basis",
+      "expected_value": "pro rata as to amount",
+      "page": 2,
+      "clause_no": "7",
+      "clause_type": "REINSTATEMENT",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-008",
+      "wording_id": "W8",
+      "field": "exclusions",
+      "expected_value": [
+        "war",
+        "nuclear"
+      ],
+      "page": 2,
+      "clause_no": "8",
+      "clause_type": "EXCLUSION",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-008",
+      "wording_id": "W8",
+      "field": "currency",
+      "expected_value": "USD",
+      "page": 4,
+      "clause_no": "14",
+      "clause_type": "OTHER",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-008",
+      "wording_id": "W8",
+      "field": "hours_clause.WS",
+      "expected_value": 72,
+      "page": 4,
+      "clause_no": "12",
+      "clause_type": "OTHER",
+      "source": "text"
+    },
+    {
+      "treaty_id": "T-008",
+      "wording_id": "W8",
+      "field": "hours_clause.EQ",
+      "expected_value": 72,
+      "page": 4,
+      "clause_no": "12",
+      "clause_type": "OTHER",
+      "source": "text"
+    }
+  ],
+  "decoys": [
+    {
+      "treaty_id": "T-001",
+      "clause_no": "9.1",
+      "clause_title": "Notification of Loss",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-001",
+      "clause_no": "9.2",
+      "clause_title": "Loss Advices and Cash Calls",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-001",
+      "clause_no": "9.3",
+      "clause_title": "Inspection of Records",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-001",
+      "clause_no": "10.1",
+      "clause_title": "Premium Payment",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-001",
+      "clause_no": "11.1",
+      "clause_title": "Arbitration",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-001",
+      "clause_no": "11.2",
+      "clause_title": "Service of Suit",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-001",
+      "clause_no": "12.4",
+      "clause_title": "Definition: Business Day",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-001",
+      "clause_no": "12.5",
+      "clause_title": "Definition: Act of God Period",
+      "page": 4,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-001",
+      "clause_no": "13.2",
+      "clause_title": "Extended Expiration",
+      "page": 4,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-001",
+      "clause_no": "13.3",
+      "clause_title": "Sanctions",
+      "page": 4,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-002",
+      "clause_no": "9.1",
+      "clause_title": "Notification of Loss",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-002",
+      "clause_no": "9.2",
+      "clause_title": "Loss Advices and Cash Calls",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-002",
+      "clause_no": "9.3",
+      "clause_title": "Inspection of Records",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-002",
+      "clause_no": "10.1",
+      "clause_title": "Premium Payment",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-002",
+      "clause_no": "11.1",
+      "clause_title": "Arbitration",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-002",
+      "clause_no": "11.2",
+      "clause_title": "Service of Suit",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-002",
+      "clause_no": "12.4",
+      "clause_title": "Definition: Business Day",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-002",
+      "clause_no": "12.5",
+      "clause_title": "Definition: Act of God Period",
+      "page": 4,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-002",
+      "clause_no": "13.2",
+      "clause_title": "Extended Expiration",
+      "page": 4,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-002",
+      "clause_no": "13.3",
+      "clause_title": "Sanctions",
+      "page": 4,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-003",
+      "clause_no": "9.1",
+      "clause_title": "Notification of Loss",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-003",
+      "clause_no": "9.2",
+      "clause_title": "Loss Advices and Cash Calls",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-003",
+      "clause_no": "9.3",
+      "clause_title": "Inspection of Records",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-003",
+      "clause_no": "10.1",
+      "clause_title": "Premium Payment",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-003",
+      "clause_no": "11.1",
+      "clause_title": "Arbitration",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-003",
+      "clause_no": "11.2",
+      "clause_title": "Service of Suit",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-003",
+      "clause_no": "12.4",
+      "clause_title": "Definition: Business Day",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-003",
+      "clause_no": "12.5",
+      "clause_title": "Definition: Act of God Period",
+      "page": 4,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-003",
+      "clause_no": "13.2",
+      "clause_title": "Extended Expiration",
+      "page": 4,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-003",
+      "clause_no": "13.3",
+      "clause_title": "Sanctions",
+      "page": 4,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-004",
+      "clause_no": "9.1",
+      "clause_title": "Notification of Loss",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-004",
+      "clause_no": "9.2",
+      "clause_title": "Loss Advices and Cash Calls",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-004",
+      "clause_no": "9.3",
+      "clause_title": "Inspection of Records",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-004",
+      "clause_no": "10.1",
+      "clause_title": "Premium Payment",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-004",
+      "clause_no": "11.1",
+      "clause_title": "Arbitration",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-004",
+      "clause_no": "11.2",
+      "clause_title": "Service of Suit",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-004",
+      "clause_no": "12.4",
+      "clause_title": "Definition: Business Day",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-004",
+      "clause_no": "12.5",
+      "clause_title": "Definition: Act of God Period",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-004",
+      "clause_no": "13.2",
+      "clause_title": "Extended Expiration",
+      "page": 4,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-004",
+      "clause_no": "13.3",
+      "clause_title": "Sanctions",
+      "page": 4,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-005",
+      "clause_no": "9.1",
+      "clause_title": "Notification of Loss",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-005",
+      "clause_no": "9.2",
+      "clause_title": "Loss Advices and Cash Calls",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-005",
+      "clause_no": "9.3",
+      "clause_title": "Inspection of Records",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-005",
+      "clause_no": "10.1",
+      "clause_title": "Premium Payment",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-005",
+      "clause_no": "11.1",
+      "clause_title": "Arbitration",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-005",
+      "clause_no": "11.2",
+      "clause_title": "Service of Suit",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-005",
+      "clause_no": "12.4",
+      "clause_title": "Definition: Business Day",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-005",
+      "clause_no": "12.5",
+      "clause_title": "Definition: Act of God Period",
+      "page": 4,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-005",
+      "clause_no": "13.2",
+      "clause_title": "Extended Expiration",
+      "page": 4,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-005",
+      "clause_no": "13.3",
+      "clause_title": "Sanctions",
+      "page": 4,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-006",
+      "clause_no": "9.1",
+      "clause_title": "Notification of Loss",
+      "page": 2,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-006",
+      "clause_no": "9.2",
+      "clause_title": "Loss Advices and Cash Calls",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-006",
+      "clause_no": "9.3",
+      "clause_title": "Inspection of Records",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-006",
+      "clause_no": "10.1",
+      "clause_title": "Premium Payment",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-006",
+      "clause_no": "11.1",
+      "clause_title": "Arbitration",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-006",
+      "clause_no": "11.2",
+      "clause_title": "Service of Suit",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-006",
+      "clause_no": "12.4",
+      "clause_title": "Definition: Business Day",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-006",
+      "clause_no": "12.5",
+      "clause_title": "Definition: Act of God Period",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-006",
+      "clause_no": "13.2",
+      "clause_title": "Extended Expiration",
+      "page": 4,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-006",
+      "clause_no": "13.3",
+      "clause_title": "Sanctions",
+      "page": 4,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-007",
+      "clause_no": "9.1",
+      "clause_title": "Notification of Loss",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-007",
+      "clause_no": "9.2",
+      "clause_title": "Loss Advices and Cash Calls",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-007",
+      "clause_no": "9.3",
+      "clause_title": "Inspection of Records",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-007",
+      "clause_no": "10.1",
+      "clause_title": "Premium Payment",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-007",
+      "clause_no": "11.1",
+      "clause_title": "Arbitration",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-007",
+      "clause_no": "11.2",
+      "clause_title": "Service of Suit",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-007",
+      "clause_no": "12.4",
+      "clause_title": "Definition: Business Day",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-007",
+      "clause_no": "12.5",
+      "clause_title": "Definition: Act of God Period",
+      "page": 4,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-007",
+      "clause_no": "13.2",
+      "clause_title": "Extended Expiration",
+      "page": 4,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-007",
+      "clause_no": "13.3",
+      "clause_title": "Sanctions",
+      "page": 4,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-008",
+      "clause_no": "9.1",
+      "clause_title": "Notification of Loss",
+      "page": 2,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-008",
+      "clause_no": "9.2",
+      "clause_title": "Loss Advices and Cash Calls",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-008",
+      "clause_no": "9.3",
+      "clause_title": "Inspection of Records",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-008",
+      "clause_no": "10.1",
+      "clause_title": "Premium Payment",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-008",
+      "clause_no": "11.1",
+      "clause_title": "Arbitration",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-008",
+      "clause_no": "11.2",
+      "clause_title": "Service of Suit",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-008",
+      "clause_no": "12.4",
+      "clause_title": "Definition: Business Day",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-008",
+      "clause_no": "12.5",
+      "clause_title": "Definition: Act of God Period",
+      "page": 3,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-008",
+      "clause_no": "13.2",
+      "clause_title": "Extended Expiration",
+      "page": 4,
+      "why": "mentions a number of hours but is not the hours clause"
+    },
+    {
+      "treaty_id": "T-008",
+      "clause_no": "13.3",
+      "clause_title": "Sanctions",
+      "page": 4,
+      "why": "mentions a number of hours but is not the hours clause"
+    }
+  ]
+}
