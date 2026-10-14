@@ -280,7 +280,7 @@ def build_slides() -> list[str]:
     <div style="font-size:66px;font-weight:600;color:#000000;margin-bottom:28px;line-height:1.1">Team Details</div>
     <div style="margin-left:98px;font-size:38px;line-height:1.65;color:#000000">
       <div><span style="display:inline-block;width:68px">a.</span>Team name: <b>Techno Crackers</b></div>
-      <div><span style="display:inline-block;width:68px">b.</span>Team leader name: <b>Venket Raj S</b> <span style="font-size:24px;color:#3c4043">(Team: Venket Raj S · Malik Chandra Pandian · Arun Veerappan · Nagaraj)</span></div>
+      <div><span style="display:inline-block;width:68px">b.</span>Team leader name: <b>Venket Raj S</b> <span style="font-size:24px;color:#3c4043">(Team: Venket Raj S · Malik Chandra Pandian · Arun Veerappan · Nagaraj — 4 working professionals in JAPAC, no students)</span></div>
       <div><span style="display:inline-block;width:68px">c.</span>Problem Statement: <b>BFSI: Intelligent Risk, Fraud &amp; Financial Experiences</b></div>
       <div style="margin-left:68px;font-size:25px;color:#202124;line-height:1.38;margin-top:4px">
         <b>CatSight — Event-aware contract intelligence for catastrophe reinsurance:</b> After a typhoon or earthquake, a reinsurer cannot say quickly or defensibly how much it owes because the answer depends on contract clauses buried in PDF treaty wordings.

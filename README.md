@@ -4,7 +4,7 @@
 
 > When a typhoon or earthquake hits, primary insurance companies must quickly pay thousands of claims to affected families and damaged businesses. To stay solvent, insurers rely on multi-million dollar reinsurance payouts. But those payouts depend on 50-page legal contracts with ambiguous clauses. CatSight resolves this in 9 seconds: it calculates exact disaster payouts across 24 contracts (the LLM never does math), checks contract clauses with AI vision, and runs a mock trial between two AI agents to price the exact $14.6M dispute gap so claims get paid without delay.
 
-Google Cloud AI Builder Cup 2026 · BFSI: Intelligent Risk, Fraud & Financial Experiences · **Team Techno Crackers:** Venket Raj S, Malik Chandra Pandian, Arun Veerappan, Nagaraj.
+Google Cloud AI Builder Cup 2026 · BFSI: Intelligent Risk, Fraud & Financial Experiences · **Team Techno Crackers:** Venket Raj S, Malik Chandra Pandian, Arun Veerappan, Nagaraj (all 4 members are working professionals in JAPAC, no students).
 
 **▶ Live demo:** https://catsight-api-342162443546.us-central1.run.app — press **Instant replay** for a recorded real run in about 6 seconds, or **Run live** to watch the agents work (about 15 seconds).
 **▶ Demo video (< 3 min):** `[VIDEO_LINK_PLACEHOLDER — insert YouTube URL before final submission]`
