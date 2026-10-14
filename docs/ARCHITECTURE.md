@@ -178,14 +178,15 @@ in model calls.
 | Concern | Setting |
 |---|---|
 | Region | Cloud Run, Firestore, Cloud Storage: `us-central1`. **Gemini on Gemini Enterprise Agent Platform (formerly Vertex AI): `global`** (3.x is not served from us-central1). |
-| Auth | Dedicated `catsight-run` service account (Vertex AI user, Firestore user, storage, logging, trace); `GOOGLE_GENAI_USE_ENTERPRISE=true`; no API keys |
+| Auth | Dedicated `catsight-run` service account (Vertex AI user, Firestore user, storage, logging, trace, Model Armor user); `GOOGLE_GENAI_USE_ENTERPRISE=true`; no API keys |
 | Scaling | `--min-instances 0` (1 during judging) `--max-instances 3 --timeout 300`, startup CPU boost |
 | Cost guards | Daily analysis cap (300), per-visitor limit (20/hour, using right-most `X-Forwarded-For` hop from Cloud Run LB), `CACHED_REPLAY_ONLY` kill switch |
 | Firestore rules | Deny all client access; everything goes through the API |
+| Question screening | Follow-up questions and answers pass two layers (`backend/catsight_agent/guardrails.py`): a local regex filter for obvious prompt injection and credential names, then **Google Cloud Model Armor** (`sanitizeUserPrompt` / `sanitizeModelResponse` on the `catsight-ask` template: prompt injection and jailbreak, malicious URLs, harassment, hate speech). Screening runs after the rate limit. A block names the layer that made it. **Fail-open:** if Model Armor errors or times out (3 s), the question goes ahead on the local filter's verdict and `model_armor_unavailable` is logged; answers stay grounded in the engine's figures and checked citations either way. `/health` reports the active layers as `question_screening`. |
 | Retries | 429 / 500 / 503 and dropped connections retried with backoff; a 400 is never retried |
 | Thinking | `thinking_level=LOW` on Gemini 3 |
 | Cold start | The standard retrieval queries ship pre-embedded (`backend/data/query_embeddings.jsonl`), so a fresh instance makes no embedding calls during an analysis; interactive `/ask` queries run without batch pacing sleep; the SSE stream sends a `: keepalive` comment after 15 s of silence |
-| Observability | Structured JSON logs with the run id; guardrail events (`citation_withheld`, `unsupported_figures`, `counsel_dropped`, `limit_refused`); ADK spans to Cloud Trace. `scripts/setup_observability.sh` builds log-based metrics, a Cloud Monitoring dashboard and an optional budget alert from them; the dashboard's per-run table is a Log Analytics SQL query (`scripts/observability_runs.sql`): seconds per agent, model and tool calls, tokens, cost, flags and the Courtroom outcome for each run. No raw IPs, questions or prompts logged. |
+| Observability | Structured JSON logs with the run id; guardrail events (`citation_withheld`, `unsupported_figures`, `counsel_dropped`, `limit_refused`, `guardrail_blocked`, `model_armor_unavailable`); ADK spans to Cloud Trace. `scripts/setup_observability.sh` builds log-based metrics, a Cloud Monitoring dashboard and an optional budget alert from them; the dashboard's per-run table is a Log Analytics SQL query (`scripts/observability_runs.sql`): seconds per agent, model and tool calls, tokens, cost, flags and the Courtroom outcome for each run. No raw IPs, questions or prompts logged. |
 
 Measured latency and cost are in [`RESULTS.md`](RESULTS.md) §1.
 

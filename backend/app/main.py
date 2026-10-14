@@ -43,7 +43,7 @@ from app.logs import hash_ip, log_event, observe, setup_tracing
 from app.runs import MemoryRunStore, capture, new_run_id
 from app.streaming import stream_agent_analysis
 from catsight_agent.agents import AgentDeps, answer_question, ask_targets, cost_usd
-from catsight_agent.guardrails import default_guardrail
+from catsight_agent.guardrails import PromptGuard
 from catsight_agent.store import BookNotSeeded, DataStore, FirestoreStore, LocalStore
 
 __all__ = ["app", "create_app"]
@@ -262,6 +262,9 @@ def create_app(config: Settings | None = None, store: DataStore | None = None) -
     limiter = _RateLimiter(config.rate_limit_per_hour, config.daily_analysis_cap)
     api.state.config = config
     api.state.limiter = limiter
+    # Follow-up questions and answers are screened by the local filter and,
+    # when MODEL_ARMOR_TEMPLATE is set, by Google Cloud Model Armor.
+    api.state.guard = PromptGuard.from_settings(config)
     # The book, events and method are read from the seeded store - local JSON
     # or Firestore - and cached by the store. The runtime never generates data.
     api.state.store = store if store is not None else open_store(config)
@@ -379,6 +382,7 @@ def create_app(config: Settings | None = None, store: DataStore | None = None) -
             "features": {
                 "courtroom": config.courtroom_enabled,
                 "cached_replay_only": config.cached_replay_only,
+                "question_screening": api.state.guard.layers,
             },
             "warnings": list(config.warnings),
             "frontend": api.state.static_dir is not None,
@@ -756,10 +760,6 @@ def create_app(config: Settings | None = None, store: DataStore | None = None) -
                 status_code=422,
                 detail=f"question exceeds {config.max_query_chars} characters.",
             )
-        screen = default_guardrail.screen_prompt(body.question, context="ask")
-        if not screen.allowed:
-            log_event("guardrail_blocked", where="ask", reason=screen.reason, filter=screen.filter_type)
-            raise HTTPException(status_code=400, detail=screen.reason)
         prefix = "replay-"
         if not analysis_id.startswith(prefix):
             raise HTTPException(status_code=404, detail="analyses are addressed as replay-{event_id}")
@@ -771,6 +771,15 @@ def create_app(config: Settings | None = None, store: DataStore | None = None) -
         if not allowed:
             _refused(message, client_ip, "ask")
             raise HTTPException(status_code=429, detail={"message": message})
+        # Screened after the rate limit, so a flood of questions cannot run up
+        # Model Armor calls; the question text itself is never logged.
+        screen = api.state.guard.screen_prompt(body.question, context="ask")
+        if screen.model_armor_unavailable:
+            log_event("model_armor_unavailable", severity="WARNING", where="ask")
+        if not screen.allowed:
+            log_event("guardrail_blocked", where="ask", reason=screen.reason,
+                      filter=screen.filter_type, layer=screen.layer)
+            raise HTTPException(status_code=400, detail=screen.reason)
 
         book = portfolio()
         try:
@@ -792,14 +801,19 @@ def create_app(config: Settings | None = None, store: DataStore | None = None) -
         log_event("ask_answered", analysis_id=analysis_id,
                   citations=len(answer.get("citations") or []),
                   withheld=len(answer.get("withheld") or []),
-                  unsupported=len(answer.get("unsupported_figures") or []), cost_usd=spent)
+                  unsupported=len(answer.get("unsupported_figures") or []),
+                  retrieval_skipped=bool(answer.get("retrieval_skipped")), cost_usd=spent)
         if answer.get("unsupported_figures"):
             log_event("unsupported_figures", severity="WARNING", where="ask",
                       analysis_id=analysis_id, count=len(answer["unsupported_figures"]))
-        resp_screen = default_guardrail.screen_response(answer.get("answer_md", ""), context="ask")
+        resp_screen = api.state.guard.screen_response(answer.get("answer_md", ""), context="ask")
+        if resp_screen.model_armor_unavailable:
+            log_event("model_armor_unavailable", severity="WARNING", where="ask_response")
         if not resp_screen.allowed:
-            log_event("guardrail_blocked", where="ask_response", reason=resp_screen.reason)
-            answer["answer_md"] = "Response withheld by security guardrails."
+            log_event("guardrail_blocked", where="ask_response", reason=resp_screen.reason,
+                      filter=resp_screen.filter_type, layer=resp_screen.layer)
+            answer["answer_md"] = resp_screen.reason
+            answer["citations"] = []
         return {"analysis_id": analysis_id, "question": body.question, **answer, "cost_usd": spent}
 
     # ----------------------------------------------------------------- API-5 #

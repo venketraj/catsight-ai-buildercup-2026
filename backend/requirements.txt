@@ -20,6 +20,11 @@ uvicorn==0.54.0
 google-cloud-firestore==2.34.1
 google-cloud-storage==3.17.0
 
+# ── Question screening (FR-ASK, WAF security) ───────────────────────────────
+# Google Cloud Model Armor screens follow-up questions and answers when
+# MODEL_ARMOR_TEMPLATE is set (catsight_agent/guardrails.py).
+google-cloud-modelarmor==0.7.2
+
 # ── Report export (FR-EXPORT) ───────────────────────────────────────────────
 # The Word (.docx) analyst report is generated server-side from the stored run
 # and the engine's figures, so the document cannot drift from the computation.

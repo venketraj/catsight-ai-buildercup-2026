@@ -81,6 +81,11 @@ class Settings:
     daily_analysis_cap: int = 300
     rate_limit_per_hour: int = 20
     max_query_chars: int = 300
+    #: Google Cloud Model Armor template that screens follow-up questions and
+    #: answers (catsight_agent.guardrails). None = the local filter only.
+    model_armor_template: str | None = None
+    #: Model Armor is regional; the template lives in this location.
+    model_armor_location: str = "us-central1"
 
     #: REQUIREMENTS_V2 §7 feature switches, so behaviour can change during
     #: judging without a redeploy.
@@ -181,6 +186,8 @@ def load_settings(env: dict[str, str] | None = None) -> Settings:
         daily_analysis_cap=_integer("DAILY_ANALYSIS_CAP", 300),
         rate_limit_per_hour=_integer("RATE_LIMIT_PER_HOUR", 20),
         max_query_chars=_integer("MAX_QUERY_CHARS", 300),
+        model_armor_template=(os.environ.get("MODEL_ARMOR_TEMPLATE") or "").strip() or None,
+        model_armor_location=os.environ.get("MODEL_ARMOR_LOCATION") or "us-central1",
         courtroom_enabled=_flag("COURTROOM_ENABLED", True),
         verifier_max_retries=_integer("VERIFIER_MAX_RETRIES", 1),
         cached_replay_only=_flag("CACHED_REPLAY_ONLY", False),

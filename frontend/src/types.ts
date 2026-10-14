@@ -277,6 +277,8 @@ export interface AskResult {
   withheld: { chunk_id: string; reason: string }[];
   unsupported_figures: string[];
   searched: string[];
+  /** True when clause search failed (quota, network) and the answer uses the engine's figures only. */
+  retrieval_skipped?: boolean;
   cost_usd: string | null;
 }
 

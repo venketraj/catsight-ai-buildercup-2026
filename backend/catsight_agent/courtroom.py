@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import asyncio
 import json
+import logging
 from decimal import Decimal
 from typing import Any, Mapping
 
@@ -37,6 +38,8 @@ from catsight_agent.tools.retrieval import STANDARD_QUERIES, search_treaty_claus
 from catsight_agent.tools.verify import match_quote
 
 __all__ = ["pick_disputed_flag", "build_courtroom", "PARTY_KEYS", "LABEL"]
+
+logger = logging.getLogger("catsight.courtroom")
 
 LABEL = "Issue-spotting, not legal advice. The analyst decides."
 PARTY_KEYS = ("cedent_net_cost", "market_net", "our_net", "total_ceded")
@@ -90,17 +93,25 @@ def build_courtroom(
         for chunk in deps.vectors.chunks_for(treaty_id):
             if chunk.clause_no == cited["clause_no"] or chunk.clause_type == "COVER":
                 context[chunk.chunk_id] = chunk
-        hits_cover = await asyncio.to_thread(
-            search_treaty_clauses, "business covered scope of reinsurance covering clause insuring agreement",
-            store=deps.vectors, embedder=deps.embedder, treaty_id=treaty_id, limit=2)
-        for hit in hits_cover:
-            context.setdefault(hit.chunk.chunk_id, hit.chunk)
-        hits = await asyncio.to_thread(
-            search_treaty_clauses, STANDARD_QUERIES["EXCLUSION"], store=deps.vectors,
-            embedder=deps.embedder, treaty_id=treaty_id, limit=3)
-        for hit in hits:
-            context.setdefault(hit.chunk.chunk_id, hit.chunk)
+        # Vector search adds the covering and exclusion clauses the stored
+        # clause types may miss. It is a bonus, not a dependency: if an
+        # embedding call fails (quota, network), the brief goes ahead with the
+        # cited clause and the COVER-typed clauses already collected above.
+        skipped: list[str] = []
+        for category, limit in (("COVER", 2), ("EXCLUSION", 3)):
+            try:
+                hits = await asyncio.to_thread(
+                    search_treaty_clauses, STANDARD_QUERIES[category], store=deps.vectors,
+                    embedder=deps.embedder, treaty_id=treaty_id, limit=limit)
+            except Exception as exc:  # noqa: BLE001 - degrade, never fail the Courtroom
+                logger.warning("courtroom_retrieval_skipped treaty=%s query=%s error=%s",
+                               treaty_id, category, type(exc).__name__)
+                skipped.append(category)
+                continue
+            for hit in hits:
+                context.setdefault(hit.chunk.chunk_id, hit.chunk)
         out["context"] = context
+        out["retrieval_skipped"] = skipped
         emit({"type": "stage", "agent": "courtroom_brief", "status": "completed"})
         return {"ok": True}
 

@@ -166,3 +166,36 @@ def test_figures_quoted_from_a_verified_clause_are_supported():
     withheld = answer_question("hours clause W1", facts=IMPACT, targets=["T-001"],
                                deps=_deps(AskModel(answer="The period is 4321 hours.", mode="bad-quote")))
     assert withheld["unsupported_figures"] == ["4321"]
+
+
+class _QuotaEmbedder:
+    """Every embedding call fails the way a live quota spike does."""
+
+    def embed_query(self, text):
+        raise RuntimeError("429 RESOURCE_EXHAUSTED: embed quota")
+
+
+def test_a_failed_retrieval_answers_from_the_facts_and_says_so():
+    """V6: a quota error on the question's embedding must not turn into a 500.
+    The answer comes from the engine's facts, cites nothing, and is flagged."""
+    model = AskModel(answer="Our net is 70.36.")
+    deps = AgentDeps(client=model, model_main="m", model_reason="r",
+                     embedder=_QuotaEmbedder(), vectors=VECTORS)
+    out = answer_question("Show the hours clause for W1", facts=IMPACT, targets=["T-001"], deps=deps)
+    assert out["retrieval_skipped"] is True
+    assert out["citations"] == [] and out["searched"] == []
+    assert out["unsupported_figures"] == []
+    assert "clause retrieval was unavailable" in model.prompts[-1]
+
+
+def test_ask_endpoint_degrades_instead_of_failing():
+    config = load_settings({"GOOGLE_CLOUD_PROJECT": "p", "DATA_BACKEND": "firestore"})
+    api = create_app(config, store=LocalStore("data", today="2026-10-10"))
+    api.state.make_deps = lambda emit: AgentDeps(
+        client=AskModel(answer="Our net is 70.36."), model_main="m", model_reason="r",
+        embedder=_QuotaEmbedder(), vectors=VECTORS)
+    response = TestClient(api).post("/api/analyses/replay-jebi-2018/ask",
+                                    json={"question": "Show the hours clause for W1"})
+    assert response.status_code == 200
+    body = response.json()
+    assert body["retrieval_skipped"] is True and body["answer_md"] == "Our net is 70.36."

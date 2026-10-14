@@ -322,17 +322,27 @@ def answer_question(
     figure the answer states that the facts do not contain."""
     queries = [question, *rewrite_queries(question, deps)] if targets else [question]
     context: dict[str, Chunk] = {}
-    for treaty_id in targets:
-        for query in queries:
-            for hit in search_treaty_clauses(query, store=deps.vectors, embedder=deps.embedder,
-                                             treaty_id=treaty_id, limit=per_treaty):
-                context.setdefault(hit.chunk.chunk_id, hit.chunk)
+    # Retrieval needs a live embedding per question. If that call fails (quota,
+    # network), answer from the engine's facts alone and say so, rather than
+    # failing the request: the figures never depended on retrieval anyway.
+    retrieval_skipped = False
+    try:
+        for treaty_id in targets:
+            for query in queries:
+                for hit in search_treaty_clauses(query, store=deps.vectors, embedder=deps.embedder,
+                                                 treaty_id=treaty_id, limit=per_treaty):
+                    context.setdefault(hit.chunk.chunk_id, hit.chunk)
+    except Exception:  # noqa: BLE001 - degrade to a facts-only answer
+        retrieval_skipped = True
 
     facts_text = json.dumps(facts, indent=1, default=str)
-    prompt = prompts.ASK.format(
-        question=question, facts=facts_text,
-        clauses="\n\n".join(_render(c) for c in context.values()) or "(none retrieved)",
-    )
+    if context:
+        clauses = "\n\n".join(_render(c) for c in context.values())
+    elif retrieval_skipped:
+        clauses = "(clause retrieval was unavailable for this question; answer from the facts only and cite no clauses)"
+    else:
+        clauses = "(none retrieved)"
+    prompt = prompts.ASK.format(question=question, facts=facts_text, clauses=clauses)
     raw = _generate(deps, deps.model_main, prompt, AskAnswer, "ask")
     answer = AskAnswer.model_validate(json.loads(raw or "{}"))
 
@@ -359,6 +369,7 @@ def answer_question(
         "withheld": withheld,
         "unsupported_figures": check_report_figures(answer.answer_md, allowed),
         "searched": sorted({c.treaty_id for c in context.values()}),
+        "retrieval_skipped": retrieval_skipped,
     }
 
 

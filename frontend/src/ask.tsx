@@ -75,6 +75,12 @@ export function AskPanel({ analysisId }: { analysisId: string }) {
         <article key={`${a.question}-${i}`} className="ask-answer">
           <div className="ask-q">Q: {a.question}</div>
           <Markdown text={a.answer_md} />
+          {a.retrieval_skipped && (
+            <p className="note">
+              Clause search was unavailable for this question, so this answer uses the loss engine's
+              figures only and cites no contract clauses.
+            </p>
+          )}
           {a.unsupported_figures.length === 0 ? (
             <p className="verify-header">✓ Every figure in this answer matches the loss engine.</p>
           ) : (

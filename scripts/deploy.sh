@@ -4,7 +4,8 @@
 #
 # Takes the project from the environment, never from a literal in this file -
 # the rule stated in backend/.env.example. Run `scripts/check_access.ps1`
-# first; this script assumes the APIs are enabled and you are authenticated.
+# and `scripts/setup_model_armor.sh` first; this script assumes the APIs are
+# enabled and you are authenticated.
 #
 #   PROJECT_ID=techno-crackers-catsight ./scripts/deploy.sh
 #
@@ -23,6 +24,9 @@ SERVICE_ACCOUNT="${SERVICE_ACCOUNT:-catsight-run@${PROJECT_ID:-${GOOGLE_CLOUD_PR
 # Gemini 3.x is not served from us-central1, so the model location stays
 # global while the service itself runs in the region with the data.
 MODEL_LOCATION="${MODEL_LOCATION:-global}"
+# Model Armor template for follow-up questions (scripts/setup_model_armor.sh).
+# Set MODEL_ARMOR_TEMPLATE="" to run the local filter only.
+MODEL_ARMOR_TEMPLATE="${MODEL_ARMOR_TEMPLATE-catsight-ask}"
 
 if [[ -z "${PROJECT_ID}" ]]; then
   echo "PROJECT_ID is not set." >&2
@@ -86,6 +90,8 @@ gcloud run deploy "${SERVICE}" \
   --set-env-vars "GCS_BUCKET=${BUCKET}" \
   --set-env-vars "DATA_BACKEND=firestore" \
   --set-env-vars "ENABLE_CLOUD_TRACE=true" \
+  --set-env-vars "MODEL_ARMOR_TEMPLATE=${MODEL_ARMOR_TEMPLATE}" \
+  --set-env-vars "MODEL_ARMOR_LOCATION=${REGION}" \
   --set-env-vars "^|^ALLOWED_ORIGINS=${ORIGINS}" \
   --set-env-vars "BUILD_LABEL=${BUILD_LABEL}"
 

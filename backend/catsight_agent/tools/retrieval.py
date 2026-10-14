@@ -530,6 +530,10 @@ STANDARD_QUERIES: dict[str, str] = {
     "REINSTATEMENT": "reinstatement of the limit, number of reinstatements and the premium basis",
     "PERIOD": "period of the agreement, inception and expiry, extended expiration",
     "LIMIT": "limit and retention per loss occurrence for each layer",
+    # Used by the Clause Courtroom brief, not by the wording checker (which
+    # loops over WORDING_QUERIES). Pre-embedded in data/query_embeddings.jsonl
+    # like the rest, so a fresh instance never needs a live call for it.
+    "COVER": "business covered scope of reinsurance covering clause insuring agreement",
 }
 
 

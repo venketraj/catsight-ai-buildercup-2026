@@ -269,3 +269,49 @@ def test_adversarial_counsel_denying_exclusion_without_support_is_dropped():
     assert out["sides"]["cedent"]["verified"] is False
     assert out["sides"]["reinsurer"]["verified"] is False
     assert "money_at_stake" not in out
+
+
+class _QuotaEmbedder:
+    """An embedder whose every call fails the way a live quota spike does."""
+
+    def embed_query(self, text):
+        raise RuntimeError("429 RESOURCE_EXHAUSTED: embed quota")
+
+    def embed_documents(self, texts):  # pragma: no cover - not reached by the brief
+        raise RuntimeError("429 RESOURCE_EXHAUSTED: embed quota")
+
+
+def test_the_brief_survives_a_failed_embedding_call():
+    """V5: the brief's vector searches are a bonus. If they fail, the Courtroom
+    still argues from the cited clause and the stored COVER clauses instead of
+    returning a 500."""
+    deps = AgentDeps(client=CourtModel(), model_main="m", model_reason="r",
+                     embedder=_QuotaEmbedder(), vectors=VECTORS, emit=lambda f: None)
+    deps.observed = ["Osaka recorded a tide of 329 cm, a record for the station."]
+    graph, out = build_courtroom(event_id="jebi-2018", flag=FLAG, deps=deps, price=_price)
+    asyncio.run(_run_with_adk(graph))
+    assert out["retrieval_skipped"] == ["COVER", "EXCLUSION"]
+    assert "T-004#c8" in out["context"]
+    assert out["sides"]["cedent"]["verified"] and out["sides"]["reinsurer"]["verified"]
+    assert "money_at_stake" in out
+
+
+def test_the_brief_uses_the_pre_embedded_cover_query():
+    """The cover search must use a STANDARD_QUERIES phrase, which ships with a
+    vector in data/query_embeddings.jsonl, so a fresh instance makes no live call."""
+    from catsight_agent.tools.retrieval import STANDARD_QUERIES
+
+    seen = []
+
+    class Recording(DeterministicEmbedder):
+        def embed_query(self, text):
+            seen.append(text)
+            return super().embed_query(text)
+
+    deps = AgentDeps(client=CourtModel(), model_main="m", model_reason="r",
+                     embedder=Recording(), vectors=VECTORS, emit=lambda f: None)
+    deps.observed = ["Osaka recorded a tide of 329 cm, a record for the station."]
+    graph, out = build_courtroom(event_id="jebi-2018", flag=FLAG, deps=deps, price=_price)
+    asyncio.run(_run_with_adk(graph))
+    assert seen and set(seen) <= set(STANDARD_QUERIES.values())
+    assert out["retrieval_skipped"] == []

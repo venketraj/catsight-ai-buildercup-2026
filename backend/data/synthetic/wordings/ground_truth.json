@@ -8,7 +8,7 @@
       "expected_value": "CAT_XL",
       "page": 1,
       "clause_no": "2",
-      "clause_type": "OTHER",
+      "clause_type": "COVER",
       "source": "text"
     },
     {
@@ -21,7 +21,7 @@
       ],
       "page": 1,
       "clause_no": "2",
-      "clause_type": "OTHER",
+      "clause_type": "COVER",
       "source": "text"
     },
     {
@@ -247,7 +247,7 @@
       "expected_value": "CAT_XL",
       "page": 1,
       "clause_no": "2",
-      "clause_type": "OTHER",
+      "clause_type": "COVER",
       "source": "text"
     },
     {
@@ -260,7 +260,7 @@
       ],
       "page": 1,
       "clause_no": "2",
-      "clause_type": "OTHER",
+      "clause_type": "COVER",
       "source": "text"
     },
     {
@@ -486,7 +486,7 @@
       "expected_value": "CAT_XL",
       "page": 1,
       "clause_no": "2",
-      "clause_type": "OTHER",
+      "clause_type": "COVER",
       "source": "text"
     },
     {
@@ -499,7 +499,7 @@
       ],
       "page": 1,
       "clause_no": "2",
-      "clause_type": "OTHER",
+      "clause_type": "COVER",
       "source": "text"
     },
     {
@@ -726,7 +726,7 @@
       "expected_value": "CAT_XL",
       "page": 1,
       "clause_no": "2",
-      "clause_type": "OTHER",
+      "clause_type": "COVER",
       "source": "text"
     },
     {
@@ -739,7 +739,7 @@
       ],
       "page": 1,
       "clause_no": "2",
-      "clause_type": "OTHER",
+      "clause_type": "COVER",
       "source": "text"
     },
     {
@@ -1015,7 +1015,7 @@
       "expected_value": "CAT_XL",
       "page": 1,
       "clause_no": "2",
-      "clause_type": "OTHER",
+      "clause_type": "COVER",
       "source": "text"
     },
     {
@@ -1027,7 +1027,7 @@
       ],
       "page": 1,
       "clause_no": "2",
-      "clause_type": "OTHER",
+      "clause_type": "COVER",
       "source": "text"
     },
     {
@@ -1283,7 +1283,7 @@
       "expected_value": "QS",
       "page": 1,
       "clause_no": "2",
-      "clause_type": "OTHER",
+      "clause_type": "COVER",
       "source": "text"
     },
     {
@@ -1296,7 +1296,7 @@
       ],
       "page": 1,
       "clause_no": "2",
-      "clause_type": "OTHER",
+      "clause_type": "COVER",
       "source": "text"
     },
     {
@@ -1401,7 +1401,7 @@
       "expected_value": "CAT_XL",
       "page": 1,
       "clause_no": "2",
-      "clause_type": "OTHER",
+      "clause_type": "COVER",
       "source": "text"
     },
     {
@@ -1414,7 +1414,7 @@
       ],
       "page": 1,
       "clause_no": "2",
-      "clause_type": "OTHER",
+      "clause_type": "COVER",
       "source": "text"
     },
     {
@@ -1669,7 +1669,7 @@
       "expected_value": "CAT_XL",
       "page": 1,
       "clause_no": "2",
-      "clause_type": "OTHER",
+      "clause_type": "COVER",
       "source": "text"
     },
     {
@@ -1682,7 +1682,7 @@
       ],
       "page": 1,
       "clause_no": "2",
-      "clause_type": "OTHER",
+      "clause_type": "COVER",
       "source": "text"
     },
     {

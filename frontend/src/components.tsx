@@ -171,9 +171,14 @@ export function TreatyTable({
   heroId: string;
   onExplain?: (treatyId: string) => void;
 }) {
+  // Book size = treaties that responded + those the engine excluded for this
+  // event, so the heading always matches the data (e.g. 13 of 24 for Jebi).
+  const inBook = impact.totals.treaties_matched + impact.totals.treaties_excluded;
   return (
     <section className="panel" data-tour="treaties">
-      <h2>Contracts that responded (24 Treaties)</h2>
+      <h2>
+        Contracts that responded ({impact.totals.treaties_matched} of {inBook})
+      </h2>
       <table>
         <caption className="note" style={{ captionSide: "bottom", textAlign: "left" }}>
           Ordered by our net exposure - the first question is where we are most
