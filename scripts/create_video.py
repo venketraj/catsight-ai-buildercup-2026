@@ -136,7 +136,7 @@ def capture() -> dict:
         body = page.inner_text("body")
         facts["seconds"] = _grab(r"TIME\s+(\d+)\s*s", body)
         facts["cost"] = _grab(r"MODEL COST\s+\$([\d.]+)", body)
-        facts["treaties"] = re.search(r"TREATIES HIT\s+(\d+)\s+of\s+(\d+)", body)
+        facts["treaties"] = re.search(r"(?:TREATIES|CONTRACTS)\s+HIT\s+(\d+)\s+of\s+(\d+)", body, re.IGNORECASE)
         facts["treaties"] = facts["treaties"].groups() if facts["treaties"] else None
         facts["flags"] = re.search(r"(\d+) verified\s*·\s*(\d+) withheld", body).groups()
 
@@ -255,7 +255,7 @@ def scenes(facts: dict) -> list[dict]:
         {"id": "scene2_one_click", "text": (
             "One click, and the agents run live: hazard footprint, exposure overlay, layer maths, then "
             "the wording. Every number you see comes from tested Python. The language model never does "
-            f"arithmetic. It reads, retrieves and explains. {hit[1]} treaties, {hit[0]} hit. The money "
+            f"arithmetic. It reads, retrieves and explains. {hit[1]} contracts, {hit[0]} hit. The money "
             f"in seconds, the checked wording in {sec} seconds.")},
         {"id": "scene3_money_moment", "text": courtroom_lines(facts.get("court"))},
         {"id": "scene4_trust", "text": (
@@ -331,14 +331,14 @@ def slides(facts: dict) -> dict[str, str]:
 <div class=card><div class=val>{v} of {shown}</div><div class=lbl>Displayed citations verified</div><div class=sub>on the run shown · {w} withheld for review</div></div>
 <div class=card><div class=val>{facts.get('seconds') or '—'} s</div><div class=lbl>Live analysis</div><div class=sub>the run shown, end to end</div></div>
 <div class=card><div class=val>${facts.get('cost') or '—'}</div><div class=lbl>Model cost</div><div class=sub>the run shown (Courtroom extra)</div></div></div>
-<div class=note>874 automated pytest tests · 0 untraceable figures across all runs · Flag recall and a blind extraction set are next.</div>"""
+<div class=note>874 offline tests + 13 opt-in live tests · 0 untraceable figures across all runs · Flag recall and a blind extraction set are next.</div>"""
     arch = f"""<style>{CSS}</style><div class=badge>Google Cloud</div><div class=title>How it is built</div>
 <div class=grid style="grid-template-columns:repeat(3,1fr);width:1500px">
 <div class=card><div class=lbl>Gemini 3.5 Flash-Lite · 3.8 Flash</div><div class=sub>on Gemini Enterprise Agent Platform (Vertex AI): reading, checks, counsel &amp; arbiter</div></div>
 <div class=card><div class=lbl>Google ADK 2.11 graph</div><div class=sub>verification loop and parallel Courtroom fan-out</div></div>
 <div class=card><div class=lbl>Firestore vector search</div><div class=sub>768-dim clause embeddings (186/186 retrieved)</div></div>
 <div class=card><div class=lbl>Cloud Run</div><div class=sub>one service: API, SSE stream and the React app</div></div>
-<div class=card><div class=lbl>Deterministic loss engine</div><div class=sub>Python Decimal (874 tests): layers, reinstatements; no LLM arithmetic</div></div>
+<div class=card><div class=lbl>Deterministic loss engine</div><div class=sub>Python Decimal (874 offline tests): layers, reinstatements; no LLM arithmetic</div></div>
 <div class=card><div class=lbl>Public hazard data</div><div class=sub>NOAA IBTrACS · USGS ShakeMap · synthetic treaties</div></div></div>"""
     close = f"""<style>{CSS}</style><div class=title style="font-size:72px;margin-bottom:16px">CatSight</div>
 <div style="font-size:30px;color:#1fa99c;margin-bottom:48px">Faster, fairer disaster recovery</div>
