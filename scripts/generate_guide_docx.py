@@ -1,3 +1,10 @@
+"""Generates docs/CatSight_Business_and_Domain_Guide.docx.
+
+Translates the CatSight submission build into a comprehensive domain & business guide.
+Visual screenshots embedded in the guide are captured from a local scratch/ directory.
+"""
+
+from pathlib import Path
 import os
 from docx import Document
 from docx.shared import Inches, Pt, RGBColor
@@ -5,6 +12,8 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.enum.table import WD_TABLE_ALIGNMENT
 from docx.oxml import parse_xml
 from docx.oxml.ns import nsdecls
+
+ROOT = Path(__file__).resolve().parents[1]
 
 def set_cell_background(cell, fill_hex):
     tcPr = cell._tc.get_or_add_tcPr()
@@ -148,8 +157,8 @@ def create_document():
         doc.add_paragraph().paragraph_format.space_after = Pt(6)
 
     def add_image_box(image_path, caption):
-        full_path = os.path.join(r"e:\My Projects\ai-buildercup-2026", image_path)
-        if not os.path.exists(full_path):
+        full_path = ROOT / image_path
+        if not full_path.exists():
             print(f"Warning: image not found: {full_path}")
             return
         p_img = doc.add_paragraph()
@@ -158,7 +167,7 @@ def create_document():
         p_img.paragraph_format.space_after = Pt(3)
         p_img.paragraph_format.keep_with_next = True
         run_img = p_img.add_run()
-        run_img.add_picture(full_path, width=Inches(6.5))
+        run_img.add_picture(str(full_path), width=Inches(6.5))
 
         p_cap = doc.add_paragraph()
         p_cap.alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -179,7 +188,7 @@ def create_document():
     )
 
     add_callout(
-        "This guide translates the entire CatSight project (synced to the final submission build, 870+ automated tests, "
+        "This guide translates the entire CatSight project (synced to the final submission build, 870+ offline tests + 13 opt-in live tests, "
         "and 14-slide official AI Builder Cup submission deck) into everyday business language. It demystifies every reinsurance formula, "
         "explains why primary insurers and reinsurers argue over millions of dollars after natural disasters, and shows "
         "how CatSight delivers a verified portfolio view in 0.7–1.0 seconds (math) and ~10–12 seconds p50 (full AI wording check).",
@@ -311,7 +320,7 @@ def create_document():
     # ------------------ SECTION 3 ------------------
     add_h1("3. Step-by-Step Numerical Examples (How the Engine Calculates)")
     add_p(
-        "Every money figure in CatSight comes from deterministic Python using exact Decimal math (870+ automated tests: 870+ offline + 13 opt-in live). "
+        "Every money figure in CatSight comes from deterministic Python using exact Decimal math (870+ offline tests + 13 opt-in live tests). "
         "Here are the two core worked examples from our documentation (`docs/DOMAIN_PRIMER.md` and `docs/MONEY_MOMENT.md`):"
     )
 
@@ -431,7 +440,7 @@ def create_document():
     add_styled_table(
         ["Benchmark / Metric", "Measured Result", "Notes & Audit Trail (`docs/RESULTS.md`)"],
         [
-            ["Loss engine vs. hand-checked worked example", "Exact (100%)", "870+ automated tests (`Decimal` half-up; 870+ offline + 13 opt-in live)"],
+            ["Loss engine vs. hand-checked worked example", "Exact (100%)", "870+ offline tests + 13 opt-in live tests (`Decimal` half-up)"],
             ["Time to money on screen (two 5-run live benchmarks)", "0.7–1.0 s p50 (0.6–1.1 s)", "Engine runs before LLM agents"],
             ["Complete live analysis with verified flags", "9.8–12.1 s p50 (8.0–31.2 s)", "Warm Cloud Run service, SSE with 15s heartbeat"],
             ["Model cost per live analysis", "$0.0094–$0.0102 p50 ($0.0081–$0.0126)", "Measured from Gemini token usage"],
@@ -443,14 +452,9 @@ def create_document():
         ]
     )
 
-    output_path = r"e:\My Projects\ai-buildercup-2026\docs\CatSight_Business_and_Domain_Guide.docx"
-    try:
-        doc.save(output_path)
-        print(f"Updated guide successfully saved to: {output_path}")
-    except PermissionError:
-        alt_path = r"e:\My Projects\ai-buildercup-2026\docs\CatSight_Business_and_Domain_Guide_v2.docx"
-        doc.save(alt_path)
-        print(f"Original file is open in Word; saved updated guide to: {alt_path}")
+    output_path = ROOT / "docs" / "CatSight_Business_and_Domain_Guide.docx"
+    doc.save(str(output_path))
+    print(f"Updated guide successfully saved to: {output_path}")
 
 if __name__ == "__main__":
     create_document()

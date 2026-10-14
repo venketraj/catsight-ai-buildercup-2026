@@ -59,6 +59,3 @@ backend/uv.lock
 # Haiyan is not offered in the demo (README, ASSUMPTIONS X11); keep its local replay out of the repo and the container
 backend/data/replays/haiyan-2013.json
 
-# Local video recording bot (never published)
-scripts/create_video.py
-

@@ -207,7 +207,7 @@ Measured latency and cost are in [`RESULTS.md`](RESULTS.md) §1.
 │   ├── ingest/                     wordings, embedding, RAG extraction, reconciliation, seeding
 │   ├── qa/                         extraction accuracy and the per-field citation audit
 │   ├── data/                       book, events, replays, extracted terms, ASSUMPTIONS.md
-│   ├── tests/                      870+ pytest tests (870+ offline unit + 13 opt-in live)
+│   ├── tests/                      870+ offline tests + 13 opt-in live tests
 │   └── Dockerfile
 ├── frontend/                       Vite + React + TypeScript
 ├── benchmarks/                     run_all.py — live latency, cost and Courtroom runs
@@ -215,7 +215,7 @@ Measured latency and cost are in [`RESULTS.md`](RESULTS.md) §1.
 └── scripts/                        deploy.sh · smoke_test.sh · setup_observability.sh
                                     · observability_dashboard.json · observability_runs.sql
                                     · check_access.ps1 · setup_model_armor.sh · build_deck.py
-                                    · generate_guide_docx.py
+                                    · generate_guide_docx.py · create_video.py
 ```
 
 ## 7. Not built — the path to production

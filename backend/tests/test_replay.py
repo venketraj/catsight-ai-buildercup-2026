@@ -190,17 +190,13 @@ def test_committed_replays_are_internally_consistent(path):
         assert c_ver == len(verified)
         assert c_wh == withheld_count
 
-    if report:
+    if report and verification:
         md = report[0].get("markdown", "")
         m_rpt = _CITATION_PATTERN.search(md)
-        if m_rpt:
-            r_shown, r_ver, r_wh = map(int, m_rpt.groups())
-            assert r_shown == len(verified)
-            assert r_ver == len(verified)
-            assert r_wh == withheld_count
-        elif withheld_count > 0:
-            m_wh = re.search(r"(\d+)\s+withheld flag", md)
-            if m_wh:
-                assert int(m_wh.group(1)) == withheld_count
+        assert m_rpt, f"report must state the verification counts in {path.name}"
+        r_shown, r_ver, r_wh = map(int, m_rpt.groups())
+        assert r_shown == len(verified)
+        assert r_ver == len(verified)
+        assert r_wh == withheld_count
 
 
