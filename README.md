@@ -89,7 +89,7 @@ Detail in [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 | Citation coverage | **186/188** fields cited; **185/186** check out against the page | per-field audit in [`docs/RESULTS.md`](docs/RESULTS.md) §3; 1 scanned page is labelled "transcribed" |
 | Extraction time, 8 wordings | **57 s** | vs ~25 min for whole-document extraction |
 | Live analysis (Jebi), 10-run live benchmark | money in **0.7 s** p50 (0.5–1.1 s); complete in **11.3 s** p50 (7.8–19.3 s); **$0.0097** p50 model cost ($0.0081–$0.0140) | warm service on Cloud Run; latest run in [`docs/RESULTS.md`](docs/RESULTS.md) §1 |
-| Clause Courtroom | **8 of 8 verified live on Cloud Run** (8.0 s p50, $0.0052 p50 cost across 8 runs) | both counsel verified in all 8 Courtrooms that ran; prices money at stake live (+$10.3M to +$26.0M cedent net cost / $11.6M reinsurer payout reduction on the recorded 20% run); audit in [`docs/RESULTS.md`](docs/RESULTS.md) §1 |
+| Clause Courtroom | **Ran in 8 of 10 live analyses (skipped in 2 when the verifier withheld the T-004 flag); both sides verified in all 8** (8.0 s p50, $0.0052 p50 cost across 8 runs) | both counsel verified in all 8 Courtrooms that ran; prices money at stake live (+$10.3M to +$26.0M cedent net cost / $11.6M reinsurer payout reduction on the recorded 20% run); audit in [`docs/RESULTS.md`](docs/RESULTS.md) §1 |
 | Follow-up question | about **$0.003** | from token counts, not benchmarked |
 | Automated tests | **870+ offline tests + 13 opt-in live tests** | runs out-of-the-box on a fresh clone (CI in [`.github/workflows/ci.yml`](.github/workflows/ci.yml)) |
 
@@ -167,6 +167,9 @@ This turns the service's structured logs into Cloud Monitoring metrics and a **"
 - Agent output varies between runs, even at temperature 0. Extraction prompts were revised against the same eight wordings they are scored on, so those scores are an upper bound ([`docs/RESULTS.md`](docs/RESULTS.md)).
 - Every modelling assumption is recorded in [`backend/data/ASSUMPTIONS.md`](backend/data/ASSUMPTIONS.md).
 - Manual-effort comparisons in the app are labelled *simulated*: an estimate of the analyst workflow, not a timed study.
+- The per-visitor rate limit (20/hour) is counted per Cloud Run instance: a cost guard, not a security control (up to 3 instances).
+- The analyst-position endpoint has no login (demo scope; no user accounts).
+- Only the preloaded events can be analysed; there is no public upload (mode "live" returns 501).
 
 ## Future work
 

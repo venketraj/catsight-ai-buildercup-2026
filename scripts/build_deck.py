@@ -299,7 +299,7 @@ def build_slides() -> list[str]:
         "Brief about the idea",
         """<div class="grid2">
   <div>
-    <p><b>CatSight</b> tells a reinsurer in <b>about 9–15 seconds</b> after a typhoon or earthquake which contracts respond, what each layer pays, and which contract clauses decide that payout — with every quote machine-verified against the source PDF page.</p>
+    <p><b>CatSight</b> tells a reinsurer in <b>about 11 seconds (p50)</b> after a typhoon or earthquake which contracts respond, what each layer pays, and which contract clauses decide that payout — with every quote machine-verified against the source PDF page.</p>
     <p><b>The Human &amp; Community Problem:</b></p>
     <ul>
       <li>When a catastrophe hits, <b>primary insurance companies</b> must rapidly pay hundreds of thousands of claims to rebuilding families and local businesses (e.g., <b>857,284 claims &amp; ¥1,067.8bn paid</b> after Typhoon Jebi <span class="tag">GIAJ</span>).</li>
@@ -315,7 +315,7 @@ def build_slides() -> list[str]:
       <tr><td>PERILS (Asia loss index)</td><td><b>6 weeks</b></td><td>Industry loss index, not treaty-level payout calculation</td></tr>
       <tr><td>Verisk PCS Japan</td><td><b>up to 90 days</b></td><td>Market-wide index for events ≥ $2bn</td></tr>
       <tr><td>Manual in-house spreadsheet review</td><td><b>2–4 days</b></td><td>Slow, error-prone; missed endorsements and exclusions</td></tr>
-      <tr><td><b>CatSight (Lion Re's book)</b></td><td><b>0.7 s math · ~9–12 s full AI check</b></td><td><b>Event × exposure × layer math × verified PDF wording</b></td></tr>
+      <tr><td><b>CatSight (Lion Re's book)</b></td><td><b>0.7 s math · ~11 s full AI check</b></td><td><b>Event × exposure × layer math × verified PDF wording</b></td></tr>
     </table>
     <p class="muted" style="margin-top:14px">Replays real public hazard footprints (NOAA IBTrACS, USGS ShakeMap) over a synthetic book of <b>24 reinsurance contracts written for 8 primary insurers</b> in Japan, the Philippines, and Taiwan.</p>
   </div>
@@ -395,7 +395,7 @@ def build_slides() -> list[str]:
         </div>
         <div style="font-size:13px;color:#5d4037;margin-top:4px;line-height:1.3">
           Without CatSight: Months of legal argument delay settlement.<br>
-          With CatSight: Clause Courtroom prices both readings in ~8–11 seconds.
+          With CatSight: Clause Courtroom prices both readings in about 8 s (p50).
         </div>
       </div>
     </div>
@@ -542,7 +542,7 @@ def build_slides() -> list[str]:
     <div>
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
         <span style="font-size:19px;font-weight:700">Trust Architecture: 2-Stage Verification Funnel</span>
-        <span style="font-size:13px;background:#e6f4ea;color:#137333;padding:2px 8px;border-radius:4px;font-weight:600">100% Quote Guardrail</span>
+        <span style="font-size:13px;background:#e6f4ea;color:#137333;padding:2px 8px;border-radius:4px;font-weight:600">Every quote checked</span>
       </div>
 
       <!-- Funnel Graphic -->
@@ -703,7 +703,7 @@ def build_slides() -> list[str]:
   <tr><th>Benchmark / Evaluation (<code>docs/RESULTS.md</code>)</th><th>Measured Result</th><th>Methodology &amp; Honest Caveat</th></tr>
   <tr><td><b>Loss engine vs. hand-checked worked example</b></td><td><b>100% exact match</b></td><td><code>Decimal</code> half-up; verified on every Cat XL layer, reinstatement, RIP, and Quota Share formula.</td></tr>
   <tr><td><b>Governing clause retrieval &amp; citation audit</b></td><td><b>186/186 retrieved · 185/186 verified</b></td><td>Firestore 768-d vector search; 184 text-layer verified + 1 scanned endorsement transcribed; 1 unverified withheld.</td></tr>
-  <tr><td><b>Clause Courtroom live on Cloud Run</b></td><td><b>8 of 8 verified live</b></td><td>Both counsel verified in all 8 Courtrooms that ran; $10.3M to $26.0M money at stake priced live; 0 unsupported figures (build 7b1e7e3).</td></tr>
+  <tr><td><b>Clause Courtroom live on Cloud Run</b></td><td><b>Ran in 8 of 10 live analyses (skipped in 2 when the verifier withheld the T-004 flag); both sides verified in all 8.</b></td><td>Both counsel verified in all 8 Courtrooms that ran; $10.3M to $26.0M money at stake priced live; 0 unsupported figures (build 7b1e7e3).</td></tr>
   <tr><td><b>Corrupted quote rejection (Verifier unit suite)</b></td><td><b>40/40 rejected (0 false withholds)</b></td><td>Normalised + word-aligned <code>...</code> ellipsis fragment matcher + Gemini 3.8 Flash semantic check (offline stubs suite).</td></tr>
   <tr><td><b>Untraceable numbers in AI-written reports</b></td><td><b>0 across all live runs</b></td><td>Deterministic Python post-check compares every figure in reporter/arbiter prose against engine output.</td></tr>
   <tr><td><b>Honest limitations &amp; unmeasured items</b></td><td colspan="2">Extraction prompt was tuned on the 8 synthetic wordings (99.5% is an upper bound; blind set is next). Manual effort savings (30–60h → 3.5–8h) are labelled <i>simulated estimates</i> pending a timed practitioner study.</td></tr>

@@ -444,7 +444,7 @@ def create_document():
             ["Time to money on screen (10-run live benchmark)", "0.7 s p50 (0.5–1.1 s)", "Engine runs before LLM agents"],
             ["Complete live analysis with verified flags", "11.3 s p50 (7.8–19.3 s)", "Warm Cloud Run service, SSE with 15s heartbeat"],
             ["Model cost per live analysis", "$0.0097 p50 ($0.0081–$0.0140)", "Measured from Gemini token usage"],
-            ["Clause Courtroom latency & cost", "8.0 s p50 · $0.0052 p50 (8/8 verified)", "Parallel counsel on 3.5 Flash-Lite, Arbiter on 3.8 Flash; 8 of 8 verified"],
+            ["Clause Courtroom latency & cost", "8.0 s p50 · $0.0052 p50", "Ran in 8 of 10 live analyses (skipped in 2 when the verifier withheld the T-004 flag); both sides verified in all 8."],
             ["Treaty-term extraction (RAG-first, 8 wordings)", "99.5% (185/186 fields) in 57 s", "Upper bound on tuned set (vs ~25 min whole-doc)"],
             ["Governing clause retrieved", "186/186 (100%)", "Firestore 768-dim vector search with treaty_id pre-filter"],
             ["Per-field citation audit", "186/188 cited · 185/186 verified", "184 verified + 1 transcribed; 1 unverified withheld"],

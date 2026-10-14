@@ -59,13 +59,13 @@ footprint could be plugged in behind the same interface.
 ## 4. Measured on our test portfolio
 
 24 synthetic treaties, 8 fictional insurers, Typhoon Jebi replayed live on the
-deployed service (two 5-run benchmarks; the latest is `RESULTS.md` §1):
+deployed service (10-run live benchmark; see `RESULTS.md` §1):
 
 | | Measured |
 |---|---|
-| Money on screen (treaties hit, layer losses, each party's position) | about **1 s** after the request (p50 0.7 s and 1.0 s) |
-| Complete analysis, with wording flags verified against the page | about **10–12 s** p50 (9.8 s and 12.1 s; runs 8–31 s) |
-| Model cost per analysis | about **$0.01** p50 ($0.0102 and $0.0094) |
+| Money on screen (treaties hit, layer losses, each party's position) | about **0.7 s** after the request (p50 0.7 s; 0.5–1.1 s) |
+| Complete analysis, with wording flags verified against the page | **11.3 s p50** (7.8–19.3 s) |
+| Model cost per analysis | **$0.0097** p50 ($0.0081–$0.0140) |
 | Report figures not traceable to the engine | **0** |
 | Treaty-term extraction from the wordings | 99.5% (upper bound — see `RESULTS.md`) |
 
