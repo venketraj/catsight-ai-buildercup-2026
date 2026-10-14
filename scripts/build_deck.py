@@ -338,14 +338,14 @@ def build_slides() -> list[str]:
       <li style="margin-bottom:14px">
         <b>How will it solve the problem?</b>
         <div style="font-size:19px;margin-top:4px;color:#202124">
-          • <b>Deterministic Python engine (<code>Decimal</code>, 874 tests):</b> Computes regional gross loss, tier payouts, burn %, and refill fees in <b>0.7–1.0 s</b> — zero LLM arithmetic.<br>
+          • <b>Deterministic Python engine (<code>Decimal</code>, 870+ tests):</b> Computes regional gross loss, tier payouts, burn %, and refill fees in <b>0.7–1.0 s</b> — zero LLM arithmetic.<br>
           • <b>Firestore vector RAG + 2-stage verification:</b> 252 clause vectors (768-d) + deterministic quote matching + Gemini 3.8 Flash semantic support check.
         </div>
       </li>
       <li style="margin-bottom:6px">
         <b>USP &amp; Social Impact</b>
         <div style="font-size:19px;margin-top:4px;color:#202124">
-          • <b>Clause Courtroom:</b> Dual AI counsel argue opposing readings of ambiguous exclusions, pricing the exact <b>$14.6M disputed claim gap</b> live.<br>
+          • <b>Clause Courtroom:</b> Dual AI counsel argue opposing readings of ambiguous exclusions, pricing the <b>$11.6M disputed claim gap at stake</b> ($11.6M reinsurer payout reduction / +$10.3M insurer net cost on the recorded 20% run; measured insurer range +$10.3M to +$26.0M) live.<br>
           • <b>Scanned Endorsement Detective:</b> Transcribes stamped, rasterised image endorsements.<br>
           • <b>Protection Gap:</b> 91% of APAC disaster losses ($65B) are uninsured, and 48% of insurers lack cat models. Transparent settlements speed community recovery.
         </div>
@@ -355,7 +355,7 @@ def build_slides() -> list[str]:
   
   <div class="card-strong" style="padding:16px 20px;background:#f8f9fa">
     <div style="font-size:19px;font-weight:700;color:#000;margin-bottom:12px;border-bottom:2px solid #000;padding-bottom:6px">
-      Visualizing the $14.6M Dispute Problem (Typhoon Jebi)
+      Visualizing the Disputed Claim Gap (Typhoon Jebi: $11.6M at 20% Surge Share)
     </div>
     
     <div style="display:flex;flex-direction:column;gap:8px">
@@ -391,11 +391,11 @@ def build_slides() -> list[str]:
             <b style="color:#b06000;font-size:17px">⚖ Disputed Claim Gap at Stake</b>
             <div style="font-size:13px;color:#795548">T-004 Osaka 329cm Storm Surge Clause</div>
           </div>
-          <div style="font-size:23px;font-weight:700;color:#b06000">$14.6M</div>
+          <div style="font-size:23px;font-weight:700;color:#b06000">$11.6M</div>
         </div>
         <div style="font-size:13px;color:#5d4037;margin-top:4px;line-height:1.3">
           Without CatSight: Months of legal argument delay settlement.<br>
-          With CatSight: Clause Courtroom prices both readings in 15 seconds.
+          With CatSight: Clause Courtroom prices both readings in ~10–12 seconds.
         </div>
       </div>
     </div>
@@ -412,9 +412,9 @@ def build_slides() -> list[str]:
   <tr><td><b>1. Contract Matching &amp; Payout Waterfall</b></td><td>Matches all 24 contracts on peril ∩ territory ∩ period (with exclusion reasons for the other 11); computes per-tier payout, coverage limit used (burn %), refill fees, and 3-party net positions (Primary Insurer, All Reinsurers, Lion Re).</td><td>Deterministic <code>Decimal</code> engine; 100% exact match against hand-checked worked examples.</td></tr>
   <tr><td><b>2. "How was this calculated?"</b></td><td>Step-by-step audit drawer per contract: regional peak wind/MMI, vulnerability curve damage %, insured value × damage % = gross loss, and exact layer formula with citations.</td><td>Every intermediate number is inspectable and reproducible.</td></tr>
   <tr><td><b>3. Cited Wording Flags &amp; Endorsement Detective</b></td><td>Flags clauses that bite on <i>this</i> event (e.g., T-004 storm-surge exclusion on Jebi's 329 cm Osaka tide) and transcribes scanned image endorsements (T-004 p.7: 168h replaces 72h).</td><td>2-stage verifier loop; unverified flags visibly withheld (<code>n verified · k withheld</code>); scanned pages badged <code>transcribed</code>.</td></tr>
-  <tr><td><b>4. Clause Courtroom (Dispute Resolution)</b></td><td>Parallel ADK agents (<code>cedent_counsel</code> ∥ <code>reinsurer_counsel</code>) argue opposing readings from verified quotes (with dynamic <code>COVER</code> clause retrieval &amp; <code>...</code> fragment matching); engine prices both readings; Arbiter summarises without deciding.</td><td>Issue-spotting only; human analyst records the decision with an audit timestamp.</td></tr>
-  <tr><td><b>5. Bounded What-if &amp; Grounded Q&amp;A</b></td><td>Interactive storm-window scenario pricing (clearly labelled HYPOTHETICAL on Jebi's 9-hour window) and live follow-up Q&amp;A over contract clauses screened by Google Model Armor.</td><td>Typed, bounded tool schema; Model Armor prompt injection &amp; leakage filtering; 0 untraceable figures.</td></tr>
-  <tr><td><b>6. Instant Replay, 9-Stop Tour &amp; Word Export</b></td><td>6-second zero-cost replay of a recorded real run, live SSE streaming (~9–12 s), colour-blind-safe themes, keyboard navigation, and Word (<code>.docx</code>) &amp; Markdown memos.</td><td>Every export carries the methodology version, verification counts, and mandatory disclaimers.</td></tr>
+  <tr><td><b>4. Clause Courtroom (Dispute Pricing; the analyst decides)</b></td><td>Parallel ADK agents (<code>cedent_counsel</code> ∥ <code>reinsurer_counsel</code>) argue opposing readings from verified quotes (with dynamic <code>COVER</code> clause retrieval &amp; <code>...</code> fragment matching); engine prices both readings; Arbiter summarises without deciding.</td><td>Issue-spotting only; human analyst records the decision with an audit timestamp.</td></tr>
+  <tr><td><b>5. Bounded What-if &amp; Grounded Q&amp;A</b></td><td>Interactive storm-window scenario pricing (clearly labelled HYPOTHETICAL on Jebi's 9-hour window) and live follow-up Q&amp;A over contract clauses screened by Google Model Armor (with local regex fallback).</td><td>Typed, bounded tool schema; dual-layer Model Armor screening; 0 untraceable figures.</td></tr>
+  <tr><td><b>6. Instant Replay, 9-Stop Tour &amp; Word Export</b></td><td>6-second zero-cost replay of a recorded real run, live SSE streaming (~10–12 s p50), colour-blind-safe themes, keyboard navigation, and Word (<code>.docx</code>) &amp; Markdown memos.</td><td>Every export carries the methodology version, verification counts, and mandatory disclaimers.</td></tr>
 </table>"""
     ))
 
@@ -478,7 +478,7 @@ def build_slides() -> list[str]:
           <span>Local Claims: <b>$733.0M</b></span>
           <span>Reinsurers: <b>$490.9M</b></span>
           <span style="color:#38bdf8">Our Net: <b>$70.4M</b></span>
-          <span style="background:#059669;padding:1px 6px;border-radius:3px;font-size:11px">✓ 2 of 2 Verified</span>
+          <span style="background:#059669;padding:1px 6px;border-radius:3px;font-size:11px">✓ 1 Verified · 1 Withheld</span>
         </div>
 
         <!-- Stepper Nav -->
@@ -524,13 +524,13 @@ def build_slides() -> list[str]:
                 <span style="color:#1d4ed8;font-weight:bold">20% Surge share</span>
               </div>
             </div>
-            <div style="font-size:11px;color:#b45309;font-weight:600">Disputed Gap: $14.6M priced live</div>
+            <div style="font-size:11px;color:#b45309;font-weight:600">Disputed Gap: $11.64M priced live (at 20% surge share)</div>
           </div>
         </div>
         
         <!-- Footer Bar -->
         <div style="background:#ffffff;border-top:1px solid #dadce0;padding:6px 12px;display:flex;justify-content:space-between;font-size:11px;color:#5f6368">
-          <span>⚡ Instant Replay: <b>6 s</b> · Live Agent SSE: <b>~9–12 s</b></span>
+          <span>⚡ Instant Replay: <b>6 s</b> · Live Agent SSE: <b>~10–12 s p50</b></span>
           <span>Python Decimal: <b>Zero LLM arithmetic</b></span>
         </div>
       </div>
@@ -628,11 +628,11 @@ def build_slides() -> list[str]:
   <tr><th style="width:28%">Technology / Service</th><th style="width:23%">Component</th><th style="width:49%">Why it was chosen &amp; role in CatSight</th></tr>
   <tr><td><b>Gemini 3.5 Flash-Lite</b><br><span class="muted">Gemini Enterprise Agent Platform (Vertex AI)</span></td><td>Agent generation &amp; OCR</td><td>Fast, low-cost structured output (<code>response_schema</code>, <code>thinking_level=LOW</code>) for wording checks, parallel Courtroom counsel, report prose, and scanned-page transcription.</td></tr>
   <tr><td><b>Gemini 3.8 Flash</b><br><span class="muted">Gemini Enterprise Agent Platform (Vertex AI)</span></td><td>Verification &amp; Arbiter</td><td>Stronger reasoning model used as the semantic support judge in the Verifier Loop, Counsel Quote Checker, and neutral Courtroom Arbiter.</td></tr>
-  <tr><td><b>Google ADK 2.11</b><br><span class="muted"><code>google-genai</code> + ADK Workflow</span></td><td>Multi-agent orchestration</td><td>Graph <code>Workflow</code> with bounded retry loops (<code>verifier ⇄ reviser</code>), parallel fan-out/fan-in (<code>JoinNode</code> for blind counsel), and OpenTelemetry Cloud Trace spans.</td></tr>
+  <tr><td><b>Google ADK 2.11</b><br><span class="muted"><code>google-genai</code> + ADK Workflow</span></td><td>Multi-agent orchestration</td><td>Graph <code>Workflow</code>: a 5-node analysis graph (verifier runs bounded retry inside its node) and a Courtroom graph with a parallel counsel fan-out joined by <code>JoinNode</code>.</td></tr>
   <tr><td><b>Cloud Firestore + Vector Search</b><br><span class="muted"><code>gemini-embedding-001</code> (768-d)</span></td><td>Operational &amp; vector store</td><td>Stores the 24-treaty book, 252 clause vectors with equality pre-filtering on <code>treaty_id</code> (186/186 governing clauses retrieved), ingestion audit trail, and runs.</td></tr>
   <tr><td><b>Google Cloud Run &amp; Cloud Storage</b></td><td>Serverless runtime &amp; PDFs</td><td>Scale-to-zero container serving FastAPI SSE + React 18 UI; GCS stores treaty PDF wordings.</td></tr>
   <tr><td><b>Cloud Logging, Trace &amp; Monitoring</b></td><td>Production observability</td><td>Log-based metrics + Log Analytics SQL query (<code>observability_runs.sql</code>) powering the Cloud Monitoring dashboard.</td></tr>
-  <tr><td><b>Python 3.12 · FastAPI · React 18 · Custom SVG</b></td><td>Core engine &amp; frontend</td><td>Deterministic <code>Decimal</code> loss engine (874 offline tests + 13 opt-in live tests), python-docx memo generator, accessible TypeScript UI.</td></tr>
+  <tr><td><b>Python 3.12 · FastAPI · React 18 · Custom SVG</b></td><td>Core engine &amp; frontend</td><td>Deterministic <code>Decimal</code> loss engine (870+ offline tests + 13 opt-in live tests), python-docx memo generator, accessible TypeScript UI.</td></tr>
 </table>"""
     ))
 
@@ -697,7 +697,7 @@ def build_slides() -> list[str]:
   <div class="card-strong"><div class="big">0.7–1.0 s</div><div class="lbl">Time to money on screen (p50 across two 5-run live benchmarks)</div></div>
   <div class="card-strong"><div class="big">9.8–12.1 s</div><div class="lbl">Complete live analysis with verified flags (p50; range 8.0–31.2 s)</div></div>
   <div class="card-strong"><div class="big">99.5%</div><div class="lbl">RAG treaty-term extraction (185/186 fields in 57 s vs ~25 min whole-doc)</div></div>
-  <div class="card-strong"><div class="big">874</div><div class="lbl">Automated pytest tests (874 offline tests + 13 opt-in live tests; CI on GitHub)</div></div>
+  <div class="card-strong"><div class="big">870+</div><div class="lbl">Automated pytest tests (870+ offline tests + 13 opt-in live tests; CI on GitHub)</div></div>
 </div>
 <table>
   <tr><th>Benchmark / Evaluation (<code>docs/RESULTS.md</code>)</th><th>Measured Result</th><th>Methodology &amp; Honest Caveat</th></tr>
@@ -746,17 +746,17 @@ def build_slides() -> list[str]:
   <li style="margin-bottom:18px">
     <b>GitHub Public Repository</b><br>
     <a href="{REPO}" style="font-size:23px;font-family:Consolas,monospace;color:#1fa99c;text-decoration:none">{REPO}</a>
-    <div class="muted" style="margin-top:2px">Apache-2.0 licence · 874 offline tests + 13 opt-in live tests · GitHub Actions CI · Full architecture &amp; assumptions in <code>docs/</code>.</div>
+    <div class="muted" style="margin-top:2px">Apache-2.0 licence · 870+ offline tests + 13 opt-in live tests · GitHub Actions CI · Full architecture &amp; assumptions in <code>docs/</code>.</div>
   </li>
   <li style="margin-bottom:18px">
     <b>Demo Video Link (3 Minutes)</b><br>
     <a href="{VIDEO}" style="font-size:23px;font-family:Consolas,monospace;color:#1fa99c;text-decoration:none">{VIDEO}</a>
-    <div class="muted" style="margin-top:2px">3-minute walkthrough (2m 45s) of the reinsurance problem, live ~15 s Typhoon Jebi analysis, scanned endorsement transcription, and Clause Courtroom.</div>
+    <div class="muted" style="margin-top:2px">3-minute walkthrough (2m 45s) of the reinsurance problem, live ~10–12 s Typhoon Jebi analysis, scanned endorsement transcription, and Clause Courtroom.</div>
   </li>
   <li style="margin-bottom:18px">
     <b>Final Product Link</b><br>
     <a href="{LIVE}" style="font-size:23px;font-family:Consolas,monospace;color:#1fa99c;text-decoration:none">{LIVE}</a>
-    <div class="muted" style="margin-top:2px">Live on Google Cloud Run (us-central1) · No sign-up required · Click <b>Instant replay</b> (~6 s) or <b>Run live</b> (~15 s) · 9-stop guided tour included.</div>
+    <div class="muted" style="margin-top:2px">Live on Google Cloud Run (us-central1) · No sign-up required · Click <b>Instant replay</b> (~6 s) or <b>Run live</b> (~10–12 s) · 9-stop guided tour included.</div>
   </li>
   <li style="margin-bottom:18px">
     <b>Submission Package Folder (All Artifacts)</b><br>

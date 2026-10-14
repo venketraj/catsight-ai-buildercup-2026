@@ -2,7 +2,7 @@
 
 **Event-aware contract intelligence for catastrophe reinsurance.**
 
-> When a typhoon or earthquake hits, primary insurance companies must quickly pay thousands of claims to affected families and damaged businesses. To stay solvent, insurers rely on multi-million dollar reinsurance payouts. But those payouts depend on 50-page legal contracts with ambiguous clauses. CatSight resolves this in 9 seconds: it calculates exact disaster payouts across 24 contracts (the LLM never does math), checks contract clauses with AI vision, and runs a mock trial between two AI agents to price the exact $14.6M dispute gap so claims get paid without delay.
+> When a typhoon or earthquake hits, primary insurance companies must quickly pay thousands of claims to affected families and damaged businesses. To stay solvent, insurers rely on multi-million dollar reinsurance payouts. But those payouts depend on 50-page legal contracts with ambiguous clauses. CatSight computes disaster impact in ~10–12 seconds (measured p50; money on screen in about 1 s): it calculates exact disaster payouts across 24 contracts (the LLM never does math), Gemini reads the contract wording (and transcribes a scanned endorsement once at ingest), and runs a mock trial between two AI agents to price disputed contract gaps ($11.6M reinsurer payout reduction / +$10.3M insurer net cost on the recorded 20% surge share; measured insurer range +$10.3M to +$26.0M) so the conversation about who pays can start sooner. AI counsel argue both sides; the engine prices both; the human analyst decides.
 
 Google Cloud AI Builder Cup 2026 · BFSI: Intelligent Risk, Fraud & Financial Experiences · **Team Techno Crackers:** Venket Raj S, Malik Chandra Pandian, Arun Veerappan, Nagaraj (all 4 members are working professionals in JAPAC, no students).
 
@@ -19,8 +19,8 @@ If you are new to reinsurance, here is the whole system in everyday words:
 - **Reinsurance Contract (Treaty):** The policy between the primary insurer and the reinsurer (our firm, Lion Re) covering extreme disasters across an entire portfolio.
 - **Coverage Used (Layer Burn %):** How much of the reinsurance payout limit has been consumed by the catastrophe (e.g. 100% = fully paid out).
 - **Fee to Refill Coverage (Reinstatement Premium):** The contractual fee paid to restore the reinsurance protection for subsequent storms.
-- **Disputed Claim Gap (Money at Stake):** When a contract exclusion is ambiguous (e.g. windstorm vs storm surge flooding), our Clause Courtroom pits two AI lawyers against each other to calculate the exact dollar difference between their readings ($14.6M), giving human analysts immediate clarity.
-- **Why It Matters to People:** In Asia-Pacific, **91% of catastrophe losses are uninsured** ($65B lost in 2023), and **48% of insurers lack catastrophe models**. When reinsurance disputes take months to settle, community rebuilding stalls. CatSight makes dispute resolution instantaneous.
+- **Disputed Claim Gap (Money at Stake):** When a contract exclusion is ambiguous (e.g. windstorm vs storm surge flooding), our Clause Courtroom pits two AI counsel against each other to price the dollar difference between their readings ($11.6M reinsurer payout reduction / +$10.3M insurer net cost on the recorded 20% surge share; measured insurer range +$10.3M to +$26.0M), giving human analysts a priced, cited view in seconds.
+- **Why It Matters to People:** In Asia-Pacific, **91% of catastrophe losses are uninsured** ($65B lost in 2023), and **48% of insurers lack catastrophe models**. When reinsurance disputes take months to settle, community rebuilding stalls. CatSight gives analysts a priced, cited view of disputes in seconds.
 
 **Where it fits.** CatSight is not a catastrophe model and does not compete with one. Cat models (Moody's RMS, Verisk and others) estimate *how big* the loss is. CatSight is the layer after that: it joins an event's footprint to the reinsurer's own treaties and their contract wording, so the analyst sees *who pays what, and which clause could change it*. Here the footprint comes from public data (NOAA IBTrACS, USGS ShakeMap); a licensed cat-model footprint could be plugged in behind the same typed interface.
 
@@ -89,9 +89,9 @@ Detail in [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 | Citation coverage | **186/188** fields cited; **185/186** check out against the page | per-field audit in [`docs/RESULTS.md`](docs/RESULTS.md) §3; 1 scanned page is labelled "transcribed" |
 | Extraction time, 8 wordings | **57 s** | vs ~25 min for whole-document extraction |
 | Live analysis (Jebi), two 5-run benchmarks | money in about **0.7–1.0 s**; complete in about **10-12 s** p50 (9.8 s and 12.1 s; runs 8-31 s); about **$0.01** p50 model cost | warm service; latest run in [`docs/RESULTS.md`](docs/RESULTS.md) §1 |
-| Clause Courtroom | **3 of 3 verified live on Cloud Run** (9.0–10.0 s, ~$0.005), 100% verification rate | both counsel verified on first attempt; prices money at stake live (+$10.3M to +$26.0M); full benchmark in [`docs/RESULTS.md`](docs/RESULTS.md) §1 |
+| Clause Courtroom | **3 of 3 verified live on Cloud Run** (9.0–10.0 s, ~$0.005 on 3-run live sample) | both counsel verified on first attempt; prices money at stake live (+$10.3M to +$26.0M cedent net cost / $11.6M reinsurer payout reduction on the recorded 20% run); audit in [`docs/RESULTS.md`](docs/RESULTS.md) §1 |
 | Follow-up question | about **$0.003** | from token counts, not benchmarked |
-| Automated tests | **874 offline tests + 13 opt-in live tests** | runs out-of-the-box on a fresh clone (CI in [`.github/workflows/ci.yml`](.github/workflows/ci.yml)) |
+| Automated tests | **870+ offline tests + 13 opt-in live tests** | runs out-of-the-box on a fresh clone (CI in [`.github/workflows/ci.yml`](.github/workflows/ci.yml)) |
 
 ## Run it yourself
 
@@ -127,7 +127,7 @@ npm run dev        # open http://localhost:5173
 **4. Tests** - in `backend/`:
 
 ```powershell
-uv run --no-sync pytest -q                                   # 874 offline tests, no cloud calls (auto-builds PDFs on fresh clone)
+uv run --no-sync pytest -q                                   # 870+ offline tests, no cloud calls (auto-builds PDFs on fresh clone)
 $env:RUN_LIVE="1"; uv run --no-sync --env-file .env pytest -m live -q   # 13 live tests against real Gemini + Firestore
 ```
 
@@ -182,7 +182,7 @@ Designed or investigated, not built:
 
 | Criterion | Where to look |
 |---|---|
-| **Technical merit** | ADK 2.11 `Workflow` with a verification loop and a parallel Courtroom fan-out; RAG on Firestore vector search; a citation verifier that withholds anything it cannot match; a deterministic loss engine with 874 tests; guardrail events, traces and a dashboard in Cloud Logging, Trace and Monitoring — [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md), [`docs/RESULTS.md`](docs/RESULTS.md) |
+| **Technical merit** | ADK 2.11 `Workflow` graphs: a 5-node analysis graph (verifier runs bounded verify-and-revise retry inside its node) and a Courtroom graph with a parallel counsel fan-out joined by a `JoinNode`; RAG on Firestore vector search; citation verifier that withholds ungrounded claims; deterministic loss engine with 870+ offline tests + 13 opt-in live tests; guardrail events, traces and dashboard in Cloud Logging, Trace and Monitoring — [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md), [`docs/RESULTS.md`](docs/RESULTS.md) |
 | **Problem alignment & impact** | The first-view question a reinsurer faces after a catastrophe, answered per treaty and per party, with the clause that could change it — [`docs/BUSINESS_IMPACT.md`](docs/BUSINESS_IMPACT.md), [`docs/DOMAIN_PRIMER.md`](docs/DOMAIN_PRIMER.md) |
 | **Innovation** | Two AI counsel argue a disputed clause from verified wording, and tested code prices both readings; Gemini reads a scanned endorsement that changes the contract — [`docs/MONEY_MOMENT.md`](docs/MONEY_MOMENT.md) |
 | **User experience** | Five-step layout, sticky summary, guided tour, instant replay, light and dark themes with colour-blind-checked palettes, keyboard navigation, Word export |
@@ -196,7 +196,7 @@ Designed or investigated, not built:
 | **Arun Veerappan** | ADK 2.11 agent workflows, RAG-first treaty extraction, 2-stage citation verifier loop, parallel Clause Courtroom & QA audit |
 | **Nagaraj** | React 18 + TypeScript + custom SVG choropleth UI, 5-step analyst layout, guided tour, accessibility palettes & Word/Markdown export |
 
-*Note on git history:* Features were developed in parallel across module worktrees during the hackathon sprint and consolidated into clean, verifiable milestone commits on `main` (from the initial loss-engine & RAG foundation through Cloud Run deployment, security hardening, and final QA).
+*Note on git history:* Built during the hackathon window in a private working copy and first pushed to this repository on 10 Oct 2026; every change since is an individual commit.
 
 ## Documentation
 

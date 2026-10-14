@@ -315,3 +315,41 @@ def test_the_brief_uses_the_pre_embedded_cover_query():
     asyncio.run(_run_with_adk(graph))
     assert seen and set(seen) <= set(STANDARD_QUERIES.values())
     assert out["retrieval_skipped"] == []
+
+
+def test_t004_surge_exclusion_pricing_ladder_traces_to_engine():
+    """Traces the T-004 Osaka storm surge exclusion pricing ladder:
+    - 0% surge share (cedent reading): baseline total_ceded = $39.58M, cedent_net_cost = $22.79M, our_net = $7.61M.
+    - 20% surge share (recorded reinsurer reading):
+        total_ceded drops by -$11.64M ($39.58M -> $27.94M)
+        cedent_net_cost increases by +$10.31M ($22.79M -> $33.10M)
+        market_net decreases by -$10.31M
+        our_net (Lion Re) decreases by -$1.34M ($7.61M -> $6.27M)
+    - 30% surge share:
+        total_ceded drops by -$17.46M
+        cedent_net_cost increases by +$15.51M
+        our_net (Lion Re) decreases by -$2.44M
+    - 50% surge share:
+        total_ceded drops by -$29.09M (-$29.1M total reinsurer payout reduction)
+        cedent_net_cost increases by +$25.97M (+26.0M insurer net cost)
+        market_net decreases by -$25.97M
+        our_net (Lion Re) decreases by -$5.16M
+    """
+    res_20 = run_scenario("jebi-2018", ScenarioRequest(
+        treaty_id="T-004", mode="exclusion", excluded_share=0.20, excluded_cause="storm surge"),
+        store=STORE)
+    stake_20 = res_20["money_at_stake"]
+    assert stake_20["total_ceded"] == "-11.64"
+    assert stake_20["cedent_net_cost"] == "10.31"
+    assert stake_20["market_net"] == "-10.31"
+    assert stake_20["our_net"] == "-1.34"
+
+    res_50 = run_scenario("jebi-2018", ScenarioRequest(
+        treaty_id="T-004", mode="exclusion", excluded_share=0.50, excluded_cause="storm surge"),
+        store=STORE)
+    stake_50 = res_50["money_at_stake"]
+    assert stake_50["total_ceded"] == "-29.09"
+    assert stake_50["cedent_net_cost"] == "25.97"
+    assert stake_50["market_net"] == "-25.97"
+    assert stake_50["our_net"] == "-5.16"
+

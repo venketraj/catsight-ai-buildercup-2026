@@ -293,6 +293,34 @@ def test_ordered_verbatim_fragments_joined_by_ellipsis_match():
     assert not match_quote(paraphrased_frag, exclusions).ok
 
 
+def test_stitched_non_contiguous_quote_without_ellipsis_is_rejected():
+    """N9 offline gap: an advocate cannot stitch two non-contiguous phrases together
+    without an ellipsis. Without '...', match_quote treats it as a single contiguous quote
+    and rejects it as paraphrased/non-matching."""
+    exclusions = (
+        "This Agreement does not cover loss, damage, cost or expense directly "
+        "or indirectly arising out of any of the following. "
+        "War, invasion, hostilities, civil war. "
+        "Storm surge, being the rise in sea level caused by meteorological conditions."
+    )
+    # Stitched non-contiguous quote omitting intervening words without '...'
+    stitched_without_ellipsis = (
+        "This Agreement does not cover loss Storm surge, being the rise in sea level"
+    )
+    outcome = match_quote(stitched_without_ellipsis, exclusions)
+    assert not outcome.ok
+    assert "paraphrased" in outcome.reason
+
+    # Single-word fragment in ellipsis is also rejected (each fragment must have >= 2 words)
+    single_word_frag = "Agreement ... Storm surge, being the rise in sea level"
+    assert not match_quote(single_word_frag, exclusions).ok
+
+    # More than 3 fragments is also rejected
+    too_many_frags = "This Agreement ... loss, damage ... War, invasion ... Storm surge"
+    assert not match_quote(too_many_frags, exclusions).ok
+
+
+
 # --------------------------------------------------------------------------- #
 # Scoping — locate_citation
 # --------------------------------------------------------------------------- #

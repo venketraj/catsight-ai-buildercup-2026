@@ -1,0 +1,35 @@
+name: Daily Live Health Check
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+jobs:
+  health-check:
+    name: Probe Cloud Run Live Deployment
+    runs-on: ubuntu-24.04
+    env:
+      BASE_URL: "https://catsight-api-342162443546.us-central1.run.app"
+    steps:
+      - name: Verify /health endpoint
+        run: |
+          echo "Pinging $BASE_URL/health..."
+          RESP=$(curl -sS --fail-with-body "$BASE_URL/health")
+          echo "$RESP"
+          echo "$RESP" | grep -q '"status":"ok"' || echo "$RESP" | grep -q '"status": "ok"'
+          echo "Health check passed."
+
+      - name: Verify /api/events endpoint
+        run: |
+          echo "Checking $BASE_URL/api/events..."
+          RESP=$(curl -sS --fail-with-body "$BASE_URL/api/events")
+          echo "$RESP" | grep -q "jebi-2018"
+          echo "Events endpoint passed."
+
+      - name: Verify /api/analyses/replay-jebi-2018 endpoint
+        run: |
+          echo "Checking $BASE_URL/api/analyses/replay-jebi-2018..."
+          RESP=$(curl -sS --fail-with-body "$BASE_URL/api/analyses/replay-jebi-2018")
+          echo "$RESP" | grep -q "frames"
+          echo "Replay endpoint passed."

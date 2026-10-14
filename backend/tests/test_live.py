@@ -118,3 +118,64 @@ def test_a_full_live_analysis_keeps_its_guarantees(gcp):
     report = next(f for f in frames if f["type"] == "report")
     assert report["unsupported_figures"] == []
     assert report["cost_usd"] is not None and float(report["cost_usd"]) < 0.05
+
+
+def test_counsel_quote_check_adversarial_and_positive_control(gcp):
+    """Finding N9: Live adversarial evaluation of the relaxed quote check.
+
+    Verifies that COUNSEL_QUOTE_CHECK on Gemini 3.8 Flash (model_reason):
+    1. Negative test: Rejects an adversarial reading claiming storm surge is covered
+       using a Clause 2 quote (supports=False).
+    2. Positive control: Accepts an accurate reading of what Clause 2 establishes
+       (supports=True).
+    """
+    from catsight_agent import prompts
+    from catsight_agent.agents import AgentDeps, _generate
+    from catsight_agent.schemas import SupportVerdict
+
+    config = gcp["config"]
+    deps = AgentDeps(
+        client=gcp["client"],
+        model_main=config.model_main,
+        model_reason=config.model_reason,
+        embedder=gcp["embedder"],
+        vectors=gcp["vectors"],
+        observed=[
+            "Typhoon Jebi made landfall on 4 September 2018 in Kansai region.",
+            "Peak storm tide observed at Osaka tidal station was 329 cm.",
+            "Wind gusts up to 209 km/h recorded in Osaka prefecture.",
+        ],
+    )
+
+    chunks = gcp["vectors"].chunks_for("T-004")
+    clause2 = next((c for c in chunks if str(c.clause_no) == "2"), chunks[0])
+
+    quote = "limited to loss arising from Windstorm"
+    assert quote in clause2.text, f"Expected '{quote}' in Clause 2 text: {clause2.text}"
+
+    # 1. Negative test: counsel reading falsely asserts storm surge is covered business
+    neg_prompt = prompts.COUNSEL_QUOTE_CHECK.format(
+        reading="Clause 2 explicitly provides that storm surge and coastal flood are covered business without exclusion.",
+        quote=quote,
+        clause_no=clause2.clause_no,
+        page=clause2.page,
+        clause=clause2.text,
+        observed="\n".join(f"- {o}" for o in deps.observed),
+    )
+    raw_neg = _generate(deps, deps.model_reason, neg_prompt, SupportVerdict, "adv_quote_check_neg")
+    verdict_neg = SupportVerdict.model_validate(json.loads(raw_neg or "{}"))
+    assert verdict_neg.supports is False, f"Expected supports=False for adversarial misrepresentation, got: {verdict_neg}"
+
+    # 2. Positive control: counsel reading accurately asserts what Clause 2 establishes
+    pos_prompt = prompts.COUNSEL_QUOTE_CHECK.format(
+        reading="Clause 2 establishes that Windstorm is covered business under the treaty's property account.",
+        quote=quote,
+        clause_no=clause2.clause_no,
+        page=clause2.page,
+        clause=clause2.text,
+        observed="\n".join(f"- {o}" for o in deps.observed),
+    )
+    raw_pos = _generate(deps, deps.model_reason, pos_prompt, SupportVerdict, "adv_quote_check_pos")
+    verdict_pos = SupportVerdict.model_validate(json.loads(raw_pos or "{}"))
+    assert verdict_pos.supports is True, f"Expected supports=True for faithful reading, got: {verdict_pos}"
+
