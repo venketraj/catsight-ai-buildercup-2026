@@ -7,7 +7,8 @@
 Google Cloud AI Builder Cup 2026 · BFSI: Intelligent Risk, Fraud & Financial Experiences · **Team Techno Crackers:** Venket Raj S, Malik Chandra Pandian, Arun Veerappan, Nagaraj (all 4 members are working professionals in JAPAC, no students).
 
 **▶ Live demo:** https://catsight-api-342162443546.us-central1.run.app — press **Instant replay** for a recorded real run in about 6 seconds, or **Run live** to watch the agents work (about 15 seconds).
-**▶ Demo video (< 3 min):** `[VIDEO_LINK_PLACEHOLDER — insert YouTube URL before final submission]`
+**▶ Demo video (< 3 min):** [Watch Demo Walkthrough on Google Drive](https://drive.google.com/file/d/14Yv-A-KtVksOgRxOxafZcEKFBUvFumQi/view?usp=sharing) (`catsight_3min_presentation_v2.mp4`, 2m 45s)
+**▶ All Submission Files & Artifacts:** [Google Drive Submission Folder](https://drive.google.com/drive/folders/1X5cNQh4aMP-B1JIvIXyyxCL-4anxJhl4?usp=sharing)
 **▶ Deck (PDF):** [`docs/CatSight_deck.pdf`](docs/CatSight_deck.pdf) · **CI:** [`.github/workflows/ci.yml`](.github/workflows/ci.yml)
 
 ### The 60-Second Plain-English Primer (For Generalist Judges)

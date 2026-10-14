@@ -57,3 +57,10 @@ backend/uv.lock
 
 # Haiyan is not offered in the demo (README, ASSUMPTIONS X11); keep its local replay out of the repo and the container
 backend/data/replays/haiyan-2013.json
+scripts/create_video.py
+scripts/build_deck.py
+scripts/generate_guide_docx.py
+scripts/check_access.ps1
+scripts/setup_observability.sh
+scripts/observability_runs.sql
+scripts/observability_dashboard.json
