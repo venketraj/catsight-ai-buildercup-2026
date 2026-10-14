@@ -43,6 +43,7 @@ from app.logs import hash_ip, log_event, observe, setup_tracing
 from app.runs import MemoryRunStore, capture, new_run_id
 from app.streaming import stream_agent_analysis
 from catsight_agent.agents import AgentDeps, answer_question, ask_targets, cost_usd
+from catsight_agent.guardrails import default_guardrail
 from catsight_agent.store import BookNotSeeded, DataStore, FirestoreStore, LocalStore
 
 __all__ = ["app", "create_app"]
@@ -755,6 +756,10 @@ def create_app(config: Settings | None = None, store: DataStore | None = None) -
                 status_code=422,
                 detail=f"question exceeds {config.max_query_chars} characters.",
             )
+        screen = default_guardrail.screen_prompt(body.question, context="ask")
+        if not screen.allowed:
+            log_event("guardrail_blocked", where="ask", reason=screen.reason, filter=screen.filter_type)
+            raise HTTPException(status_code=400, detail=screen.reason)
         prefix = "replay-"
         if not analysis_id.startswith(prefix):
             raise HTTPException(status_code=404, detail="analyses are addressed as replay-{event_id}")
@@ -791,6 +796,10 @@ def create_app(config: Settings | None = None, store: DataStore | None = None) -
         if answer.get("unsupported_figures"):
             log_event("unsupported_figures", severity="WARNING", where="ask",
                       analysis_id=analysis_id, count=len(answer["unsupported_figures"]))
+        resp_screen = default_guardrail.screen_response(answer.get("answer_md", ""), context="ask")
+        if not resp_screen.allowed:
+            log_event("guardrail_blocked", where="ask_response", reason=resp_screen.reason)
+            answer["answer_md"] = "Response withheld by security guardrails."
         return {"analysis_id": analysis_id, "question": body.question, **answer, "cost_usd": spent}
 
     # ----------------------------------------------------------------- API-5 #

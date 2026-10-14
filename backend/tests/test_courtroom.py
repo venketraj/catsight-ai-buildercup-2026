@@ -255,3 +255,17 @@ def test_courtroom_kill_switch_skips_cleanly():
     resp = disabled.post("/api/runs/run-1/courtroom").json()
     assert resp["skipped"] is True
     assert "switched off" in resp["reason"]
+
+
+def test_adversarial_counsel_denying_exclusion_without_support_is_dropped():
+    """FR-COURT-3 / N9: A counsel who accurately quotes text but asserts an
+    unfaithful reading that the checker rejects (supports=False) must fail
+    verification and be dropped, preventing unverified money at stake from pricing."""
+    class UnsupportedReading(CourtModel):
+        def __init__(self):
+            super().__init__(supports=False)
+
+    out, _ = _court(UnsupportedReading())
+    assert out["sides"]["cedent"]["verified"] is False
+    assert out["sides"]["reinsurer"]["verified"] is False
+    assert "money_at_stake" not in out

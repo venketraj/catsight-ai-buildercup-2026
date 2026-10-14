@@ -60,7 +60,7 @@ export function SummaryBar({ impact, verified, withheld, checked, seconds, runni
       <Item label="Insurers' claims" value={formatUsd(t.gross)} tone="cedent" />
       <Item label="Reinsurers pay" value={formatUsd(t.ceded)} tone="market" />
       <Item label="Our net (Lion Re)" value={formatUsd(t.our_net)} tone="ours" strong />
-      <Item label="Treaties hit" value={`${t.treaties_matched} of ${t.treaties_matched + t.treaties_excluded}`} />
+      <Item label="Contracts hit" value={`${t.treaties_matched} of ${t.treaties_matched + t.treaties_excluded}`} />
       <Item
         label="Clause flags"
         value={checked ? `${verified} verified · ${withheld} withheld` : running ? "checking…" : "-"}

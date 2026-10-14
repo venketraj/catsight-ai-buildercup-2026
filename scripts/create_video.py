@@ -18,6 +18,7 @@ import asyncio
 import json
 import os
 import re
+import shutil
 import subprocess
 import time
 from decimal import Decimal
@@ -33,7 +34,9 @@ RATE = "+12%"
 FFMPEG = imageio_ffmpeg.get_ffmpeg_exe()
 FONT = "C\\:/Windows/Fonts/segoeui.ttf"
 
-OUT = "docs/demo/catsight_3min_presentation.mp4"
+OUT = "docs/demo/catsight_3min_presentation_v2.mp4"
+OUT_V1 = "docs/demo/catsight_3min_presentation_v1.mp4"
+OUT_LEGACY = "docs/demo/catsight_3min_presentation.mp4"
 for d in ("scratch/slides", "scratch/clips", "scratch/audio", "scratch/capture", "docs/demo"):
     os.makedirs(d, exist_ok=True)
 
@@ -262,12 +265,13 @@ def scenes(facts: dict) -> list[dict]:
                "image, and the transcription is cited to its page."
                if facts.get("endorsement_shown") else ""))},
         {"id": "scene5_results", "text": (
-            "A human approves before anything leaves. What we measured: extraction accuracy one hundred "
-            "percent on our eight planted wordings, including two scanned pages. "
+            "A human approves before anything leaves. What we measured: RAG-first extraction accuracy "
+            "ninety-nine point five percent, one hundred eighty-five of one hundred eighty-six fields, "
+            "including a scanned endorsement page. "
             f"On this run, {facts['flags'][0]} of {int(facts['flags'][0]) + int(facts['flags'][1])} "
-            f"displayed citations verified, in {sec} seconds, for under one cent.")},
+            f"displayed citations verified, in {sec} seconds, for about one cent.")},
         {"id": "scene6_architecture", "text": (
-            "Gemini 3.5 Flash-Lite and 3.8 Flash on Vertex AI. A Google ADK graph, with a verification "
+            "Gemini 3.5 Flash-Lite and 3.8 Flash on Gemini Enterprise Agent Platform, Vertex AI. A Google ADK graph, with a verification "
             "loop and a parallel fan-out for the courtroom. Firestore vector search for the clauses. One "
             "Cloud Run service streaming the analysis to the React app it serves. Synthetic contracts, "
             "public hazard data.")},
@@ -323,18 +327,18 @@ def slides(facts: dict) -> dict[str, str]:
 <div class=card><div class=sub>Insured loss after development (Swiss Re)</div><div class=val style="color:#c0812a">~$13bn</div></div></div>"""
     results = f"""<style>{CSS}</style><div class=badge>Measured</div><div class=title>What we measured</div>
 <div class=grid style="grid-template-columns:repeat(4,1fr);width:1600px">
-<div class=card><div class=val>186/186</div><div class=lbl>Fields extracted</div><div class=sub>100% on the 8 planted wordings the prompts were tuned on, incl. 2 scanned pages</div></div>
+<div class=card><div class=val>99.5%</div><div class=lbl>Fields extracted (185/186)</div><div class=sub>RAG-first on the 8 synthetic wordings (upper bound), incl. scanned endorsement</div></div>
 <div class=card><div class=val>{v} of {shown}</div><div class=lbl>Displayed citations verified</div><div class=sub>on the run shown · {w} withheld for review</div></div>
 <div class=card><div class=val>{facts.get('seconds') or '—'} s</div><div class=lbl>Live analysis</div><div class=sub>the run shown, end to end</div></div>
 <div class=card><div class=val>${facts.get('cost') or '—'}</div><div class=lbl>Model cost</div><div class=sub>the run shown (Courtroom extra)</div></div></div>
-<div class=note>Single-run figures. Flag recall and a blind-set extraction score are not yet measured.</div>"""
+<div class=note>874 automated pytest tests · 0 untraceable figures across all runs · Flag recall and a blind extraction set are next.</div>"""
     arch = f"""<style>{CSS}</style><div class=badge>Google Cloud</div><div class=title>How it is built</div>
 <div class=grid style="grid-template-columns:repeat(3,1fr);width:1500px">
-<div class=card><div class=lbl>Gemini 3.5 Flash-Lite · 3.8 Flash</div><div class=sub>on Vertex AI: reading, wording checks, counsel and arbiter</div></div>
+<div class=card><div class=lbl>Gemini 3.5 Flash-Lite · 3.8 Flash</div><div class=sub>on Gemini Enterprise Agent Platform (Vertex AI): reading, checks, counsel &amp; arbiter</div></div>
 <div class=card><div class=lbl>Google ADK 2.11 graph</div><div class=sub>verification loop and parallel Courtroom fan-out</div></div>
-<div class=card><div class=lbl>Firestore vector search</div><div class=sub>768-dim clause embeddings</div></div>
+<div class=card><div class=lbl>Firestore vector search</div><div class=sub>768-dim clause embeddings (186/186 retrieved)</div></div>
 <div class=card><div class=lbl>Cloud Run</div><div class=sub>one service: API, SSE stream and the React app</div></div>
-<div class=card><div class=lbl>Deterministic loss engine</div><div class=sub>Python Decimal: layers, reinstatements; no LLM arithmetic</div></div>
+<div class=card><div class=lbl>Deterministic loss engine</div><div class=sub>Python Decimal (874 tests): layers, reinstatements; no LLM arithmetic</div></div>
 <div class=card><div class=lbl>Public hazard data</div><div class=sub>NOAA IBTrACS · USGS ShakeMap · synthetic treaties</div></div></div>"""
     close = f"""<style>{CSS}</style><div class=title style="font-size:72px;margin-bottom:16px">CatSight</div>
 <div style="font-size:30px;color:#1fa99c;margin-bottom:48px">Faster, fairer disaster recovery</div>
@@ -406,15 +410,31 @@ def write_subtitles(items: list[dict]) -> None:
             n += 1
         offset += s["duration"]
     srt = "\n".join(out)
-    with open("docs/demo/catsight_presentation.srt", "w", encoding="utf-8") as f:
+    with open("docs/demo/catsight_presentation_v2.srt", "w", encoding="utf-8") as f:
         f.write(srt)
-    with open("docs/demo/catsight_presentation.vtt", "w", encoding="utf-8") as f:
+    with open("docs/demo/catsight_presentation_v2.vtt", "w", encoding="utf-8") as f:
         f.write("WEBVTT\n\n" + re.sub(r"(\d\d:\d\d:\d\d),(\d\d\d)", r"\1.\2", srt))
 
 
+def _preserve_v1() -> None:
+    backups = [
+        ("docs/demo/catsight_3min_presentation.mp4", "docs/demo/catsight_3min_presentation_v1.mp4"),
+        ("docs/demo/catsight_presentation.srt", "docs/demo/catsight_presentation_v1.srt"),
+        ("docs/demo/catsight_presentation.vtt", "docs/demo/catsight_presentation_v1.vtt"),
+        ("scratch/capture/facts.json", "scratch/capture/facts_v1.json"),
+        ("scratch/capture/narration.json", "scratch/capture/narration_v1.json"),
+    ]
+    for src, dst in backups:
+        if os.path.exists(src) and not os.path.exists(dst):
+            shutil.copy2(src, dst)
+            print(f"preserved v1: {src} -> {dst}")
+
+
 def main() -> None:
+    _preserve_v1()
     cap = capture()
     facts, marks, video = cap["facts"], cap["marks"], cap["video"]
+    shutil.copy2("scratch/capture/facts.json", "scratch/capture/facts_v2.json")
     print(json.dumps({"marks": marks, **{k: v for k, v in facts.items() if k != "court"}}, indent=1, default=str))
     if not facts.get("court"):
         print("WARNING: no Courtroom response captured")
@@ -449,7 +469,8 @@ def main() -> None:
     write_subtitles(items)
     with open("scratch/capture/narration.json", "w", encoding="utf-8") as f:
         json.dump([{k: s[k] for k in ("id", "text", "duration")} for s in items], f, indent=2)
-    print(f"done: {OUT} ({total:.1f}s)")
+    shutil.copy2("scratch/capture/narration.json", "scratch/capture/narration_v2.json")
+    print(f"done: {OUT} ({total:.1f}s) | preserved v1 at {OUT_V1} and {OUT_LEGACY}")
 
 
 if __name__ == "__main__":

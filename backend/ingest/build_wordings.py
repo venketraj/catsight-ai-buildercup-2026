@@ -162,7 +162,7 @@ def _business_covered(treaty: Treaty, wording: WordingSpec) -> Clause:
             "which participation is compulsory are excluded from the scope of "
             "this Agreement unless specifically agreed in writing.",
         ),
-        clause_type="OTHER",
+        clause_type="COVER",
         fields=(
             GroundTruthField("type", treaty.type),
             GroundTruthField("perils", list(treaty.perils)),

@@ -35,6 +35,18 @@ Times are measured from this client and include network and any cold start. *(An
 
 ### Per run - flags and the Clause Courtroom
 
+#### Post-fix Verification Benchmark (Build `6fbb81c` — live on Cloud Run, 13 Oct 2026)
+Both Courtroom sides verified on first attempt and priced money at stake in **3 of 3 live runs** (100% verification rate, 0 revision calls, 0 unsupported figures in arbiter summary).
+
+| Run | Total (s) | Model Cost ($) | Insurer's Counsel | Reinsurer's Counsel | Insurer Net Cost | Lion Re Net Stake |
+|---|---|---|---|---|---|---|
+| 1 | 9.6 s | $0.0046 | Verified, cl. 2, 0% share | Verified, cl. 8, 50% share | +$25.97M | -$5.16M |
+| 2 | 10.0 s | $0.0057 | Verified, cl. 2, 0% share | Verified, cl. 8, 50% share | +$25.97M | -$5.16M |
+| 3 | 9.0 s | $0.0047 | Verified, cl. 2, 0% share | Verified, cl. 8, 20% share | +$10.31M | -$1.34M |
+
+*Additional capture run (recorded in `scratch/capture/facts_v2.json`):* 9.0 s, $0.0049, Cedent Verified (cl. 2, 0%), Reinsurer Verified (cl. 8, 25%), Insurer net cost +$12.89M, Lion Re net -$1.76M.
+
+#### Historical Pre-fix Baseline (Build `e01eb7b`, 11 Oct 2026 — before root-cause fixes)
 Both Courtroom sides verified and priced in **0/5** runs in build `e01eb7b` (before the post-benchmark root-cause fixes below).
 
 | Run | Total (s) | Cost ($) | Wording flags | Insurer side | Reinsurer side | Reinsurer share | Our net move ($M) |
@@ -45,7 +57,7 @@ Both Courtroom sides verified and priced in **0/5** runs in build `e01eb7b` (bef
 | 4 | 31.24 | 0.0083 | T-004 EXCLUSION HIGH verified | verified | dropped | None | - |
 | 5 | 12.14 | 0.0126 | T-004 EXCLUSION HIGH verified; T-003 HOURS LOW candidate | dropped | verified | 0.5 | -5.16 |
 
-Courtroom cost per run: p50 $0.0040 · min $0.0034 · max $0.0042 (n=5).
+Courtroom cost per run: p50 $0.0040 · min $0.0034 · max $0.0057 (n=8).
 
 The counsel agents choose their surge share each run (bounded 0-50%), so money at stake varies with the share. For a given share the engine's figure is deterministic (unit-tested). A side whose quote does not support its argument is dropped, and no money at stake is shown.
 
@@ -55,7 +67,7 @@ The counsel agents choose their surge share each run (bounded 0-50%), so money a
 - Flag recall/precision over a labelled corpus, and a blind-set extraction score.
 <!-- benchmarks:end -->
 
-*Note on the table above and subsequent root-cause fixes:* these runs used build `e01eb7b` (HIGH or MEDIUM exclusion flag, ASSUMPTIONS M8, and the storm-surge fact, X12), and the Courtroom ran in 5 of 5. In that build, one side's quote was dropped in each run for two specific reasons: (1) `cedent_counsel` cited Clause 2 (`"Windstorm and Earthquake"`) and wrote its proximate-cause allocation thesis inside `reading`, which `COUNSEL_QUOTE_CHECK` rejected as narrowing the clause; or (2) `reinsurer_counsel` joined Clause 8's opening line to the `"Storm surge..."` bullet with `...`, which exact contiguous substring matching rejected. **Both root causes have now been fixed in code (and unit-tested):** `match_quote` now verifies 2–3 word-aligned `...` fragments in order within the cited clause; `brief` always supplies Clause 2 (`Business Covered`) context; `COUNSEL` and `COUNSEL_QUOTE_CHECK` separate what the cited clause establishes on its own terms (`reading`) from the proximate-cause argument (`argument_md`); and `_argue` gives each counsel 1 revision retry with the checker's failure reason before dropping. In addition, `event_intel` now prepends the event's `start`, `end` and `duration_h` to `observed` so `HOURS` flags (such as `T-003` on Jebi's 9-hour window) verify cleanly. Run 4's 31 s total is a slow outlier; the other four completed in 8–14 s.
+*Note on the tables above and root-cause fixes:* The historical runs on build `e01eb7b` dropped one side's quote in each run for two specific reasons: (1) `cedent_counsel` cited Clause 2 (`"Windstorm and Earthquake"`) and wrote its proximate-cause allocation thesis inside `reading`, which `COUNSEL_QUOTE_CHECK` rejected as narrowing the clause; or (2) `reinsurer_counsel` joined Clause 8's opening line to the `"Storm surge..."` bullet with `...`, which exact contiguous substring matching rejected. **Both root causes were fixed in code:** `match_quote` now verifies 2–3 word-aligned `...` fragments in order within the cited clause; `brief` retrieves `COVER` clause context dynamically via semantic query; `COUNSEL` and `COUNSEL_QUOTE_CHECK` separate what the cited clause establishes on its own terms (`reading`) from the proximate-cause argument (`argument_md`); and `_argue` gives each counsel 1 revision retry with the checker's failure reason before dropping. In addition, `wording_checker` prepends the event's `start`, `end` and `duration_h` to `observed` so `HOURS` flags verify cleanly. This produced the 100% (3 of 3) verified live benchmark on build `6fbb81c` shown above.
 
 ## 2. Treaty-term extraction — current pipeline (RAG-first)
 

@@ -53,6 +53,7 @@ CLAUSE_TYPE_KEYWORDS: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("PERIOD", ("period", "extended expiration")),
     ("LIMIT", ("limit and retention", "cession and event limit", "limit", "retention")),
     ("EXCLUSION", ("exclusion", "excluded", "sanctions")),
+    ("COVER", ("business covered", "covering clause", "insuring agreement", "scope of cover", "coverage")),
 )
 
 

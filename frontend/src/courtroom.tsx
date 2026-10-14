@@ -38,12 +38,12 @@ interface Court {
 }
 
 const PARTIES: { key: string; label: string }[] = [
-  { key: "cedent_net_cost", label: "Insurer's net cost" },
-  { key: "market_net", label: "All reinsurers pay" },
-  { key: "our_net", label: "Our net (Lion Re)" },
+  { key: "cedent_net_cost", label: "Primary Insurer's Net Cost" },
+  { key: "market_net", label: "All Reinsurers Pay" },
+  { key: "our_net", label: "Our Net Share (Lion Re)" },
 ];
 
-const TITLES = { cedent: "Counsel for the insurer (cedent)", reinsurer: "Counsel for the reinsurers" };
+const TITLES = { cedent: "Counsel for the Primary Insurer (Cedent)", reinsurer: "Counsel for the Reinsurers" };
 
 async function call(path: string, init?: RequestInit) {
   const response = await fetch(`${API_BASE}${path}`, init);
@@ -167,7 +167,7 @@ export function CourtroomPanel({ runId }: { runId: string }) {
 
           {court.money_at_stake ? (
             <div className="stake">
-              <strong>Money at stake</strong> - the reinsurers' reading compared with the insurer's:
+              <strong>Disputed Claim Gap (Money at Stake)</strong> — difference between the two interpretations:
               {PARTIES.map((p) => {
                 const v = Number(court.money_at_stake![p.key]);
                 return (

@@ -128,26 +128,26 @@ export function MoneyMoment({ hero }: { hero: TreatyOutcome }) {
       <h2>Where each party stands &middot; {hero.treaty_id}</h2>
       <div className="figures">
         <div className="figure">
-          <div className="label">Cedent net cost</div>
+          <div className="label">Primary insurer cost (Cedent)</div>
           <div className="value cedent">{formatMoney(hero.cedent_net_cost)}</div>
           <div className="label" style={{ textTransform: "none" }}>
-            {formatMoney(hero.cedent_retention)} retained +{" "}
-            {formatMoney(hero.total_rip)} reinstatement premium
+            {formatMoney(hero.cedent_retention)} deductible +{" "}
+            {formatMoney(hero.total_rip)} coverage refill fee
           </div>
         </div>
         <div className="figure">
-          <div className="label">Market net</div>
+          <div className="label">All reinsurers payout</div>
           <div className="value market">{formatMoney(hero.market_net)}</div>
           <div className="label" style={{ textTransform: "none" }}>
-            all reinsurers, net of RIP
+            all reinsurers, net of refill fees
           </div>
         </div>
         <div className="figure">
-          <div className="label">Our net (Lion Re)</div>
+          <div className="label">Our net share (Lion Re)</div>
           <div className="value ours">{formatMoney(hero.our_net)}</div>
           <div className="label" style={{ textTransform: "none" }}>
-            {formatMoney(hero.our_loss)} recovered &minus; {formatMoney(hero.our_rip)}{" "}
-            <Term>reinstatement</Term> premium
+            {formatMoney(hero.our_loss)} payout &minus; {formatMoney(hero.our_rip)}{" "}
+            refill fee
           </div>
         </div>
       </div>
@@ -173,23 +173,23 @@ export function TreatyTable({
 }) {
   return (
     <section className="panel" data-tour="treaties">
-      <h2>Treaties that responded</h2>
+      <h2>Contracts that responded (24 Treaties)</h2>
       <table>
         <caption className="note" style={{ captionSide: "bottom", textAlign: "left" }}>
           Ordered by our net exposure - the first question is where we are most
-          on the hook. Gross is the insurer's claims; ceded is what all
-          reinsurers pay; our net is Lion Re's share.
+          on the hook. Local Claims is the primary insurer's total claims; Reinsurers Pay is what all
+          reinsurers cover; Our Net Share is Lion Re's portion.
         </caption>
         <thead>
           <tr>
-            <th>Treaty</th>
+            <th>Contract</th>
             <th>
-              <Term>cedent</Term>
+              <Term>Primary Insurer (Cedent)</Term>
             </th>
             <th>Type</th>
-            <th className="num">Gross</th>
-            <th className="num">Ceded</th>
-            <th className="num">Our net</th>
+            <th className="num">Local Claims</th>
+            <th className="num">Reinsurers Pay</th>
+            <th className="num">Our Net Share</th>
             <th className="num">Regions</th>
             {onExplain && <th aria-label="Explanation" />}
           </tr>

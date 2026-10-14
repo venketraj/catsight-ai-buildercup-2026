@@ -88,8 +88,13 @@ def build_courtroom(
         context = {}
         cited = flag["citation"]
         for chunk in deps.vectors.chunks_for(treaty_id):
-            if chunk.clause_no == cited["clause_no"] or chunk.clause_type == "COVER" or chunk.clause_no == "2":
+            if chunk.clause_no == cited["clause_no"] or chunk.clause_type == "COVER":
                 context[chunk.chunk_id] = chunk
+        hits_cover = await asyncio.to_thread(
+            search_treaty_clauses, "business covered scope of reinsurance covering clause insuring agreement",
+            store=deps.vectors, embedder=deps.embedder, treaty_id=treaty_id, limit=2)
+        for hit in hits_cover:
+            context.setdefault(hit.chunk.chunk_id, hit.chunk)
         hits = await asyncio.to_thread(
             search_treaty_clauses, STANDARD_QUERIES["EXCLUSION"], store=deps.vectors,
             embedder=deps.embedder, treaty_id=treaty_id, limit=3)

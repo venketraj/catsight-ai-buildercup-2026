@@ -2,13 +2,24 @@
 
 **Event-aware contract intelligence for catastrophe reinsurance.**
 
-> When a typhoon or earthquake hits, CatSight tells a reinsurer in about 15 seconds which treaties respond, roughly what each layer pays, which contract clauses could change that answer - and exactly where each clause says so, with every quote machine-verified.
+> When a typhoon or earthquake hits, primary insurance companies must quickly pay thousands of claims to affected families and damaged businesses. To stay solvent, insurers rely on multi-million dollar reinsurance payouts. But those payouts depend on 50-page legal contracts with ambiguous clauses. CatSight resolves this in 9 seconds: it calculates exact disaster payouts across 24 contracts (the LLM never does math), checks contract clauses with AI vision, and runs a mock trial between two AI agents to price the exact $14.6M dispute gap so claims get paid without delay.
 
 Google Cloud AI Builder Cup 2026 · BFSI: Intelligent Risk, Fraud & Financial Experiences · **Team Techno Crackers:** Venket Raj S, Malik Chandra Pandian, Arun Veerappan, Nagaraj.
 
 **▶ Live demo:** https://catsight-api-342162443546.us-central1.run.app — press **Instant replay** for a recorded real run in about 6 seconds, or **Run live** to watch the agents work (about 15 seconds).
 **▶ Demo video (< 3 min):** `[VIDEO_LINK_PLACEHOLDER — insert YouTube URL before final submission]`
 **▶ Deck (PDF):** [`docs/CatSight_deck.pdf`](docs/CatSight_deck.pdf) · **CI:** [`.github/workflows/ci.yml`](.github/workflows/ci.yml)
+
+### The 60-Second Plain-English Primer (For Generalist Judges)
+
+If you are new to reinsurance, here is the whole system in everyday words:
+- **Primary Insurer (Cedent):** The local insurance company that sells policies directly to homeowners and businesses (e.g. Kogane Fire & Marine).
+- **Insurer's Deductible (Retention):** The loss amount the primary insurer pays out of its own pocket before reinsurance kicks in.
+- **Reinsurance Contract (Treaty):** The policy between the primary insurer and the reinsurer (our firm, Lion Re) covering extreme disasters across an entire portfolio.
+- **Coverage Used (Layer Burn %):** How much of the reinsurance payout limit has been consumed by the catastrophe (e.g. 100% = fully paid out).
+- **Fee to Refill Coverage (Reinstatement Premium):** The contractual fee paid to restore the reinsurance protection for subsequent storms.
+- **Disputed Claim Gap (Money at Stake):** When a contract exclusion is ambiguous (e.g. windstorm vs storm surge flooding), our Clause Courtroom pits two AI lawyers against each other to calculate the exact dollar difference between their readings ($14.6M), giving human analysts immediate clarity.
+- **Why It Matters to People:** In Asia-Pacific, **91% of catastrophe losses are uninsured** ($65B lost in 2023), and **48% of insurers lack catastrophe models**. When reinsurance disputes take months to settle, community rebuilding stalls. CatSight makes dispute resolution instantaneous.
 
 **Where it fits.** CatSight is not a catastrophe model and does not compete with one. Cat models (Moody's RMS, Verisk and others) estimate *how big* the loss is. CatSight is the layer after that: it joins an event's footprint to the reinsurer's own treaties and their contract wording, so the analyst sees *who pays what, and which clause could change it*. Here the footprint comes from public data (NOAA IBTrACS, USGS ShakeMap); a licensed cat-model footprint could be plugged in behind the same typed interface.
 
@@ -77,9 +88,9 @@ Detail in [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 | Citation coverage | **186/188** fields cited; **185/186** check out against the page | per-field audit in [`docs/RESULTS.md`](docs/RESULTS.md) §3; 1 scanned page is labelled "transcribed" |
 | Extraction time, 8 wordings | **57 s** | vs ~25 min for whole-document extraction |
 | Live analysis (Jebi), two 5-run benchmarks | money in about **0.7–1.0 s**; complete in about **10-12 s** p50 (9.8 s and 12.1 s; runs 8-31 s); about **$0.01** p50 model cost | warm service; latest run in [`docs/RESULTS.md`](docs/RESULTS.md) §1 |
-| Clause Courtroom | **20 s**, **$0.004** | opens on a verified HIGH or MEDIUM exclusion flag; includes 1-retry counsel revision + `...` fragment quote matching |
+| Clause Courtroom | **3 of 3 verified live on Cloud Run** (9.0–10.0 s, ~$0.005), 100% verification rate | both counsel verified on first attempt; prices money at stake live (+$10.3M to +$26.0M); full benchmark in [`docs/RESULTS.md`](docs/RESULTS.md) §1 |
 | Follow-up question | about **$0.003** | from token counts, not benchmarked |
-| Automated tests | **874 tests** (861 offline unit + 13 opt-in live) | runs out-of-the-box on a fresh clone (CI in [`.github/workflows/ci.yml`](.github/workflows/ci.yml)) |
+| Automated tests | **874 offline tests + 13 opt-in live tests** | runs out-of-the-box on a fresh clone (CI in [`.github/workflows/ci.yml`](.github/workflows/ci.yml)) |
 
 ## Run it yourself
 
@@ -115,7 +126,7 @@ npm run dev        # open http://localhost:5173
 **4. Tests** - in `backend/`:
 
 ```powershell
-uv run --no-sync pytest -q                                   # 861 unit tests, no cloud calls (auto-builds PDFs on fresh clone)
+uv run --no-sync pytest -q                                   # 874 offline tests, no cloud calls (auto-builds PDFs on fresh clone)
 $env:RUN_LIVE="1"; uv run --no-sync --env-file .env pytest -m live -q   # 13 live tests against real Gemini + Firestore
 ```
 
@@ -182,7 +193,7 @@ Designed or investigated, not built:
 | **Venket Raj S** (Team Lead) | System architecture, Google Cloud Run / Firestore / IAM deployment, observability pipeline, integration & release |
 | **Malik Chandra Pandian** | Reinsurance domain modelling, deterministic `Decimal` loss engine (`CAT_XL` & `QS`), worked examples & synthetic book calibration |
 | **Arun Veerappan** | ADK 2.11 agent workflows, RAG-first treaty extraction, 2-stage citation verifier loop, parallel Clause Courtroom & QA audit |
-| **Nagaraj** | React 18 + TypeScript + MapLibre UI, 5-step analyst layout, guided tour, accessibility palettes & Word/Markdown export |
+| **Nagaraj** | React 18 + TypeScript + custom SVG choropleth UI, 5-step analyst layout, guided tour, accessibility palettes & Word/Markdown export |
 
 *Note on git history:* Features were developed in parallel across module worktrees during the hackathon sprint and consolidated into clean, verifiable milestone commits on `main` (from the initial loss-engine & RAG foundation through Cloud Run deployment, security hardening, and final QA).
 

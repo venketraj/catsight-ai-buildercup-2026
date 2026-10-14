@@ -223,7 +223,10 @@ class GeminiEmbedder:
             return cached
 
         client = self._ensure_client()
-        attempts = 20
+        # For batch document ingestion, retry up to 20 times with backoff.
+        # For interactive user queries (RETRIEVAL_QUERY), fail fast after 2 attempts
+        # so the user never experiences multi-minute stalls on a 429 quota spike.
+        attempts = 2 if task_type == "RETRIEVAL_QUERY" else 20
         for attempt in range(attempts):
             try:
                 with self._gate:
@@ -240,8 +243,9 @@ class GeminiEmbedder:
             except Exception as exc:  # noqa: BLE001 - quota is retried, the rest raised
                 if "429" not in str(exc) and "RESOURCE_EXHAUSTED" not in str(exc) or attempt == attempts - 1:
                     raise
-                # Per-minute quota: wait long enough for the window to move.
-                time.sleep(min(60.0, 5.0 * 2**attempt) + random.uniform(0, 2))
+                # Per-minute quota: wait briefly for interactive queries, longer for batch.
+                sleep_s = 1.0 if task_type == "RETRIEVAL_QUERY" else min(60.0, 5.0 * 2**attempt)
+                time.sleep(sleep_s + random.uniform(0, 0.5 if task_type == "RETRIEVAL_QUERY" else 2.0))
         vector = l2_normalise(response.embeddings[0].values)
         with self._lock:
             self._cache.put(key, vector)
