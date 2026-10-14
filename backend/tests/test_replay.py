@@ -4,7 +4,10 @@ from __future__ import annotations
 
 import asyncio
 import json
+import re
+from pathlib import Path
 
+import pytest
 from fastapi.testclient import TestClient
 
 from app import replay as replay_module
@@ -153,3 +156,51 @@ def test_live_agent_runs_are_recorded(tmp_path):
         embedder=DeterministicEmbedder(), vectors=VECTORS, emit=emit)
     TestClient(api).post("/api/analyses", json={"event_id": "jebi-2018"})
     assert has_replay(tmp_path, "jebi-2018")
+
+
+REPLAYS = Path(__file__).resolve().parents[1] / "data" / "replays"
+_CITATION_PATTERN = re.compile(
+    r"(\d+)\s+of\s+(\d+)\s+displayed citations verified\s+[·\u00b7]\s+(\d+)\s+withheld"
+)
+
+
+@pytest.mark.parametrize("path", sorted(REPLAYS.glob("*.json")), ids=lambda p: p.stem)
+def test_committed_replays_are_internally_consistent(path):
+    """A replay must show exactly what the recorded run did: the verification
+    frame's counts and header string match the flag frames, and the report's
+    caveats line matches the verified/withheld counts. Nothing vanishes silently."""
+    data = json.loads(path.read_text(encoding="utf-8"))
+    frames = [row["frame"] for row in data["frames"]]
+    verified = [f for f in frames if f.get("type") == "flag" and f.get("status") == "verified"]
+    candidates = [f for f in frames if f.get("type") == "flag" and f.get("status") == "candidate"]
+    verification = [f for f in frames if f.get("type") == "verification"]
+    report = [f for f in frames if f.get("type") == "report"]
+    withheld_count = len(candidates) - len(verified)
+
+    assert data.get("recorded_at"), "a replay must say when it was recorded"
+    if verification:
+        v = verification[0]
+        assert v["verified"] == len(verified)
+        assert len(v.get("withheld", [])) == withheld_count
+
+        m_hdr = _CITATION_PATTERN.search(v.get("header", ""))
+        assert m_hdr, f"verification header malformed in {path.name}: {v.get('header')}"
+        c_shown, c_ver, c_wh = map(int, m_hdr.groups())
+        assert c_shown == len(verified)
+        assert c_ver == len(verified)
+        assert c_wh == withheld_count
+
+    if report:
+        md = report[0].get("markdown", "")
+        m_rpt = _CITATION_PATTERN.search(md)
+        if m_rpt:
+            r_shown, r_ver, r_wh = map(int, m_rpt.groups())
+            assert r_shown == len(verified)
+            assert r_ver == len(verified)
+            assert r_wh == withheld_count
+        elif withheld_count > 0:
+            m_wh = re.search(r"(\d+)\s+withheld flag", md)
+            if m_wh:
+                assert int(m_wh.group(1)) == withheld_count
+
+
