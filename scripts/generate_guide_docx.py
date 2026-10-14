@@ -191,7 +191,7 @@ def create_document():
         "This guide translates the entire CatSight project (synced to the final submission build, 870+ offline tests + 13 opt-in live tests, "
         "and 14-slide official AI Builder Cup submission deck) into everyday business language. It demystifies every reinsurance formula, "
         "explains why primary insurers and reinsurers argue over millions of dollars after natural disasters, and shows "
-        "how CatSight delivers a verified portfolio view in 0.7–1.0 seconds (math) and ~10–12 seconds p50 (full AI wording check).",
+        "how CatSight delivers a verified portfolio view in 0.7 seconds (math) and 11.3 seconds p50 (full AI wording check).",
         title="DOCUMENT PURPOSE"
     )
 
@@ -225,7 +225,7 @@ def create_document():
             ["PERILS (Japan typhoon & flood)", "6 weeks", "Market-wide industry loss report, not treaty-specific"],
             ["Verisk PCS Japan (events >= $2bn)", "Up to 90 days", "Market-wide catastrophe index"],
             ["In-house manual analyst workflow", "2 to 4 business days (30–60 analyst-hours)", "Spreadsheets + re-reading 25+ exposed PDF contracts by hand"],
-            ["CatSight (on the reinsurer's own book)", "0.7–1.0s (math) · ~10–12s p50 (verified AI flags)", "Joins event × exposure × layers × verified PDF wording"]
+            ["CatSight (on the reinsurer's own book)", "0.7s (math) · 11.3s p50 (verified AI flags)", "Joins event × exposure × layers × verified PDF wording"]
         ]
     )
     add_p(
@@ -390,7 +390,7 @@ def create_document():
 
     add_h2("Step 3: What It Costs — Deterministic Layer Waterfall")
     add_p(
-        "Within 0.7–1.0 seconds, the deterministic loss engine matches all 24 treaties (13 matched, 11 excluded with reasons—e.g., PHL or TWN territory) "
+        "Within 0.7 seconds (p50), the deterministic loss engine matches all 24 treaties (13 matched, 11 excluded with reasons—e.g., PHL or TWN territory) "
         "and computes gross loss ($733.04M), insurer retention ($242.12M), all reinsurers ($490.92M), and Lion Re's net ($70.36M). "
         "Clicking 'How was this calculated?' shows every treaty's region-by-region damage and layer formulas."
     )
@@ -441,10 +441,10 @@ def create_document():
         ["Benchmark / Metric", "Measured Result", "Notes & Audit Trail (`docs/RESULTS.md`)"],
         [
             ["Loss engine vs. hand-checked worked example", "Exact (100%)", "870+ offline tests + 13 opt-in live tests (`Decimal` half-up)"],
-            ["Time to money on screen (two 5-run live benchmarks)", "0.7–1.0 s p50 (0.6–1.1 s)", "Engine runs before LLM agents"],
-            ["Complete live analysis with verified flags", "9.8–12.1 s p50 (8.0–31.2 s)", "Warm Cloud Run service, SSE with 15s heartbeat"],
-            ["Model cost per live analysis", "$0.0094–$0.0102 p50 ($0.0081–$0.0126)", "Measured from Gemini token usage"],
-            ["Clause Courtroom latency & cost", "20.3 s · $0.0040", "Parallel counsel on 3.5 Flash-Lite, Arbiter on 3.8 Flash"],
+            ["Time to money on screen (10-run live benchmark)", "0.7 s p50 (0.5–1.1 s)", "Engine runs before LLM agents"],
+            ["Complete live analysis with verified flags", "11.3 s p50 (7.8–19.3 s)", "Warm Cloud Run service, SSE with 15s heartbeat"],
+            ["Model cost per live analysis", "$0.0097 p50 ($0.0081–$0.0140)", "Measured from Gemini token usage"],
+            ["Clause Courtroom latency & cost", "8.0 s p50 · $0.0052 p50 (8/8 verified)", "Parallel counsel on 3.5 Flash-Lite, Arbiter on 3.8 Flash; 8 of 8 verified"],
             ["Treaty-term extraction (RAG-first, 8 wordings)", "99.5% (185/186 fields) in 57 s", "Upper bound on tuned set (vs ~25 min whole-doc)"],
             ["Governing clause retrieved", "186/186 (100%)", "Firestore 768-dim vector search with treaty_id pre-filter"],
             ["Per-field citation audit", "186/188 cited · 185/186 verified", "184 verified + 1 transcribed; 1 unverified withheld"],

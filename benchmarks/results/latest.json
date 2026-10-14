@@ -1,40 +1,46 @@
 {
   "api_url": "https://catsight-api-342162443546.us-central1.run.app",
-  "build": "e01eb7b",
+  "build": "7b1e7e3",
   "event_id": "jebi-2018",
-  "measured_at": "2026-10-11 20:08 UTC",
+  "measured_at": "2026-10-14 21:02 UTC",
   "analyses": [
     {
       "event_id": "jebi-2018",
-      "money_s": 1.03,
-      "flags_verified": 1,
-      "flags_withheld": 0,
-      "cost_usd": "0.0081",
+      "money_s": 1.08,
+      "flags_verified": 0,
+      "flags_withheld": 2,
+      "cost_usd": "0.0140",
       "unsupported_figures": 0,
-      "run_id": "run-7bf4a6314eb6",
+      "run_id": "run-da1efa0285dc",
       "agents": true,
       "replay": false,
-      "total_s": 7.98,
+      "total_s": 16.66,
       "flags": [
+        {
+          "treaty_id": "T-002",
+          "issue_type": "EXCLUSION",
+          "severity": "MEDIUM",
+          "status": "candidate"
+        },
         {
           "treaty_id": "T-004",
           "issue_type": "EXCLUSION",
           "severity": "HIGH",
-          "status": "verified"
+          "status": "candidate"
         }
       ]
     },
     {
       "event_id": "jebi-2018",
-      "money_s": 1.03,
+      "money_s": 0.77,
       "flags_verified": 1,
       "flags_withheld": 1,
-      "cost_usd": "0.0113",
+      "cost_usd": "0.0117",
       "unsupported_figures": 0,
-      "run_id": "run-850841d11aef",
+      "run_id": "run-47672050ccd3",
       "agents": true,
       "replay": false,
-      "total_s": 13.83,
+      "total_s": 14.84,
       "flags": [
         {
           "treaty_id": "T-002",
@@ -52,41 +58,41 @@
     },
     {
       "event_id": "jebi-2018",
-      "money_s": 1.05,
+      "money_s": 0.78,
       "flags_verified": 1,
       "flags_withheld": 1,
-      "cost_usd": "0.0094",
+      "cost_usd": "0.0107",
       "unsupported_figures": 0,
-      "run_id": "run-5fe0529e9fb9",
+      "run_id": "run-d74ea0caec6b",
       "agents": true,
       "replay": false,
-      "total_s": 11.12,
+      "total_s": 13.47,
       "flags": [
+        {
+          "treaty_id": "T-002",
+          "issue_type": "EXCLUSION",
+          "severity": "MEDIUM",
+          "status": "candidate"
+        },
         {
           "treaty_id": "T-004",
           "issue_type": "EXCLUSION",
           "severity": "HIGH",
           "status": "verified"
-        },
-        {
-          "treaty_id": "T-003",
-          "issue_type": "HOURS",
-          "severity": "LOW",
-          "status": "candidate"
         }
       ]
     },
     {
       "event_id": "jebi-2018",
-      "money_s": 0.83,
+      "money_s": 0.66,
       "flags_verified": 1,
       "flags_withheld": 0,
-      "cost_usd": "0.0083",
+      "cost_usd": "0.0084",
       "unsupported_figures": 0,
-      "run_id": "run-5db80712be52",
+      "run_id": "run-9f6491873469",
       "agents": true,
       "replay": false,
-      "total_s": 31.24,
+      "total_s": 9.34,
       "flags": [
         {
           "treaty_id": "T-004",
@@ -98,101 +104,345 @@
     },
     {
       "event_id": "jebi-2018",
-      "money_s": 0.75,
+      "money_s": 0.53,
       "flags_verified": 1,
       "flags_withheld": 1,
-      "cost_usd": "0.0126",
+      "cost_usd": "0.0098",
       "unsupported_figures": 0,
-      "run_id": "run-4ba773bc513b",
+      "run_id": "run-ee395f0b5e1a",
       "agents": true,
       "replay": false,
-      "total_s": 12.14,
+      "total_s": 12.11,
+      "flags": [
+        {
+          "treaty_id": "T-002",
+          "issue_type": "EXCLUSION",
+          "severity": "MEDIUM",
+          "status": "candidate"
+        },
+        {
+          "treaty_id": "T-004",
+          "issue_type": "EXCLUSION",
+          "severity": "HIGH",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "event_id": "jebi-2018",
+      "money_s": 0.84,
+      "flags_verified": 1,
+      "flags_withheld": 1,
+      "cost_usd": "0.0092",
+      "unsupported_figures": 0,
+      "run_id": "run-d1aa67b9f1dc",
+      "agents": true,
+      "replay": false,
+      "total_s": 10.44,
+      "flags": [
+        {
+          "treaty_id": "T-002",
+          "issue_type": "EXCLUSION",
+          "severity": "MEDIUM",
+          "status": "candidate"
+        },
+        {
+          "treaty_id": "T-004",
+          "issue_type": "EXCLUSION",
+          "severity": "HIGH",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "event_id": "jebi-2018",
+      "money_s": 0.66,
+      "flags_verified": 1,
+      "flags_withheld": 3,
+      "cost_usd": "0.0136",
+      "unsupported_figures": 0,
+      "run_id": "run-f77c088a3f4f",
+      "agents": true,
+      "replay": false,
+      "total_s": 19.33,
+      "flags": [
+        {
+          "treaty_id": "T-002",
+          "issue_type": "EXCLUSION",
+          "severity": "MEDIUM",
+          "status": "candidate"
+        },
+        {
+          "treaty_id": "T-002",
+          "issue_type": "HOURS",
+          "severity": "LOW",
+          "status": "verified"
+        },
+        {
+          "treaty_id": "T-002",
+          "issue_type": "REINSTATEMENT",
+          "severity": "HIGH",
+          "status": "candidate"
+        },
+        {
+          "treaty_id": "T-004",
+          "issue_type": "EXCLUSION",
+          "severity": "HIGH",
+          "status": "candidate"
+        }
+      ]
+    },
+    {
+      "event_id": "jebi-2018",
+      "money_s": 0.69,
+      "flags_verified": 1,
+      "flags_withheld": 1,
+      "cost_usd": "0.0095",
+      "unsupported_figures": 0,
+      "run_id": "run-45fead5c54fa",
+      "agents": true,
+      "replay": false,
+      "total_s": 10.53,
+      "flags": [
+        {
+          "treaty_id": "T-002",
+          "issue_type": "EXCLUSION",
+          "severity": "MEDIUM",
+          "status": "candidate"
+        },
+        {
+          "treaty_id": "T-004",
+          "issue_type": "EXCLUSION",
+          "severity": "HIGH",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "event_id": "jebi-2018",
+      "money_s": 0.62,
+      "flags_verified": 1,
+      "flags_withheld": 0,
+      "cost_usd": "0.0081",
+      "unsupported_figures": 0,
+      "run_id": "run-81d63610d23f",
+      "agents": true,
+      "replay": false,
+      "total_s": 7.76,
       "flags": [
         {
           "treaty_id": "T-004",
           "issue_type": "EXCLUSION",
           "severity": "HIGH",
           "status": "verified"
-        },
+        }
+      ]
+    },
+    {
+      "event_id": "jebi-2018",
+      "money_s": 0.72,
+      "flags_verified": 1,
+      "flags_withheld": 1,
+      "cost_usd": "0.0097",
+      "unsupported_figures": 0,
+      "run_id": "run-a1afa0718010",
+      "agents": true,
+      "replay": false,
+      "total_s": 10.55,
+      "flags": [
         {
-          "treaty_id": "T-003",
-          "issue_type": "HOURS",
+          "treaty_id": "T-002",
+          "issue_type": "EXCLUSION",
           "severity": "LOW",
           "status": "candidate"
+        },
+        {
+          "treaty_id": "T-004",
+          "issue_type": "EXCLUSION",
+          "severity": "HIGH",
+          "status": "verified"
         }
       ]
     }
   ],
   "courtrooms": [
     {
-      "seconds": 21.72,
-      "skipped": false,
-      "reason": null,
-      "cost_usd": "0.0042",
+      "seconds": 0.64,
+      "skipped": true,
+      "reason": "No HIGH or MEDIUM exclusion flag was raised and verified for this event.",
+      "treaty_id": null,
+      "cost_usd": null,
       "unsupported_figures": 0,
-      "cedent_verified": false,
-      "cedent_share": null,
-      "cedent_our_net_move": null,
-      "reinsurer_verified": true,
-      "reinsurer_share": 0.5,
-      "reinsurer_our_net_move": "-5.16",
       "money_at_stake": null
     },
     {
-      "seconds": 6.12,
+      "seconds": 7.94,
       "skipped": false,
       "reason": null,
-      "cost_usd": "0.0040",
+      "treaty_id": "T-004",
+      "cost_usd": "0.0057",
       "unsupported_figures": 0,
-      "cedent_verified": false,
-      "cedent_share": null,
-      "cedent_our_net_move": null,
       "reinsurer_verified": true,
       "reinsurer_share": 0.5,
       "reinsurer_our_net_move": "-5.16",
-      "money_at_stake": null
-    },
-    {
-      "seconds": 6.38,
-      "skipped": false,
-      "reason": null,
-      "cost_usd": "0.0040",
-      "unsupported_figures": 0,
-      "cedent_verified": false,
-      "cedent_share": null,
-      "cedent_our_net_move": null,
-      "reinsurer_verified": true,
-      "reinsurer_share": 0.5,
-      "reinsurer_our_net_move": "-5.16",
-      "money_at_stake": null
-    },
-    {
-      "seconds": 6.64,
-      "skipped": false,
-      "reason": null,
-      "cost_usd": "0.0034",
-      "unsupported_figures": 0,
       "cedent_verified": true,
       "cedent_share": 0.0,
       "cedent_our_net_move": "0.00",
-      "reinsurer_verified": false,
-      "reinsurer_share": null,
-      "reinsurer_our_net_move": null,
-      "money_at_stake": null
+      "money_at_stake": {
+        "cedent_net_cost": "25.97",
+        "market_net": "-25.97",
+        "our_net": "-5.16",
+        "total_ceded": "-29.09"
+      }
     },
     {
-      "seconds": 5.86,
+      "seconds": 45.16,
       "skipped": false,
       "reason": null,
-      "cost_usd": "0.0040",
+      "treaty_id": "T-004",
+      "cost_usd": "0.0047",
       "unsupported_figures": 0,
-      "cedent_verified": false,
-      "cedent_share": null,
-      "cedent_our_net_move": null,
       "reinsurer_verified": true,
       "reinsurer_share": 0.5,
       "reinsurer_our_net_move": "-5.16",
+      "cedent_verified": true,
+      "cedent_share": 0.0,
+      "cedent_our_net_move": "0.00",
+      "money_at_stake": {
+        "cedent_net_cost": "25.97",
+        "market_net": "-25.97",
+        "our_net": "-5.16",
+        "total_ceded": "-29.09"
+      }
+    },
+    {
+      "seconds": 7.08,
+      "skipped": false,
+      "reason": null,
+      "treaty_id": "T-004",
+      "cost_usd": "0.0047",
+      "unsupported_figures": 0,
+      "reinsurer_verified": true,
+      "reinsurer_share": 0.2,
+      "reinsurer_our_net_move": "-1.34",
+      "cedent_verified": true,
+      "cedent_share": 0.0,
+      "cedent_our_net_move": "0.00",
+      "money_at_stake": {
+        "cedent_net_cost": "10.31",
+        "market_net": "-10.31",
+        "our_net": "-1.34",
+        "total_ceded": "-11.64"
+      }
+    },
+    {
+      "seconds": 8.03,
+      "skipped": false,
+      "reason": null,
+      "treaty_id": "T-004",
+      "cost_usd": "0.0048",
+      "unsupported_figures": 0,
+      "reinsurer_verified": true,
+      "reinsurer_share": 0.5,
+      "reinsurer_our_net_move": "-5.16",
+      "cedent_verified": true,
+      "cedent_share": 0.0,
+      "cedent_our_net_move": "0.00",
+      "money_at_stake": {
+        "cedent_net_cost": "25.97",
+        "market_net": "-25.97",
+        "our_net": "-5.16",
+        "total_ceded": "-29.09"
+      }
+    },
+    {
+      "seconds": 7.92,
+      "skipped": false,
+      "reason": null,
+      "treaty_id": "T-004",
+      "cost_usd": "0.0049",
+      "unsupported_figures": 0,
+      "reinsurer_verified": true,
+      "reinsurer_share": 0.5,
+      "reinsurer_our_net_move": "-5.16",
+      "cedent_verified": true,
+      "cedent_share": 0.0,
+      "cedent_our_net_move": "0.00",
+      "money_at_stake": {
+        "cedent_net_cost": "25.97",
+        "market_net": "-25.97",
+        "our_net": "-5.16",
+        "total_ceded": "-29.09"
+      }
+    },
+    {
+      "seconds": 0.61,
+      "skipped": true,
+      "reason": "No HIGH or MEDIUM exclusion flag was raised and verified for this event. Hours-clause questions are explored in the What-if panel.",
+      "treaty_id": null,
+      "cost_usd": null,
+      "unsupported_figures": 0,
       "money_at_stake": null
+    },
+    {
+      "seconds": 10.49,
+      "skipped": false,
+      "reason": null,
+      "treaty_id": "T-004",
+      "cost_usd": "0.0064",
+      "unsupported_figures": 0,
+      "reinsurer_verified": true,
+      "reinsurer_share": 0.5,
+      "reinsurer_our_net_move": "-5.16",
+      "cedent_verified": true,
+      "cedent_share": 0.0,
+      "cedent_our_net_move": "0.00",
+      "money_at_stake": {
+        "cedent_net_cost": "25.97",
+        "market_net": "-25.97",
+        "our_net": "-5.16",
+        "total_ceded": "-29.09"
+      }
+    },
+    {
+      "seconds": 25.19,
+      "skipped": false,
+      "reason": null,
+      "treaty_id": "T-004",
+      "cost_usd": "0.0054",
+      "unsupported_figures": 0,
+      "reinsurer_verified": true,
+      "reinsurer_share": 0.2,
+      "reinsurer_our_net_move": "-1.34",
+      "cedent_verified": true,
+      "cedent_share": 0.0,
+      "cedent_our_net_move": "0.00",
+      "money_at_stake": {
+        "cedent_net_cost": "10.31",
+        "market_net": "-10.31",
+        "our_net": "-1.34",
+        "total_ceded": "-11.64"
+      }
+    },
+    {
+      "seconds": 7.67,
+      "skipped": false,
+      "reason": null,
+      "treaty_id": "T-004",
+      "cost_usd": "0.0055",
+      "unsupported_figures": 0,
+      "reinsurer_verified": true,
+      "reinsurer_share": 0.5,
+      "reinsurer_our_net_move": "-5.16",
+      "cedent_verified": true,
+      "cedent_share": 0.0,
+      "cedent_our_net_move": "0.00",
+      "money_at_stake": {
+        "cedent_net_cost": "25.97",
+        "market_net": "-25.97",
+        "our_net": "-5.16",
+        "total_ceded": "-29.09"
+      }
     }
   ]
 }

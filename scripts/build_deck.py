@@ -338,7 +338,7 @@ def build_slides() -> list[str]:
       <li style="margin-bottom:14px">
         <b>How will it solve the problem?</b>
         <div style="font-size:19px;margin-top:4px;color:#202124">
-          • <b>Deterministic Python engine (<code>Decimal</code>, 870+ tests):</b> Computes regional gross loss, tier payouts, burn %, and refill fees in <b>0.7–1.0 s</b> — zero LLM arithmetic.<br>
+          • <b>Deterministic Python engine (<code>Decimal</code>, 870+ tests):</b> Computes regional gross loss, tier payouts, burn %, and refill fees in <b>0.7 s p50</b> (0.5–1.1 s) — zero LLM arithmetic.<br>
           • <b>Firestore vector RAG + 2-stage verification:</b> 252 clause vectors (768-d) + deterministic quote matching + Gemini 3.8 Flash semantic support check.
         </div>
       </li>
@@ -395,7 +395,7 @@ def build_slides() -> list[str]:
         </div>
         <div style="font-size:13px;color:#5d4037;margin-top:4px;line-height:1.3">
           Without CatSight: Months of legal argument delay settlement.<br>
-          With CatSight: Clause Courtroom prices both readings in ~10–12 seconds.
+          With CatSight: Clause Courtroom prices both readings in ~8–11 seconds.
         </div>
       </div>
     </div>
@@ -414,7 +414,7 @@ def build_slides() -> list[str]:
   <tr><td><b>3. Cited Wording Flags &amp; Endorsement Detective</b></td><td>Flags clauses that bite on <i>this</i> event (e.g., T-004 storm-surge exclusion on Jebi's 329 cm Osaka tide) and transcribes scanned image endorsements (T-004 p.7: 168h replaces 72h).</td><td>2-stage verifier loop; unverified flags visibly withheld (<code>n verified · k withheld</code>); scanned pages badged <code>transcribed</code>.</td></tr>
   <tr><td><b>4. Clause Courtroom (Dispute Pricing; the analyst decides)</b></td><td>Parallel ADK agents (<code>cedent_counsel</code> ∥ <code>reinsurer_counsel</code>) argue opposing readings from verified quotes (with dynamic <code>COVER</code> clause retrieval &amp; <code>...</code> fragment matching); engine prices both readings; Arbiter summarises without deciding.</td><td>Issue-spotting only; human analyst records the decision with an audit timestamp.</td></tr>
   <tr><td><b>5. Bounded What-if &amp; Grounded Q&amp;A</b></td><td>Interactive storm-window scenario pricing (clearly labelled HYPOTHETICAL on Jebi's 9-hour window) and live follow-up Q&amp;A over contract clauses screened by Google Model Armor (with local regex fallback).</td><td>Typed, bounded tool schema; dual-layer Model Armor screening; 0 untraceable figures.</td></tr>
-  <tr><td><b>6. Instant Replay, 9-Stop Tour &amp; Word Export</b></td><td>6-second zero-cost replay of a recorded real run, live SSE streaming (~10–12 s p50), colour-blind-safe themes, keyboard navigation, and Word (<code>.docx</code>) &amp; Markdown memos.</td><td>Every export carries the methodology version, verification counts, and mandatory disclaimers.</td></tr>
+  <tr><td><b>6. Instant Replay, 9-Stop Tour &amp; Word Export</b></td><td>6-second zero-cost replay of a recorded real run, live SSE streaming (~11 s p50), colour-blind-safe themes, keyboard navigation, and Word (<code>.docx</code>) &amp; Markdown memos.</td><td>Every export carries the methodology version, verification counts, and mandatory disclaimers.</td></tr>
 </table>"""
     ))
 
@@ -426,7 +426,7 @@ def build_slides() -> list[str]:
     <p style="margin-top:0"><b>Workflow 1: Live Event Analysis Graph (ADK 2.11 <code>Workflow</code>)</b></p>
     <div class="box"><b>1. event_intel</b>Loads NOAA IBTrACS / USGS ShakeMap footprint, event window (<code>start</code>, <code>end</code>, <code>duration_h</code>) &amp; JMA facts</div>
     <div class="arrow">▼</div>
-    <div class="box" style="border-width:2.5px"><b>2. exposure_analyst (NO LLM — Pure Python Engine)</b>Matches 24 treaties → regional gross loss → Cat XL / QS waterfall → emits <code>result</code> SSE frame in ~0.7–1.0 s</div>
+    <div class="box" style="border-width:2.5px"><b>2. exposure_analyst (NO LLM — Pure Python Engine)</b>Matches 24 treaties → regional gross loss → Cat XL / QS waterfall → emits <code>result</code> SSE frame in ~0.7 s</div>
     <div class="arrow">▼</div>
     <div class="box"><b>3. wording_checker (Gemini 3.5 Flash-Lite)</b>Firestore 768-d vector search per treaty (<code>treaty_id</code> pre-filter) → candidate flags with page, clause &amp; quote</div>
     <div class="arrow">▼</div>
@@ -530,7 +530,7 @@ def build_slides() -> list[str]:
         
         <!-- Footer Bar -->
         <div style="background:#ffffff;border-top:1px solid #dadce0;padding:6px 12px;display:flex;justify-content:space-between;font-size:11px;color:#5f6368">
-          <span>⚡ Instant Replay: <b>6 s</b> · Live Agent SSE: <b>~10–12 s p50</b></span>
+          <span>⚡ Instant Replay: <b>6 s</b> · Live Agent SSE: <b>11.3 s p50</b></span>
           <span>Python Decimal: <b>Zero LLM arithmetic</b></span>
         </div>
       </div>
@@ -640,8 +640,8 @@ def build_slides() -> list[str]:
     s.append(content_slide(
         "Estimated implementation cost (optional)",
         """<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:22px">
-  <div class="card-strong"><div class="big">$0.010</div><div class="lbl">p50 model cost per live analysis ($0.008–$0.013)</div></div>
-  <div class="card-strong"><div class="big">$0.004</div><div class="lbl">p50 model cost per Clause Courtroom run</div></div>
+  <div class="card-strong"><div class="big">$0.010</div><div class="lbl">p50 model cost per live analysis ($0.008–$0.014)</div></div>
+  <div class="card-strong"><div class="big">$0.005</div><div class="lbl">p50 model cost per Clause Courtroom run ($0.005–$0.006)</div></div>
   <div class="card-strong"><div class="big">$0.000</div><div class="lbl">Instant Replay cost (cached real SSE stream)</div></div>
   <div class="card-strong"><div class="big">$0.003</div><div class="lbl">Follow-up question (from token counts)</div></div>
 </div>
@@ -651,8 +651,8 @@ def build_slides() -> list[str]:
     <table>
       <tr><th>Workload</th><th>Model / Service</th><th>Measured Cost</th></tr>
       <tr><td>One-time ingestion (8 PDF wordings, 252 chunks)</td><td><code>gemini-embedding-001</code> + <code>3.5-flash-lite</code></td><td><b>&lt; $0.08 total</b> (57 s runtime)</td></tr>
-      <tr><td>Live event analysis (13 responding treaties)</td><td><code>3.5-flash-lite</code> + <code>3.8-flash</code> verifier</td><td><b>$0.0094–$0.0102 p50</b></td></tr>
-      <tr><td>Clause Courtroom (parallel counsel + arbiter)</td><td>2× <code>3.5-flash-lite</code> + <code>3.8-flash</code></td><td><b>$0.0040 p50</b></td></tr>
+      <tr><td>Live event analysis (13 responding treaties)</td><td><code>3.5-flash-lite</code> + <code>3.8-flash</code> verifier</td><td><b>$0.0097 p50</b> ($0.0081–$0.0140)</td></tr>
+      <tr><td>Clause Courtroom (parallel counsel + arbiter)</td><td>2× <code>3.5-flash-lite</code> + <code>3.8-flash</code></td><td><b>$0.0052 p50</b> ($0.0047–$0.0064)</td></tr>
       <tr><td>Cloud Run + Firestore (scale-to-zero default)</td><td><code>min-instances 0</code>, <code>max-instances 3</code></td><td><b>~$0 idle</b> · pennies per active hour</td></tr>
     </table>
   </div>
@@ -673,7 +673,7 @@ def build_slides() -> list[str]:
         f"""<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
   <div>
     <img class="shot" style="max-height:335px;object-fit:cover;object-position:top" src="{img('cap_6.png')}" alt="">
-    <p style="font-size:17px;margin:6px 0 0"><b>1. Live Agent Streaming:</b> ADK 2.11 stages stream over SSE; deterministic loss figures arrive in ~0.7–1.0 s while Gemini retrieves &amp; verifies treaty clauses.</p>
+    <p style="font-size:17px;margin:6px 0 0"><b>1. Live Agent Streaming:</b> ADK 2.11 stages stream over SSE; deterministic loss figures arrive in ~0.7 s while Gemini retrieves &amp; verifies treaty clauses.</p>
   </div>
   <div>
     <img class="shot" style="max-height:335px;object-fit:cover;object-position:top" src="{img('cap_12.png')}" alt="">
@@ -694,8 +694,8 @@ def build_slides() -> list[str]:
     s.append(content_slide(
         "Prototype Performance report/Benchmarking",
         """<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:22px">
-  <div class="card-strong"><div class="big">0.7–1.0 s</div><div class="lbl">Time to money on screen (p50 across two 5-run live benchmarks)</div></div>
-  <div class="card-strong"><div class="big">9.8–12.1 s</div><div class="lbl">Complete live analysis with verified flags (p50; range 8.0–31.2 s)</div></div>
+  <div class="card-strong"><div class="big">0.7 s</div><div class="lbl">Time to money on screen (p50; 0.5–1.1 s on 10-run live benchmark)</div></div>
+  <div class="card-strong"><div class="big">11.3 s</div><div class="lbl">Complete live analysis with verified flags (p50; range 7.8–19.3 s)</div></div>
   <div class="card-strong"><div class="big">99.5%</div><div class="lbl">RAG treaty-term extraction (185/186 fields in 57 s vs ~25 min whole-doc)</div></div>
   <div class="card-strong"><div class="big">870+</div><div class="lbl">Automated pytest tests (870+ offline tests + 13 opt-in live tests; CI on GitHub)</div></div>
 </div>
@@ -703,7 +703,7 @@ def build_slides() -> list[str]:
   <tr><th>Benchmark / Evaluation (<code>docs/RESULTS.md</code>)</th><th>Measured Result</th><th>Methodology &amp; Honest Caveat</th></tr>
   <tr><td><b>Loss engine vs. hand-checked worked example</b></td><td><b>100% exact match</b></td><td><code>Decimal</code> half-up; verified on every Cat XL layer, reinstatement, RIP, and Quota Share formula.</td></tr>
   <tr><td><b>Governing clause retrieval &amp; citation audit</b></td><td><b>186/186 retrieved · 185/186 verified</b></td><td>Firestore 768-d vector search; 184 text-layer verified + 1 scanned endorsement transcribed; 1 unverified withheld.</td></tr>
-  <tr><td><b>Clause Courtroom live on Cloud Run</b></td><td><b>3 of 3 verified live (100% rate)</b></td><td>Both counsel verified on first attempt; $10.3M to $26.0M money at stake priced live; 0 unsupported figures (build 6fbb81c).</td></tr>
+  <tr><td><b>Clause Courtroom live on Cloud Run</b></td><td><b>8 of 8 verified live</b></td><td>Both counsel verified in all 8 Courtrooms that ran; $10.3M to $26.0M money at stake priced live; 0 unsupported figures (build 7b1e7e3).</td></tr>
   <tr><td><b>Corrupted quote rejection (Verifier unit suite)</b></td><td><b>40/40 rejected (0 false withholds)</b></td><td>Normalised + word-aligned <code>...</code> ellipsis fragment matcher + Gemini 3.8 Flash semantic check (offline stubs suite).</td></tr>
   <tr><td><b>Untraceable numbers in AI-written reports</b></td><td><b>0 across all live runs</b></td><td>Deterministic Python post-check compares every figure in reporter/arbiter prose against engine output.</td></tr>
   <tr><td><b>Honest limitations &amp; unmeasured items</b></td><td colspan="2">Extraction prompt was tuned on the 8 synthetic wordings (99.5% is an upper bound; blind set is next). Manual effort savings (30–60h → 3.5–8h) are labelled <i>simulated estimates</i> pending a timed practitioner study.</td></tr>
@@ -751,12 +751,12 @@ def build_slides() -> list[str]:
   <li style="margin-bottom:18px">
     <b>Demo Video Link (3 Minutes)</b><br>
     <a href="{VIDEO}" style="font-size:23px;font-family:Consolas,monospace;color:#1fa99c;text-decoration:none">{VIDEO}</a>
-    <div class="muted" style="margin-top:2px">3-minute walkthrough (2m 45s) of the reinsurance problem, live ~10–12 s Typhoon Jebi analysis, scanned endorsement transcription, and Clause Courtroom.</div>
+    <div class="muted" style="margin-top:2px">3-minute walkthrough (2m 45s) of the reinsurance problem, live ~11 s Typhoon Jebi analysis, scanned endorsement transcription, and Clause Courtroom.</div>
   </li>
   <li style="margin-bottom:18px">
     <b>Final Product Link</b><br>
     <a href="{LIVE}" style="font-size:23px;font-family:Consolas,monospace;color:#1fa99c;text-decoration:none">{LIVE}</a>
-    <div class="muted" style="margin-top:2px">Live on Google Cloud Run (us-central1) · No sign-up required · Click <b>Instant replay</b> (~6 s) or <b>Run live</b> (~10–12 s) · 9-stop guided tour included.</div>
+    <div class="muted" style="margin-top:2px">Live on Google Cloud Run (us-central1) · No sign-up required · Click <b>Instant replay</b> (~6 s) or <b>Run live</b> (~11 s) · 9-stop guided tour included.</div>
   </li>
   <li style="margin-bottom:18px">
     <b>Submission Package Folder (All Artifacts)</b><br>
