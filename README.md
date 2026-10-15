@@ -68,7 +68,7 @@ CatSight takes the side of a fictional reinsurer, **Lion Re**, and replays a rea
 | **Map** | Regions coloured by peak wind or shaking; click for insured value by insurer |
 | **Follow-up questions** | Plain-language answers from the engine's figures and checked quotes |
 | **What-if** | An hours clause on the real loss timeline, or a labelled hypothetical, priced by the engine |
-| **Clause Courtroom** | Two AI lawyers argue opposite readings; the engine prices both; an arbiter summarises without deciding; the analyst records a position |
+| **Clause Courtroom** | Two AI lawyers argue opposite readings; the engine prices both; an arbiter summarises without deciding; the analyst records a position (stored with the run in Firestore; not yet in the exported report) |
 | **Treaties, Methodology, Knowledge base** | The treaty book checked against each wording, the versioned method, and how the clause library was built |
 | **Reports** | Markdown and Word (.docx) downloads |
 
@@ -91,7 +91,7 @@ Every money figure comes from unit-tested Python (`Decimal`, half-up rounding), 
 - **Numbers in AI-written text:** checked against the engine; anything untraceable is listed as unsupported.
 - **Follow-up questions:** the question and the answer are screened by a local filter, then **Google Cloud Model Armor** (prompt injection, jailbreak, malicious URLs, harassment, hate speech). Live, a jailbreak attempt returns *"Question blocked by Google Cloud Model Armor (ask: pi_and_jailbreak)."* If Model Armor is unavailable (3 s timeout), the local filter still applies and the event is logged.
 - **Contract text is data, not instructions:** agents ignore instructions inside documents.
-- **People decide:** the arbiter only summarises; the analyst records the position.
+- **People decide:** the arbiter only summarises; the analyst records the position (insurer's reading, reinsurers' reading or unresolved, with an optional note and a timestamp), stored with the run in Firestore; not yet in the exported report.
 
 ## Why it's fast
 
@@ -235,6 +235,7 @@ Add `BILLING_ACCOUNT=… BUDGET_INR=…` to the observability script for a budge
 - **Manual-effort comparisons are labelled *simulated*:** an estimate, not a timed study.
 - **The rate limit is a cost guard, not security:** 20/hour is counted per Cloud Run instance (up to 3).
 - **Demo scope:** no user accounts (the analyst-position endpoint has no login), and no public upload (mode "live" returns 501).
+- **Recorded positions:** stored with the run in Firestore (position, note, UTC time; no name, since there are no logins). Not yet in the Word or Markdown export, not listed anywhere in the app, and replaced if the Courtroom is re-run.
 - Every modelling assumption is in [`backend/data/ASSUMPTIONS.md`](backend/data/ASSUMPTIONS.md).
 
 ## Future work

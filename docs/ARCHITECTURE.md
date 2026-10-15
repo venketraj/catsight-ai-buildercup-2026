@@ -102,6 +102,11 @@ would add calls and latency without adding judgement.
   analyst records a position (insurer's reading / reinsurers' / unresolved)
 ```
 
+The position, an optional note and a UTC timestamp are stored on the run's
+document in Firestore (`analyses/{run_id}`, field `courtroom.position`). They
+are not yet in the Word or Markdown export, and re-running the Courtroom
+replaces them.
+
 ### Why this shape
 
 | Decision | What it buys |
