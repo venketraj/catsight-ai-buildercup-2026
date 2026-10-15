@@ -1,59 +1,106 @@
 # CatSight
 
-**Event-aware contract intelligence for catastrophe reinsurance.**
+**When a typhoon or earthquake hits, CatSight shows a reinsurer, in seconds, who pays what under each contract, and which contract wording could change that answer.**
 
-> When a typhoon or earthquake hits, primary insurance companies must quickly pay thousands of claims to affected families and damaged businesses. To stay solvent, insurers rely on multi-million dollar reinsurance payouts. But those payouts depend on 50-page legal contracts with ambiguous clauses. CatSight computes disaster impact in ~11 seconds (measured 11.3 s p50; money on screen in 0.7 s p50): it calculates exact disaster payouts across 24 contracts (the LLM never does math), Gemini reads the contract wording (and transcribes a scanned endorsement once at ingest), and runs a mock trial between two AI agents to price disputed contract gaps ($11.6M reinsurer payout reduction / +$10.3M insurer net cost on the recorded 20% surge share; measured insurer range +$10.3M to +$26.0M) so the conversation about who pays can start sooner. AI counsel argue both sides; the engine prices both; the human analyst decides.
+Google Cloud AI Builder Cup 2026 · BFSI: Intelligent Risk, Fraud & Financial Experiences · **Team Techno Crackers:** Venket Raj S, Malik Chandra Pandian, Arun Veerappan, Nagaraj (all 4 are working professionals in JAPAC; no students).
 
-Google Cloud AI Builder Cup 2026 · BFSI: Intelligent Risk, Fraud & Financial Experiences · **Team Techno Crackers:** Venket Raj S, Malik Chandra Pandian, Arun Veerappan, Nagaraj (all 4 members are working professionals in JAPAC, no students).
+| | |
+|---|---|
+| **▶ Live demo** | https://catsight-api-342162443546.us-central1.run.app (no login) |
+| **▶ Demo video** (2 min 45 s) | [Watch on Google Drive](https://drive.google.com/file/d/14Yv-A-KtVksOgRxOxafZcEKFBUvFumQi/view?usp=sharing) |
+| **▶ Deck (PDF)** | [`docs/CatSight_deck.pdf`](docs/CatSight_deck.pdf) |
+| **▶ Submission folder** | [Google Drive](https://drive.google.com/drive/folders/1X5cNQh4aMP-B1JIvIXyyxCL-4anxJhl4?usp=sharing) |
+| **CI** | [`.github/workflows/ci.yml`](.github/workflows/ci.yml) |
 
-**▶ Live demo:** https://catsight-api-342162443546.us-central1.run.app — press **Instant replay** for a recorded real run in about 6 seconds, or **Run live** to watch the agents work (about 15 seconds).
-**▶ Demo video (< 3 min):** [Watch Demo Walkthrough on Google Drive](https://drive.google.com/file/d/14Yv-A-KtVksOgRxOxafZcEKFBUvFumQi/view?usp=sharing) (`catsight_3min_presentation_v2.mp4`, 2m 45s)
-**▶ All Submission Files & Artifacts:** [Google Drive Submission Folder](https://drive.google.com/drive/folders/1X5cNQh4aMP-B1JIvIXyyxCL-4anxJhl4?usp=sharing)
-**▶ Deck (PDF):** [`docs/CatSight_deck.pdf`](docs/CatSight_deck.pdf) · **CI:** [`.github/workflows/ci.yml`](.github/workflows/ci.yml)
+## In 30 seconds
 
-### The 60-Second Plain-English Primer (For Generalist Judges)
+After a disaster, insurers must pay thousands of families and businesses quickly. They get much of that money back from **reinsurers**: insurers for insurance companies, bound by long legal contracts called **treaties**. Working out what each treaty pays takes days of manual review, and disputes over unclear wording can run for months. CatSight gives the first answer in seconds:
 
-If you are new to reinsurance, here is the whole system in everyday words:
-- **Primary Insurer (Cedent):** The local insurance company that sells policies directly to homeowners and businesses (e.g. Kogane Fire & Marine).
-- **Insurer's Deductible (Retention):** The loss amount the primary insurer pays out of its own pocket before reinsurance kicks in.
-- **Reinsurance Contract (Treaty):** The policy between the primary insurer and the reinsurer (our firm, Lion Re) covering extreme disasters across an entire portfolio.
-- **Coverage Used (Layer Burn %):** How much of the reinsurance payout limit has been consumed by the catastrophe (e.g. 100% = fully paid out).
-- **Fee to Refill Coverage (Reinstatement Premium):** The contractual fee paid to restore the reinsurance protection for subsequent storms.
-- **Disputed Claim Gap (Money at Stake):** When a contract exclusion is ambiguous (e.g. windstorm vs storm surge flooding), our Clause Courtroom pits two AI counsel against each other to price the dollar difference between their readings ($11.6M reinsurer payout reduction / +$10.3M insurer net cost on the recorded 20% surge share; measured insurer range +$10.3M to +$26.0M), giving human analysts a priced, cited view in seconds.
-- **Why It Matters to People:** In Asia-Pacific, **91% of catastrophe losses are uninsured** ($65B lost in 2023), and **48% of insurers lack catastrophe models**. When reinsurance disputes take months to settle, community rebuilding stalls. CatSight gives analysts a priced, cited view of disputes in seconds.
+- **The money in 0.7 s** (median), calculated by tested code, never by the AI.
+- **The full check in 11.3 s** (median). Gemini reads the contract wording, and every quote it uses is checked against the contract page.
+- **About 1 cent of AI cost** per analysis ($0.0097 median).
 
-**Where it fits.** CatSight is not a catastrophe model and does not compete with one. Cat models (Moody's RMS, Verisk and others) estimate *how big* the loss is. CatSight is the layer after that: it joins an event's footprint to the reinsurer's own treaties and their contract wording, so the analyst sees *who pays what, and which clause could change it*. Here the footprint comes from public data (NOAA IBTrACS, USGS ShakeMap); a licensed cat-model footprint could be plugged in behind the same typed interface.
+*Measured on the live service over 10 runs; see [`docs/RESULTS.md`](docs/RESULTS.md) §1.*
 
----
+## For judges: try it in 2 minutes
+
+1. Open the **live demo**. There's no login.
+2. Press **Instant replay** (a recorded real run, about 6 s, no AI cost) or **Run live** to watch the AI agents work (about 11 s median; 8–19 s measured).
+3. Follow the five steps on screen (*Event → Who's hit → What it costs → Clauses that matter → Decide*), or press **Take the tour** (9 stops).
+4. In **Follow-up questions**, click one of the built-in examples. All three were checked on the live site on 15 Oct 2026:
+   - *Which layers are exhausted, and on which treaties?*
+   - *Show the hours clause for W1.*
+   - *Why does T-004 matter for this event?*
+5. Open the **Clause Courtroom**: two AI "lawyers" argue opposite readings of one unclear clause, and the engine prices both readings.
+
+**Good to know (limits, by design):**
+- About **20 live runs per hour per visitor**, and **300 a day** for the whole site. Past a limit you get the recorded replay instead, clearly labelled, so the demo always completes.
+- Questions that try to override the AI's instructions are **blocked**, by a local filter and by Google Cloud Model Armor. That's expected.
+- Only the preloaded disasters can be analysed (no file upload).
+- All companies and contracts are **fictional**. The disasters and the hazard data are real (see [Data](#data)).
+
+## The words you need
+
+- **Primary insurer (cedent):** the local insurer that sells policies to homes and businesses (for example, *Kogane Fire & Marine*).
+- **Reinsurer:** the company that covers the insurer's biggest losses. Ours is the fictional **Lion Re**.
+- **Treaty:** the contract between the insurer and its reinsurers.
+- **Retention (deductible):** the part of the loss the insurer pays itself before the treaty pays.
+- **Layer and burn %:** a treaty pays in slices ("layers"). Burn % is how much of a slice the disaster used up; 100% means fully paid out.
+- **Reinstatement premium:** the fee to refill a used-up layer for the next disaster.
+- **Disputed gap:** the money that depends on how one unclear clause is read (for example, wind damage vs. storm-surge flooding).
+
+**Why it matters:** in Asia-Pacific, **91% of catastrophe losses are uninsured** ($65B in 2023), and **48% of insurers lack catastrophe models**. When reinsurance payments are slow or disputed, rebuilding is slower too.
+
+**Where it fits.** Catastrophe models (Moody's RMS, Verisk) estimate *how big* the loss is. CatSight comes next: it applies that footprint to the reinsurer's own treaties and wording, showing *who pays what, and which clause could change it*. We use public footprints (NOAA IBTrACS, USGS ShakeMap); a licensed model's footprint could plug in behind the same interface.
 
 ## What it does
 
-CatSight takes the reinsurer's side - a fictional reinsurer, **Lion Re** - and replays a real catastrophe over a synthetic book of 24 treaties written for 8 fictional insurers in Japan, the Philippines and Taiwan.
+CatSight takes the side of a fictional reinsurer, **Lion Re**, and replays a real disaster over 24 synthetic treaties for 8 fictional insurers in Japan, the Philippines and Taiwan.
 
-1. **Which treaties respond** - peril, territory and period matching, with a reason for every treaty that does not.
-2. **What each layer pays** - gross loss by region, per-layer ceded, burn, reinstatements and reinstatement premium, and where each party stands: what the insurer keeps, what all reinsurers pay, and Lion Re's net.
-3. **Which clauses change that answer** - Gemini agents search the treaty wordings and flag clauses that bite on *this* event (for Jebi: T-004 excludes storm surge, and Osaka recorded a record 329 cm tide).
-4. **Where each clause says so** - treaty, page and clause, with the quote string-matched against the stored clause and checked for support. Anything that fails is withheld and shown as withheld, never displayed as a finding.
-
-Around that core:
+1. **Which treaties respond:** matched on peril, territory and period, with a reason for each one that doesn't.
+2. **What each layer pays:** loss by region, payout per layer, burn %, reinstatement premium, and where the insurer, all reinsurers and Lion Re each end up.
+3. **Which clauses change that answer:** Gemini searches the wordings for clauses that bite on *this* event. For Jebi: treaty T-004 excludes storm surge, and Osaka recorded a record 329 cm tide.
+4. **Where each clause says so:** treaty, page and clause, with the quote checked against the contract. A quote that fails is withheld and shown as withheld.
 
 | Feature | What it gives the analyst |
 |---|---|
-| **How was this calculated?** | Every treaty, step by step: the hazard, why it responded, damage by region (insured value × damage % = loss), and each layer's figure with its formula and contract citation |
-| **Map** | Regions coloured by peak wind or shaking intensity; click a region for insured value by insurer; table alternative |
-| **Follow-up questions** | "Show the hours clause for W1" - answered from the engine's figures and live clause retrieval, with verified citations |
-| **What-if** | Apply an hours clause to the real loss timeline, or a clearly labelled hypothetical split - priced by the engine, money at stake per party |
-| **Clause Courtroom** | Two AI counsel argue opposite readings of the disputed clause in parallel, each from verified wording; the engine prices both readings; an arbiter summarises without deciding; the analyst records a position |
-| **Treaties, Methodology, Knowledge base** | The treaty book with each wording reconciled against it field by field; the versioned method; evidence of how the clause corpus was built |
-| **Reports** | Markdown and Word (.docx) downloads, the on-screen report laid out as a paper memo; instant replay of a recorded real run |
+| **How was this calculated?** | Every treaty step by step: hazard, why it responded, insured value × damage % = loss, and each layer's formula with its citation |
+| **Map** | Regions coloured by peak wind or shaking; click for insured value by insurer |
+| **Follow-up questions** | Plain-language answers from the engine's figures and checked quotes |
+| **What-if** | An hours clause on the real loss timeline, or a labelled hypothetical, priced by the engine |
+| **Clause Courtroom** | Two AI lawyers argue opposite readings; the engine prices both; an arbiter summarises without deciding; the analyst records a position |
+| **Treaties, Methodology, Knowledge base** | The treaty book checked against each wording, the versioned method, and how the clause library was built |
+| **Reports** | Markdown and Word (.docx) downloads |
 
-**Built for a judge with ninety seconds.** The Analysis screen opens on the event cards and two buttons - **Instant replay** (a recorded real run, about 6 s, no model cost) and **Run live** (the agents, about 15 s). The result is laid out in five steps - *Event → Who's hit → What it costs → Clauses that matter → Decide* - under a sticky summary bar (claims, reinsurers pay, our net, flags verified, time, method version). A guided **tour** walks through a recorded run in nine stops. Dark and light themes, each with its own colour-blind-checked palette; keyboard navigation throughout.
+## The AI never does the maths
 
-## The design decision that matters
+Every money figure comes from unit-tested Python (`Decimal`, half-up rounding), checked against a hand-worked example. Gemini reads, argues and writes; tested code calculates.
 
-**The language model never does arithmetic.**
+**How a change is made.** Contract terms, damage curves and market rules are data, not code:
 
-Every money figure comes from deterministic, unit-tested Python (`Decimal`, half-up rounding) validated against a hand-checked worked example. Gemini reads the wordings, finds and argues clauses, and writes prose; tested code calculates. Every number in an AI-written report or answer is checked against the engine's output, and any figure that is not there is shown as unsupported.
+| What changes | Where it lives | How you change it |
+|---|---|---|
+| Treaty terms at renewal (retention, limit, share, reinstatements, hours clause, exclusions) | [`treaties.json`](backend/data/book/treaties.json) | Edit the data; no code change. Re-run `ingest.reconcile` to flag any mismatch with the PDF, then re-seed |
+| Damage curves and market rules (reinstatement basis, retention per occurrence, rounding) | [`methodology.json`](backend/data/methodology.json) + [`vulnerability.json`](backend/data/vulnerability.json) | Add a new method version with its own effective date; old ones are never edited. The engine uses the version in force on the day and stamps it on every analysis |
+| The formulas (layer payout, quota share, occurrence split) | [`loss_engine.py`](backend/catsight_agent/tools/loss_engine.py) | A code change, guarded by the worked example and the test suite |
+| A one-off "what if" | The What-if panel | No edit: override hours or retention within checked bounds |
+
+## Guardrails: how it avoids making things up
+
+- **Contract quotes:** matched word-for-word against the stored page, then a second Gemini model checks the quote supports the claim. One retry; if it still fails, it is withheld and counted.
+- **Numbers in AI-written text:** checked against the engine; anything untraceable is listed as unsupported.
+- **Follow-up questions:** the question and the answer are screened by a local filter, then **Google Cloud Model Armor** (prompt injection, jailbreak, malicious URLs, harassment, hate speech). Live, a jailbreak attempt returns *"Question blocked by Google Cloud Model Armor (ask: pi_and_jailbreak)."* If Model Armor is unavailable (3 s timeout), the local filter still applies and the event is logged.
+- **Contract text is data, not instructions:** agents ignore instructions inside documents.
+- **People decide:** the arbiter only summarises; the analyst records the position.
+
+## Why it's fast
+
+- **Money first:** plain code calculates it before any AI call, so it's on screen in 0.7 s.
+- **Streaming:** results appear as each step finishes (server-sent events).
+- **A fixed workflow,** not an open-ended AI tool loop, so no wasted model calls.
+- **Parallel lawyers:** both Courtroom sides run at once.
+- **Narrow search:** contract search is filtered to one treaty, and standard searches are pre-computed, so a fresh server makes no embedding calls during an analysis.
+- **No cold start:** one warm Cloud Run instance during judging.
 
 ## Architecture (as built)
 
@@ -69,15 +116,29 @@ Browser (React) ──SSE──► Cloud Run: FastAPI
                             │
      Firestore: treaty book, events, method versions, 252 clause vectors,
                 ingestion evidence, completed runs · Cloud Storage: treaty PDFs
+     Model Armor: question and answer screening · Cloud Logging / Trace / Monitoring
 ```
 
-- **Models:** `gemini-3.5-flash-lite` (agents), `gemini-3.8-flash` (verification, arbiter), `gemini-embedding-001` at 768 dims - on **Gemini Enterprise Agent Platform (formerly Vertex AI, global endpoint)**, service-account auth, no API keys.
-- **RAG:** each wording is split into clauses with page numbers (the scanned endorsement page is transcribed by Gemini once), embedded and stored in **Firestore vector search**; agents retrieve with an equality pre-filter on the treaty.
-- **Serving:** the frontend is served by the same Cloud Run service, so the browser streams from one origin.
-- **Observability:** structured JSON logs (one line per stage, retrieval, verification and limit hit, each with the run id) go to **Cloud Logging**; ADK's OpenTelemetry spans go to **Cloud Trace** (`ENABLE_CLOUD_TRACE=true` on Cloud Run). Guardrail trips are named events - `citation_withheld`, `unsupported_figures`, `counsel_dropped`, `limit_refused` - ready for log-based metrics. No raw IPs, question text or prompts are logged.
-- **Guards:** per-visitor hourly limit (right-most `X-Forwarded-For` hop from Cloud Run's load balancer) and a daily cap (a refused live run falls back to the recorded replay); Cloud Run `--min-instances 0 --max-instances 3`; a dedicated least-privilege service account.
+- **Models:** `gemini-3.5-flash-lite` (agents), `gemini-3.8-flash` (checking and arbiter), `gemini-embedding-001` at 768 dims, on **Gemini Enterprise Agent Platform (formerly Vertex AI, global endpoint)**. Service-account auth, no API keys.
+- **Contract search (RAG):** wordings are split into clauses with page numbers (one scanned page is transcribed by Gemini once), embedded, and stored in **Firestore vector search**, filtered by treaty. At 252 clauses Firestore fits well; AlloyDB AI suits far larger vector sets.
+- **Serving:** one Cloud Run service serves the UI and the API from one origin.
+- **Cost guards:** per-visitor hourly limit (right-most `X-Forwarded-For` hop from Cloud Run's load balancer), a daily cap with replay fallback, `--max-instances 3`, a least-privilege service account, billing budget alerts.
 
 Detail in [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
+
+## Seeing it run: observability
+
+Every run writes structured logs to **Cloud Logging** (one line per stage, with the run id), and ADK's OpenTelemetry spans go to **Cloud Trace**. Guardrail events are named (`citation_withheld`, `unsupported_figures`, `counsel_dropped`, `limit_refused`, `guardrail_blocked`, `model_armor_unavailable`) and become **Cloud Monitoring** metrics. No raw IPs, question text or prompts are logged.
+
+![CatSight live-service dashboard in Cloud Monitoring](docs/images/observability_dashboard.png)
+
+*The "CatSight - live service" dashboard (screenshot from 15 Oct 2026). "Citations withheld" counts quotes the checker refused to show: the guardrail doing its job, not an error.*
+
+![Per-run table from Log Analytics](docs/images/observability_runs.png)
+
+*Per-run table (Log Analytics SQL): seconds spent in each agent for every run. The query is [`scripts/observability_runs.sql`](scripts/observability_runs.sql), and the dashboard layout is [`scripts/observability_dashboard.json`](scripts/observability_dashboard.json).*
+
+The dashboard lives in our private Google Cloud project, so these screenshots stand in for a link.
 
 ## Measured results
 
@@ -88,10 +149,12 @@ Detail in [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 | Governing clause retrieved | **186/186** | Firestore vector search |
 | Citation coverage | **186/188** fields cited; **185/186** check out against the page | per-field audit in [`docs/RESULTS.md`](docs/RESULTS.md) §3; 1 scanned page is labelled "transcribed" |
 | Extraction time, 8 wordings | **57 s** | vs ~25 min for whole-document extraction |
-| Live analysis (Jebi), 10-run live benchmark | money in **0.7 s** p50 (0.5–1.1 s); complete in **11.3 s** p50 (7.8–19.3 s); **$0.0097** p50 model cost ($0.0081–$0.0140) | warm service on Cloud Run; latest run in [`docs/RESULTS.md`](docs/RESULTS.md) §1 |
-| Clause Courtroom | **Ran in 8 of 10 live analyses (skipped in 2 when the verifier withheld the T-004 flag); both sides verified in all 8** (8.0 s p50, $0.0052 p50 cost across 8 runs) | both counsel verified in all 8 Courtrooms that ran; prices money at stake live (+$10.3M to +$26.0M cedent net cost / $11.6M reinsurer payout reduction on the recorded 20% run); audit in [`docs/RESULTS.md`](docs/RESULTS.md) §1 |
+| Live analysis (Jebi), 10-run live benchmark | money in **0.7 s** p50 (0.5–1.1 s); complete in **11.3 s** p50 (7.8–19.3 s); **$0.0097** p50 model cost ($0.0081–$0.0140) | warm service on Cloud Run; [`docs/RESULTS.md`](docs/RESULTS.md) §1 |
+| Clause Courtroom | **Ran in 8 of 10 live analyses** (skipped in 2 when the verifier withheld the T-004 flag); **both sides verified in all 8**; 8.0 s p50, $0.0052 p50 cost | prices the money at stake live: on the recorded 20% surge-share run, reinsurers pay $11.6M less and the insurer's net cost rises $10.3M; measured insurer range +$10.3M to +$26.0M |
 | Follow-up question | about **$0.003** | from token counts, not benchmarked |
-| Automated tests | **870+ offline tests + 13 opt-in live tests** | runs out-of-the-box on a fresh clone (CI in [`.github/workflows/ci.yml`](.github/workflows/ci.yml)) |
+| Automated tests | **870+ offline tests + 13 opt-in live tests** | run on a fresh clone (CI in [`.github/workflows/ci.yml`](.github/workflows/ci.yml)) |
+
+*Why the video shows different Courtroom numbers:* the demo video is a separate live run in which the lawyers argued a **30%** surge share. Then $17.46M of recoveries move and Lion Re saves $2.44M ([`docs/MONEY_MOMENT.md`](docs/MONEY_MOMENT.md) §7). The replay and the deck use the **20%** run.
 
 ## Run it yourself
 
@@ -144,79 +207,79 @@ uv run --no-sync --env-file .env python -m ingest.seed_cloud --apply            
 Run in **Google Cloud Shell** (bash), from the repo root:
 
 ```bash
-PROJECT_ID=techno-crackers-catsight ./scripts/deploy.sh                    # scale to zero (default)
-PROJECT_ID=techno-crackers-catsight MIN_INSTANCES=1 ./scripts/deploy.sh    # judging window: one warm instance
+PROJECT_ID=<your-project-id> ./scripts/setup_model_armor.sh         # once, before the first deploy: question screening
+PROJECT_ID=<your-project-id> ./scripts/deploy.sh                    # scale to zero (default)
+PROJECT_ID=<your-project-id> MIN_INSTANCES=1 ./scripts/deploy.sh    # judging window: one warm instance
 ./scripts/smoke_test.sh <service-url>
 ```
 
-The script builds the UI into the image, so one Cloud Run service serves both the UI and the API. It runs as the dedicated `catsight-run` service account, turns on Cloud Trace, and applies the cost guards.
+The deploy script builds the UI into the image, so one Cloud Run service serves both the UI and the API. It runs as the dedicated `catsight-run` service account, turns on Cloud Trace, and applies the cost guards.
 
 **Observability** (once per project):
 
 ```bash
-PROJECT_ID=techno-crackers-catsight ./scripts/setup_observability.sh
+PROJECT_ID=<your-project-id> ./scripts/setup_observability.sh   # log-based metrics + the dashboard above
 ```
 
-This turns the service's structured logs into Cloud Monitoring metrics and a **"CatSight - live service"** dashboard: four headline numbers (analyses, median live time, median model cost, citations withheld), a donut of analyses by mode, bar charts of citations verified vs withheld and of Courtroom outcomes, and a per-run table from **Log Analytics** (seconds per agent, model and tool calls, tokens, cost, flags, Courtroom outcome; query in [`scripts/observability_runs.sql`](scripts/observability_runs.sql)). The layout is [`scripts/observability_dashboard.json`](scripts/observability_dashboard.json). Add `BILLING_ACCOUNT=… BUDGET_INR=…` for a budget alert. Per-agent timelines are in **Cloud Trace**; nothing is built into the app itself.
+Add `BILLING_ACCOUNT=… BUDGET_INR=…` to the observability script for a budget alert. Per-agent timelines are in **Cloud Trace**; nothing is built into the app itself.
 
 ## Limitations
 
-- No real event in the data makes an hours clause move money (Jebi's damage lasted 9 hours; Noto's real aftershock causes no loss in our model). The hours-clause what-if is therefore shown as labelled *hypothetical*; the Courtroom argues the real storm-surge exclusion instead.
-- Courtroom surge shares are bounded assumptions (0-50%) - the data does not separate wind from surge damage.
-- Typhoon Haiyan (Philippines) is in the data but not offered in the demo. The synthetic Philippine book is sized like Japan's and the wind curve is an economic-damage calibration, so modelled claims (~$94B) are far above the real ~$1.5B insured loss. A per-country insurance-penetration and insured-loss calibration is future work ([`ASSUMPTIONS.md`](backend/data/ASSUMPTIONS.md) X11).
-- Agent output varies between runs, even at temperature 0. Extraction prompts were revised against the same eight wordings they are scored on, so those scores are an upper bound ([`docs/RESULTS.md`](docs/RESULTS.md)).
-- Every modelling assumption is recorded in [`backend/data/ASSUMPTIONS.md`](backend/data/ASSUMPTIONS.md).
-- Manual-effort comparisons in the app are labelled *simulated*: an estimate of the analyst workflow, not a timed study.
-- The per-visitor rate limit (20/hour) is counted per Cloud Run instance: a cost guard, not a security control (up to 3 instances).
-- The analyst-position endpoint has no login (demo scope; no user accounts).
-- Only the preloaded events can be analysed; there is no public upload (mode "live" returns 501).
+- **Hours clause is hypothetical here.** No real event in our data makes an hours clause move money (Jebi's damage lasted 9 hours; Noto's aftershock causes no loss in our model), so What-if labels it *hypothetical*. The Courtroom argues the real storm-surge exclusion instead.
+- **Surge share is an assumption** (bounded 0–50%), because the data doesn't separate wind from surge damage.
+- **Typhoon Haiyan is hidden from the demo.** The synthetic Philippine book is sized like Japan's, so modelled claims (~$94B) are far above the real ~$1.5B insured loss. Per-country calibration is future work ([`ASSUMPTIONS.md`](backend/data/ASSUMPTIONS.md) X11).
+- **AI output varies** between runs, even at temperature 0. Extraction prompts were tuned on the same eight wordings they are scored on, so those scores are an upper bound.
+- **Manual-effort comparisons are labelled *simulated*:** an estimate, not a timed study.
+- **The rate limit is a cost guard, not security:** 20/hour is counted per Cloud Run instance (up to 3).
+- **Demo scope:** no user accounts (the analyst-position endpoint has no login), and no public upload (mode "live" returns 501).
+- Every modelling assumption is in [`backend/data/ASSUMPTIONS.md`](backend/data/ASSUMPTIONS.md).
 
 ## Future work
 
 Designed or investigated, not built:
 
-- **More events and countries from data alone.** The 2024 Hualien earthquake (Taiwan) has been investigated: its real aftershock cluster about 20 days later is a genuine second occurrence worth about $11-15M per treaty under the hours clause. That would give the Courtroom a real hours-clause dispute alongside Jebi's storm-surge exclusion.
-- **Per-treaty hours clauses and multi-shock earthquakes** applied in the base analysis, not only in What-if.
-- **Calibrated vulnerability per country** - insurance penetration and insured-loss wind curves - which would bring Haiyan back into the demo.
-- **Upload your own wordings.** The RAG pipeline already ingests any PDF; public upload is held back for cost and safety.
-- **Live event feeds** - a USGS or JTWC alert starts an analysis automatically.
+- **A real hours-clause dispute:** the 2024 Hualien earthquake (Taiwan). Its real aftershock cluster about 20 days later is a second occurrence worth about $11-15M per treaty.
+- **Per-treaty hours clauses and multi-shock earthquakes** in the main analysis, not only in What-if.
+- **Damage curves calibrated per country,** which would bring Haiyan back.
+- **Upload your own wordings:** the ingestion pipeline already reads any PDF; public upload is held back for cost and safety.
+- **Live event feeds:** a USGS or JTWC alert starts an analysis automatically.
 
 ## How it maps to the judging criteria
 
 | Criterion | Where to look |
 |---|---|
-| **Technical merit** | ADK 2.11 `Workflow` graphs: a 5-node analysis graph (verifier runs bounded verify-and-revise retry inside its node) and a Courtroom graph with a parallel counsel fan-out joined by a `JoinNode`; RAG on Firestore vector search; citation verifier that withholds ungrounded claims; deterministic loss engine with 870+ offline tests + 13 opt-in live tests; guardrail events, traces and dashboard in Cloud Logging, Trace and Monitoring — [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md), [`docs/RESULTS.md`](docs/RESULTS.md) |
-| **Problem alignment & impact** | The first-view question a reinsurer faces after a catastrophe, answered per treaty and per party, with the clause that could change it — [`docs/BUSINESS_IMPACT.md`](docs/BUSINESS_IMPACT.md), [`docs/DOMAIN_PRIMER.md`](docs/DOMAIN_PRIMER.md) |
-| **Innovation** | Two AI counsel argue a disputed clause from verified wording, and tested code prices both readings; Gemini reads a scanned endorsement that changes the contract — [`docs/MONEY_MOMENT.md`](docs/MONEY_MOMENT.md) |
-| **User experience** | Five-step layout, sticky summary, guided tour, instant replay, light and dark themes with colour-blind-checked palettes, keyboard navigation, Word export |
+| **Technical merit** | ADK 2.11 `Workflow` graphs (5-node analysis with a bounded verify-and-revise loop; Courtroom with a parallel fan-out and `JoinNode`); RAG on Firestore vector search; a citation checker that withholds ungrounded claims; Model Armor screening; a deterministic engine with 870+ offline + 13 live tests; Cloud Logging, Trace and Monitoring. [`ARCHITECTURE`](docs/ARCHITECTURE.md), [`RESULTS`](docs/RESULTS.md) |
+| **Problem alignment & impact** | The first question a reinsurer faces after a disaster, answered per treaty and per party. [`BUSINESS_IMPACT`](docs/BUSINESS_IMPACT.md), [`DOMAIN_PRIMER`](docs/DOMAIN_PRIMER.md) |
+| **Innovation** | Two AI lawyers argue a disputed clause from checked wording; tested code prices both readings; Gemini reads a scanned endorsement that changes the contract. [`MONEY_MOMENT`](docs/MONEY_MOMENT.md) |
+| **User experience** | Five-step layout, sticky summary, guided tour, instant replay, example questions, light and dark themes with colour-blind-checked palettes, keyboard navigation, Word export |
 
-## Team Techno Crackers & development workflow
+## Team Techno Crackers
 
-| Member | Role & Contributions |
+| Member | Role & contributions |
 |---|---|
 | **Venket Raj S** (Team Lead) | System architecture, Google Cloud Run / Firestore / IAM deployment, observability pipeline, integration & release |
 | **Malik Chandra Pandian** | Reinsurance domain modelling, deterministic `Decimal` loss engine (`CAT_XL` & `QS`), worked examples & synthetic book calibration |
 | **Arun Veerappan** | ADK 2.11 agent workflows, RAG-first treaty extraction, 2-stage citation verifier loop, parallel Clause Courtroom & QA audit |
 | **Nagaraj** | React 18 + TypeScript + custom SVG choropleth UI, 5-step analyst layout, guided tour, accessibility palettes & Word/Markdown export |
 
-*Note on git history:* Built during the hackathon window in a private working copy and first pushed to this repository on 10 Oct 2026; every change since is an individual commit.
+*Note on git history:* built during the hackathon window in a private working copy and first pushed to this repository on 10 Oct 2026; every change since is an individual commit.
 
 ## Documentation
 
 | | |
 |---|---|
-| [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) | Agent graph, data flows and service topology |
+| [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) | Agent graph, data flows and service set-up |
 | [`docs/RESULTS.md`](docs/RESULTS.md) | Every measured figure, the per-field citation audit, and what is not yet measured |
 | [`docs/BUSINESS_IMPACT.md`](docs/BUSINESS_IMPACT.md) | Who uses it, what it saves, and how that was estimated |
 | [`docs/DOMAIN_PRIMER.md`](docs/DOMAIN_PRIMER.md) | Reinsurance terms and the worked example |
-| [`docs/MONEY_MOMENT.md`](docs/MONEY_MOMENT.md) | The per-party money story, derived number by number |
+| [`docs/MONEY_MOMENT.md`](docs/MONEY_MOMENT.md) | The per-party money story, number by number |
 | [`backend/data/ASSUMPTIONS.md`](backend/data/ASSUMPTIONS.md) | Every modelling assumption and decision, with its status |
 
 IDs such as `FR-LOSS-2`, `QA-1` or `B6` in code, tests and commit messages refer to the team's internal requirement list: `FR` a functional requirement, `QA` an acceptance test, `B` a benchmark.
 
 ## Data
 
-Portfolio, cedents and treaty wordings are **entirely synthetic** - fictional companies and wordings written in the style of public contracts. Hazard data is public: NOAA IBTrACS v04r01 (Knapp et al. 2010, doi:10.25921/82ty-9e16), USGS ShakeMap (public domain), Natural Earth (public domain). No real employer, client or broker data is used anywhere.
+**Why synthetic contracts?** Real reinsurance treaties and their wordings are confidential and never published, so the portfolio, the 8 insurers and the 24 treaty wordings are **entirely synthetic**: fictional companies, with wordings written in the style of public contracts. The **disasters and hazard data are real**: NOAA IBTrACS v04r01 (Knapp et al. 2010, doi:10.25921/82ty-9e16), USGS ShakeMap (public domain), Natural Earth (public domain). A reinsurer would load its own treaty book and PDF wordings through the same ingestion pipeline. No real employer, client or broker data is used anywhere.
 
 ## Licence
 

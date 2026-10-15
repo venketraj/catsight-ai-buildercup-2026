@@ -32,7 +32,8 @@ and labelled as such.
 
   Cross-cutting: Cloud Logging (structured JSON, one line per stage) ·
                  Cloud Trace (ADK OpenTelemetry spans) · Cloud Monitoring
-                 (log-based metrics + dashboard) · Cloud Build
+                 (log-based metrics + dashboard) · Model Armor (follow-up
+                 question screening) · Cloud Build
 ```
 
 **One service, one origin.** The deploy script builds the React app into
@@ -135,6 +136,12 @@ synthetic treaty PDFs ──► split into clauses with page numbers
 The vector index is created with gcloud (`treaty_id` + `embedding`, flat,
 768). Firestore pre-filters are equality only, which is why retrieval filters
 on `treaty_id` alone.
+
+**Why Firestore rather than AlloyDB AI.** The corpus is 252 clause vectors
+next to document-shaped operational data (the treaty book, events, runs), so
+one serverless document store with a flat vector index is enough. AlloyDB AI
+with a ScaNN index is the natural step for much larger vector sets that need
+millisecond-level search, hybrid filtering, or relational guarantees.
 
 ### B — analysis
 

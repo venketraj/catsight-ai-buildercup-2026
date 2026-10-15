@@ -5,7 +5,7 @@ The project requires this file to be updated as part of the change that
 introduces an assumption, not afterwards.
 
 The UI's Methodology page (UI-9) renders from this file. Nothing here is a
-result; results live in `benchmarks/results/RESULTS.md`.
+result; results live in `docs/RESULTS.md`.
 
 **Status key** — `SOURCED` published figure, cited · `DERIVED` follows from a
 sourced figure or from the spec's own arithmetic · `JUDGEMENT` our choice,

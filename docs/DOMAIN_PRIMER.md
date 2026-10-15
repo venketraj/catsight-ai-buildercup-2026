@@ -1,6 +1,6 @@
 # CatSight Domain Primer: Reinsurance & Catastrophe Terms
 
-> For team members new to reinsurance. One worked example runs through the whole document. **All company names and numbers are made up; damage ratios are illustrative.** The event (Typhoon Jebi, Sep 2018) is real.
+> For anyone new to reinsurance, judges included. One worked example runs through the whole document. **All company names and numbers are made up; damage ratios are illustrative.** The event (Typhoon Jebi, Sep 2018) is real.
 
 ---
 
