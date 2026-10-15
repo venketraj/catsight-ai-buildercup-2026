@@ -157,7 +157,7 @@ The dashboard lives in our private Google Cloud project, so these screenshots st
 | Follow-up question | about **$0.003** | from token counts, not benchmarked |
 | Automated tests | **870+ offline tests + 13 opt-in live tests** | run on a fresh clone (CI in [`.github/workflows/ci.yml`](.github/workflows/ci.yml)) |
 
-*What the demo video shows:* one live run recorded on 15 Oct, walking the five steps above: the run (10 s), Who's hit with *How was this calculated?*, What it costs, the clauses and the Courtroom (26 s), the checked quote and scanned endorsement, then What-if, the Word report and a follow-up question. Its lawyers argued a **50%** surge share, the most common outcome in the benchmark (6 of 8 Courtrooms): $29.09M of recoveries move and Lion Re saves $5.16M. The replay and the deck use the **20%** run. Each figure is boxed on screen as the narration says it; long waits are cut, never sped up, and each cut is captioned with the real time.
+*What the demo video shows:* one live run recorded on 15 Oct, walking the five steps above: the run (13 s), Who's hit with *How was this calculated?*, What it costs, the clauses and the Courtroom (23 s), the checked quote and scanned endorsement, then What-if, the Word report and a follow-up question. Its lawyers argued a **40%** surge share: $23.27M of recoveries move and Lion Re saves $3.80M. The share is the counsel's own choice each run (0–50%), so live runs differ; the engine's price for a given share is fixed. The replay and the deck use the **20%** run. Each figure is boxed on screen as the narration says it; long waits are cut, never sped up, and each cut is captioned with the real time.
 
 ## Run it yourself
 

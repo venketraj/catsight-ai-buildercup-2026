@@ -44,7 +44,7 @@ CAPTURE_SCALE = 1
 
 OUT = "docs/demo/CatSight_Demo_Video.mp4"
 SUBS = "docs/demo/CatSight_Demo_Video"
-BACKUP = "docs/demo/CatSight_Demo_Video_v3_plain"
+BACKUP = "docs/demo/CatSight_Demo_Video_v4_old_build"
 TIMING = "benchmarks/results/browser_check_2026-10-15.json"
 BENCH = "benchmarks/results/latest.json"
 

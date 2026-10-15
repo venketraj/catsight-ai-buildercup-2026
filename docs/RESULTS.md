@@ -82,7 +82,9 @@ Both Courtroom sides verified in all 3 runs.
 
 **Other live runs the same day** (not in the averages, server times from Cloud Logging): recording the demo video between 12:46 and 13:49 UTC, five analyses took 13, 16, 20, 54 and 9 s, and their Courtrooms 12, 278, 37, 13 and 26 s. One more run in the logs, at 13:03 UTC, took 21 s, and its Courtroom 84 s. The 278 s Courtroom made its usual model calls ($0.0046), so the time went waiting on the model; it ran close to Cloud Run's 300 s request timeout. Every analysis that day finished in under a minute.
 
-The video script records again rather than show an outlier (an analysis over 45 s or a Courtroom over 90 s). The demo video's results slide uses the 3-run averages above; the run it shows (13:48 UTC) took 10 s in the browser, and its Courtroom 26 s.
+**After the fix deploy (build `f8f234d`, 14:40 UTC):** live model calls time out at 40 s with one brief retry, and the Courtroom has a 120 s limit. Five live analyses that afternoon took 21, 19, 17, 45 and 12 s on the server, and the three Courtrooms run 14, 13 and 22 s. The new per-call `model_call` log lines (55 calls) show the slowest single call at 28.2 s (a wording check, in the 45 s run), inside the 40 s limit.
+
+The video script records again rather than show an outlier (an analysis over 45 s or a Courtroom over 90 s). The demo video's results slide uses the 3-run averages above; the run it shows (14:51 UTC, build `f8f234d`) took 13 s in the browser, and its Courtroom 23 s.
 
 ## History (earlier builds)
 
