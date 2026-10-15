@@ -720,7 +720,7 @@ def build_slides() -> list[str]:
     <p style="font-size:16px;margin:6px 0 0">The live-service dashboard in Cloud Monitoring (screenshot, 15 Oct 2026). "Citations withheld" counts quotes the checker refused to show: the guardrail working, not an error.</p>
   </div>
 </div>
-<p class="muted" style="font-size:17px;margin-top:12px"><b>Honest limits:</b> extraction prompts were tuned on the same 8 synthetic wordings (99.5% is an upper bound; a blind set is next). Speed varies: slow runs spend their time re-checking a quote that failed its first check. Analyst-time savings are labelled <i>simulated estimates</i>.</p>"""
+<p class="muted" style="font-size:17px;margin-top:12px"><b>Honest limits:</b> extraction prompts were tuned on the same 8 synthetic wordings (99.5% is an upper bound; a blind set is next). Speed varies: slow runs spend their time re-checking a quote that failed its first check, and one Courtroom on 15 Oct took 278 s. Analyst-time savings are labelled <i>simulated estimates</i>.</p>"""
     ))
 
     # Slide 12 — Template Page 13: Additional Details/Future Development (if any)
@@ -730,7 +730,7 @@ def build_slides() -> list[str]:
   <div class="card">
     <p style="margin-top:0"><b>Why pricing each party matters</b></p>
     <p style="font-size:21px"><b>1. Jebi Courtroom (T-004 storm-surge exclusion, p.2 cl.8):</b><br>
-    At a 20% surge share (the recorded run), reinsurance payouts fall <b>−$11.64M</b> ($39.58M → $27.94M); net of refill fees, reinsurers save <b>$10.31M</b> and the insurer carries <b>+$10.31M</b>; Lion Re saves <b>$1.34M</b>. The demo video shows a separate 30% run: <b style="white-space:nowrap">−$17.46M</b> ceded, Lion Re <b style="white-space:nowrap">−$2.44M</b>.</p>
+    At a 20% surge share (the recorded run), reinsurance payouts fall <b>−$11.64M</b> ($39.58M → $27.94M); net of refill fees, reinsurers save <b>$10.31M</b> and the insurer carries <b>+$10.31M</b>; Lion Re saves <b>$1.34M</b>. The demo video shows a separate 50% run: <b style="white-space:nowrap">−$29.09M</b> ceded, Lion Re <b style="white-space:nowrap">−$5.16M</b>.</p>
     <p style="font-size:21px"><b>2. Hours clause (worked example, What-if):</b><br>
     Splitting one $54.4M event into two ($35.0M + $19.4M) cuts reinsurers' recoveries by <b>−22.5% (−$10.0M)</b>, yet <b>raises Lion Re's loss +7.4%</b> ($6.82M → $7.33M), because the split moves loss into the layer where Lion Re's share is largest.</p>
     <p style="margin-top:12px"><b>Team Techno Crackers — Roles</b></p>
@@ -762,9 +762,9 @@ def build_slides() -> list[str]:
     <div class="muted" style="margin-top:2px">Apache-2.0 licence · 870+ offline tests + 13 opt-in live tests · GitHub Actions CI · Full architecture &amp; assumptions in <code>docs/</code>.</div>
   </li>
   <li style="margin-bottom:18px">
-    <b>Demo Video Link (under 3 minutes: 2 min 45 s)</b><br>
+    <b>Demo Video Link (under 3 minutes: 2 min 48 s)</b><br>
     <a href="{VIDEO}" style="font-size:23px;font-family:Consolas,monospace;color:#1fa99c;text-decoration:none">{VIDEO}</a>
-    <div class="muted" style="margin-top:2px">The problem, a live Typhoon Jebi analysis, a scanned endorsement read by Gemini, and the Clause Courtroom.</div>
+    <div class="muted" style="margin-top:2px">One live Typhoon Jebi run through all five steps: the Clause Courtroom, a scanned endorsement read by Gemini, What-if, the Word report and a follow-up question.</div>
   </li>
   <li style="margin-bottom:18px">
     <b>Final Product Link</b><br>

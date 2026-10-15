@@ -7,7 +7,7 @@ Google Cloud AI Builder Cup 2026 · BFSI: Intelligent Risk, Fraud & Financial Ex
 | | |
 |---|---|
 | **▶ Live demo** | https://catsight-api-342162443546.us-central1.run.app (no login) |
-| **▶ Demo video** (2 min 45 s) | [Watch on Google Drive](https://drive.google.com/file/d/14Yv-A-KtVksOgRxOxafZcEKFBUvFumQi/view?usp=sharing) |
+| **▶ Demo video** (2 min 48 s) | [Watch on Google Drive](https://drive.google.com/file/d/14Yv-A-KtVksOgRxOxafZcEKFBUvFumQi/view?usp=sharing) |
 | **▶ Deck (PDF)** | [`docs/CatSight_deck.pdf`](docs/CatSight_deck.pdf) |
 | **▶ Submission folder** | [Google Drive](https://drive.google.com/drive/folders/1X5cNQh4aMP-B1JIvIXyyxCL-4anxJhl4?usp=sharing) |
 | **CI** | [`.github/workflows/ci.yml`](.github/workflows/ci.yml) |
@@ -31,7 +31,7 @@ After a disaster, insurers must pay thousands of families and businesses quickly
    - *Which layers are exhausted, and on which treaties?*
    - *Show the hours clause for W1.*
    - *Why does T-004 matter for this event?*
-5. Open the **Clause Courtroom**: two AI "lawyers" argue opposite readings of one unclear clause, and the engine prices both readings. It's a separate step: 42 s on average on 15 Oct (10–70 s).
+5. Open the **Clause Courtroom**: two AI "lawyers" argue opposite readings of one unclear clause, and the engine prices both readings. It's a separate step: 42 s on average on 15 Oct (10–70 s); one later run that day took over 4 minutes.
 
 **Good to know (limits, by design):**
 - About **20 live runs per hour per visitor**, and **300 a day** for the whole site. Past a limit you get the recorded replay instead, clearly labelled, so the demo always completes.
@@ -157,7 +157,7 @@ The dashboard lives in our private Google Cloud project, so these screenshots st
 | Follow-up question | about **$0.003** | from token counts, not benchmarked |
 | Automated tests | **870+ offline tests + 13 opt-in live tests** | run on a fresh clone (CI in [`.github/workflows/ci.yml`](.github/workflows/ci.yml)) |
 
-*Why the video shows different Courtroom numbers:* the demo video is a separate live run in which the lawyers argued a **30%** surge share. Then $17.46M of recoveries move and Lion Re saves $2.44M ([`docs/MONEY_MOMENT.md`](docs/MONEY_MOMENT.md) §7). The replay and the deck use the **20%** run. The live run shown in the video took 9 s, a fast run; the video's results slide gives the 15 Oct averages instead.
+*What the demo video shows:* one live run recorded on 15 Oct, walking the five steps above: the run (20 s), Who's hit with *How was this calculated?*, What it costs, the clauses and the Courtroom (38 s), the checked quote and scanned endorsement, then What-if, the Word report and a follow-up question. Its lawyers argued a **50%** surge share, the most common outcome in the benchmark (6 of 8 Courtrooms): $29.09M of recoveries move and Lion Re saves $5.16M. The replay and the deck use the **20%** run. Long waits are cut, never sped up, and each cut is captioned with the real time.
 
 ## Run it yourself
 

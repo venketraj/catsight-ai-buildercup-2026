@@ -1,0 +1,72 @@
+{
+  "measured_at": "2026-10-15 12:23 UTC",
+  "build": "7b1e7e3",
+  "runs": [
+    {
+      "run": 1,
+      "analysis_wall_s": 17.41,
+      "app_time_s": "17",
+      "app_cost": "0.0094",
+      "flags": "1 verified \u00b7 1 withheld",
+      "replay_or_notice": false,
+      "courtroom_wall_s": 44.99,
+      "courtroom_skipped": false,
+      "courtroom_reason": null,
+      "courtroom_cost": "0.0047",
+      "courtroom_sides_verified": {
+        "reinsurer": true,
+        "cedent": true
+      },
+      "money_at_stake": {
+        "cedent_net_cost": "25.97",
+        "market_net": "-25.97",
+        "our_net": "-5.16",
+        "total_ceded": "-29.09"
+      }
+    },
+    {
+      "run": 2,
+      "analysis_wall_s": 43.33,
+      "app_time_s": "43",
+      "app_cost": "0.0099",
+      "flags": "1 verified \u00b7 1 withheld",
+      "replay_or_notice": false,
+      "courtroom_wall_s": 69.84,
+      "courtroom_skipped": false,
+      "courtroom_reason": null,
+      "courtroom_cost": "0.0047",
+      "courtroom_sides_verified": {
+        "reinsurer": true,
+        "cedent": true
+      },
+      "money_at_stake": {
+        "cedent_net_cost": "25.97",
+        "market_net": "-25.97",
+        "our_net": "-5.16",
+        "total_ceded": "-29.09"
+      }
+    },
+    {
+      "run": 3,
+      "analysis_wall_s": 8.24,
+      "app_time_s": "8",
+      "app_cost": "0.0081",
+      "flags": "1 verified \u00b7 0 withheld",
+      "replay_or_notice": false,
+      "courtroom_wall_s": 10.34,
+      "courtroom_skipped": false,
+      "courtroom_reason": null,
+      "courtroom_cost": "0.0049",
+      "courtroom_sides_verified": {
+        "reinsurer": true,
+        "cedent": true
+      },
+      "money_at_stake": {
+        "cedent_net_cost": "15.51",
+        "market_net": "-15.51",
+        "our_net": "-2.44",
+        "total_ceded": "-17.46"
+      }
+    }
+  ]
+}
