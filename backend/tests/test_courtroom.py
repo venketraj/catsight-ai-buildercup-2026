@@ -353,3 +353,19 @@ def test_t004_surge_exclusion_pricing_ladder_traces_to_engine():
     assert stake_50["market_net"] == "-25.97"
     assert stake_50["our_net"] == "-5.16"
 
+
+
+def test_a_courtroom_past_its_deadline_says_so_and_can_be_retried():
+    """A slow model must not hold a visitor near Cloud Run's 300 s limit: past
+    the deadline the request ends with a plain message, and nothing is saved,
+    so trying again runs the Courtroom afresh."""
+    api, client = _api(CourtModel(), COURTROOM_DEADLINE_S="1")
+
+    async def slow(graph):
+        await asyncio.sleep(5)
+
+    api.state.run_graph = slow
+    resp = client.post("/api/runs/run-1/courtroom").json()
+    assert resp["skipped"] is True and resp["timed_out"] is True
+    assert "try again" in resp["reason"].lower()
+    assert "courtroom" not in api.state.runs.get("run-1")

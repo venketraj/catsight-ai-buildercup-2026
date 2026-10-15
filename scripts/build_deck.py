@@ -534,7 +534,7 @@ def build_slides() -> list[str]:
         
         <!-- Footer Bar -->
         <div style="background:#ffffff;border-top:1px solid #dadce0;padding:6px 12px;display:flex;justify-content:space-between;font-size:11px;color:#5f6368">
-          <span>⚡ Instant Replay: <b>6 s</b> · Live run: <b>avg 23 s</b>, under 1 min (15 Oct)</span>
+          <span>⚡ Instant replay: <b>plays in seconds</b> · Live run: <b>avg 23 s</b>, under 1 min (15 Oct)</span>
           <span>Python Decimal: <b>Zero LLM arithmetic</b></span>
         </div>
       </div>
@@ -731,8 +731,9 @@ def build_slides() -> list[str]:
     <p style="margin-top:0"><b>Why pricing each party matters</b></p>
     <p style="font-size:21px"><b>1. Jebi Courtroom (T-004 storm-surge exclusion, p.2 cl.8):</b><br>
     At a 20% surge share (the recorded run), reinsurance payouts fall <b>−$11.64M</b> ($39.58M → $27.94M); net of refill fees, reinsurers save <b>$10.31M</b> and the insurer carries <b>+$10.31M</b>; Lion Re saves <b>$1.34M</b>. The demo video shows a separate 50% run: <b style="white-space:nowrap">−$29.09M</b> ceded, Lion Re <b style="white-space:nowrap">−$5.16M</b>.</p>
-    <p style="font-size:21px"><b>2. Hours clause (worked example, What-if):</b><br>
-    Splitting one $54.4M event into two ($35.0M + $19.4M) cuts reinsurers' recoveries by <b>−22.5% (−$10.0M)</b>, yet <b>raises Lion Re's loss +7.4%</b> ($6.82M → $7.33M), because the split moves loss into the layer where Lion Re's share is largest.</p>
+    <p style="font-size:21px"><b>2. Hours clause (worked example, unit-tested):</b><br>
+    Splitting one $54.4M event into two ($35.0M + $19.4M) cuts reinsurers' recoveries by <b>−22.5% (−$10.0M)</b>, yet <b>raises Lion Re's loss +7.4%</b> ($6.82M → $7.33M), because the split moves loss into the layer where Lion Re's share is largest.<br>
+    <span style="font-size:18px">On Jebi, the What-if's hypothetical split (T-001, cut at 06:00 UTC: $38.19M + $16.11M) also cuts recoveries $10.0M and doubles the insurer's retention, but Lion Re's share barely moves (−$0.01M): where the cut falls decides who pays.</span></p>
     <p style="margin-top:12px"><b>Team Techno Crackers — Roles</b></p>
     <p style="font-size:18px;margin:4px 0">• <b>Venket Raj S (Lead):</b> Architecture, Cloud Run / Firestore / IAM deployment &amp; observability<br>
     • <b>Malik Chandra Pandian:</b> Reinsurance domain modelling, <code>Decimal</code> loss engine &amp; worked examples<br>
@@ -769,7 +770,7 @@ def build_slides() -> list[str]:
   <li style="margin-bottom:18px">
     <b>Final Product Link</b><br>
     <a href="{LIVE}" style="font-size:23px;font-family:Consolas,monospace;color:#1fa99c;text-decoration:none">{LIVE}</a>
-    <div class="muted" style="margin-top:2px">Live on Google Cloud Run · No login · <b>Instant replay</b> (~6 s) or <b>Run live</b> (~23 s on average; the Courtroom ~42 s more) · 9-stop tour · 3 example questions built in · the README has a 2-minute judge guide.</div>
+    <div class="muted" style="margin-top:2px">Live on Google Cloud Run · No login · <b>Instant replay</b> (a recorded live run, plays in seconds) or <b>Run live</b> (~23 s on average; the Courtroom ~42 s more) · 9-stop tour · 3 example questions built in · the README has a 2-minute judge guide.</div>
   </li>
   <li style="margin-bottom:18px">
     <b>Submission Folder (Google Drive)</b><br>

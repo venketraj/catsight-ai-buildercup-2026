@@ -25,7 +25,7 @@ After a disaster, insurers must pay thousands of families and businesses quickly
 ## For judges: try it in 2 minutes
 
 1. Open the **live demo**. There's no login.
-2. Press **Instant replay** (a recorded real run, about 6 s, no AI cost) or **Run live** to watch the AI agents work (23 s on average on 15 Oct; under a minute in every run that day).
+2. Press **Instant replay** (a recorded real live run, played back in a few seconds, no AI cost; a banner says when it was recorded and how long it took live) or **Run live** to watch the AI agents work (23 s on average on 15 Oct; under a minute in every run that day).
 3. Follow the five steps on screen (*Event → Who's hit → What it costs → Clauses that matter → Decide*), or press **Take the tour** (9 stops).
 4. In **Follow-up questions**, click one of the built-in examples. All three were checked on the live site on 15 Oct 2026:
    - *Which layers are exhausted, and on which treaties?*

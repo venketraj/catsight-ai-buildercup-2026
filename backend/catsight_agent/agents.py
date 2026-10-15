@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import json
 import re
+import time
 from dataclasses import dataclass, field
 from decimal import Decimal, InvalidOperation
 from typing import Any, Callable, Mapping, Sequence
@@ -74,6 +75,9 @@ class AgentDeps:
     #: The event's observed facts, so the verifier can check what a flag
     #: claims about the event - not only what it claims about the wording.
     observed: list[str] = field(default_factory=list)
+    #: Told about every model call (kind, model, seconds, ok) - never the
+    #: prompt - so a slow run can be traced to the call that was slow.
+    on_call: Callable[[dict[str, Any]], None] = lambda info: None
 
     def count(self, kind: str) -> None:
         self.calls[kind] = self.calls.get(kind, 0) + 1
@@ -103,19 +107,43 @@ def cost_usd(usage: Mapping[str, Mapping[str, int]], pricing: Mapping[str, Any])
     return str(total.quantize(Decimal("0.0001")))
 
 
+#: A visitor is waiting on every live call, so a quota or transient error is
+#: retried once, briefly - not with ingestion's minutes-long backoff.
+LIVE_ATTEMPTS = 2
+LIVE_RETRY_DELAY_S = 1.0
+
+
 def _generate(deps: AgentDeps, model: str, prompt: str, schema: Any | None, kind: str) -> str:
-    """One model call, retried on quota, thinking LOW."""
+    """One model call, retried once on quota, thinking LOW."""
     from ingest.ingest_treaty import _generate_with_retry
     from ingest.rag_extract import generation_config
 
     deps.count(kind)
-    response = _generate_with_retry(
-        lambda: deps.client.models.generate_content(
-            model=model, contents=prompt, config=generation_config(schema)
+    started = time.monotonic()
+    try:
+        response = _generate_with_retry(
+            lambda: deps.client.models.generate_content(
+                model=model, contents=prompt, config=generation_config(schema)
+            ),
+            attempts=LIVE_ATTEMPTS,
+            base_delay=LIVE_RETRY_DELAY_S,
         )
-    )
+    except Exception as exc:
+        _report_call(deps, kind, model, started, error=type(exc).__name__)
+        raise
+    _report_call(deps, kind, model, started)
     deps.record(model, response)
     return response.text or ""
+
+
+def _report_call(deps: AgentDeps, kind: str, model: str, started: float, error: str | None = None) -> None:
+    info = {"kind": kind, "model": model, "seconds": round(time.monotonic() - started, 2), "ok": error is None}
+    if error:
+        info["error"] = error
+    try:
+        deps.on_call(info)
+    except Exception:  # noqa: BLE001 - reporting must never break a call
+        pass
 
 
 def _bounded(quote: str) -> str:

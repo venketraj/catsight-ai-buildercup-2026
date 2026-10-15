@@ -289,7 +289,10 @@ def create_app(config: Settings | None = None, store: DataStore | None = None) -
             from ingest.ingest_treaty import build_client
 
             api.state.agent_resources = {
-                "client": build_client(config.project, config.location),
+                # A visitor is waiting: a short per-call timeout and no silent
+                # transport retries (agents._generate retries once, briefly).
+                "client": build_client(config.project, config.location,
+                                       timeout_ms=config.model_call_timeout_s * 1000, attempts=1),
                 "embedder": GeminiEmbedder(
                     project=config.project, location=config.location,
                     model=config.embed_model,
@@ -302,7 +305,8 @@ def create_app(config: Settings | None = None, store: DataStore | None = None) -
         shared = api.state.agent_resources
         return AgentDeps(client=shared["client"], model_main=config.model_main,
                          model_reason=config.model_reason, embedder=shared["embedder"],
-                         vectors=shared["vectors"], emit=emit)
+                         vectors=shared["vectors"], emit=emit,
+                         on_call=lambda info: log_event("model_call", **info))
 
     api.state.make_deps = make_deps
     # How an ADK graph is executed; tests run the same graphs through ADK too.
@@ -704,7 +708,16 @@ def create_app(config: Settings | None = None, store: DataStore | None = None) -
                 *[f["text"] for f in event.get("facts", [])],
             ]
             graph, out = build_courtroom(event_id=run["event_id"], flag=flag, deps=deps, price=price)
-            await api.state.run_graph(graph)
+            started = time.monotonic()
+            try:
+                await asyncio.wait_for(api.state.run_graph(graph), timeout=config.courtroom_deadline_s)
+            except asyncio.TimeoutError:
+                # Not saved, so trying again runs the Courtroom afresh.
+                log_event("courtroom_timeout", severity="WARNING", run_id=run_id,
+                          seconds=round(time.monotonic() - started, 1), calls=dict(deps.calls))
+                return {"skipped": True, "timed_out": True, "label": LABEL,
+                        "reason": "The AI counsel are taking longer than usual right now "
+                                  f"(over {config.courtroom_deadline_s} s). Nothing was priced. Please try again."}
             out.pop("context", None)
             pricing = (api.state.store.benchmark() or {}).get("pricing", {})
             result = {"skipped": False, **out, "calls": dict(deps.calls),

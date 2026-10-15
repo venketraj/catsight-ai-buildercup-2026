@@ -162,8 +162,10 @@ cost, unsupported figures), `done` (run id).
 ### C — instant replay
 
 Every complete live run records its stream to `data/replays/{event_id}.json`.
-**Instant replay** plays it back in about 6 seconds, labelled with when it
-was recorded and how long the live run took. It covers cold starts, the daily
+**Instant replay** plays it back in a few seconds (compressed to at most about
+6), labelled with when it was recorded and how long the live run took. The
+repository ships the latest recording (`backend/data/replays/jebi-2018.json`);
+a running instance replaces it with each complete live run it serves. It covers cold starts, the daily
 cap under public traffic, and a dead network on stage. Replays cost nothing
 in model calls.
 

@@ -42,11 +42,11 @@ export function Landing({
       <button className="primary big" data-tour="replay" onClick={onReplay} disabled={running || !replayReady}
               title={replayReady ? "Plays back a recorded real run in a few seconds"
                 : "No recording yet - run this event live once to record one"}>
-        ▶ Instant replay <small>about 6 s · recorded real run</small>
+        ▶ Instant replay <small>plays in seconds · recorded real run</small>
       </button>
       <button className="secondary big" onClick={onLive} disabled={running} aria-busy={running}
-              title="Runs the agents live: Gemini, Firestore vector search, about 15 seconds">
-        ⚡ {liveLabel} <small>Gemini agents · about 15 s</small>
+              title="Runs the agents live: Gemini, Firestore vector search, usually under a minute">
+        ⚡ {liveLabel} <small>Gemini agents · usually under a minute</small>
       </button>
       {status && <span className="note" style={{ margin: 0 }}>{status}</span>}
     </div>

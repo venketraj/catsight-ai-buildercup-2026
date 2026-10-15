@@ -331,3 +331,32 @@ def test_identifiers_are_not_figures_but_signed_numbers_are():
     facts = '{"our_net": "6.81"}'
     assert check_report_figures("T-004 and JP-27 on 2018-09-04", facts + " 2018 09 04") == []
     assert check_report_figures("a change of -1.34 overall", facts) == ["1.34"]
+
+
+def test_a_live_model_call_is_retried_once_and_reported(monkeypatch):
+    """A visitor is waiting: a transient error is retried once, briefly, and
+    every call - failed or not - is reported with its time, never its prompt."""
+    from catsight_agent.agents import LIVE_ATTEMPTS, _generate
+
+    monkeypatch.setattr("time.sleep", lambda seconds: None)
+    tries: list[str] = []
+
+    class Flaky:
+        class models:
+            @staticmethod
+            def generate_content(*, model, contents, config):
+                tries.append(model)
+                if model == "down":
+                    raise RuntimeError("503 UNAVAILABLE")
+                return SimpleNamespace(text="ok")
+
+    seen: list[dict] = []
+    deps = AgentDeps(client=Flaky(), model_main="m", model_reason="r", embedder=None, vectors=None,
+                     on_call=seen.append)
+    with pytest.raises(RuntimeError):
+        _generate(deps, "down", "secret prompt text", None, "verifier")
+    assert len(tries) == LIVE_ATTEMPTS == 2
+    assert _generate(deps, "up", "secret prompt text", None, "reporter") == "ok"
+    assert [(s["kind"], s["model"], s["ok"]) for s in seen] == [("verifier", "down", False), ("reporter", "up", True)]
+    assert seen[0]["error"] == "RuntimeError" and all(isinstance(s["seconds"], float) for s in seen)
+    assert "secret prompt text" not in json.dumps(seen)

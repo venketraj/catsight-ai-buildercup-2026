@@ -170,10 +170,13 @@ def setup_tracing(enabled: bool) -> bool:  # pragma: no cover - needs GCP creden
         return False
     os.environ.setdefault("ADK_CAPTURE_MESSAGE_CONTENT_IN_SPANS", "false")
     try:
-        from google.adk.telemetry.google_cloud import get_gcp_exporters
+        from google.adk.telemetry.google_cloud import get_gcp_exporters, get_gcp_resource
         from google.adk.telemetry.setup import maybe_set_otel_providers
 
-        maybe_set_otel_providers([get_gcp_exporters(enable_cloud_tracing=True)])
+        # The Telemetry API rejects every batch whose resource lacks
+        # `gcp.project_id` (HTTP 400), so the resource must be set explicitly.
+        maybe_set_otel_providers([get_gcp_exporters(enable_cloud_tracing=True)],
+                                 otel_resource=get_gcp_resource(os.environ.get("GOOGLE_CLOUD_PROJECT")))
     except Exception as exc:  # noqa: BLE001 - tracing is optional; say why and carry on
         log_event("tracing_unavailable", severity="WARNING", detail=f"{type(exc).__name__}: {exc}")
         return False

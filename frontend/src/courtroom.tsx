@@ -26,6 +26,8 @@ interface Side {
 
 interface Court {
   skipped: boolean;
+  /** The Courtroom ran past its time limit; nothing was saved, so it can be retried. */
+  timed_out?: boolean;
   reason?: string;
   label: string;
   flag?: { treaty_id: string; issue_type: string; explanation: string };
@@ -103,7 +105,7 @@ export function CourtroomPanel({ runId }: { runId: string }) {
           <p className="note">
             Takes the most material disputed exclusion flag from this analysis, has two counsel argue
             opposite readings in parallel, verifies every quote, and prices each reading with the loss
-            engine (about 15 seconds).
+            engine (usually under a minute).
           </p>
           <button className="primary" onClick={() => open()} disabled={busy}>
             {busy ? "Counsel are arguing…" : "Open the Clause Courtroom"}
@@ -113,6 +115,11 @@ export function CourtroomPanel({ runId }: { runId: string }) {
       {error && <p className="banner error">{error}</p>}
 
       {court?.skipped && <p className="note">Courtroom skipped: {court.reason}</p>}
+      {court?.timed_out && (
+        <button className="primary" onClick={() => { setCourt(null); void open(); }} disabled={busy}>
+          Try again
+        </button>
+      )}
 
       {court && !court.skipped && court.sides && (
         <>

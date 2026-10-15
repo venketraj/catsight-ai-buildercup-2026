@@ -265,12 +265,21 @@ class ExtractionOutcome:
         return self.validation_error is not None
 
 
-def build_client(project: str | None = None, location: str | None = None) -> Any:
+def build_client(
+    project: str | None = None,
+    location: str | None = None,
+    *,
+    timeout_ms: int | None = None,
+    attempts: int = 3,
+) -> Any:
     """A Vertex-backed genai client, configured from the environment.
 
     Reads `GOOGLE_CLOUD_PROJECT` and `GOOGLE_CLOUD_LOCATION` so nothing here
     hardcodes a project - the rule stated in `.env.example`. Location
     defaults to `global` because Gemini 3.x is not served from us-central1.
+
+    The defaults suit ingestion (a long timeout, transport retries). The live
+    service passes a short timeout and one attempt: a visitor is waiting.
     """
     from google import genai
     from google.genai import types
@@ -283,8 +292,8 @@ def build_client(project: str | None = None, location: str | None = None) -> Any
         # A hung request must fail and be retried, not wait forever (ms).
         # Transport-level retries are off by default in google-genai (C-5).
         http_options=types.HttpOptions(
-            timeout=REQUEST_TIMEOUT_MS,
-            retry_options=types.HttpRetryOptions(attempts=3, initial_delay=2.0),
+            timeout=timeout_ms or REQUEST_TIMEOUT_MS,
+            retry_options=types.HttpRetryOptions(attempts=attempts, initial_delay=2.0),
         ),
     )
 

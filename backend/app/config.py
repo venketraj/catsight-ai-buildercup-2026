@@ -91,6 +91,12 @@ class Settings:
     #: judging without a redeploy.
     courtroom_enabled: bool = True
     verifier_max_retries: int = 1
+    #: Seconds one live model call may take before it fails. A failed call
+    #: degrades safely (an unchecked quote is withheld, a side is dropped).
+    model_call_timeout_s: int = 40
+    #: Seconds a Courtroom request may take; past it the visitor is told the
+    #: model is slow and can try again, well inside Cloud Run's 300 s limit.
+    courtroom_deadline_s: int = 120
     cached_replay_only: bool = False
     #: Send ADK spans to Cloud Trace (app/logs.py). Off locally and in tests.
     enable_cloud_trace: bool = False
@@ -190,6 +196,8 @@ def load_settings(env: dict[str, str] | None = None) -> Settings:
         model_armor_location=os.environ.get("MODEL_ARMOR_LOCATION") or "us-central1",
         courtroom_enabled=_flag("COURTROOM_ENABLED", True),
         verifier_max_retries=_integer("VERIFIER_MAX_RETRIES", 1),
+        model_call_timeout_s=_integer("MODEL_CALL_TIMEOUT_S", 40),
+        courtroom_deadline_s=_integer("COURTROOM_DEADLINE_S", 120),
         cached_replay_only=_flag("CACHED_REPLAY_ONLY", False),
         enable_cloud_trace=_flag("ENABLE_CLOUD_TRACE", False),
         replay_fixture_dir=os.environ.get("REPLAY_FIXTURE_DIR") or DEFAULT_REPLAY_DIR,
