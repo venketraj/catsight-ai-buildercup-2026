@@ -80,9 +80,9 @@ Both Courtroom sides verified in all 3 runs.
 
 **Where the time goes.** Every slow run spent it in the verification step. When a quote fails its first check, the reviser rewrites it and the checker (`gemini-3.8-flash`) runs again. Those 3 calls took 11.6 s in run 1 and 36.6 s in run 2, so the model's own response time varies too. We did not measure the Courtroom's internal steps. Pricing (the engine) takes under 0.2 s in every run. An earlier live run the same day, outside this check, took 34.7 s with the same pattern (verification step 27.3 s).
 
-**Other live runs the same day** (not in the averages): recording the demo video between 12:46 and 13:06 UTC, analyses took 14, 16 and 20 s and Courtrooms 12, 278 and 38 s. One more run in the service logs, at 13:03 UTC, took 21 s, and its Courtroom 84 s. The 278 s Courtroom made its usual model calls ($0.0046), so the time went waiting on the model; it ran close to Cloud Run's 300 s request timeout, and we recorded the video again rather than show it.
+**Other live runs the same day** (not in the averages, server times from Cloud Logging): recording the demo video between 12:46 and 13:49 UTC, five analyses took 13, 16, 20, 54 and 9 s, and their Courtrooms 12, 278, 37, 13 and 26 s. One more run in the logs, at 13:03 UTC, took 21 s, and its Courtroom 84 s. The 278 s Courtroom made its usual model calls ($0.0046), so the time went waiting on the model; it ran close to Cloud Run's 300 s request timeout. Every analysis that day finished in under a minute.
 
-The demo video's results slide uses the 3-run averages above. The run shown in the video took 20 s, and its Courtroom 38 s.
+The video script records again rather than show an outlier (an analysis over 45 s or a Courtroom over 90 s). The demo video's results slide uses the 3-run averages above; the run it shows (13:48 UTC) took 10 s in the browser, and its Courtroom 26 s.
 
 ## History (earlier builds)
 

@@ -17,7 +17,7 @@ Google Cloud AI Builder Cup 2026 · BFSI: Intelligent Risk, Fraud & Financial Ex
 After a disaster, insurers must pay thousands of families and businesses quickly. They get much of that money back from **reinsurers**: insurers for insurance companies, bound by long legal contracts called **treaties**. Working out what each treaty pays takes days of manual review, and disputes over unclear wording can run for months. CatSight gives the first answer in seconds:
 
 - **The money in 0.7 s** (median), calculated by tested code, never by the AI.
-- **The full check in 8–43 s** (23 s on average in 3 live runs on 15 Oct; 11.3 s median in the 10-run benchmark on 14 Oct). Gemini reads the contract wording, and every quote it uses is checked against the contract page.
+- **The full check in under a minute:** 23 s on average in 3 timed live runs on 15 Oct (8–43 s; the slowest run that day took 56 s), and 11.3 s median in the 10-run benchmark on 14 Oct. Gemini reads the contract wording, and every quote it uses is checked against the contract page.
 - **About 1 cent of AI cost** per analysis ($0.0097 median).
 
 *Measured on the live service; see [`docs/RESULTS.md`](docs/RESULTS.md) §1 and §1b.*
@@ -25,7 +25,7 @@ After a disaster, insurers must pay thousands of families and businesses quickly
 ## For judges: try it in 2 minutes
 
 1. Open the **live demo**. There's no login.
-2. Press **Instant replay** (a recorded real run, about 6 s, no AI cost) or **Run live** to watch the AI agents work (23 s on average on 15 Oct; 8–43 s measured).
+2. Press **Instant replay** (a recorded real run, about 6 s, no AI cost) or **Run live** to watch the AI agents work (23 s on average on 15 Oct; under a minute in every run that day).
 3. Follow the five steps on screen (*Event → Who's hit → What it costs → Clauses that matter → Decide*), or press **Take the tour** (9 stops).
 4. In **Follow-up questions**, click one of the built-in examples. All three were checked on the live site on 15 Oct 2026:
    - *Which layers are exhausted, and on which treaties?*
@@ -157,7 +157,7 @@ The dashboard lives in our private Google Cloud project, so these screenshots st
 | Follow-up question | about **$0.003** | from token counts, not benchmarked |
 | Automated tests | **870+ offline tests + 13 opt-in live tests** | run on a fresh clone (CI in [`.github/workflows/ci.yml`](.github/workflows/ci.yml)) |
 
-*What the demo video shows:* one live run recorded on 15 Oct, walking the five steps above: the run (20 s), Who's hit with *How was this calculated?*, What it costs, the clauses and the Courtroom (38 s), the checked quote and scanned endorsement, then What-if, the Word report and a follow-up question. Its lawyers argued a **50%** surge share, the most common outcome in the benchmark (6 of 8 Courtrooms): $29.09M of recoveries move and Lion Re saves $5.16M. The replay and the deck use the **20%** run. Long waits are cut, never sped up, and each cut is captioned with the real time.
+*What the demo video shows:* one live run recorded on 15 Oct, walking the five steps above: the run (10 s), Who's hit with *How was this calculated?*, What it costs, the clauses and the Courtroom (26 s), the checked quote and scanned endorsement, then What-if, the Word report and a follow-up question. Its lawyers argued a **50%** surge share, the most common outcome in the benchmark (6 of 8 Courtrooms): $29.09M of recoveries move and Lion Re saves $5.16M. The replay and the deck use the **20%** run. Each figure is boxed on screen as the narration says it; long waits are cut, never sped up, and each cut is captioned with the real time.
 
 ## Run it yourself
 

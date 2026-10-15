@@ -319,7 +319,7 @@ def build_slides() -> list[str]:
       <tr><td>PERILS (Asia loss index)</td><td><b>6 weeks</b></td><td>An industry total, not treaty payouts</td></tr>
       <tr><td>Verisk PCS Japan</td><td><b>up to 90 days</b></td><td>Market index, events ≥ $2bn only</td></tr>
       <tr><td>Manual spreadsheet review</td><td><b>2–4 days</b></td><td>Slow; easy to miss endorsements</td></tr>
-      <tr><td><b>CatSight</b></td><td><b>0.7 s money · 8–43 s full check</b></td><td><b>Your treaties, priced, with checked quotes</b></td></tr>
+      <tr><td><b>CatSight</b></td><td><b>0.7 s money · full check in under a minute</b></td><td><b>Your treaties, priced, with checked quotes</b></td></tr>
     </table>
     <p class="muted" style="margin-top:14px">Hazard data: NOAA IBTrACS (typhoon tracks), USGS ShakeMap (earthquakes).</p>
   </div>
@@ -534,7 +534,7 @@ def build_slides() -> list[str]:
         
         <!-- Footer Bar -->
         <div style="background:#ffffff;border-top:1px solid #dadce0;padding:6px 12px;display:flex;justify-content:space-between;font-size:11px;color:#5f6368">
-          <span>⚡ Instant Replay: <b>6 s</b> · Live run: <b>8–43 s</b> (avg 23 s, 15 Oct)</span>
+          <span>⚡ Instant Replay: <b>6 s</b> · Live run: <b>avg 23 s</b>, under 1 min (15 Oct)</span>
           <span>Python Decimal: <b>Zero LLM arithmetic</b></span>
         </div>
       </div>
@@ -720,7 +720,7 @@ def build_slides() -> list[str]:
     <p style="font-size:16px;margin:6px 0 0">The live-service dashboard in Cloud Monitoring (screenshot, 15 Oct 2026). "Citations withheld" counts quotes the checker refused to show: the guardrail working, not an error.</p>
   </div>
 </div>
-<p class="muted" style="font-size:17px;margin-top:12px"><b>Honest limits:</b> extraction prompts were tuned on the same 8 synthetic wordings (99.5% is an upper bound; a blind set is next). Speed varies: slow runs spend their time re-checking a quote that failed its first check, and one Courtroom on 15 Oct took 278 s. Analyst-time savings are labelled <i>simulated estimates</i>.</p>"""
+<p class="muted" style="font-size:17px;margin-top:12px"><b>Honest limits:</b> extraction prompts were tuned on the same 8 synthetic wordings (99.5% is an upper bound; a blind set is next). Speed varies: slow runs spend their time re-checking a quote that failed its first check, and on 15 Oct one analysis took 56 s and one Courtroom 278 s. Analyst-time savings are labelled <i>simulated estimates</i>.</p>"""
     ))
 
     # Slide 12 — Template Page 13: Additional Details/Future Development (if any)
