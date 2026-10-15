@@ -303,7 +303,7 @@ def build_slides() -> list[str]:
         "Brief about the idea",
         """<div class="grid2">
   <div>
-    <p style="font-size:25px"><b>CatSight</b> tells a reinsurer, <b>about 11 seconds</b> (median) after a typhoon or earthquake, which contracts pay, how much, and which clauses could change that, with every quote checked against the contract page.</p>
+    <p style="font-size:25px"><b>CatSight</b> tells a reinsurer, <b>in under a minute</b> after a typhoon or earthquake, which contracts pay, how much, and which clauses could change that, with every quote checked against the contract page. The money is on screen in about a second.</p>
     <p><b>The problem, in people terms</b></p>
     <ul>
       <li>After Typhoon Jebi, insurers paid <b>857,284 claims (¥1,067.8bn)</b> <span class="tag">GIAJ</span> to families and businesses.</li>
@@ -319,7 +319,7 @@ def build_slides() -> list[str]:
       <tr><td>PERILS (Asia loss index)</td><td><b>6 weeks</b></td><td>An industry total, not treaty payouts</td></tr>
       <tr><td>Verisk PCS Japan</td><td><b>up to 90 days</b></td><td>Market index, events ≥ $2bn only</td></tr>
       <tr><td>Manual spreadsheet review</td><td><b>2–4 days</b></td><td>Slow; easy to miss endorsements</td></tr>
-      <tr><td><b>CatSight</b></td><td><b>0.7 s money · ~11 s full check</b></td><td><b>Your treaties, priced, with checked quotes</b></td></tr>
+      <tr><td><b>CatSight</b></td><td><b>0.7 s money · 8–43 s full check</b></td><td><b>Your treaties, priced, with checked quotes</b></td></tr>
     </table>
     <p class="muted" style="margin-top:14px">Hazard data: NOAA IBTrACS (typhoon tracks), USGS ShakeMap (earthquakes).</p>
   </div>
@@ -534,7 +534,7 @@ def build_slides() -> list[str]:
         
         <!-- Footer Bar -->
         <div style="background:#ffffff;border-top:1px solid #dadce0;padding:6px 12px;display:flex;justify-content:space-between;font-size:11px;color:#5f6368">
-          <span>⚡ Instant Replay: <b>6 s</b> · Live Agent SSE: <b>11.3 s p50</b></span>
+          <span>⚡ Instant Replay: <b>6 s</b> · Live run: <b>8–43 s</b> (avg 23 s, 15 Oct)</span>
           <span>Python Decimal: <b>Zero LLM arithmetic</b></span>
         </div>
       </div>
@@ -574,7 +574,7 @@ def build_slides() -> list[str]:
         <div style="background:#f3e8fd;border:1.5px solid #8430ce;border-radius:6px;padding:8px 12px">
           <div style="display:flex;justify-content:space-between;align-items:center">
             <b style="color:#8430ce;font-size:13px">Stage 2: Semantic Support Check (Gemini 3.8 Flash)</b>
-            <span style="font-size:11px;background:#8430ce;color:#fff;padding:1px 6px;border-radius:3px">~1.2 s Reasoning</span>
+            <span style="font-size:11px;background:#8430ce;color:#fff;padding:1px 6px;border-radius:3px">Model reasoning</span>
           </div>
           <div style="font-size:12px;color:#202124;margin-top:2px">Verifies quote + event timeline (<code>start</code>, <code>end</code>, <code>duration_h</code>) + JMA facts directly support the exclusion. 1 revision retry loop on failure.</div>
         </div>
@@ -699,9 +699,10 @@ def build_slides() -> list[str]:
     # Slide 11 — Template Page 12: Prototype Performance report/Benchmarking
     s.append(content_slide(
         "Prototype Performance report/Benchmarking",
-        f"""<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:20px">
+        f"""<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-bottom:20px">
   <div class="card-strong"><div class="big">0.7 s</div><div class="lbl">Money on screen (median; 0.5–1.1 s over 10 live runs)</div></div>
-  <div class="card-strong"><div class="big">11.3 s</div><div class="lbl">Full analysis with checked quotes (median; 7.8–19.3 s)</div></div>
+  <div class="card-strong"><div class="big">23 s</div><div class="lbl">Full analysis with checked quotes (average of 3 live runs, 15&nbsp;Oct; <span style="white-space:nowrap">8–43 s</span>). Benchmark median 11.3&nbsp;s</div></div>
+  <div class="card-strong"><div class="big">42 s</div><div class="lbl">Clause Courtroom, a separate click (average of the same 3 runs; <span style="white-space:nowrap">10–70 s</span>)</div></div>
   <div class="card-strong"><div class="big">99.5%</div><div class="lbl">Treaty terms extracted (185/186 fields, in 57 s vs ~25 min)</div></div>
   <div class="card-strong"><div class="big">870+</div><div class="lbl">Automated tests (870+ offline + 13 live; CI on GitHub)</div></div>
 </div>
@@ -719,7 +720,7 @@ def build_slides() -> list[str]:
     <p style="font-size:16px;margin:6px 0 0">The live-service dashboard in Cloud Monitoring (screenshot, 15 Oct 2026). "Citations withheld" counts quotes the checker refused to show: the guardrail working, not an error.</p>
   </div>
 </div>
-<p class="muted" style="font-size:17px;margin-top:12px"><b>Honest limits:</b> extraction prompts were tuned on the same 8 synthetic wordings (99.5% is an upper bound; a blind set is next). Analyst-time savings are labelled <i>simulated estimates</i>.</p>"""
+<p class="muted" style="font-size:17px;margin-top:12px"><b>Honest limits:</b> extraction prompts were tuned on the same 8 synthetic wordings (99.5% is an upper bound; a blind set is next). Speed varies: slow runs spend their time re-checking a quote that failed its first check. Analyst-time savings are labelled <i>simulated estimates</i>.</p>"""
     ))
 
     # Slide 12 — Template Page 13: Additional Details/Future Development (if any)
@@ -768,7 +769,7 @@ def build_slides() -> list[str]:
   <li style="margin-bottom:18px">
     <b>Final Product Link</b><br>
     <a href="{LIVE}" style="font-size:23px;font-family:Consolas,monospace;color:#1fa99c;text-decoration:none">{LIVE}</a>
-    <div class="muted" style="margin-top:2px">Live on Google Cloud Run · No login · <b>Instant replay</b> (~6 s) or <b>Run live</b> (~11 s median) · 9-stop tour · 3 example questions built in · the README has a 2-minute judge guide.</div>
+    <div class="muted" style="margin-top:2px">Live on Google Cloud Run · No login · <b>Instant replay</b> (~6 s) or <b>Run live</b> (~23 s on average; the Courtroom ~42 s more) · 9-stop tour · 3 example questions built in · the README has a 2-minute judge guide.</div>
   </li>
   <li style="margin-bottom:18px">
     <b>Submission Folder (Google Drive)</b><br>

@@ -1,6 +1,6 @@
 # CatSight
 
-**When a typhoon or earthquake hits, CatSight shows a reinsurer, in seconds, who pays what under each contract, and which contract wording could change that answer.**
+**When a typhoon or earthquake hits, CatSight shows a reinsurer, within a minute, who pays what under each contract, and which contract wording could change that answer.**
 
 Google Cloud AI Builder Cup 2026 · BFSI: Intelligent Risk, Fraud & Financial Experiences · **Team Techno Crackers:** Venket Raj S, Malik Chandra Pandian, Arun Veerappan, Nagaraj (all 4 are working professionals in JAPAC; no students).
 
@@ -17,21 +17,21 @@ Google Cloud AI Builder Cup 2026 · BFSI: Intelligent Risk, Fraud & Financial Ex
 After a disaster, insurers must pay thousands of families and businesses quickly. They get much of that money back from **reinsurers**: insurers for insurance companies, bound by long legal contracts called **treaties**. Working out what each treaty pays takes days of manual review, and disputes over unclear wording can run for months. CatSight gives the first answer in seconds:
 
 - **The money in 0.7 s** (median), calculated by tested code, never by the AI.
-- **The full check in 11.3 s** (median). Gemini reads the contract wording, and every quote it uses is checked against the contract page.
+- **The full check in 8–43 s** (23 s on average in 3 live runs on 15 Oct; 11.3 s median in the 10-run benchmark on 14 Oct). Gemini reads the contract wording, and every quote it uses is checked against the contract page.
 - **About 1 cent of AI cost** per analysis ($0.0097 median).
 
-*Measured on the live service over 10 runs; see [`docs/RESULTS.md`](docs/RESULTS.md) §1.*
+*Measured on the live service; see [`docs/RESULTS.md`](docs/RESULTS.md) §1 and §1b.*
 
 ## For judges: try it in 2 minutes
 
 1. Open the **live demo**. There's no login.
-2. Press **Instant replay** (a recorded real run, about 6 s, no AI cost) or **Run live** to watch the AI agents work (about 11 s median; 8–19 s measured).
+2. Press **Instant replay** (a recorded real run, about 6 s, no AI cost) or **Run live** to watch the AI agents work (23 s on average on 15 Oct; 8–43 s measured).
 3. Follow the five steps on screen (*Event → Who's hit → What it costs → Clauses that matter → Decide*), or press **Take the tour** (9 stops).
 4. In **Follow-up questions**, click one of the built-in examples. All three were checked on the live site on 15 Oct 2026:
    - *Which layers are exhausted, and on which treaties?*
    - *Show the hours clause for W1.*
    - *Why does T-004 matter for this event?*
-5. Open the **Clause Courtroom**: two AI "lawyers" argue opposite readings of one unclear clause, and the engine prices both readings.
+5. Open the **Clause Courtroom**: two AI "lawyers" argue opposite readings of one unclear clause, and the engine prices both readings. It's a separate step: 42 s on average on 15 Oct (10–70 s).
 
 **Good to know (limits, by design):**
 - About **20 live runs per hour per visitor**, and **300 a day** for the whole site. Past a limit you get the recorded replay instead, clearly labelled, so the demo always completes.
@@ -102,6 +102,8 @@ Every money figure comes from unit-tested Python (`Decimal`, half-up rounding), 
 - **Narrow search:** contract search is filtered to one treaty, and standard searches are pre-computed, so a fresh server makes no embedding calls during an analysis.
 - **No cold start:** one warm Cloud Run instance during judging.
 
+**What makes a run slower:** checking. When a quote fails its first check, the AI revises it and the checker runs again. On 15 Oct the runs that needed this took 17–43 s, and the run that passed first time took 8 s ([`docs/RESULTS.md`](docs/RESULTS.md) §1b).
+
 ## Architecture (as built)
 
 ```
@@ -150,11 +152,12 @@ The dashboard lives in our private Google Cloud project, so these screenshots st
 | Citation coverage | **186/188** fields cited; **185/186** check out against the page | per-field audit in [`docs/RESULTS.md`](docs/RESULTS.md) §3; 1 scanned page is labelled "transcribed" |
 | Extraction time, 8 wordings | **57 s** | vs ~25 min for whole-document extraction |
 | Live analysis (Jebi), 10-run live benchmark | money in **0.7 s** p50 (0.5–1.1 s); complete in **11.3 s** p50 (7.8–19.3 s); **$0.0097** p50 model cost ($0.0081–$0.0140) | warm service on Cloud Run; [`docs/RESULTS.md`](docs/RESULTS.md) §1 |
-| Clause Courtroom | **Ran in 8 of 10 live analyses** (skipped in 2 when the verifier withheld the T-004 flag); **both sides verified in all 8**; 8.0 s p50, $0.0052 p50 cost | prices the money at stake live: on the recorded 20% surge-share run, reinsurers pay $11.6M less and the insurer's net cost rises $10.3M; measured insurer range +$10.3M to +$26.0M |
+| Clause Courtroom | **Ran in 8 of 10 live analyses** (skipped in 2 when the verifier withheld the T-004 flag); **both sides verified in all 8**; 8.0 s p50 (7.1–45.2 s), $0.0052 p50 cost | prices the money at stake live: on the recorded 20% surge-share run, reinsurers pay $11.6M less and the insurer's net cost rises $10.3M; measured insurer range +$10.3M to +$26.0M |
+| Browser check, 3 live runs (15 Oct) | analysis **23.0 s** average (8.2–43.3 s); Courtroom **41.7 s** average (10.3–69.8 s); $0.0091 average model cost | timed from the click, as a visitor sees it; [`docs/RESULTS.md`](docs/RESULTS.md) §1b |
 | Follow-up question | about **$0.003** | from token counts, not benchmarked |
 | Automated tests | **870+ offline tests + 13 opt-in live tests** | run on a fresh clone (CI in [`.github/workflows/ci.yml`](.github/workflows/ci.yml)) |
 
-*Why the video shows different Courtroom numbers:* the demo video is a separate live run in which the lawyers argued a **30%** surge share. Then $17.46M of recoveries move and Lion Re saves $2.44M ([`docs/MONEY_MOMENT.md`](docs/MONEY_MOMENT.md) §7). The replay and the deck use the **20%** run.
+*Why the video shows different Courtroom numbers:* the demo video is a separate live run in which the lawyers argued a **30%** surge share. Then $17.46M of recoveries move and Lion Re saves $2.44M ([`docs/MONEY_MOMENT.md`](docs/MONEY_MOMENT.md) §7). The replay and the deck use the **20%** run. The live run shown in the video took 9 s, a fast run; the video's results slide gives the 15 Oct averages instead.
 
 ## Run it yourself
 

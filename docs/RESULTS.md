@@ -61,6 +61,27 @@ The counsel agents choose their surge share each run (bounded 0-50%), so money a
 - Flag recall/precision over a labelled corpus, and a blind-set extraction score.
 <!-- benchmarks:end -->
 
+### Courtroom time in the 10-run benchmark
+
+The Courtroom is a separate request, so the end-to-end times above do not include it. `latest.json` records its time for the 8 runs where it ran: **8.0 s median, 7.1–45.2 s** (7.1, 7.7, 7.9, 7.9, 8.0, 10.5, 25.2, 45.2).
+
+## 1b. Browser check, 15 Oct 2026
+
+Three live Jebi analyses on the deployed site (build `7b1e7e3`) in a real browser (Microsoft Edge, Playwright), each followed by the Clause Courtroom. Times run from the click to the finished screen, which is what a visitor waits for. Measured 15 Oct 2026, 12:23–12:27 UTC; the server-side request times in Cloud Logging agree to within 0.7 s.
+
+| Run | Analysis (s) | Courtroom (s) | Model cost | Verification step (s) | Quote revised and re-checked? |
+|---|---|---|---|---|---|
+| 1 | 17.4 | 45.0 | $0.0094 + $0.0047 | 11.6 | yes, 1 withheld |
+| 2 | 43.3 | 69.8 | $0.0099 + $0.0047 | 36.6 | yes, 1 withheld |
+| 3 | 8.2 | 10.3 | $0.0081 + $0.0049 | 2.6 | no |
+| **Average** | **23.0** | **41.7** | **$0.0091 + $0.0048** | | |
+
+Both Courtroom sides verified in all 3 runs.
+
+**Where the time goes.** Every slow run spent it in the verification step. When a quote fails its first check, the reviser rewrites it and the checker (`gemini-3.8-flash`) runs again. Those 3 calls took 11.6 s in run 1 and 36.6 s in run 2, so the model's own response time varies too. We did not measure the Courtroom's internal steps. Pricing (the engine) takes under 0.2 s in every run. An earlier live run the same day, outside this check, took 34.7 s with the same pattern (verification step 27.3 s).
+
+The demo video's results slide uses these averages. The live run shown in the video took 9 s.
+
 ## History (earlier builds)
 
 ### 13 Oct 2026 — Post-fix Verification Benchmark (Build `6fbb81c` — live on Cloud Run)
